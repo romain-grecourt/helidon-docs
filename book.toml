@@ -3,3 +3,11 @@ authors = ["Romain Grecourt"]
 language = "en"
 src = "src"
 title = "Helidon Documentation"
+
+[preprocessor.pagetoc]
+scroll_offset = 10  # pixels added to scroll position for active header detection (default: 10)
+
+[output.html]
+additional-css = ["theme/pagetoc.css"]
+additional-js  = ["theme/pagetoc.js"]
+sidebar-header-nav = false
