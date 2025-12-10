@@ -1,0 +1,5 @@
+[book]
+authors = ["Romain Grecourt"]
+language = "en"
+src = "src"
+title = "Helidon Documentation"
