@@ -81,5 +81,5 @@ and restart your application.
 # Demo
 
 <figure>
-<img src="../images/Helidon_cli.gif" alt="CLI Demo" />
+<img src="../images/cli-demo.gif" alt="CLI Demo" />
 </figure>

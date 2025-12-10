@@ -9,8 +9,7 @@ then use.
 # Maven Coordinates
 
 To enable Config, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependencies>
@@ -28,9 +27,7 @@ and how they work together. Most applications will typically deal with
 more than one of these parts.
 
 <figure>
-<img
-src="/Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/config/overview.png"
-alt="Configuration Overview" />
+<img src="../../images/se-config-overview.png" alt="Configuration Overview" />
 </figure>
 
 These are the main parts of the configuration system:

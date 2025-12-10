@@ -42,15 +42,10 @@ To include health checks for Messaging add the following dependency:
 # Usage
 
 - [Channels](#channels)
-
 - [Emitter](#emitter)
-
 - [Connector](#connector)
-
 - [Message](#message)
-
 - [Acknowledgement](#acknowledgement)
-
 - [Health Check](#health-check)
 
 ## Channels
@@ -60,11 +55,10 @@ with one consumer (downstream). Each channel needs to have both ends
 connected otherwise the container cannot successfully start.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/msg/channel.svg" alt="Messaging Channel" />
+<img src="../../images/reactive-messaging-channel.svg" alt="Messaging Channel" />
 </figure>
 
-Channels can be connected either to [emitter](#emitter) (1), [producing
-method](#producing-method) (2) or [connector](#connector) (3) on the
+Channels can be connected either to [emitter](#emitter) (1), [producing method](#producing-method) (2) or [connector](#connector) (3) on the
 upstream side. And [injected publisher](#injected-publisher) (4),
 [consuming method](#consuming-method) (5) or [connector](#connector)
 (6) on the downstream.
@@ -228,7 +222,7 @@ act as processors, consuming messages from one channel and producing to
 another.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/msg/processor.svg" alt="Processor method connecting two channels together" />
+<img src="../../images/reactive-messaging-processor.svg" alt="Processor method connecting two channels together" />
 </figure>
 
 Diagram shows how processing method (2) serves as a downstream to the
@@ -509,7 +503,7 @@ channel-specific properties merged together with special synthetic
 property `channel-name`.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/msg/connector-config.svg" alt="Connector config" />
+<img src="../../images/reactive-messaging-connector-config.svg" alt="Connector config" />
 </figure>
 
 Connector specific config (1) merged together with global connector config (2).

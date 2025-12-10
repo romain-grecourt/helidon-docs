@@ -187,7 +187,7 @@ Click on the UI Find traces button (the search icon) as shown in the
 image below.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/12_tracing_refresh.png" alt="Trace Refresh" />
+<img src="../../images/mp-guides-tracing-refresh.png" alt="Trace Refresh" />
 <figcaption>Jaeger UI</figcaption>
 </figure>
 
@@ -198,7 +198,7 @@ trace will have a much longer duration since there is one-time
 initialization that occurs.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/12_tracing_top.png" alt="Traces" />
+<img src="../../images/mp-guides-tracing-top.png" alt="Traces" />
 <figcaption>Tracing list view</figcaption>
 </figure>
 
@@ -207,7 +207,7 @@ are listed. You can clearly see the root span and the relationship among
 all the spans in the trace, along with timing information.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/12_tracing_detail.png" alt="Trace Detail" />
+<img src="../../images/mp-guides-tracing-detail.png" alt="Trace Detail" />
 <figcaption>Trace detail page</figcaption>
 </figure>
 
@@ -474,7 +474,7 @@ Refresh the Jaeger UI trace listing page and notice that there is a
 trace across two services.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/12_tracing_detail_2_services.png" alt="Traces" />
+<img src="../../images/mp-tracing-detail.png" alt="Traces" />
 <figcaption>Tracing across multiple services detail view</figcaption>
 </figure>
 

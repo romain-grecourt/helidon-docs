@@ -25,7 +25,7 @@ Token](https://docs.cloud.oracle.com/iaas/Content/Registry/Tasks/registrygetting
 > again.
 
 Log in to the OCIR Docker registry:
-``` bash
+```shell
 docker login \
        -u <username> \ 
        -p <password> \ 
@@ -39,7 +39,7 @@ docker login \
 
 Tag the image that you want to push to the registry:
 
-``` bash
+```shell
 docker tag \
        helidon-quickstart-se:latest \ 
        <region-code>.ocir.io/<tenancy-name>/<repo-name>/<image-name>:<tag> 
@@ -50,7 +50,7 @@ docker tag \
   want to push the image (for example, `project01`).
 
 Push the image to the Registry:
-``` bash
+```shell
 docker push \
     <region-code>.ocir.io/<tenancy-name>/<repo-name>/<image-name>:<tag>
 ```
@@ -62,7 +62,7 @@ You can pull your image with the image path used above, for example:
 
 Create a namespace (for example, `helidon`) for the project:
 
-``` bash
+```shell
 kubectl create namespace helidon
 ```
 
@@ -71,7 +71,7 @@ authenticate with the container registry and pull the private image, you
 must create and use an image-pull secret.
 
 Create an image-pull secret:
-``` bash
+```shell
 kubectl create secret docker-registry \
     ocirsecret \ 
     --docker-server=<region-code>.ocir.io \ 
@@ -94,7 +94,7 @@ First, change to the `helidon-quickstart-se` directory.
 Then edit `app.yaml` and add the following under `spec` in the
 `deployment` section:
 
-``` yaml
+```yaml
 spec:
   imagePullSecrets:
   - name: ocirsecret 
@@ -111,17 +111,17 @@ spec:
 - The image path
 
 Deploy the application:
-``` bash
+```shell
 kubectl create -f app.yaml -n helidon
 ```
 
 Get the `NodePort` number for your new pod:
-``` bash
+```shell
 kubectl get svc -n helidon
 ```
 
 Get the IP address for your cluster nodes:
-``` bash
+```shell
 kubectl get nodes
 ```
 

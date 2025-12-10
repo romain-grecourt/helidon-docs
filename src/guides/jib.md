@@ -104,8 +104,7 @@ jib-quickstart-se   latest        384aebda5594  48 years ago   124MB
 ```
 
 - Ignore the fact that it says the image was created 48 years ago. Refer
-  to the [Jib
-  FAQ](https://github.com/GoogleContainerTools/jib/blob/v0.10.1-maven/jib-maven-plugin/../docs/faq.md#why-is-my-image-created-48-years-ago)
+  to the [Jib FAQ](https://github.com/GoogleContainerTools/jib/blob/v0.10.1-maven/jib-maven-plugin/../docs/faq.md#why-is-my-image-created-48-years-ago)
   for explanations.
 
 > [!NOTE]

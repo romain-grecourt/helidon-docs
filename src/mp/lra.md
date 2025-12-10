@@ -43,7 +43,7 @@ participants don’t have to be on same instance, the whole architecture
 is highly scalable.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/lra/lra-complete-lb.svg" alt="Complete" />
+<img src="../images/lra-complete-lb.svg" alt="Complete" />
 </figure>
 
 If an error occurs during the LRA transaction, the participant reports a
@@ -51,7 +51,7 @@ cancellation of LRA to the coordinator. [Coordinator](#coordinator)
 calls compensate on all the joined participants.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/lra/lra-compensate-lb-error.svg" alt="Cancel" />
+<img src="../images/lra-compensate-lb-error.svg" alt="Cancel" />
 </figure>
 
 When a participant joins the LRA with timeout defined
@@ -60,7 +60,7 @@ the coordinator compensates if the timeout occurred before the close is
 reported by the participants.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/lra/lra-compensate-lb-timeout.svg" alt="Timeout" />
+<img src="../images/lra-compensate-lb-timeout.svg" alt="Timeout" />
 </figure>
 
 # API

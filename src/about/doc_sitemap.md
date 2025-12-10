@@ -7,8 +7,7 @@ the navigation panel to the left.
 
 ## New Users
 
-New to Helidon? Start with the [Helidon
-Documentation](../about/introduction.md)
+New to Helidon? Start with the [Helidon Documentation](../about/introduction.md)
 page. Here you will find some of the most common topics for getting
 started as well as easy first steps for building your first project or
 application.
@@ -16,11 +15,8 @@ application.
 Once you’ve settled on your preferred programming framework, visit the
 Helidon flavor sections of this site for more information.
 
-- [Helidon
-  SE](../se/introduction.md)
-
-- [Helidon
-  MP](../mp/introduction.md)
+- [Helidon SE](../se/introduction.md)
+- [Helidon MP](../mp/introduction.md)
 
 ## Existing Helidon Users
 
@@ -32,6 +28,5 @@ Documentation](../about/introduction.md)
 page offers quick links to some of our most popular topics, including
 our new training and certification programs.
 
-Check out the [What’s New in Helidon
-4](../about/intro.md)
+Check out the [What’s New in Helidon 4](../about/intro.md)
 for a list of new features and functionality.

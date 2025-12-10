@@ -202,7 +202,7 @@ see a visual representation of the traces and spans within them.
     each `curl` command you ran to access the application.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_trace_list.png" alt="Trace List" />
+<img src="../../images/se-guides-tracing-trace-list.png" alt="Trace List" />
 <figcaption>List of traces</figcaption>
 </figure>
 
@@ -212,7 +212,7 @@ the spans within the trace. You can clearly see the root span
 the time over which each span was active.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_first_trace.png" alt="Trace Detail" />
+<img src="../../images/se-guides-tracing-first-trace.png" alt="Trace Detail" />
 <figcaption>Trace detail page</figcaption>
 </figure>
 
@@ -221,7 +221,7 @@ image below which shows the span details including timing information.
 You can see times for each space relative to the root span.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_span_detail.png" alt="Span Details" />
+<img src="../../images/se-guides-tracing-span-detail.png" alt="Span Details" />
 <figcaption>Span detail page</figcaption>
 </figure>
 
@@ -283,7 +283,7 @@ display contains an additional trace, displayed first, for the most
 recent `curl` you ran.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_second_trace_list.png" alt="Expanded trace list" />
+<img src="../../images/se-guides-tracing-second-trace-list.png" alt="Expanded trace list" />
 <figcaption aria-hidden="true">Expanded trace list</figcaption>
 </figure>
 
@@ -291,7 +291,7 @@ Notice that the top trace has three spans, not two as with the earlier
 trace. Click on the trace to see the trace details.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_expanded_trace.png" alt="Trace details with custom span" />
+<img src="../../images/se-guides-tracing-expanded-trace.png" alt="Trace details with custom span" />
 <figcaption aria-hidden="true">Trace details with custom span</figcaption>
 </figure>
 
@@ -529,7 +529,7 @@ Refresh the Jaeger UI trace listing page and notice that there is a
 trace across two services. Click on that trace to see its details.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/tracing_se_second_expanded_trace.png" alt="Traces" />
+<img src="../../images/se-guides-tracing-second-expanded-trace.png" alt="Traces" />
 <figcaption>Tracing across multiple services detail view</figcaption>
 </figure>
 

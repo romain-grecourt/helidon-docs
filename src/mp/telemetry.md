@@ -104,7 +104,7 @@ enables developers to gain a comprehensive understanding of the system’s
 behavior and detect any issues or bottlenecks that may arise.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/telemetry/telemetry-general.png" alt="General understanding of OpenTelemetry Tracing" />
+<img src="../images/telemetry-general.png" alt="General understanding of OpenTelemetry Tracing" />
 </figure>
 
 There are two ways to work with Telemetry, using:
@@ -586,7 +586,7 @@ Next, launch the Jaeger UI at <http://localhost:16686/>. The expected
 output is:
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/telemetry/telemetry-greeting-jaeger.png" alt="Greeting service tracing output" />
+<img src="../images/telemetry-greeting-jaeger.png" alt="Greeting service tracing output" />
 </figure>
 
 Custom method:
@@ -625,7 +625,7 @@ Again you can launch the Jaeger UI at <http://localhost:16686/>. The
 expected output is:
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/telemetry/telemetry-custom-jaeger.png" alt="Custom span usage" />
+<img src="../images/telemetry-custom-jaeger.png" alt="Custom span usage" />
 </figure>
 
 Now let us use multiple services calls. In the example below our main
@@ -679,11 +679,10 @@ Launch the Jaeger UI at <http://localhost:16686/> to see the expected
 output (shown below).
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/telemetry/telemetry-outbound-jaeger.png" alt="Secondary service outbound call" />
+<img src="../images/telemetry-outbound-jaeger.png" alt="Secondary service outbound call" />
 </figure>
 
-This example is available at the [Helidon official GitHub
-repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/telemetry).
+This example is available at the [Helidon official GitHub repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/telemetry).
 
 # Reference
 

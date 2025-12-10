@@ -53,8 +53,7 @@ register the `OpenApiFeature` service.
 # Usage
 
 Make sure your application incorporates Helidon OpenAPI support as
-described in detail in [the Helidon OpenAPI
-documentation](../../se/openapi/openapi.adoc)).
+described in detail in [the Helidon OpenAPI documentation](./openapi.md).
 Helidon automatically prepares the OpenAPI UI with default settings if
 you also declare a dependency on the Helidon OpenAPI UI integration
 component as explained above. The [API](#api) section below illustrates
@@ -75,10 +74,8 @@ greeting application to contain a static OpenAPI file which describes
 the service endpoints.
 
 <figure>
-<img
-src="/Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/openapi-ui-screen-capture-greeting-se-start.png"
-alt="openapi ui screen capture greeting se start" />
-<figcaption>Example OpenAPI UI Screen</figcaption>
+<img src="../../images/se-openapi-ui.png" alt="OpenAPI UI screenshot" />
+<figcaption>Example OpenAPI UI screenshot</figcaption>
 </figure>
 
 With the OpenAPI UI displayed, follow these steps to access one of your
@@ -120,8 +117,8 @@ describes the possible responses from the operation as declared in the
 OpenAPI document for the application.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/openapi-ui-screen-capture-greeting-se-expanded.png" alt="openapi ui screen capture greeting se expanded" />
-<figcaption>Example OpenAPI UI Screen</figcaption>
+<img src="../../images/se-openapi-ui-expanded.png" alt="OpenAPI UI screenshot expanded" />
+<figcaption>Example OpenAPI UI screenshot</figcaption>
 </figure>
 
 # API
@@ -231,11 +228,11 @@ Type:
 
 ## Configuration options
 
-| key | type | default value | description |
-|----|----|----|----|
-| `enabled` | boolean | `true` | Sets whether the service should be enabled. |
-| `options` | Map\<string, string\> |  | Merges implementation-specific UI options. |
-| `web-context` | string |  | Full web context (not just the suffix). |
+| key           | type                  | default value | description                                 |
+|---------------|-----------------------|---------------|---------------------------------------------|
+| `enabled`     | boolean               | `true`        | Sets whether the service should be enabled. |
+| `options`     | Map\<string, string\> |               | Merges implementation-specific UI options.  |
+| `web-context` | string                |               | Full web context (not just the suffix).     |
 
 Optional configuration options
 
@@ -248,8 +245,7 @@ You can use configuration to affect the UI path in two ways:
 
 - Configure the OpenAPI endpoint path (the `/openapi` part).
 
-  Recall that you can [configure the Helidon OpenAPI
-  component](../../se/openapi/openapi.xml#config)
+  Recall that you can [configure the Helidon OpenAPI component](./openapi.md#configuration)
   to change where it serves the OpenAPI document.
 
   Configuring the OpenAPI web context:
@@ -264,7 +260,7 @@ You can use configuration to affect the UI path in two ways:
   `/my-openapi` to return either the OpenAPI document or the UI.
 
 - Separately, configure the entire web context path for the UI
-  independently from the web context for OpenAPI.
+  independently of the web context for OpenAPI.
 
   Configuring the OpenAPI UI web context:
   ```yaml
@@ -283,7 +279,7 @@ You can use configuration to affect the UI path in two ways:
   path for OpenAPI itself.
 
 The SmallRye OpenAPI UI component accepts several options, but they are
-of minimal use to application developers and they must be passed to the
+of minimal use to application developers, and they must be passed to the
 SmallRye UI code programmatically. Helidon allows you to specify these
 values using configuration in the `openapi.services.ui.options` section.
 Helidon then passes the corresponding options to SmallRye for you. To

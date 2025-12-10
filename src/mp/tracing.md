@@ -298,7 +298,7 @@ Example:
 Configuration properties:
 ```properties
 tracing.components.web-server.spans.0.name="HTTP Request"
-tracing.components.web-server.spans.0.new-name: "HTTP %1$s %2$s"
+tracing.components.web-server.spans.0.new-name="HTTP %1$s %2$s"
 ```
 
 This is supported ONLY for the span named "HTTP Request" on component
@@ -488,7 +488,7 @@ Refresh the Jaeger UI trace listing page and notice that there is a
 trace across two services.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/guides/12_tracing_detail_2_services.png" alt="Traces" />
+<img src="../images/mp-tracing-detail.png" alt="Traces" />
 <figcaption>Tracing across multiple services detail view</figcaption>
 </figure>
 
@@ -936,7 +936,7 @@ tracing:
 Example of Zipkin trace:
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/webserver/zipkin.png" alt="Zipkin example" />
+<img src="../images/tracing-zipkin.png" alt="Zipkin example" />
 </figure>
 
 ## Responding to Span Lifecycle Events
@@ -945,13 +945,9 @@ Applications and libraries can register listeners to be notified at
 several moments during the lifecycle of every Helidon span:
 
 - Before a new span starts
-
 - After a new span has started
-
 - After a span ends
-
 - After a span is activated (creating a new scope)
-
 - After a scope is closed
 
 The next sections explain how you can write and add a listener and what

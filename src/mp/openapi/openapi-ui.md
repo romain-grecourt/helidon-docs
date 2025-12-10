@@ -1,7 +1,6 @@
 # Overview
 
-SmallRye offers an [OpenAPI user interface
-component](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)
+SmallRye offers an [OpenAPI user interface component](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)
 which displays a web page based on your application’s OpenAPI document.
 Through that UI, users can invoke the operations declared in the
 document.
@@ -18,8 +17,7 @@ simply.
 # Maven Coordinates
 
 To enable Helidon OpenAPI UI support, add the following dependency to
-your project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -65,10 +63,8 @@ The example below shows the UI for the Helidon MP QuickStart greeting
 application.
 
 <figure>
-<img
-src="/Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/openapi-ui-screen-capture-greeting-mp-start.png"
-alt="openapi ui screen capture greeting mp start" />
-<figcaption>Example OpenAPI UI Screen</figcaption>
+<img src="../../images/mp-openapi-ui.png" alt="OpenAPI UI screenshot" />
+<figcaption>Example OpenAPI UI screenshot</figcaption>
 </figure>
 
 With the OpenAPI UI displayed, follow these steps to access one of your
@@ -110,10 +106,8 @@ describes the possible responses from the operation as declared in the
 OpenAPI document for the application.
 
 <figure>
-<img
-src="/Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/openapi-ui-screen-capture-greeting-mp-expanded.png"
-alt="openapi ui screen capture greeting mp expanded" />
-<figcaption>Example OpenAPI UI Screen</figcaption>
+<img src="../../images/mp-openapi-ui-expanded.png" alt="OpenAPI UI screenshot expanded" />
+<figcaption>Example OpenAPI UI screenshot</figcaption>
 </figure>
 
 # API

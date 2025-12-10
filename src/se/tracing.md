@@ -941,7 +941,7 @@ tracing:
 Example of Zipkin trace:
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/webserver/zipkin.png" alt="Zipkin example" />
+<img src="../images/tracing-zipkin.png" alt="Zipkin example" />
 </figure>
 
 # Reference

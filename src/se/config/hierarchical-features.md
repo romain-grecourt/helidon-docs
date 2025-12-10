@@ -91,9 +91,8 @@ data {
 The diagram below illustrates the in-memory tree for that configuration.
 
 <figure>
-<img src="file:///Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/config/application_conf-nodes.png" alt="Loaded Config Nodes structure" />
-<figcaption>Config Nodes structure of <code>application.conf</code>
-file</figcaption>
+<img src="../../images/se-config-nodes-structure.png" alt="Loaded Config Nodes structure" />
+<figcaption>Config Nodes structure of <code>application.conf</code>file</figcaption>
 </figure>
 
 Notes

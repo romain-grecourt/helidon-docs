@@ -205,9 +205,7 @@ use a specific annotation.
 The general method name syntax is illustrated below:
 
 <figure>
-<img
-src="/Users/jdipol/GitHub/barchetta/helidon/docs/src/main/asciidoc/images/data/qbmn_syntax.png"
-alt="qbmn syntax" />
+<img src="../images/data-qbmn-syntax.png" alt="qbmn syntax" />
 </figure>
 
 All parts of the pattern are optional except the return type keyword,
@@ -230,15 +228,15 @@ long longCountByName(String name);
 
 The query return type depends on the return type keyword:
 
-| Keyword | Return Type | Description |
-|----|----|----|
-| count | Numeric type | Number of rows matching the query criteria |
-| exists | `boolean` or `Boolean` | Whether at least one matching row exists |
-| get | Query row type | Single result that throws an exception if there are zero or multiple results |
-| find | `Optional<…>` | Zero or single result that throws an exception if there are multiple results |
-| list | `Collection` or `List` | All matching rows |
-| list | `Slice` or `Page` | Pageable result set |
-| stream | `Stream` | Stream of matching rows |
+| Keyword | Return Type            | Description                                                                  |
+|---------|------------------------|------------------------------------------------------------------------------|
+| count   | Numeric type           | Number of rows matching the query criteria                                   |
+| exists  | `boolean` or `Boolean` | Whether at least one matching row exists                                     |
+| get     | Query row type         | Single result that throws an exception if there are zero or multiple results |
+| find    | `Optional<…>`          | Zero or single result that throws an exception if there are multiple results |
+| list    | `Collection` or `List` | All matching rows                                                            |
+| list    | `Slice` or `Page`      | Pageable result set                                                          |
+| stream  | `Stream`               | Stream of matching rows                                                      |
 
 > [!NOTE]
 > Validation of the keyword–return type mapping is not fully enforced by
