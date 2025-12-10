@@ -11,3 +11,6 @@ scroll_offset = 10  # pixels added to scroll position for active header detectio
 additional-css = ["theme/pagetoc.css"]
 additional-js  = ["theme/pagetoc.js"]
 sidebar-header-nav = false
+
+[build]
+create-missing = false
