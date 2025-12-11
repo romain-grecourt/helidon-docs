@@ -1,54 +1,57 @@
 # Introduction
 
 Helidon MP is an Eclipse MicroProfile 6.1 runtime that allows the
-Jakarta EE community to run microservices in a portable way. It is
-designed for ease of use and provides Spring Boot like development
+Jakarta EE community to run microservices in a portable way.
+
+It is designed for ease of use and provides Spring Boot like development
 experience with heavy usage of dependency injection and annotations.
 
 Even though Helidon MP supports Jakarta EE APIs it does not require an
-application server. Helidon MP applications are stand-alone Java
-applications running in their own JVM powered by Helidon WebServer. So
+application server.
+
+Helidon MP applications are stand-alone Java applications running in their own JVM powered by Helidon WebServer. So
 you get all the benefits of a low overhead server built on Java virtual
 threads.
 
 # Supported Jakarta EE Specifications
 
-| Specification                                  | Version                     | Description                                                 |
-|------------------------------------------------|-----------------------------|-------------------------------------------------------------|
-| Jakarta Bean Validation                        | [3.0][bean-validation-spec] | Object level constraint declaration and validation facility |
-| Jakarta Context and Dependency Injection (CDI) | [4.0][cdi-spec]             | Declarative dependency injection and supporting services    |
-| Jakarta JSON Processing (JSON-P)               | [2.1][jsonp-spec]           | API to parse, generate, transform, and query JSON docs      |
-| Jakarta JSON Binding (JSON-B)                  | [3.0][jsonb-spec]           | Binding framework for converting POJOs to/from JSON docs    |
-| Jakarta RESTful Web Services (JAX-RS)          | [3.1][jaxrs-spec]           | API to develop web services following the REST pattern      |
-| Jakarta Persistence (JPA)                      | [3.1][jpa-spec]             | Management of persistence and object/relational mapping     |
-| Jakarta Transactions (JTA)                     | [2.0][jta-spec]             | Allows handling transactions consistent with X/Open XA-spec |
-| Jakarta WebSocket                              | [2.1][websocket-spec]       | API for Server and Client Endpoints for WebSocket protocol  |
+| Specification                                  | Version                     |
+|------------------------------------------------|-----------------------------|
+| Jakarta Bean Validation                        | [3.0][bean-validation-spec] |
+| Jakarta Context and Dependency Injection (CDI) | [4.0][cdi-spec]             |
+| Jakarta JSON Processing (JSON-P)               | [2.1][jsonp-spec]           |
+| Jakarta JSON Binding (JSON-B)                  | [3.0][jsonb-spec]           |
+| Jakarta RESTful Web Services (JAX-RS)          | [3.1][jaxrs-spec]           |
+| Jakarta Persistence (JPA)                      | [3.1][jpa-spec]             |
+| Jakarta Transactions (JTA)                     | [2.0][jta-spec]             |
+| Jakarta WebSocket                              | [2.1][websocket-spec]       |
 
 # Supported MicroProfile Specifications
 
-| Specification                           | Version                           | Description                                                                                                     |
-|-----------------------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| MicroProfile Config                     | [3.1][mp-config-spec]             | A flexible configuration framework with support for multiple sources and formats                                |
-| MicroProfile Fault Tolerance            | [4.0.2][mp-ft-spec]               | Common strategies for various system problems such as time-outs, retries, Circuit Breaker, etc.                 |
-| MicroProfile GraphQL                    | [2.0][mp-graphql-spec]            | API for working with GraphQL                                                                                    |
-| MicroProfile Health                     | [4.0][mp-health-spec]             | Health checks for automatic service restart/shutdown                                                            |
-| MicroProfile JWT Auth                   | [2.1][mp-jwt-auth-spec]           | Defines a compact and self-contained way for securely transmitting information between parties as a JSON object |
-| MicroProfile Long-Running Actions (LRA) | [2.0][mp-lra-spec]                | Distributed transactions for microservices following SAGA pattern                                               |
-| MicroProfile Metrics                    | [5.1.1][mp-metrics-spec]          | Defining and exposing telemetry data in Prometheus and JSON formats                                             |
-| MicroProfile Open API                   | [3.1.1][mp-openapi-spec]          | Annotations for documenting your application endpoints                                                          |
-| MicroProfile OpenTracing                | [3.0][mp-opentracing-spec]        | Profile and monitor your applications across multiple services                                                  |
-| MicroProfile Reactive Messaging         | [3.0][mp-reactive-messaging-spec] | Standard API for sending and receiving messages/events using streams                                            |
-| MicroProfile Reactive Streams Operators | [3.0][mp-reactive-stream-spec]    | Control flow and error processing for event streams                                                             |
-| MicroProfile REST Client                | [3.0][mp-rest-client-spec]        | Type-safe API for RESTful Web Services                                                                          |
+
+| Specification                           | Version                           |
+|-----------------------------------------|-----------------------------------|
+| MicroProfile Config                     | [3.1][mp-config-spec]             |
+| MicroProfile Fault Tolerance            | [4.0.2][mp-ft-spec]               |
+| MicroProfile GraphQL                    | [2.0][mp-graphql-spec]            |
+| MicroProfile Health                     | [4.0][mp-health-spec]             |
+| MicroProfile JWT Auth                   | [2.1][mp-jwt-auth-spec]           |
+| MicroProfile Long-Running Actions (LRA) | [2.0][mp-lra-spec]                |
+| MicroProfile Metrics                    | [5.1.1][mp-metrics-spec]          |
+| MicroProfile Open API                   | [3.1.1][mp-openapi-spec]          |
+| MicroProfile OpenTracing                | [3.0][mp-opentracing-spec]        |
+| MicroProfile Reactive Messaging         | [3.0][mp-reactive-messaging-spec] |
+| MicroProfile Reactive Streams Operators | [3.0][mp-reactive-stream-spec]    |
+| MicroProfile REST Client                | [3.0][mp-rest-client-spec]        |
 
 # Other Components
 
-| Component                    | Description                                                                  |
-|------------------------------|------------------------------------------------------------------------------|
-| [CORS](cors/cors.md)         | Cross Origin Resource Sharing                                                |
-| [gRPC](grpc/server.md)       | gRPC server and client                                                       |
-| [OCI SDK](integrations/oci.md) | Full set of APIs for working with OCI services                               |
-| [Scheduling](scheduling.md)  | Scheduling functionality based on [Cron-utils][cron-utils]                   |
+| Component                        | Description                                                                  |
+|----------------------------------|------------------------------------------------------------------------------|
+| [CORS](cors/cors.md)             | Cross Origin Resource Sharing                                                |
+| [gRPC](grpc/server.md)           | gRPC server and client                                                       |
+| [OCI SDK](integrations/oci.md)   | Full set of APIs for working with OCI services                               |
+| [Scheduling](scheduling.md)      | Scheduling functionality based on [Cron-utils][cron-utils]                   |
 | [Security](security/security.md) | A tool-chain to handle authentication, authorization and context propagation |
 
 # Upgrade
