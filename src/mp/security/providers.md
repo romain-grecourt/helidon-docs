@@ -54,12 +54,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -687,7 +681,7 @@ happen:
     attempts to contact the `oidc-metadata.resource` endpoint to
     retrieve all endpoints
 
-At runtime, depending on configuration…​
+At runtime, depending on configuration.
 
 If a request comes without a token or with insufficient scopes:
 
@@ -752,11 +746,6 @@ Helidon by default.
 <table>
 <caption>Possible <code>tenant-id-style</code> configuration
 options</caption>
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 44%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -827,12 +816,6 @@ Required configuration options
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1045,8 +1028,7 @@ use default values for JWK or introspection endpoint URI.</p></td>
 Multi-tenant support requires to obtain tenant name from the incoming
 request. OIDC configuration is selected based on the received tenant
 name. The way this tenant name has to be provided is configured via
-`tenant-id-style` configuration. See [How to enable
-tenants](#tenant-enable) for more information. After matching tenant
+`tenant-id-style` configuration. See [How to enable tenants](#tenant-enable) for more information. After matching tenant
 configuration with the received name, the rest of the OIDC flow if
 exactly the same as in [How does OIDC work](#oidc-workflow).
 
@@ -1169,14 +1151,14 @@ security:
 
 ### How does it work?
 
-See <https://tools.ietf.org/html/rfc7617>.
+See https://tools.ietf.org/html/rfc7617.
 
 **Authentication of request**
 
-When a request is received without the `Authorization: basic …​.` header,
+When a request is received without the `Authorization: basic` header,
 a challenge is returned to provide such authentication.
 
-When a request is received with the `Authorization: basic …​.` header,
+When a request is received with the `Authorization: basic` header,
 the username and password is validated against configured users (and
 users obtained from custom service if any provided).
 
@@ -1259,12 +1241,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1375,15 +1351,15 @@ security:
 
 ### How does it work?
 
-See <https://tools.ietf.org/html/rfc7616>.
+See https://tools.ietf.org/html/rfc7616.
 
 **Authentication of request**
 
-When a request is received without the `Authorization: digest …​.`
+When a request is received without the `Authorization: digest.`
 header, a challenge is returned to provide such authentication using
 `WWW-Authenticate` header.
 
-When a request is received with the `Authorization: digest …​.` header,
+When a request is received with the `Authorization: digest.` header,
 the request is validated against configured users (and users obtained
 from custom service if any provided).
 
@@ -1534,12 +1510,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1716,7 +1686,7 @@ security:
 ### Signature basics
 
 - standard: based on
-  <https://tools.ietf.org/html/draft-cavage-http-signatures-03>
+  https://tools.ietf.org/html/draft-cavage-http-signatures-03
 
 - key-id: an arbitrary string used to locate signature configuration -
   when a request is received the provider locates validation
@@ -1964,11 +1934,8 @@ public class AbacResource {
 **The following validators are implemented:**
 
 - [Roles](#role_validator)
-
 - [Scopes](#scope_validator)
-
 - [EL Policy](#expression_language_policy_validator)
-
 ### Role Validator
 
 Checks whether user/service is in either of the required role(s).
@@ -2221,12 +2188,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>

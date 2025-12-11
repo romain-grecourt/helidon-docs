@@ -18,8 +18,7 @@ Authentication with OCI is abstracted through
 If your environment is already set up to work with the OCI SDK or the
 OCI command line, then it is very likely you do not need to do any
 additional configuration. It is recommended that you do this first, and
-verify your configuration by using the [OCI
-CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+verify your configuration by using the [OCI CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 to access the service.
 
 ```java
@@ -48,8 +47,7 @@ dependencies for the specific ODI SDK clients you will use.
 
 This example describes how to access OCI Object Storage.
 
-As mentioned above in [Accessing OCI
-Services](#accessing_oci_services), you need to add a dependency on the
+As mentioned above in [Accessing OCI Services](#accessing_oci_services), you need to add a dependency on the
 OCI SDK Object Storage API:
 
 ```xml
@@ -74,16 +72,9 @@ ObjectStorageAsync objectStorageAsyncClient = new ObjectStorageAsyncClient(authP
 Once you have created an ObjectStorage client you can use it as
 described in:
 
-- [OCI SDK Object Storage
-  Javadocs](https://docs.oracle.com/en-us/iaas/tools/java/latest/com/oracle/bmc/objectstorage/package-summary.html)
-
-- [OCI Object Storage
-  Overview](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-
+- [OCI SDK Object Storage Javadocs](https://docs.oracle.com/en-us/iaas/tools/java/latest/com/oracle/bmc/objectstorage/package-summary.html)
+- [OCI Object Storage Overview](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
 # References
 
-- [OCI SDK Usage
-  Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/oci)
-
-- [OCI
-  Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+- [OCI SDK Usage Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/oci)
+- [OCI Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)

@@ -84,43 +84,35 @@ below.
 
 - **MicroProfile Config 3.1**:
 
-  Incompatible changes described in [MicroProfile Config 3.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-config-3.0.1/microprofile-config-spec-3.0.1.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Config 3.1 Specification](https://download.eclipse.org/microprofile/microprofile-config-3.0.1/microprofile-config-spec-3.0.1.html#_incompatible_changes)
 
 - **MicroProfile Fault Tolerance 4.0.2**:
 
-  Incompatible changes described in [MicroProfile Fault Tolerance 4.0.2
-  Specification](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0/microprofile-fault-tolerance-spec-4.0.html#_backward_incompatible_changes=)
+  Incompatible changes described in [MicroProfile Fault Tolerance 4.0.2 Specification](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0/microprofile-fault-tolerance-spec-4.0.html#_backward_incompatible_changes=)
 
 - **MicroProfile Health 4.0**:
 
-  Incompatible changes described in [MicroProfile Health 4.0
-  Specification](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Health 4.0 Specification](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html#_incompatible_changes)
 
 - **MicroProfile JWT Authentication 2.1**:
 
-  Incompatible changes described in [MicroProfile JWT Authentication 2.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.0/microprofile-jwt-auth-spec-2.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile JWT Authentication 2.1 Specification](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.0/microprofile-jwt-auth-spec-2.0.html#_incompatible_changes)
 
 - **MicroProfile Metrics 5.1.1**:
 
-  Incompatible changes described in [MicroProfile Metrics 5.1.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-metrics-4.0/microprofile-metrics-spec-4.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Metrics 5.1.1 Specification](https://download.eclipse.org/microprofile/microprofile-metrics-4.0/microprofile-metrics-spec-4.0.html#_incompatible_changes)
 
 - **MicroProfile OpenAPI 3.1.1**:
 
-  Incompatible changes described in [MicroProfile OpenAPI 3.1.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-open-api-2.0.1/microprofile-openapi-spec-2.0.1.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile OpenAPI 3.1.1 Specification](https://download.eclipse.org/microprofile/microprofile-open-api-2.0.1/microprofile-openapi-spec-2.0.1.html#_incompatible_changes)
 
 - **MicroProfile OpenTracing 3.0**:
 
-  Incompatible changes described in [MicroProfile OpenTracing 3.0
-  Specification](https://download.eclipse.org/microprofile/microprofile-opentracing-3.0/microprofile-opentracing-spec-3.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile OpenTracing 3.0 Specification](https://download.eclipse.org/microprofile/microprofile-opentracing-3.0/microprofile-opentracing-spec-3.0.html#_incompatible_changes)
 
 - **MicroProfile Rest Client 3.0**:
 
-  Incompatible changes described in [MicroProfile Rest Client 3.0
-  Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Rest Client 3.0 Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
 
 ## Supported Jakarta EE specifications
 
@@ -149,8 +141,7 @@ below.
 - **Jakarta Annotations 2.1.1**:
 
   Moved to `jakarta` namespace. Moved to `jakarta` namespace. Full
-  information in [Jakarta Annotations 2.1.1
-  Specification](https://jakarta.ee/specifications/annotations/2.0/annotations-spec-2.0.html)
+  information in [Jakarta Annotations 2.1.1 Specification](https://jakarta.ee/specifications/annotations/2.0/annotations-spec-2.0.html)
 
 - **Jakarta Persistence API 3.1**:
 
@@ -185,11 +176,6 @@ below.
   SDK instead. If you use Helidon MP you can inject OCI SDK clients by
   adding the dependency
   `io.helidon.integrations.oci.sdk:helidon-integrations-oci-sdk-cdi`.
-
-> [!NOTE]
-> See [Resolving compatibility issue with OCI
-> SDK](../../mp/integrations/oci.xml#oci-compatibility)
-> for detailed information on how to work around this issue.
 
 - The `MultiPart buffered readers` have been deprecated. Use the
   `MultiPart stream readers` instead.

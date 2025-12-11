@@ -4,8 +4,7 @@ This module adds support for selected Open AI models.
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4j core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 ```xml
@@ -391,11 +390,6 @@ strategy:
 # Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
-
-- [LangChain4j OpenAI
-  Documentation](https://docs.langchain4j.dev/integrations/language-models/open-ai)
-
-- [OpenAI API
-  Documentation](https://platform.openai.com/docs/introduction)
-
+- [LangChain4j OpenAI Documentation](https://docs.langchain4j.dev/integrations/language-models/open-ai)
+- [OpenAI API Documentation](https://platform.openai.com/docs/introduction)
 - [OpenAI API Reference](https://platform.openai.com/docs/api-reference)

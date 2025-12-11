@@ -34,8 +34,7 @@ for your Helidon application. It includes the following features:
     overridden through configuration). AuditProvider SPI may be
     implemented to support other auditing options.
 
-Each feature is implemented with the help of "[Security
-Providers](providers.md)".
+Each feature is implemented with the help of "[Security Providers](providers.md)".
 
 Security module is quite HTTP centric (as most common use cases are
 related to HTTP REST), though it is not HTTP specific (the security
@@ -48,8 +47,7 @@ authentication).
 # Maven Coordinates
 
 To enable Security, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

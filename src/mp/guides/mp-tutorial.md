@@ -126,7 +126,7 @@ needed to get started and does the following:
 > MicroProfile contains features like Metrics, Health Check, Streams
 > Operators, Open Tracing, OpenAPI, REST client, and fault tolerance.
 > You can find detailed information about MicroProfile on the [Eclipse
-> MicroProfile](https://projects.eclipse.org/projects/technology.microprofile)
+ MicroProfile](https://projects.eclipse.org/projects/technology.microprofile)
 > site.
 
 With this `pom.xml`, the application can be built successfully with
@@ -355,7 +355,7 @@ public class GreetingProvider {
   greeting will be stored. The `AtomicReference` provides lock-free
   thread-safe access to the underlying `String`.
 
-- The `public GreetingProvider(…​)` constructor is annotated with
+- The `GreetingProvider` constructor is annotated with
   `Inject` which tells Helidon to use Contexts and Dependency Injection
   to provide the needed values. In this case, the `String message` is
   annotated with `ConfigProperty(name = "app.greeting")` so Helidon will
@@ -594,7 +594,7 @@ public JsonObject getDefaultMessage() {
 - The `Timed` annotation is added to the `getDefaultMessage()` method.
 
 Rebuild and run the application. Make some calls to the endpoint
-(<http://localhost:8080/greet>) so there will be some data to report.
+(http://localhost:8080/greet) so there will be some data to report.
 Then obtain the application metrics as follows:
 
 Checking the application metrics:
@@ -621,8 +621,7 @@ curl -H "Accept: application/json" http://localhost:8080/metrics/application
 }
 ```
 
-Learn more about using Helidon and MicroProfile metrics in the [Metrics
-Guide](metrics.md).
+Learn more about using Helidon and MicroProfile metrics in the [Metrics Guide](metrics.md).
 
 # Health Check
 
@@ -860,8 +859,7 @@ curl http://localhost:8080/health/ready
 
 # Deploy the application to Kubernetes
 
-If you don’t have access to a Kubernetes cluster, you can [install one
-on your desktop](../../about/kubernetes.md).
+If you don’t have access to a Kubernetes cluster, you can [install one on your desktop](../../about/kubernetes.md).
 
 Then deploy the example:
 ```shell

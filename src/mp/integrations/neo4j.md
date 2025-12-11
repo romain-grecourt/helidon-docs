@@ -8,8 +8,7 @@ and processing. Neo4j is available in a GPL3-licensed open-source
 # Maven Coordinates
 
 To enable Neo4j, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -49,8 +48,7 @@ public MovieRepository(Driver driver) {
 }
 ```
 
-The driver can be used according to the [Neo4j
-documentation](https://neo4j.com/developer/java/).
+The driver can be used according to the [Neo4j documentation](https://neo4j.com/developer/java/).
 
 # Configuration
 
@@ -61,12 +59,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -307,8 +299,7 @@ curl -s -X GET http://localhost:8080/metrics
 curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 ```
 
-Full example code is available in [Helidon GitHub
-Repository](https://github.com/oracle/helidon/tree/master/examples/integrations/neo4j/neo4j-mp).
+Full example code is available in [Helidon GitHub Repository](https://github.com/oracle/helidon/tree/master/examples/integrations/neo4j/neo4j-mp).
 
 # Additional Information
 
@@ -362,5 +353,4 @@ Health checks for Neo4j will be included in `/health` endpoint output.
 # References
 
 - [Neo4j official website](https://neo4j.com/)
-
 - [Neo4j Java developer guide](https://neo4j.com/developer/java/)

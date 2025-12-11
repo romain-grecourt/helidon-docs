@@ -1,18 +1,15 @@
 # Overview
 
-Helidon implements [MicroProfile Reactive Streams
-Operators](https://download.eclipse.org/microprofile/microprofile-reactive-streams-operators-3.0/microprofile-reactive-streams-operators-spec-3.0.html)
+Helidon implements [MicroProfile Reactive Streams Operators](https://download.eclipse.org/microprofile/microprofile-reactive-streams-operators-3.0/microprofile-reactive-streams-operators-spec-3.0.html)
 specification which defines reactive operators and provides a
-standardized tool for manipulation with [Reactive
-Streams](https://www.reactive-streams.org/). You can use MicroProfile
+standardized tool for manipulation with [Reactive Streams](https://www.reactive-streams.org/). You can use MicroProfile
 Reactive Streams Operators when you want to maintain source-level
 portability between different implementations.
 
 # Maven Coordinates
 
 To enable Reactive Streams, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

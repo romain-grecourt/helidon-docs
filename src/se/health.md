@@ -21,8 +21,7 @@ that affect availability and the ability to perform correctly:
 # Maven Coordinates
 
 To enable Health Checks, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -363,13 +362,7 @@ You can use Helidon-provided health checks to report various common
 health check statuses:
 
 <table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 13%" />
-<col style="width: 65%" />
-<col style="width: 13%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Built-in health check</th>
@@ -458,10 +451,8 @@ two ways:
 - [Liveness Probe](#liveness_probe)
 - [Readiness Probe](#readiness_probe)
 - [Startup Probe](#startup_probe)
-
 Probes is the term used by Kubernetes to describe health checks for
-containers ([Kubernetes
-documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes)).
+containers ([Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes)).
 
 There are three types of probes:
 

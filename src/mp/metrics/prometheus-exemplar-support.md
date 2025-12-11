@@ -33,8 +33,7 @@ meter registry and exposed by the OpenMetrics output (media type
 # Maven Coordinates
 
 To enable OpenMetrics exemplar support, add the following dependency to
-your project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -45,8 +44,7 @@ Dependencies](../../about/managing-dependencies.md)).
 ```
 
 Also, include the Helidon integration module for a tracing
-implementation (such as [Helidon
-Zipkin](../../mp/tracing.xml#zipkin-tracing))
+implementation (such as [Helidon Zipkin](../../mp/tracing.md#zipkin-tracing))
 
 ```xml
 <dependency>
@@ -121,5 +119,4 @@ epoch (`1696889651.779`).
 
 # Additional Information
 
-Brief discussion of [exemplars in the OpenMetrics
-spec](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars)
+Brief discussion of [exemplars in the OpenMetrics spec](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars)

@@ -6,34 +6,27 @@ application on Oracle Cloud Infrastructure (OCI).
 Oracle Cloud Infrastructure (OCI) is a set of complementary cloud
 services that enable you to build and run a range of applications and
 services in a highly available hosted environment. For an overview of
-OCI features, see [Welcome to Oracle Cloud
-Infrastructure](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
+OCI features, see [Welcome to Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 in OCI documentation.
 
 The Helidon MP OCI Project Starter intended to quickly create a Helidon
 project for deployment on OCI. It is currently only available with
 Helidon MP, but you can write Helidon SE applications directly with the
-[OCI SDK for Java
-APIs](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+[OCI SDK for Java APIs](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 and use this guide as a guideline for setting up your OCI environment.
 
 By deploying Helidon applications on OCI, you can take advantage of OCI
 services and features. Helidon integration with OCI includes support for
-the [OCI SDK for
-Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm) -
+the [OCI SDK for Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm) -
 allowing you to write custom code to extend features.
 
-Helidon also provides a [Helidon OCI SDK CDI portable
-extension](https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#spi)
-to support injecting [Oracle Cloud Infrastructure SDK
-Clients](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
-in your Helidon application. See [OCI
-Integration](../integrations/oci.md).
+Helidon also provides a [Helidon OCI SDK CDI portable extension](https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#spi)
+to support injecting [Oracle Cloud Infrastructure SDK Clients](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+in your Helidon application. See [OCI Integration](../integrations/oci.md).
 
 This guide assumes that you have basic knowledge and familiarity with
 OCI. If you already have an OCI environment set up and running, you can
-consult the [Deploying a Helidon OCI MP Application on a Basic OCI
-Setup](https://github.com/helidon-io/helidon-labs/blob/main/hols/oci-basic-setup/README.md)
+consult the [Deploying a Helidon OCI MP Application on a Basic OCI Setup](https://github.com/helidon-io/helidon-labs/blob/main/hols/oci-basic-setup/README.md)
 lab in the Helidon Labs GitHub repository for the requirements of
 configuring and running the server service.
 
@@ -235,8 +228,7 @@ to your needs than the other.
 
 - **OKE** is a fully-managed, scalable, and highly available service
   that you can use to deploy your containerized applications to the
-  cloud. See [Kubernetes
-  Engine](https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm)
+  cloud. See [Kubernetes Engine](https://docs.oracle.com/en-us/iaas/Content/ContEng/home.htm)
   in OCI documentation for more information.
 
 After you have selected your OCI environment, you can get started with
@@ -249,8 +241,7 @@ deploying your Helidon applications.
   in the Helidon Labs GitHub repository.
 
 - To learn how to deploy a Helidon MP application on **OCI OKE**, follow
-  the instructions outlined at [Kubernetes: Deploy a Java Helidon
-  Application](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/helidon-k8s/01oci-helidon-k8s-summary.htm)
+  the instructions outlined at [Kubernetes: Deploy a Java Helidon Application](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/helidon-k8s/01oci-helidon-k8s-summary.htm)
   in OCI documentation. Make sure you select **OCI** as the Application
   Type, and *not* Quickstart.
 
@@ -293,8 +284,7 @@ you must update its configuration with values specific to your
 application and OCI environment.
 
 The Helidon OCI SDK extension also supports injecting clients for any
-[OCI services supported by the OCI SDK for
-Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm#Services_Supported).
+[OCI services supported by the OCI SDK for Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm#Services_Supported).
 See [OCI Integration](../integrations/oci.md).
 
 > [!NOTE]
@@ -302,8 +292,7 @@ See [OCI Integration](../integrations/oci.md).
 > build and redeploy the application to enable the feature of that OCI
 > service.
 
-The [Deploying a Helidon OCI MP Application on a Basic OCI
-Setup](https://github.com/helidon-io/helidon-labs/blob/main/hols/oci-basic-setup/README.md)
+The [Deploying a Helidon OCI MP Application on a Basic OCI Setup](https://github.com/helidon-io/helidon-labs/blob/main/hols/oci-basic-setup/README.md)
 lab in the Helidon Labs GitHub repository includes a
 `update_config_values.sh` script , which updates the necessary values
 required to set up OCI Monitoring and OCI Logging. You can also read the
@@ -328,8 +317,7 @@ To learn how to send Helidon MP metrics to OCI Monitoring, read the
 
 The OCI Logging service is a highly scalable and fully managed single
 pane of glass for the logs in your tenancy. For an overview of
-the OCI Logging feature, see [Logging
-Overview](https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm) in OCI documentation.
+the OCI Logging feature, see [Logging Overview](https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm) in OCI documentation.
 
 Helidon uses the [custom logs](https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/custom_logs.htm)
 feature of OCI Logging for integration. The ability to add custom logs
@@ -356,8 +344,7 @@ in OCI documentation.
 The OCI Streaming service is compatible with Apache Kafka clients which
 means that when your Helidon applications are deployed in OCI
 environments, you can use either the OCI Streaming service or Apache
-Kafka. See [Using Streaming with Apache
-Kafka](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/kafkacompatibility.htm)
+Kafka. See [Using Streaming with Apache Kafka](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/kafkacompatibility.htm)
 in OCI documentation.
 
 Streams are organized into logical groups called Stream Pools. When you
@@ -365,8 +352,7 @@ connect to OCI Streaming with a Kafka client, streams are handled as
 Kafka topics and stream pools as virtual Kafka clusters.
 
 To enable OCI Streaming integration, first you need to create a new
-stream in OCI. For instructions, see [Creating a
-Stream](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/creatingstreamsandstreampools_create-stream.htm)
+stream in OCI. For instructions, see [Creating a Stream](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/creatingstreamsandstreampools_create-stream.htm)
 in OCI documentation.
 
 After you have finished creating the stream, make a note of the

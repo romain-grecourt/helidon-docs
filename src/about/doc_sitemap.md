@@ -17,14 +17,12 @@ Helidon flavor sections of this site for more information.
 
 - [Helidon SE](../se/introduction.md)
 - [Helidon MP](../mp/introduction.md)
-
 ## Existing Helidon Users
 
 Welcome back! The documentation site has a couple of new features that
 we hope will make your experience here a bit easier.
 
-The new [Helidon
-Documentation](../about/introduction.md)
+The new [Helidon Documentation](../about/introduction.md)
 page offers quick links to some of our most popular topics, including
 our new training and certification programs.
 

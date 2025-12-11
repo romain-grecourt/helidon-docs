@@ -4,8 +4,7 @@ This module adds support for the Oracle embedding store.
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4j core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 ```xml
@@ -60,6 +59,4 @@ Full list of configuration properties:
 # Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
-
-- [langChain4J Oracle Embedding Store
-  Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/oracle)
+- [langChain4J Oracle Embedding Store Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/oracle)

@@ -23,8 +23,7 @@ To enable MicroProfile Tracing, either add a dependency on the
 [helidon-microprofile
 bundle](../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../about/managing-dependencies.md)).
+[Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -53,8 +52,7 @@ you get started with tracing.
   spans from both services. Within a trace, spans are organized as a
   directed acyclic graph (DAG) and can belong to multiple services,
   running on multiple hosts. The *OpenTracing Data Model* describes the
-  details at [The OpenTracing Semantic
-  Specification](https://opentracing.io/specification). Spans are
+  details at [The OpenTracing Semantic Specification](https://opentracing.io/specification). Spans are
   automatically created by Helidon as needed during execution of the
   REST request. Additional spans can be added through MP annotation
   `@Traced` or through OpenTracing APIs.
@@ -125,12 +123,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -644,7 +636,7 @@ curl http://localhost:31143/greet
 }
 ```
 
-Access the Jaeger UI at <http://localhost:16687/search> and click on the
+Access the Jaeger UI at http://localhost:16687/search and click on the
 refresh icon to see the trace that was just created.
 
 ## Cleanup
@@ -723,12 +715,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -879,12 +865,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>

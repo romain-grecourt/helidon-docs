@@ -19,7 +19,7 @@ Metrics is one of the Helidon observability features.
 > metrics.gc-time-type = gauge
 > ```
 >
-> See the [longer discussion below](#controlling-gc-time) in the
+> See the [longer discussion below](#controlling-the-meter-type-for-gctime) in the
 > Configuration section.
 
 ## A Word about Terminology
@@ -33,8 +33,7 @@ or a timer.
 # Maven Coordinates
 
 To enable metrics, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 Packaging the metrics API:
 ```xml
@@ -101,13 +100,13 @@ Later sections of this document describe how to do this.
 Helidon supports meters inspired by [Micrometer](https://micrometer.io)
 and summarized in the following table:
 
-|  |  |  |
-|----|----|----|
-| Meter Type | Description | Micrometer reference |
-| [`Counter`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Counter.html) | Monotonically-increasing `long` value. | [Counters](https://docs.micrometer.io/micrometer/reference/concepts/counters.html) |
-| [`DistributionSummary`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/DistributionSummary.html) | Summary of samples each with a `long` value. Reports aggregate information over all samples (count, total, mean, max) as well as the distribution of sample values using percentiles and bucket counts. | [Distribution summaries](https://docs.micrometer.io/micrometer/reference/concepts/distribution-summaries.html) |
-| [`Timer`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Timer.html) | Accumulation of short-duration (typically under a minute) intervals. Typically updated using a Java [`Duration`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html) or by recording the time taken by a method invocation or lambda. Reports the count, total time, max, and mean; provides a distribution summary of the samples. | [Timers](https://docs.micrometer.io/micrometer/reference/concepts/timers.html) |
-| [`Gauge<? extends Number>`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Gauge.html) | View of a value that is assignment-compatible with a subtype of Java [`Number`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java.lang.Number.html). The underlying value is updated by code elsewhere in the system, not by invoking methods on the gauge itself. | [Gauges](https://docs.micrometer.io/micrometer/reference/concepts/gauges.html) |
+|                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                                |
+|------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Meter Type                                                                                                                         | Description                                                                                                                                                                                                                                                                                                                                                           | Micrometer reference                                                                                           |
+| [`Counter`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Counter.html)                         | Monotonically-increasing `long` value.                                                                                                                                                                                                                                                                                                                                | [Counters](https://docs.micrometer.io/micrometer/reference/concepts/counters.html)                             |
+| [`DistributionSummary`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/DistributionSummary.html) | Summary of samples each with a `long` value. Reports aggregate information over all samples (count, total, mean, max) as well as the distribution of sample values using percentiles and bucket counts.                                                                                                                                                               | [Distribution summaries](https://docs.micrometer.io/micrometer/reference/concepts/distribution-summaries.html) |
+| [`Timer`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Timer.html)                             | Accumulation of short-duration (typically under a minute) intervals. Typically updated using a Java [`Duration`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html) or by recording the time taken by a method invocation or lambda. Reports the count, total time, max, and mean; provides a distribution summary of the samples. | [Timers](https://docs.micrometer.io/micrometer/reference/concepts/timers.html)                                 |
+| [`Gauge<? extends Number>`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Gauge.html)           | View of a value that is assignment-compatible with a subtype of Java [`Number`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java.lang.Number.html). The underlying value is updated by code elsewhere in the system, not by invoking methods on the gauge itself.                                                                                    | [Gauges](https://docs.micrometer.io/micrometer/reference/concepts/gauges.html)                                 |
 
 Types of Meters
 
@@ -119,11 +118,11 @@ Helidon includes meters in the built-in scopes described below.
 Applications often register their own meters in the `application` scope
 but can create their own scopes and register meters within them.
 
-| Built-in Scope | Typical Usage |
-|----|----|
-| `base` | OS or Java runtime measurements (available heap, disk space, etc.). |
-| `vendor` | Implemented by vendors, including the `REST.request` metrics and other key performance indicator measurements (described in later sections). |
-| `application` | Declared via annotations or programmatically registered by your service code. |
+| Built-in Scope | Typical Usage                                                                                                                                |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `base`         | OS or Java runtime measurements (available heap, disk space, etc.).                                                                          |
+| `vendor`       | Implemented by vendors, including the `REST.request` metrics and other key performance indicator measurements (described in later sections). |
+| `application`  | Declared via annotations or programmatically registered by your service code.                                                                |
 
 Built-in meter scopes
 
@@ -178,8 +177,7 @@ curl -s -H 'Accept: text/plain' -X GET http://localhost:8080/observe/metrics
 classloader_loadedClasses_count{scope="base",} 5297.0
 ```
 
-See the summary of the [OpenMetrics and Prometheus
-Format](#openmetrics_and_prometheus_format) for more information.
+See the summary of the [OpenMetrics and Prometheus Format](#openmetrics-and-prometheus-format) for more information.
 
 Example Reporting: JSON format:
 ```shell
@@ -201,21 +199,19 @@ of interest such as system and VM information.
 
 ### OpenMetrics and Prometheus Format
 
-The [OpenMetrics
-format](https://github.com/prometheus/OpenMetrics/blob/main/specification/OpenMetrics.md)
-and the [Prometheus exposition
-format](https://github.com/prometheus/docs/blob/main/content/docs/instrumenting/exposition_formats.md)
+The [OpenMetrics format](https://github.com/prometheus/OpenMetrics/blob/main/specification/OpenMetrics.md)
+and the [Prometheus exposition format](https://github.com/prometheus/docs/blob/main/content/docs/instrumenting/exposition_formats.md)
 are very similar in most important respects but are not identical. This
 brief summary treats them as the same.
 
 The OpenMetrics/Prometheus format represents each meter using three
 lines of output as summarized in the following table.
 
-| Line prefix | Purpose | Format |
-|----|----|----|
-| `# TYPE` | Displays the scope, name, and type of the meter | `TYPE <scope>:<output-name> <meter-type>` |
-| `# HELP` | Displays the scope, name, and description of the meter | `HELP <scope>:<output-name> <registered description>` |
-| (none) | Displays the scope, meter ID, and current value of the meter | `<scope>:<output-name> <current value>` |
+| Line prefix | Purpose                                                      | Format                                                |
+|-------------|--------------------------------------------------------------|-------------------------------------------------------|
+| `# TYPE`    | Displays the scope, name, and type of the meter              | `TYPE <scope>:<output-name> <meter-type>`             |
+| `# HELP`    | Displays the scope, name, and description of the meter       | `HELP <scope>:<output-name> <registered description>` |
+| (none)      | Displays the scope, meter ID, and current value of the meter | `<scope>:<output-name> <current value>`               |
 
 OpenMetrics/Prometheus format
 
@@ -241,13 +237,6 @@ The following table summarizes the naming for each meter type.
 
 <table>
 <caption>OpenMetrics/Prometheus Meter Naming</caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr>
 <th>Meter Type</th>
@@ -266,10 +255,8 @@ The following table summarizes the naming for each meter type.
 <td><p><code>requests_count_total</code></p></td>
 </tr>
 <tr>
-<td rowspan="4"
-style="text-align: left;"><p><code>DistributionSummary</code></p></td>
-<td rowspan="4"
-style="text-align: left;"><p><code>nameLengths</code></p></td>
+<td rowspan="4"><p><code>DistributionSummary</code></p></td>
+<td rowspan="4"><p><code>nameLengths</code></p></td>
 <td><p>count</p></td>
 <td><p><code>_count</code></p></td>
 <td><p><code>nameLengths_count</code></p></td>
@@ -299,8 +286,7 @@ style="text-align: left;"><p><code>nameLengths</code></p></td>
 <tr>
 <td><p><code>Timer</code>
 <sup>1</sup></p></td>
-<td rowspan="4"
-style="text-align: left;"><p><code>vthreads.recentPinned</code></p></td>
+<td rowspan="4"><p><code>vthreads.recentPinned</code></p></td>
 <td><p>count</p></td>
 <td><p><code>_count</code></p></td>
 <td><p><code>vthreads_recentPinned_seconds_count</code></p></td>
@@ -367,7 +353,7 @@ JSON metrics output structured by scope (partial):
 
 - Note the `application`, `vendor`, and `base` sections.
 
-If an HTTP request [selects by scope](#scope-specific-retrieval), the
+If an HTTP request [selects by scope](#retrieving-metrics-reports-from-your-service), the
 output omits the extra level of structure that identifies the scope as
 shown in the following example.
 
@@ -398,7 +384,7 @@ JSON output for a single-valued meter (for example, `Counter`):
 }
 ```
 
-JSON output for a multi-valued meter (for example, `Timer`):
+JSON output for a multivalued meter (for example, `Timer`):
 ```json
 {
     "getTimer": {
@@ -417,8 +403,7 @@ JSON output for a multi-valued meter (for example, `Timer`):
 ```
 
 By default, Helidon formats time values contained in JSON output as
-seconds. You can change this behavior [as described
-below](#controlling_timer_output).
+seconds. You can change this behavior [as described below](#controlling-json-timer-output).
 
 #### Understanding the JSON Metrics Metadata Format
 
@@ -452,7 +437,7 @@ the application or Helidon code explicitly set on that meter.
 One exception is that metadata for a timer always includes the `unit`
 field. By default, Helidon formats timer data in JSON output as seconds,
 regardless of any explicit `baseUnit` setting applied to the timers. But
-as [described below](#controlling_timer_output) you can change this
+as [described below](#controlling-json-timer-output) you can change this
 behavior which can lead to different timers being formatted using
 different units. Checking the metadata is the only way to know for sure
 what units Helidon used to express a given timer, so Helidon always
@@ -543,12 +528,12 @@ types and other related items.
 
 The following table summarizes the meter types.
 
-| Meter Type | Usage |
-|----|----|
-| [`Counter`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Counter.html) | Monotonically increasing count of events. |
-| [`Gauge`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Gauge.html) | Access to a value managed by other code in the service. |
-| [`DistributionSummary`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/DistributionSummary.html) | Calculates the distribution of a value. |
-| [`Timer`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Timer.html) | Frequency of invocations and the distribution of how long the invocations take. |
+| Meter Type                                                                                                                         | Usage                                                                           |
+|------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| [`Counter`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Counter.html)                         | Monotonically increasing count of events.                                       |
+| [`Gauge`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Gauge.html)                             | Access to a value managed by other code in the service.                         |
+| [`DistributionSummary`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/DistributionSummary.html) | Calculates the distribution of a value.                                         |
+| [`Timer`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.api/io/helidon/metrics/api/Timer.html)                             | Frequency of invocations and the distribution of how long the invocations take. |
 
 Meter Types
 
@@ -579,7 +564,7 @@ how to register, retrieve, and update meters.
 ## Accessing the Underlying Implementation: `unwrap`
 
 The neutral Helidon metrics API is an abstraction of common metrics
-behavior independent from any given implementation. As such, we
+behavior independent of any given implementation. As such, we
 intentionally excluded some implementation-specific behavior from the
 API.
 
@@ -605,8 +590,7 @@ To control how the Helidon metrics subsystem behaves, add a `metrics`
 section to your configuration file, such as `application.yaml`.
 
 Certain default configuration values depend on the fact that you are
-using Helidon SE as described in the [second table
-below](#flavor-specific-defaults).
+using Helidon SE as described in the [second table below](#default-values-specific-to-helidon-se).
 
 Type:
 [io.helidon.webserver.observe.metrics.MetricsObserver](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.observe.metrics/io/helidon/webserver/observe/metrics/MetricsObserver.html)
@@ -622,12 +606,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -704,7 +682,7 @@ MicroProfile 5.1.</p></li>
 </tr>
 <tr>
 <td><p><code>key-performance-indicators</code></p></td>
-<td><p><a href="../config/io_helidon_metrics_api_KeyPerformanceIndicatorMetricsConfig.md">KeyPerformanceIndicatorMetricsConfig</a></p></td>
+<td><p><a href="../../config/io_helidon_metrics_api_KeyPerformanceIndicatorMetricsConfig.md">KeyPerformanceIndicatorMetricsConfig</a></p></td>
 <td></td>
 <td><p>Key performance indicator metrics
 settings.</p></td>
@@ -743,14 +721,14 @@ expected to be in.</p></td>
 </tr>
 <tr>
 <td><p><code>scoping</code></p></td>
-<td><p><a href="../config/io_helidon_metrics_api_ScopingConfig.md">ScopingConfig</a></p></td>
+<td><p><a href="../../config/io_helidon_metrics_api_ScopingConfig.md">ScopingConfig</a></p></td>
 <td></td>
 <td><p>Settings related to scoping
 management.</p></td>
 </tr>
 <tr>
 <td><p><code>tags</code></p></td>
-<td><p><a href="../config/io_helidon_metrics_api_Tag.md">Tag[]</a></p></td>
+<td><p><a href="../../config/io_helidon_metrics_api_Tag.md">Tag[]</a></p></td>
 <td></td>
 <td><p>Global tags.</p></td>
 </tr>
@@ -783,13 +761,15 @@ threads to include in the pinned threads meter.</p></td>
 </tbody>
 </table>
 
+### Default Values Specific to Helidon SE
+
+The following table describes the default values specific to Helidon SE:
+
 | Key                | Default Value |
 |--------------------|---------------|
 | `app-tag-name`     | `app`         |
 | `scoping.tag-name` | `scope`       |
 | `scoping.default`  | `application` |
-
-Default Values Specific to Helidon SE
 
 ## Controlling the Meter Type for `gc.time`
 
@@ -818,12 +798,10 @@ Helidon will always use a gauge.
 Helidon SE includes several pre-written example applications
 illustrating aspects of metrics:
 
-- [Enabling/disabling
-  meters](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/metrics/filtering/se)
+- [Enabling/disabling meters](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/metrics/filtering/se)
   using `MetricsObserver` and `MetricsConfig`
 
-- [Controlling key performance indicator
-  metrics](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/metrics/kpi)
+- [Controlling key performance indicator metrics](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/metrics/kpi)
   using configuration and `KeyPerformanceIndicatorMetricsSettings`.
 
 The rest of this section shows how to add a custom meter to your code
@@ -840,8 +818,11 @@ Define and use a `Counter`:
 ```java
 public class GreetService implements HttpService {
 
-    private final Counter accessCtr = Metrics.globalRegistry() 
-            .getOrCreate(Counter.builder("accessctr")); 
+    // Get the global meter registry
+    private final MeterRegistry meterRegistry = Metrics.globalRegistry();
+    
+    // Create (or find) a counter named "accessctr" in the global registry
+    private final Counter accessCtr = meterRegistry.getOrCreate(Counter.builder("accessctr")); 
 
     @Override
     public void routing(HttpRules rules) {
@@ -853,37 +834,16 @@ public class GreetService implements HttpService {
 
     }
 
-    void countAccess(ServerRequest request,
-                     ServerResponse response) {
-
+    // A non-terminating handler that "filters" all requests
+    // Increment the access counter for every request
+    void countAccess(ServerRequest request, ServerResponse response) {
         accessCtr.increment(); 
         response.next();
     }
-
-    void getDefaultMessageHandler(ServerRequest request,
-                                  ServerResponse response) {
-        // ...
-    }
-
-    void getMessageHandler(ServerRequest request,
-                           ServerResponse response) {
-        // ...
-    }
-
-    void updateGreetingHandler(ServerRequest request,
-                               ServerResponse response) {
-        // ...
-    }
+    
+    // ...
 }
 ```
-
-- Get the global meter registry.
-
-- Create (or find) a counter named "accessctr" in the global registry.
-
-- Route every request to the `countAccess` method.
-
-- Increment the access counter for every request.
 
 Perform the following steps to see the new counter in action.
 
@@ -895,7 +855,7 @@ java -jar target/helidon-quickstart-se.jar
 
 Retrieve `application` metrics:
 ```shell
-curl 'http://localhost:8080/observe/metrics?scope=application' 
+curl 'http://localhost:8080/observe/metrics?scope=application'
 ```
 
 Response:
@@ -905,10 +865,9 @@ Response:
 accessctr_total{scope="application",} 0.0 
 ```
 
-- Access the metrics endpoint, selecting only application meters.
-- Note the counter is zero; we have not accessed a service endpoint yet.
+Note the counter is zero; we have not accessed a service endpoint yet.
 
-Access a service endpoint to retrieve a greeting:
+Now, access a service endpoint to retrieve a greeting:
 ```shell
 curl http://localhost:8080/greet
 ```
@@ -930,8 +889,7 @@ Response:
 accessctr_total{scope="application",} 1.0 
 ```
 
-- The counter now reports 1, reflecting our earlier access to the
-  `/greet` endpoint.
+The counter now reports 1, reflecting our earlier access to the `/greet` endpoint.
 
 ## Example Configuration
 
@@ -939,9 +897,9 @@ Metrics configuration is quite extensive and powerful and, therefore, a
 bit complicated. The rest of this section illustrates some of the most
 common scenarios:
 
-- [Disable metrics entirely.](#config-disable)
-- [Choose whether to report virtual threads meters](#config-virtual-threads).
-- [Choose whether to collect extended key performance indicator metrics.](#config-kpi)
+- [Disable metrics entirely.](#disable-metrics-subsystem)
+- [Choose whether to report virtual threads meters](#configuring-virtual-threads-meters).
+- [Choose whether to collect extended key performance indicator metrics.](#collecting-basic-and-extended-key-performance-indicator-kpi-meters)
 
 ### Disable Metrics Subsystem
 
@@ -1012,7 +970,7 @@ disabled by default:
   seconds)
 
 - load - a `Counter` (`requests.load`) measuring the number of requests
-  worked on (as opposed to received)
+  worked on (as opposed to requests received)
 
 - deferred - a `Gauge` (`requests.deferred`) measuring delayed request
   processing (work on a request was delayed after Helidon received the
@@ -1037,29 +995,23 @@ server:
 
 ## References
 
-[Micrometer Metrics concepts
-documentation](https://docs.micrometer.io/micrometer/reference/concepts)
+[Micrometer Metrics concepts documentation](https://docs.micrometer.io/micrometer/reference/concepts)
 
-[OpenMetrics
-format](https://github.com/prometheus/OpenMetrics/blob/main/specification/OpenMetrics.md)
+[OpenMetrics format](https://github.com/prometheus/OpenMetrics/blob/main/specification/OpenMetrics.md)
 
-[Prometheus exposition
-format](https://github.com/prometheus/docs/blob/main/content/docs/instrumenting/exposition_formats.md)
+[Prometheus exposition format](https://github.com/prometheus/docs/blob/main/content/docs/instrumenting/exposition_formats.md)
 
 ## Support for the Prometheus Metrics API
 
 - [Maven Coordinates](#maven-coordinates)
-
 - [Usage](#usage)
-
 - [API](#api)
-
 Helidon provides optional support for the Prometheus metrics API.
 
 To use it, your service registers Prometheus support with your routing
 set-up. You can customize its configuration. For information about using
 Prometheus, see the Prometheus documentation:
-<https://prometheus.io/docs/introduction/overview/>.
+https://prometheus.io/docs/introduction/overview/.
 
 > [!NOTE]
 > Helidon’s fully-functional, built-in metrics implementation supports
@@ -1092,13 +1044,16 @@ example) or by using its
 [`Builder`](https://helidon.io/docs/v4/apidocs/io.helidon.metrics.prometheus/io/helidon/metrics/prometheus/PrometheusSupport.Builder.html).
 
 ```java
-routing
-        .addFeature(PrometheusSupport.create())
-        .register("/myapp", new MyService());
+static void routing(HttpRouting.Builder routing) {
+    routing
+            .addFeature(PrometheusSupport.create())
+            .register("/myapp", new MyService()); 
+}
 ```
 
 This example uses the default Prometheus `CollectorRegistry`. By
 default, the `PrometheusSupport` and exposes its REST endpoint at the
-path `/metrics`. Use the builder obtained by
-`PrometheusSupport.builder()` to configure a different
+path `/metrics`.
+
+Use the builder obtained by `PrometheusSupport.builder()` to configure a different
 `CollectorRegistry` or a different path.

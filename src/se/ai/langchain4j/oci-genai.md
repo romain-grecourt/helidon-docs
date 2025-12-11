@@ -5,8 +5,7 @@ models.
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4j core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 ```xml
@@ -19,15 +18,14 @@ following:
 # Authentication
 
 Integration uses OCI SDK authentication provider bean from the service
-registry. The simplest way to configure it is by adding [Helidon OCI
-integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci):
+registry. The simplest way to configure it is by adding [Helidon OCI integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci):
 
 ```xml
 <dependency>
     <groupId>io.helidon.integrations.oci</groupId>
     <artifactId>helidon-integrations-oci</artifactId>
 </dependency>
-<!-- Jakartified OCI SDK HTTP client -->
+<!-- OCI SDK HTTP client -->
 <dependency>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-jersey3</artifactId>
@@ -65,12 +63,10 @@ helidon.oci:
   authentication-method: "config-file"
 ```
 
-All possible OCI configuration properties are documented at [OCI
-Configuration](../../../config/io_helidon_integrations_oci_OciConfig.md).
+All possible OCI configuration properties are documented at [OCI Configuration](../../../config/io_helidon_integrations_oci_OciConfig.md).
 
 More general information about Helidon OCI authentication integration
-can be found in [Helidon OCI
-integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci)
+can be found in [Helidon OCI integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci)
 
 # Components
 
@@ -94,14 +90,10 @@ component is not created.
 
 Full list of configuration properties:
 
-<https://docs.oracle.com/en-us/iaas/api/#/EN/generative-ai-inference/20231130/datatypes/GenericChatRequest>
+https://docs.oracle.com/en-us/iaas/api/#/EN/generative-ai-inference/20231130/datatypes/GenericChatRequest
 
 <table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Key</th>
@@ -276,11 +268,7 @@ component is not created.
 Full list of configuration properties:
 
 <table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 45%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Key</th>
@@ -455,11 +443,7 @@ component is not created.
 Full list of configuration properties:
 
 <table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 45%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Key</th>
@@ -657,11 +641,7 @@ component is not created.
 Full list of configuration properties:
 
 <table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 45%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Key</th>
@@ -841,9 +821,5 @@ the model will not respond to the user’s message.</p></td>
 # Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
-
-- [LangChain4j OciGenAi
-  Documentation](https://docs.langchain4j.dev/integrations/language-models/oci-genai)
-
-- [Oracle Cloud Infrastructure GenAI
-  Services](https://www.oracle.com/artificial-intelligence/generative-ai/generative-ai-service/)
+- [LangChain4j OciGenAi  Documentation](https://docs.langchain4j.dev/integrations/language-models/oci-genai)
+- [Oracle Cloud Infrastructure GenAI  Services](https://www.oracle.com/artificial-intelligence/generative-ai/generative-ai-service/)

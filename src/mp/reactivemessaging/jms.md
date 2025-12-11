@@ -5,8 +5,7 @@ Connecting streams to JMS with Reactive Messaging couldn’t be easier.
 # Maven Coordinates
 
 To enable JMS Connector, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -38,7 +37,7 @@ Connector name: `helidon-jms`
 | `session-group-id`      | When multiple channels share same `session-group-id`, they share same JMS session and same JDBC connection as well.                                                                                                                                                                                                                    |
 | `jndi.jms-factory`      | JNDI name of JMS factory.                                                                                                                                                                                                                                                                                                              |
 | `jndi.destination`      | JNDI destination identifier.                                                                                                                                                                                                                                                                                                           |
-| `jndi.env-properties`   | Environment properties used for creating initial context `java.naming.factory.initial`, `java.naming.provider.url` …​                                                                                                                                                                                                                  |
+| `jndi.env-properties`   | Environment properties used for creating initial context `java.naming.factory.initial`, `java.naming.provider.url`                                                                                                                                                                                                                     |
 | `producer.someproperty` | property with producer prefix is set to producer instance (for example WLS Unit-of-Order `WLMessageProducer.setUnitOfOrder("unit-1")` can be configured as `producer.unit-of-order=unit-1`)                                                                                                                                            |
 
 Attributes

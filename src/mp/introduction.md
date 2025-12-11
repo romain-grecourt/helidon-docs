@@ -59,11 +59,9 @@ In case you need to upgrade the version of Helidon, follow the
 For upgrade from Helidon 1.x to 2.x:
 
 - [Helidon MP 2x Upgrade Guide](../mp/guides/upgrade.md)
-
 For upgrade from Helidon 2.x to 3.x:
 
 - [Helidon MP 3x Upgrade Guide](../mp/guides/upgrade_3x.md)
-
 For upgrade from Helidon 3.x to 4.x:
 
 - [Helidon MP 4x Upgrade Guide](../mp/guides/upgrade_4x.md)

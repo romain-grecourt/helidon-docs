@@ -21,32 +21,22 @@ with Helidon.
 
 Key points:
 
-- Separate repository:
-  [helidon-mcp](https://github.com/helidon-io/helidon-mcp)
-
-- Independent lifecycle: Requires Helidon but has its own versioning and
-  release cadence
-
+- Separate repository: [helidon-mcp](https://github.com/helidon-io/helidon-mcp)
+- Independent lifecycle: Requires Helidon but has its own versioning and release cadence
 - Dedicated documentation: Full usage guides, configuration details, and
-  examples are provided directly in the [helidon-mcp
-  documentation](https://github.com/helidon-io/helidon-mcp#documentation)
+  examples are provided directly in the [helidon-mcp documentation](https://github.com/helidon-io/helidon-mcp#documentation)
 
 ## Next Steps
 
 To get started:
 
-1.  Visit the [helidon-mcp GitHub
-    repository](https://github.com/helidon-io/helidon-mcp).
-
-2.  Follow the setup and usage instructions in the repository’s
-    documentation.
-
+1.  Visit the [helidon-mcp GitHub   repository](https://github.com/helidon-io/helidon-mcp).
+2.  Follow the setup and usage instructions in the repository’s documentation.
 3.  Explore how to expose your Helidon resources as MCP tools, prompts,
     and data sources.
 
 # MCP Client
 
-Helidon includes support for an MCP client through its [integration with
-LangChain4j](../../se/ai/langchain4j/langchain4j.xml#_mcp_client).
+Helidon includes support for an MCP client through its [integration with LangChain4j](../../se/ai/langchain4j/langchain4j.md#mcp-client).
 With this integration, you can set up the MCP client using Helidon
 configuration and plug it directly into your LangChain4j AI services.

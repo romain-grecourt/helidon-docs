@@ -376,13 +376,13 @@ Response body:
 When using the health check URLs, you can get the following health check
 data:
 
-- liveness only - <http://localhost:8080/health/live>
+- liveness only - http://localhost:8080/health/live
 
-- readiness only - <http://localhost:8080/health/ready>
+- readiness only - http://localhost:8080/health/ready
 
-- startup checks only - <http://localhost:8080/health/started>
+- startup checks only - http://localhost:8080/health/started
 
-- all health check data - <http://localhost:8080/health>
+- all health check data - http://localhost:8080/health
 
 Get all the health check data, including custom data:
 ```shell
@@ -454,10 +454,10 @@ JSON response:
 
 You can specify a custom port and root context for the root health
 endpoint path. However, you cannot use different ports, such as
-<http://localhost:8080/myhealth> and
-<http://localhost:8081/myhealth/live>. Likewise, you cannot use
-different paths, such as <http://localhost:8080/health> and
-<http://localhost:8080/probe/live>.
+http://localhost:8080/myhealth and
+http://localhost:8081/myhealth/live. Likewise, you cannot use
+different paths, such as http://localhost:8080/health and
+http://localhost:8080/probe/live.
 
 The example below will change the root path.
 

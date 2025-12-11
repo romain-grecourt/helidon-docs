@@ -331,8 +331,7 @@ Config config = Config.create(
   will be cloned.
 - Specify the git branch.
 
-Note that the config system will use the [HOCON
-parser](#Config-ModuleHocon) in this example because the file type is
+Note that the config system will use the [HOCON parser](#Config-ModuleHocon) in this example because the file type is
 `.conf`. Recall that for this to work the HOCON config module must be on
 module-path or classpath.
 
@@ -360,8 +359,7 @@ Config config = Config.create(
 
 You can also implement your own polling strategy by implementing
 [`PollingStrategy`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/spi/PollingStrategy.html).
-See the [mutability support](mutability-support.md) and [polling
-strategy](extensions.xml#Config-SPI-PollingStrategy) discussions.
+See the [mutability support](mutability-support.md) and [polling strategy](extensions.md) discussions.
 
 ### Loading Meta-configuration via git
 

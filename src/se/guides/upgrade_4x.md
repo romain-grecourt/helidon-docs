@@ -139,7 +139,6 @@ If you want full control using the API, you still have that option.
 For more information see:
 
 - [Observability feature support](../observability.md)
-
 - [Media types support](../webserver/webserver.md#_media_types_support)
 
 # Routing Configuration
@@ -319,8 +318,7 @@ object with routes description.
 > [!WARNING]
 > These changes make Helidon 4 incompatible with previous versions.
 
-Learn more about `HttpService` and `Routing` at [Helidon SE
-WebServer](../webserver/webserver.md)
+Learn more about `HttpService` and `Routing` at [Helidon SE WebServer](../webserver/webserver.md)
 
 ## Other Significant Changes
 
@@ -409,8 +407,7 @@ add the above dependencies. If you choose to add them programmatically
 </dependency>
 ```
 
-Metrics has changed significantly in Helidon 4. See [Helidon SE
-Metrics](../metrics/metrics.md) for more information.
+Metrics has changed significantly in Helidon 4. See [Helidon SE Metrics](../metrics/metrics.md) for more information.
 
 ### Security
 
@@ -476,6 +473,5 @@ update it and add the following dependency:
 Please proceed to [Helidon SE Introduction](../introduction.md) to find
 more information and documentation about each module.
 
-Also, the [Helidon
-examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/)
+Also, the [Helidon examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/)
 are a good resource for seeing how things are done in Helidon 4.

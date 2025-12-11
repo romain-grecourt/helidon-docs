@@ -23,8 +23,7 @@ Helidon MP metrics API and the built-in Helidon metrics.
 # Maven Coordinates
 
 To enable Micrometer support, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -56,8 +55,7 @@ automatically registers those meters with the Micrometer composite
 
 In addition to annotating your methods, your code can create, look up,
 and update metrics programmatically using the Micrometer `MeterRegistry`
-API. The [Micrometer concepts
-document](https://docs.micrometer.io/micrometer/reference/concepts)
+API. The [Micrometer concepts document](https://docs.micrometer.io/micrometer/reference/concepts)
 provides a good starting point for learning how to use Micrometer’s
 interfaces and classes.
 
@@ -86,8 +84,7 @@ annotations you add to your code.
 ## The Micrometer API
 
 Your code can create, look up, and update metrics programmatically using
-the Micrometer `MeterRegistry` API. The [Micrometer concepts
-document](https://docs.micrometer.io/micrometer/reference/concepts)
+the Micrometer `MeterRegistry` API. The [Micrometer concepts document](https://docs.micrometer.io/micrometer/reference/concepts)
 provides a good starting point for learning how to use Micrometer’s
 interfaces and classes.
 
@@ -125,8 +122,7 @@ micrometer.web-context=my-micrometer
 
 # Examples
 
-Helidon MP includes an [example
-application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/micrometer/mp)
+Helidon MP includes an [example application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/micrometer/mp)
 which uses Micrometer support.
 
 The examples below take you step-by-step through the process of
@@ -210,8 +206,7 @@ registry.
 
 The configuration keys that are valid for the `builtin-registries` child
 entries depend on the type of Micrometer meter registry. For example,
-support in Helidon for the [Prometheus meter
-registry](https://javadoc.io/doc/io.micrometer/micrometer-registry-prometheus/1.11.1/io/micrometer/prometheus/PrometheusConfig.html)
+support in Helidon for the [Prometheus meter registry](https://javadoc.io/doc/io.micrometer/micrometer-registry-prometheus/1.11.1/io/micrometer/prometheus/PrometheusConfig.html)
 respects the `prefix` configuration setting but other meter registries
 might not and might support other settings. Refer to the documentation
 for the meter registry you want to configure to find out what items

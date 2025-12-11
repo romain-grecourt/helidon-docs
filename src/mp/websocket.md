@@ -1,15 +1,12 @@
 # Overview
 
-Helidon integrates with
-[Tyrus](https://projects.eclipse.org/projects/ee4j.tyrus) to provide
-support for the [Jakarta WebSocket
-API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).
+Helidon integrates with [Tyrus](https://projects.eclipse.org/projects/ee4j.tyrus) to provide
+support for the [Jakarta WebSocket API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).
 
 # Maven Coordinates
 
 To enable Jakarta Websocket, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -40,14 +37,14 @@ easier-to-read code.
 
 # API
 
-| Annotation | Description |
-|----|----|
+| Annotation      | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | @ServerEndpoint | This class level annotation declares that the class it decorates is a web socket endpoint that will be deployed and made available in the URI-space of a web socket server. The annotation allows the developer to define the URL (or URI template) which this endpoint will be published, and other important properties of the endpoint to the websocket runtime, such as the encoders it uses to send messages. |
-| @ClientEndpoint | The ClientEndpoint annotation, a class level annotation, is used to denote that a POJO is a web socket client and can be deployed as such. Similar to `@ServerEndpoint`, POJOs that are annotated with this annotation can have methods that, using the web socket method level annotations, are web socket lifecycle methods. |
-| @OnOpen | This method level annotation can be used to decorate a Java method that will be called when a new web socket session is open. |
-| @OnMessage | This method level annotation can be used to make a Java method receive incoming web socket messages. Each websocket endpoint may only have one message handling method for each of the native websocket message formats: text, binary and pong. |
-| @OnError | This method level annotation can be used to decorate a Java method that will be called in order to handle errors. |
-| @OnClose | This method level annotation can be used to decorate a Java method that will be called when a web socket session is closing. |
+| @ClientEndpoint | The ClientEndpoint annotation, a class level annotation, is used to denote that a POJO is a web socket client and can be deployed as such. Similar to `@ServerEndpoint`, POJOs that are annotated with this annotation can have methods that, using the web socket method level annotations, are web socket lifecycle methods.                                                                                     |
+| @OnOpen         | This method level annotation can be used to decorate a Java method that will be called when a new web socket session is open.                                                                                                                                                                                                                                                                                      |
+| @OnMessage      | This method level annotation can be used to make a Java method receive incoming web socket messages. Each websocket endpoint may only have one message handling method for each of the native websocket message formats: text, binary and pong.                                                                                                                                                                    |
+| @OnError        | This method level annotation can be used to decorate a Java method that will be called in order to handle errors.                                                                                                                                                                                                                                                                                                  |
+| @OnClose        | This method level annotation can be used to decorate a Java method that will be called when a web socket session is closing.                                                                                                                                                                                                                                                                                       |
 
 # Examples
 
@@ -138,8 +135,7 @@ For instance, if in our example we include the following class:
 @RoutingPath("/web")
 public class MessageBoardApplication implements ServerApplicationConfig {
     @Override
-    public Set<ServerEndpointConfig> getEndpointConfigs(
-            Set<Class<? extends Endpoint>> endpoints) {
+    public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Endpoint>> endpoints) {
         return Set.of(); // No programmatic endpoints
     }
 
@@ -163,8 +159,7 @@ pool, independently of Netty. Therefore, there is no need to create
 additional threads for blocking or long-running operations as these will
 not affect Netty’s ability to process networking data.
 
-For more information see the
-[example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/websocket).
+For more information see the [example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/websocket).
 
 ## WebSocket Endpoints on Different Ports
 
@@ -193,8 +188,7 @@ non-default socket as follows:
 @RoutingName(value = "admin", required = true)
 public class MessageBoardApplication implements ServerApplicationConfig {
     @Override
-    public Set<ServerEndpointConfig> getEndpointConfigs(
-            Set<Class<? extends Endpoint>> endpoints) {
+    public Set<ServerEndpointConfig> getEndpointConfigs(Set<Class<? extends Endpoint>> endpoints) {
         return Set.of(); // No programmatic endpoints
     }
 
@@ -209,12 +203,14 @@ The value of the `@RoutingName` annotation must match that of a
 configured application socket as shown in the following
 `application.yaml` file:
 
-    server:
-      port: 8080
-      host: 0.0.0.0
-      sockets:
-        - name: admin
-          port: 8888
+```yaml
+server:
+  port: 8080
+  host: 0.0.0.0
+  sockets:
+    - name: admin
+      port: 8888
+```
 
 This example assumes that port 8888 is reserved for admin users and
 binds the `MessageBoardApplication` to it.
@@ -222,8 +218,5 @@ binds the `MessageBoardApplication` to it.
 # Reference
 
 - [Eclipse Tyrus](https://projects.eclipse.org/proposals/eclipse-tyrus)
-
 - [WebSocket RFC 6455](https://datatracker.ietf.org/doc/html/rfc6455)
-
-- [Helidon MicroProfile Tyrus
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.tyrus/module-summary.html)
+- [Helidon MicroProfile Tyrus Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.tyrus/module-summary.html)

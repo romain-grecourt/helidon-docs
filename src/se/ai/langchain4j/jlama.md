@@ -5,8 +5,7 @@ This module adds support for selected
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4J core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 ```xml
@@ -142,8 +141,5 @@ Full list of configuration properties:
 # Additional Information
 
 - [LangChain4J Integration](langchain4j.md)
-
-- [LangChain4J Jlama
-  Documentation](https://docs.langchain4j.dev/integrations/language-models/jlama/)
-
+- [LangChain4J Jlama Documentation](https://docs.langchain4j.dev/integrations/language-models/jlama/)
 - [Jlama Website](https://github.com/tjake/Jlama)

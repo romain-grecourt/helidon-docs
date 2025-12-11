@@ -9,8 +9,7 @@ parameters and processing of JSON responses.
 # Maven Coordinates
 
 To enable WebClient/JSON-RPC, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -141,5 +140,4 @@ well.
 The code snippets in this document are part of the JSON-RPC example
 available here:
 
-- [JSON-RPC Machine
-  Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/jsonrpc)
+- [JSON-RPC Machine Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/jsonrpc)

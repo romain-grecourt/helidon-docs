@@ -8,8 +8,7 @@ MicroProfile neither mandates nor specifies how metrics and the REST
 client work together. Support in Helidon for metrics on REST clients
 uses the MicroProfile Metrics spec for inspiration where appropriate.
 
-For more information about support for REST clients in Helidon see [REST
-Client](restclient.md).
+For more information about support for REST clients in Helidon see [REST Client](restclient.md).
 
 # Maven Coordinates
 
@@ -17,8 +16,7 @@ To enable MicroProfile Rest Client Metrics, either add a dependency on
 the [helidon-microprofile
 bundle](../../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../../about/managing-dependencies.md)).
+[Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -67,8 +65,7 @@ enforced metrics TCK behavior.)
 Helidon registers the metrics associated with a REST client interface
 when that interface becomes known to Helidon as a REST client.
 
-The [MicroProfile REST Client
-spec](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_microprofile_rest_client)
+The [MicroProfile REST Client spec](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_microprofile_rest_client)
 describes how your application can inject a REST client interface or
 prepare it programmatically. Either action makes the REST client known
 to Helidon, at which time Helidon registers the metrics associated with
@@ -134,9 +131,8 @@ the feature at their discretion.
 
 # Examples
 
-This example is similar to the [Helidon REST Client doc
-example](restclient.xml#_examples) which starts with the [Helidon MP
-QuickStart example](../guides/quickstart.md).
+This example is similar to the [Helidon REST Client doc example](restclient.md#examples)
+which starts with the [Helidon MP QuickStart example](../guides/quickstart.md).
 
 This sample app adds a new resource which mimics the functionality of
 the `GreetResource` but delegates each incoming request to its
@@ -332,9 +328,5 @@ To create this REST client metrics example follow these steps.
 # Reference
 
 - [Helidon REST Client documentation](restclient.md)
-
-- [MicroProfile RestClient
-  specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html)
-
-- [MicroProfile Metrics
-  specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html)
+- [MicroProfile RestClient specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html)
+- [MicroProfile Metrics specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html)

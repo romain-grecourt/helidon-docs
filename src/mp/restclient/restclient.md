@@ -7,8 +7,7 @@ resembles a server-side resource class.
 Helidon will automatically create a *proxy* class for the interface and
 map local proxy calls to remote REST calls.
 
-For more information, see [Rest Client For MicroProfile
-Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html).
+For more information, see [Rest Client For MicroProfile Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html).
 
 You can also use metrics annotations on your Rest Client methods as
 described in [this related page.](restclientmetrics.md)
@@ -19,8 +18,7 @@ To enable MicroProfile Rest Client, either add a dependency on the
 [helidon-microprofile
 bundle](../../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../../about/managing-dependencies.md)).
+[Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -108,8 +106,7 @@ Once a client interface is annotated, it can be injected into any CDI
 bean.
 
 All properties in annotation `RegisterRestClient` can be overridden via
-configuration as described in [Configuration
-options](#configuration_options)
+configuration as described in [Configuration options](#configuration_options)
 
 Example:
 ```java
@@ -195,8 +192,7 @@ interface GreetRestClient {
 }
 ```
 
-Then create a runnable method as described in [Creating new
-client](#creating-a-new-client), but with baseUri
+Then create a runnable method as described in [Creating new client](#creating-a-new-client), but with baseUri
 `http://localhost:8080/greet` and the above interface.
 
 By calling `GreetRestClient.getDefaultMessage()` you reach the endpoint

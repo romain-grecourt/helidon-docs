@@ -3,16 +3,14 @@
 The Jakarta REST Client defines a programmatic API to access REST
 resources. This API sits at a higher level than traditional HTTP client
 APIs and provides full integration with server-side API concepts like
-providers. It differs from the [Rest Client
-API](../restclient/restclient.md) in that it does not support
+providers. It differs from the [Rest Client API](../restclient/restclient.md) in that it does not support
 annotations or proxies, but instead uses builders and a fluent API to
 create and execute requests.
 
 # Maven Coordinates
 
 To enable Jakarta REST Client, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
  <dependency>
@@ -122,15 +120,12 @@ previous sections.
 See [API](#api) for same simple examples. For additional information,
 refer to the
 
-[Jakarta REST Client
-Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api).
+[Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api).
 
 # Additional Information
 
-For additional information, see the [Jakarta REST
-Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
+For additional information, see the [Jakarta REST Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
 
 # Reference
 
-- [Jakarta REST Client
-  Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)
+- [Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)

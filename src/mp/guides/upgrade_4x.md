@@ -25,43 +25,35 @@ The exception is Metrics which had substantial changes.
 
 - **MicroProfile Config 3.1**:
 
-  Incompatible changes described in [MicroProfile Config 3.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-config-3.0.1/microprofile-config-spec-3.0.1.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Config 3.1 Specification](https://download.eclipse.org/microprofile/microprofile-config-3.0.1/microprofile-config-spec-3.0.1.html#_incompatible_changes)
 
 - **MicroProfile Fault Tolerance 4.0.2**:
 
-  Incompatible changes described in [MicroProfile Fault Tolerance 4.0.2
-  Specification](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html#_backward_incompatible_changes=)
+  Incompatible changes described in [MicroProfile Fault Tolerance 4.0.2 Specification](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html#_backward_incompatible_changes=)
 
 - **MicroProfile Health 4.0**:
 
-  Incompatible changes described in [MicroProfile Health 4.0
-  Specification](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Health 4.0 Specification](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html#_incompatible_changes)
 
 - **MicroProfile JWT Authentication 2.1**:
 
-  Incompatible changes described in [MicroProfile JWT Authentication 2.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.0/microprofile-jwt-auth-spec-2.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile JWT Authentication 2.1 Specification](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.0/microprofile-jwt-auth-spec-2.0.html#_incompatible_changes)
 
 - **MicroProfile Metrics 5.1.1**:
 
-  Incompatible changes described in [MicroProfile Metrics 5.1.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.0.0/microprofile-metrics-spec-5.0.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Metrics 5.1.1 Specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.0.0/microprofile-metrics-spec-5.0.0.html#_incompatible_changes)
 
 - **MicroProfile OpenAPI 3.1.1**:
 
-  Incompatible changes described in [MicroProfile OpenAPI 3.1.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1/microprofile-openapi-spec-3.1.html#incompatible_changes_30)
+  Incompatible changes described in [MicroProfile OpenAPI 3.1.1 Specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1/microprofile-openapi-spec-3.1.html#incompatible_changes_30)
 
 - **MicroProfile Rest Client 3.0**:
 
-  Incompatible changes described in [MicroProfile Rest Client 3.0
-  Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Rest Client 3.0 Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
 
 - **MicroProfile Telemetry Tracing 1.1**:
 
-  Incompatible changes described in [MicroProfile Telemetry Tracing 1.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-telemetry-1.0/tracing/microprofile-telemetry-tracing-spec-1.0.html#_incompatible_changes)
+  Incompatible changes described in [MicroProfile Telemetry Tracing 1.1 Specification](https://download.eclipse.org/microprofile/microprofile-telemetry-1.0/tracing/microprofile-telemetry-tracing-spec-1.0.html#_incompatible_changes)
 
 ## Supported Jakarta EE specifications
 
@@ -73,43 +65,35 @@ The exception is Metrics which had substantial changes.
 
 - **JAX-RS (Jakarta RESTful Web Services) 3.1**:
 
-  Changes described in [JAX-RS (Jakarta RESTful Web Services) 3.1
-  Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
+  Changes described in [JAX-RS (Jakarta RESTful Web Services) 3.1 Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html#_incompatible_changes)
 
 - **JSON-B (Jakarta JSON Binding) 3.0**:
 
-  Changes described in [JSON-B (Jakarta JSON Binding) 3.0
-  Specification](https://jakarta.ee/specifications/jsonb/2.0/jakarta-jsonb-spec-2.0.html#change-log)
+  Changes described in [JSON-B (Jakarta JSON Binding) 3.0 Specification](https://jakarta.ee/specifications/jsonb/2.0/jakarta-jsonb-spec-2.0.html#change-log)
 
 - **JSON-P (Jakarta JSON Processing) 2.1**:
 
-  Changes described in [JSON-P (Jakarta JSON Parsing) 2.1
-  Specification](https://jakarta.ee/specifications/jsonp/2.1/apidocs/)
+  Changes described in [JSON-P (Jakarta JSON Parsing) 2.1 Specification](https://jakarta.ee/specifications/jsonp/2.1/apidocs/)
 
 - **Jakarta Annotations 2.1.1**:
 
-  Full information in [Jakarta Annotations 2.1.1
-  Specification](https://jakarta.ee/specifications/annotations/2.0/annotations-spec-2.0.html)
+  Full information in [Jakarta Annotations 2.1.1 Specification](https://jakarta.ee/specifications/annotations/2.0/annotations-spec-2.0.html)
 
 - **Jakarta Persistence API 3.1**:
 
-  Changes described in [Jakarta Persistence API 3.1
-  Specification](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#revision-history)
+  Changes described in [Jakarta Persistence API 3.1 Specification](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#revision-history)
 
 - **Jakarta Transactions API 2.0**:
 
-  Changes described in [Jakarta Transactions API 2.0
-  Specification](https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html#revision-history)
+  Changes described in [Jakarta Transactions API 2.0 Specification](https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html#revision-history)
 
 - **Jakarta WebSocket API 2.1**:
 
-  Changes described in [Jakarta WebSocket API 2.1
-  Specification](https://jakarta.ee/specifications/websocket/2.0/websocket-spec-2.0.html#changes)
+  Changes described in [Jakarta WebSocket API 2.1 Specification](https://jakarta.ee/specifications/websocket/2.0/websocket-spec-2.0.html#changes)
 
 - **Jakarta Bean Validation 3.0**:
 
-  Changes described in [Jakarta Bean Validation 3.0
-  Specification](https://jakarta.ee/specifications/bean-validation/2.0/bean-validation_2.0.html#changelog)
+  Changes described in [Jakarta Bean Validation 3.0 Specification](https://jakarta.ee/specifications/bean-validation/2.0/bean-validation_2.0.html#changelog)
 
 > [!NOTE]
 > Please, read each specification carefully for incompatible changes!

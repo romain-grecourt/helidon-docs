@@ -1,8 +1,7 @@
 # Overview
 
 Distributed transactions for microservices are known as SAGA design
-patterns and are defined by the [MicroProfile Long Running Actions
-specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).
+patterns and are defined by the [MicroProfile Long Running Actions specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).
 Unlike well known XA protocol, LRA is asynchronous and therefore much
 more scalable. Every LRA JAX-RS resource ([participant](#participant))
 defines endpoints to be invoked when transaction needs to be *completed*
@@ -11,8 +10,7 @@ or *compensated*.
 # Maven Coordinates
 
 To enable Long Running Actions, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependencies>
@@ -84,7 +82,6 @@ methods([Compensate](#compensate) or [AfterLRA](#afterlra)).
 LRA options:
 
 - [value](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ws/rs/LRA.html#value--)
-
   - [REQUIRED](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ws/rs/LRA.Type.html#REQUIRED)
     join incoming LRA or create and join new
 
@@ -319,9 +316,7 @@ compensate or complete retry is needed.
   [LRA_HTTP_CONTEXT_HEADER](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ws/rs/LRA.html#LRA_HTTP_CONTEXT_HEADER) -
   ID of the LRA transaction
 
-- [ParticipantStatus](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ParticipantStatus.html) -
-  Status of the participant reported to [coordinator](#coordinator)
-
+- [ParticipantStatus](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ParticipantStatus.html) - Status of the participant reported to [coordinator](#coordinator)
 ```java
 @GET
 @Path("/status")
@@ -335,9 +330,7 @@ public Response reportStatus(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraId) {
 
 - URI with LRA ID
 
-- [ParticipantStatus](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ParticipantStatus.html) -
-  Status of the participant reported to [coordinator](#coordinator)
-
+- [ParticipantStatus](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/ParticipantStatus.html) - Status of the participant reported to [coordinator](#coordinator)
 ```java
 @Status
 public Response reportStatus(URI lraId) {
@@ -370,10 +363,8 @@ particular LRA finishes.
 
 - [LRAStatus](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html) -
   Final status of the LRA
-  ([Cancelled](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#Cancelled),
-  [Closed](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#Closed),
-  [FailedToCancel](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#FailedToCancel),
-  [FailedToClose](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#FailedToClose))
+  ([Cancelled](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#Cancelled), [Closed](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#Closed),
+  [FailedToCancel](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#FailedToCancel), [FailedToClose](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html#FailedToClose))
 
 ```java
 @PUT
@@ -426,8 +417,7 @@ mp.lra:
 - Url of the LRA enabled service overrides standard base uri, so
   coordinator can call load-balancer instead of the service
 
-For more information continue to [MicroProfile Long Running Actions
-specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).
+For more information continue to [MicroProfile Long Running Actions specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).
 
 # Examples
 
@@ -658,7 +648,6 @@ Helidon LRA supports following coordinators:
 - [MicroTx LRA coordinator](https://docs.oracle.com/en/database/oracle/transaction-manager-for-microservices/index.html)
 - Helidon LRA coordinator
 - [Narayana coordinator](https://narayana.io/lra).
-
 
 ## MicroTx LRA Coordinator
 

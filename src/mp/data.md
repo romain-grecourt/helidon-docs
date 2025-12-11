@@ -13,8 +13,7 @@ providers such as EclipseLink and Hibernate.
 # Maven Coordinates
 
 To enable Data Repository, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

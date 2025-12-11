@@ -1,24 +1,19 @@
-For development it’s often convenient to run Kubernetes on your desktop.
-Two popular ways to do this are with [Kubernetes
-Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/)
-or [Kubernetes support in Docker for
-Desktop](https://docs.docker.com/docker-for-mac/kubernetes/).
+For development, it’s often convenient to run Kubernetes on your desktop.
+Two popular ways to do this are with [Kubernetes Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/)
+or [Kubernetes support in Docker for Desktop](https://docs.docker.com/docker-for-mac/kubernetes/).
 
 In this guide we’ll use Docker for Desktop.
 
 # Install
 
-Install [Docker for
-Mac](https://docs.docker.com/docker-for-mac/install/) or [Docker for
-Windows](https://docs.docker.com/docker-for-windows/install/).
+Install [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) or [Docker for Windows](https://docs.docker.com/docker-for-windows/install/).
 
 Starting with version 18.06 Docker for Desktop includes Kubernetes
 support.
 
 # Enable Kubernetes Support
 
-Enable [Kubernetes Support for
-Mac](https://docs.docker.com/docker-for-mac/#kubernetes) or [Kubernetes
+Enable [Kubernetes Support for Mac](https://docs.docker.com/docker-for-mac/#kubernetes) or [Kubernetes
 Support for
 Windows](https://docs.docker.com/docker-for-windows/#kubernetes).
 

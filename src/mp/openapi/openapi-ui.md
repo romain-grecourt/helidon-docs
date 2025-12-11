@@ -145,7 +145,7 @@ You can use configuration to affect the UI path in two ways:
 
 - Configure the OpenAPI endpoint path (the `/openapi` part).
 
-  Recall that you can [configure the Helidon OpenAPI component](../../mp/openapi/openapi.xml#config)
+  Recall that you can [configure the Helidon OpenAPI component](../../mp/openapi/openapi.md#configuration)
   to change where it serves the OpenAPI document.
 
   Configuring the OpenAPI web context:
@@ -192,8 +192,6 @@ class as the keys in your Helidon configuration.
 
 # Additional Information
 
-[Helidon OpenAPI MP
-documentation](../../mp/openapi/openapi.md)
+[Helidon OpenAPI MP documentation](../../mp/openapi/openapi.md)
 
-[SmallRye OpenAPI UI GitHub
-site](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)
+[SmallRye OpenAPI UI GitHub site](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)

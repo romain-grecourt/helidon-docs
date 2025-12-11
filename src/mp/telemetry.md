@@ -6,8 +6,7 @@ To enable MicroProfile Telemetry, either add a dependency on the
 [helidon-microprofile
 bundle](../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../about/managing-dependencies.md)).
+[Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -71,7 +70,7 @@ exporters.
 >     {http-method-name} {http-request-route}
 >
 > (see
-> <https://opentelemetry.io/docs/specs/semconv/http/http-spans/#name>)
+> https://opentelemetry.io/docs/specs/semconv/http/http-spans/#name)
 >
 > Although span names are often used only for display in monitoring
 > tools, this is a backward-incompatible change.
@@ -188,8 +187,7 @@ public class HelidonEndpoint {
 - Inject `Tracer`.
 - Use `Tracer.spanBuilder` to create and start new `Span`.
 
-Helidon Microprofile Telemetry is integrated with [Helidon Tracing
-API](tracing.md). This means that both APIs can be mixed, and all
+Helidon Microprofile Telemetry is integrated with [Helidon Tracing API](tracing.md). This means that both APIs can be mixed, and all
 parent hierarchies will be kept. In the case below, `@WithSpan`
 annotated method is mixed with manually created
 `io.helidon.tracing.Span`:
@@ -326,8 +324,7 @@ several moments during the lifecycle of every Helidon span:
 - After a span is activated (creating a new scope)
 - After a scope is closed
 
-See the [Helidon SE documentation on span lifecycle
-support](../se/tracing.md#responding-to-span-lifecycle-events)
+See the [Helidon SE documentation on span lifecycle support](../se/tracing.md#responding-to-span-lifecycle-events)
 for more detail on the Helidon SE API which supports this feature. You
 can use those features from a Helidon MP application as well, in
 particular receiving notification of life cycle changes of
@@ -361,13 +358,11 @@ project.
 ### Controlling Automatic Spans for Incoming REST Requests
 
 To selectively suppress child span creation for incoming REST requests
-implement the [HelidonTelemetryContainerFilterHelper
-interface](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.telemetry/io/helidon/microprofile/telemetry/spi/HelidonTelemetryContainerFilterHelper.html).
+implement the [HelidonTelemetryContainerFilterHelper interface](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.telemetry/io/helidon/microprofile/telemetry/spi/HelidonTelemetryContainerFilterHelper.html).
 
 When Helidon receives an incoming REST request it invokes the
 `shouldStartSpan` method on each such implementation, passing the
-[Jakarta REST container request
-context](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/container/containerrequestcontext)
+[Jakarta REST container request context](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/container/containerrequestcontext)
 for the request. If at least one implementation returns `false` then
 Helidon suppresses the automatic child span. If all implementations
 return `true` then Helidon creates the automatic child span.
@@ -398,13 +393,11 @@ public class CustomRestRequestFilterHelper implements HelidonTelemetryContainerF
 ### Controlling Automatic Spans for Outgoing REST Client Requests
 
 To selectively suppress child span creation for outgoing REST client
-requests implement the [HelidonTelemetryClientFilterHelper
-interface](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.telemetry/io/helidon/microprofile/telemetry/spi/HelidonTelemetryClientFilterHelper.html).
+requests implement the [HelidonTelemetryClientFilterHelper interface](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.telemetry/io/helidon/microprofile/telemetry/spi/HelidonTelemetryClientFilterHelper.html).
 
 When your application sends an outgoing REST client request Helidon
 invokes the `shouldStartSpan` method on each such implementation,
-passing the [Jakarta REST client request
-context](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/client/clientrequestcontext)
+passing the [Jakarta REST client request context](https://jakarta.ee/specifications/restful-ws/3.1/apidocs/jakarta.ws.rs/jakarta/ws/rs/client/clientrequestcontext)
 for the request. If at least one implementation returns `false` then
 Helidon suppresses the automatic child span. If all implementations
 return `true` then Helidon creates the automatic child span.
@@ -449,13 +442,11 @@ followed:
   (excluding properties related to Metrics and Logging)
 
 - [Manual Instrumentation](https://opentelemetry.io/docs/instrumentation/java/manual/)
-
 Please consult with the links above for all configurations' properties
 usage.
 
 For your application to report trace information be sure you add a
-dependency on an OpenTelemetry exporter as [described
-earlier](#maven-coordinates) and, as needed, configure its use.
+dependency on an OpenTelemetry exporter as [described earlier](#maven-coordinates) and, as needed, configure its use.
 By default, OpenTelemetry attempts to use the OTLP exporter so you do not
 need to add configuration to specify that choice. To use a different
 exporter set `otel.traces.exporter` in your configuration to the
@@ -507,7 +498,7 @@ docker run -d --name jaeger \
 
 All the tracing information gathered from the examples runs is
 accessible from the browser in the Jaeger UI under
-<http://localhost:16686/>
+http://localhost:16686/
 
 ## Enable MicroProfile Telemetry in Helidon Application
 
@@ -548,7 +539,7 @@ name, which will be used to identify our service in the tracer.
 > For this example, you will use Jaeger to manage data tracing. If you
 > prefer to use Zipkin, please set `otel.traces.exporter` property to
 > "zipkin". For more information using about Zipkin, see
-> <https://zipkin.io/>. Also, a corresponding Maven dependency for the
+> https://zipkin.io/. Also, a corresponding Maven dependency for the
 > exporter should be added:
 >
 >     <dependency>
@@ -582,7 +573,7 @@ curl localhost:8080/greet
 Hello World
 ```
 
-Next, launch the Jaeger UI at <http://localhost:16686/>. The expected
+Next, launch the Jaeger UI at http://localhost:16686/. The expected
 output is:
 
 <figure>
@@ -621,7 +612,7 @@ Let us call the custom endpoint:
 curl localhost:8080/greeting/custom
 ```
 
-Again you can launch the Jaeger UI at <http://localhost:16686/>. The
+Again you can launch the Jaeger UI at http://localhost:16686/. The
 expected output is:
 
 <figure>
@@ -675,7 +666,7 @@ The `greeting-service` call `secondary-service`. Each service will
 create spans with corresponding names, and a service class hierarchy
 will be created.
 
-Launch the Jaeger UI at <http://localhost:16686/> to see the expected
+Launch the Jaeger UI at http://localhost:16686/ to see the expected
 output (shown below).
 
 <figure>

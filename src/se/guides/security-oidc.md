@@ -109,7 +109,7 @@ Keycloak runs on localhost:8080 by default.
 ## Create an Admin User
 
 You need to create an admin user because it does not come by default
-when installing Keycloak. To do this, open <http://localhost:8080> in
+when installing Keycloak. To do this, open http://localhost:8080 in
 your favorite browser.
 
 A window `Create an administrative user` should be prompted. If not,
@@ -147,7 +147,7 @@ realm as it could disturb Keycloak functioning.
 
 To create a new realm to manage your application:
 
-1.  Open Keycloak admin console <http://localhost:8080/admin>.
+1.  Open Keycloak admin console http://localhost:8080/admin.
 
 2.  Hover the mouse over the dropdown in the top-left corner where it
     says `Keycloack`, and press `Create realm`.

@@ -12,8 +12,7 @@ To enable MicroProfile Fault Tolerance, either add a dependency on the
 [helidon-microprofile
 bundle](../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../about/managing-dependencies.md)).
+[Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
  <dependency>
@@ -35,10 +34,7 @@ The following table provides a brief description of each of these
 annotations, including its parameters and default values.
 
 <table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Annotation</th>
@@ -204,5 +200,4 @@ Javadocs](https://download.eclipse.org/microprofile/microprofile-fault-tolerance
 
 # Reference
 
-- [MicroProfile Fault
-  Tolerance](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html)
+- [MicroProfile Fault Tolerance](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html)

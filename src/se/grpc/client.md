@@ -10,8 +10,7 @@ or using manually crafted service descriptors.
 # Maven Coordinates
 
 To enable gRPC Client, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -210,8 +209,7 @@ Channel newChannel = grpcClient.channel(myInterceptors());
 # Metrics
 
 Helidon supports a few metrics that are specific to gRPC clients and are
-based on those defined in [gRPC OpenTelemetry
-Metrics](https://grpc.io/docs/guides/opentelemetry-metrics/). Metrics
+based on those defined in [gRPC OpenTelemetry Metrics](https://grpc.io/docs/guides/opentelemetry-metrics/). Metrics
 are disabled by default, but can be easily enabled as we shall discuss
 shortly.
 
@@ -246,8 +244,7 @@ GrpcClient grpcClient = GrpcClient.builder()
 > Metrics are only available for gRPC clients running in a server
 > environment.
 
-For more information see [Helidon
-Metrics](../../se/metrics/metrics.md).
+For more information see [Helidon Metrics](../../se/metrics/metrics.md).
 
 # Tracing
 
@@ -290,8 +287,7 @@ GrpcClient grpcClient = GrpcClient.builder()
 
 TLS can be configured externally, just like it is done when using the
 WebClient to access an HTTP endpoint. For more information, see
-[Configuring the
-WebClient](https://helidon.io/docs/v4/se/webclient#_configuring_the_webclient).
+[Configuring the WebClient](https://helidon.io/docs/v4/se/webclient#_configuring_the_webclient).
 
 There are a few configuration options (see table below) that are
 specific to a `GrpcClient` and can be configured using a
@@ -306,12 +302,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>

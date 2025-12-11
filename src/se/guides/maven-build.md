@@ -12,8 +12,7 @@ Helidon supports Maven by providing the following:
 
 # The Helidon Application POM
 
-Helidon examples and projects generated using the [Helidon
-Quickstart](../../se/guides/quickstart.md)
+Helidon examples and projects generated using the [Helidon Quickstart](../../se/guides/quickstart.md)
 use a Helidon application POM as their parent. This parent POM provides
 the following:
 
@@ -23,8 +22,7 @@ the following:
     your Helidon application.
 
 If you want to use your own parent POM, then take a look at the
-[standalone quickstart
-example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/quickstarts/helidon-standalone-quickstart-se).
+[standalone quickstart example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/quickstarts/helidon-standalone-quickstart-se).
 This example has a standalone POM that you can pattern your own
 application POM after.
 
@@ -85,11 +83,9 @@ Component dependency:
 Helidon provides a Maven plugin that, among other things, provides the
 following goals:
 
-1.  jlink-image: Build a [custom runtime Java
-    image](../../se/guides/jlink-image.md).
+1.  jlink-image: Build a [custom runtime Java   image](../../se/guides/jlink-image.md).
 
-2.  native-image: Build a [GraalVM native
-    image](../../se/guides/graalnative.md).
+2.  native-image: Build a [GraalVM native   image](../../se/guides/graalnative.md).
     Note: this capability is now provided via the [Maven plugin for
     GraalVM Native
     Image](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html)

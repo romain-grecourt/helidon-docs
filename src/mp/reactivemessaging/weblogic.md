@@ -22,8 +22,7 @@ T3 clients must be loaded from a filesystem location specified by the
 > to allow reflection with the legacy wlthint3client.
 
 Updated versions of thin T3 clients that are compatible with modern
-Jakarta runtimes can be downloaded from [Oracle Software Delivery
-Cloud](https://edelivery.oracle.com/osdc/faces/Home.jspx) as
+Jakarta runtimes can be downloaded from [Oracle Software Delivery Cloud](https://edelivery.oracle.com/osdc/faces/Home.jspx) as
 `wlthint3client.jakarta`. However, Jakarta based thin clients can be
 placed on the Helidon classpath and used with this specialized connector
 or the [JMS connector](../../mp/reactivemessaging/jms.md) After the
@@ -33,8 +32,7 @@ repository accessible from the application build.
 # Maven Coordinates
 
 To enable WebLogic JMS connector, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

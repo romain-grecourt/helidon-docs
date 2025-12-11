@@ -9,8 +9,7 @@ WebServer.
 # Maven-Coordinates
 
 To enable MicroProfile Server add the helidon-microprofile-core bundle
-dependency to your project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+dependency to your project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -55,10 +54,7 @@ including its parameters. More information in
 `Configuring a WebServer route` section.
 
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 62%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Annotation</th>
@@ -104,12 +100,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -484,12 +474,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>

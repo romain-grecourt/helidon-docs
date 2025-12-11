@@ -31,8 +31,7 @@ Metrics is one of the Helidon observability features.
 # Maven Coordinates
 
 To enable metrics, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -66,8 +65,7 @@ Later sections of this document describe how to do each of these.
 
 ## Metric Types
 
-Helidon supports meters described by the [MicroProfile
-Metrics](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html)
+Helidon supports meters described by the [MicroProfile Metrics](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html)
 spec and summarized in the following table:
 
 |                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                            |                                                                                                                                                     |
@@ -83,8 +81,7 @@ Types of Metrics
 ## Categorizing Types of Metrics
 
 Helidon distinguishes among *scopes*, or categories, of metrics as
-described in the [MP metrics
-specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html).
+described in the [MP metrics specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html).
 
 Helidon includes metrics in the built-in scopes described below.
 Applications often register their own metrics in the `application` scope
@@ -203,13 +200,6 @@ The following table summarizes the naming for each metric type.
 
 <table>
 <caption>OpenMetrics/Prometheus Metric Naming</caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr>
 <th>Metric Type</th>
@@ -376,8 +366,7 @@ JSON output for a multivalued metric (for example, `Timer`):
 ```
 
 By default, Helidon formats time values contained in JSON output as
-seconds. You can change this behavior [as described
-below](#controlling-json-timer-output).
+seconds. You can change this behavior [as described below](#controlling-json-timer-output).
 
 #### Understanding the JSON Metrics Metadata Format
 
@@ -447,8 +436,7 @@ To enable the JSON output behavior from Helidon 3, specify
 
 # API
 
-The [MicroProfile Metrics
-API](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/apidocs/org/eclipse/microprofile/metrics/package-summary.html)
+The [MicroProfile Metrics API](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/apidocs/org/eclipse/microprofile/metrics/package-summary.html)
 prescribes all the standard interfaces related to metrics. This section
 summarizes a few key points about using that API and explains some
 Helidon-specific interfaces.
@@ -585,8 +573,7 @@ To control how the Helidon metrics subsystem behaves, add a `metrics`
 section to your `META-INF/microprofile-config.properties` file.
 
 Certain default configuration values depend on the fact that you are
-using Helidon MP as described in the [second table
-below](#configuration-options).
+using Helidon MP as described in the [second table below](#configuration-options).
 
 Type:
 [io.helidon.webserver.observe.metrics.MetricsObserver](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.observe.metrics/io/helidon/webserver/observe/metrics/MetricsObserver.html)
@@ -602,12 +589,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -806,9 +787,7 @@ The rest of this section contains other examples of working with
 metrics:
 
 - [Example Application Code](#example-application-code)
-
 - [Example Configuration](#example-configuration)
-
 ## Example Application Code
 
 ### Adding Method-level Annotations
@@ -1255,13 +1234,9 @@ bit complicated. The rest of this section illustrates some of the most
 common scenarios:
 
 - [Disable metrics entirely.](#disable-metrics-subsystem)
-
 - [Choose whether to report virtual threads metrics](#configuring-virtual-threads-metrics).
-
 - [Choose whether to collect extended key performance indicator metrics.](#collecting-basic-and-extended-key-performance-indicator-kpi-metrics)
-
 - [Control `REST.request` metrics collection.](#enable-restrequest-metrics)
-
 ### Disable Metrics Subsystem
 
 Disabling metrics entirely

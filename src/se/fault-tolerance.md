@@ -1,7 +1,6 @@
 # Overview
 
-Helidon Fault Tolerance support is inspired by [MicroProfile Fault
-Tolerance](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html).
+Helidon Fault Tolerance support is inspired by [MicroProfile Fault Tolerance](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html).
 The API defines the notion of a *fault handler* that can be combined
 with other handlers to improve application robustness. Handlers are
 created to manage error conditions (faults) that may occur in real-world
@@ -24,14 +23,12 @@ retries, timeouts, bulkheads and fallbacks. In addition, the API makes
 it very easy to create and monitor asynchronous tasks that do not
 require explicit creation and management of threads or executors.
 
-For more information, see [Fault Tolerance API
-Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).
+For more information, see [Fault Tolerance API Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).
 
 # Maven Coordinates
 
 To enable Fault Tolerance, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -78,8 +75,8 @@ between them.
 If the call to the supplier provided completes exceptionally, it will be
 treated as a failure and retried until the maximum number of attempts is
 reached; finer control is possible by creating a retry policy and using
-methods such as `applyOn(Class<? extends Throwable>…​ classes)` and
-`skipOn(Class<? extends Throwable>…​ classes)` to control the exceptions
+methods such as `applyOn(Class<? extends Throwable>... classes)` and
+`skipOn(Class<? extends Throwable>... classes)` to control the exceptions
 that must be retried and those that must be ignored.
 
 ## Timeouts
@@ -281,11 +278,9 @@ executed once a value is returned).
 
 The Helidon Fault Tolerance module has support for some basic metrics to
 monitor certain application conditions. Metrics are disabled by default,
-but can be enabled programmatically as described in [Enabling Metrics
-Programmatically](#enabling_metrics_programmatically), and by including
+but can be enabled programmatically as described in [Enabling Metrics Programmatically](#enabling_metrics_programmatically), and by including
 an actual metrics implementation in your classpath. For more information
-about metrics implementations see [Helidon
-Metrics](../se/metrics/metrics.md).
+about metrics implementations see [Helidon Metrics](../se/metrics/metrics.md).
 
 The following tables list all the metrics created by the Fault Tolerance
 module. Note that these metrics are generated per command instance, and
@@ -359,5 +354,4 @@ See [API](#api) section for examples.
 
 # Additional Information
 
-For additional information, see the [Fault Tolerance API
-Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).
+For additional information, see the [Fault Tolerance API Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).

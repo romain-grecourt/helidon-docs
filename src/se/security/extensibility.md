@@ -3,11 +3,8 @@ This guide describes how you can extend the Security component.
 The component has the following extension points:
 
 - [Security Providers](#security_providers)
-
 - [Provider Selection Policy](#provider_selection_policy)
-
 - [Framework Integration](#framework_integration)
-
 # Security Providers
 
 You can build a custom provider for each type of security concept

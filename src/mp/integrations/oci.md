@@ -4,20 +4,16 @@ You can quickly and easily deploy Helidon applications on Oracle Cloud
 Infrastructure (OCI) and integrate them with OCI services using the OCI
 Java SDK and the Helidon OCI SDK Extension.
 
-[The Oracle Cloud Infrastructure SDK for
-Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+[The Oracle Cloud Infrastructure SDK for Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 enables you to write code to manage Oracle Cloud Infrastructure
-resources. The Helidon OCI SDK [CDI portable
-extension](https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#spi)
-provides support for injecting [Oracle Cloud Infrastructure SDK
-Clients](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+resources. The Helidon OCI SDK [CDI portable extension](https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#spi)
+provides support for injecting [Oracle Cloud Infrastructure SDK Clients](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 into your Helidon applications.
 
 # Maven Coordinates
 
 To enable OCI Integration, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 Adding the Helidon OCI SDK Extension dependency:
 ```xml
@@ -31,8 +27,7 @@ Adding the Helidon OCI SDK Extension dependency:
 
 You must configure authentication between your local environment and the
 OCI environment. It is recommended that you configure authentication
-first and then verify your configuration by using the [OCI
-CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
+first and then verify your configuration by using the [OCI CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 to access the service.
 
 The Helidon OCI SDK extension authenticates with OCI by picking up OCI
@@ -70,8 +65,7 @@ OCI supports the following client authentication methods:
 - `resource_principal`: Uses OCI resources and services as the
   authentication and authorization principal, such as serverless
   functions. This option is similar to the `instance_principals`
-  authentication type. See [About Using Resource Principal to Access
-  Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/resource-principal.html).
+  authentication type. See [About Using Resource Principal to Access Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/resource-principal.html).
 
 If your environment is already set up to work with the OCI SDK or the
 OCI CLI, then it is likely you do not need to perform any additional
@@ -111,8 +105,7 @@ clients that you plan to use.
 
 The OCI Object Storage service is an internet-scale, high-performance
 storage platform that offers reliable and cost-efficient data
-durability. See [OCI Object Storage
-Overview](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
+durability. See [OCI Object Storage Overview](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
 in OCI documentation.
 
 To enable OCI Object Storage integration, add the following dependency
@@ -150,12 +143,10 @@ public class MyClass {
 ```
 
 The extension implements this injection point by creating an Object
-Storage client object in the [singleton
-scope](https://jakarta.ee/specifications/dependency-injection/2.0/apidocs/jakarta/inject/Singleton.html).
+Storage client object in the [singleton scope](https://jakarta.ee/specifications/dependency-injection/2.0/apidocs/jakarta/inject/Singleton.html).
 
 After you have injected an ObjectStorage client, you can use it as
-described in [OCI SDK Object Storage
-Javadocs](https://docs.oracle.com/en-us/iaas/tools/java/latest/com/oracle/bmc/objectstorage/package-summary.html).
+described in [OCI SDK Object Storage Javadocs](https://docs.oracle.com/en-us/iaas/tools/java/latest/com/oracle/bmc/objectstorage/package-summary.html).
 
 ## Vault
 

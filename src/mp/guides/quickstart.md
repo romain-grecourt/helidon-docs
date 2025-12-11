@@ -144,8 +144,7 @@ Then you can try the application as you did before.
 
 # Deploy the Application to Kubernetes
 
-If you don’t have access to a Kubernetes cluster, you can [install one
-on your desktop](../../about/kubernetes.md). Then deploy the example:
+If you don’t have access to a Kubernetes cluster, you can [install one on your desktop](../../about/kubernetes.md). Then deploy the example:
 
 Verify connectivity to cluster:
 ```shell
@@ -186,7 +185,6 @@ Helidon also includes support for GraalVM Native Images and Java Custom
 Runtime Images. For more information see:
 
 - [GraalVM Native Images](graalnative.md)
-
 - [Custom Runtime Images using `jlink`](jlink-image.md)
 
 # The Helidon CLI

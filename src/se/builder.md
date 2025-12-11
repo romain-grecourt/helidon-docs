@@ -74,8 +74,7 @@ ServiceConfig serviceConfig = ServiceConfig.builder()
 # Maven Coordinates
 
 To enable Builder, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

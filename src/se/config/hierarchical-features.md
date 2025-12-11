@@ -64,8 +64,7 @@ config-key = *1( key-token *( "." key-token ) )
 The following example is in
 [HOCON](https://github.com/lightbend/config/blob/master/HOCON.md)
 (human-optimized config object notation) format. The config system
-supports HOCON as an [extension
-module](supported-formats.xml#Config-ModuleHocon).
+supports HOCON as an [extension module](supported-formats.md#hoconjson).
 
 HOCON `application.conf` file:
 ```hocon
@@ -103,9 +102,7 @@ Notes
 
     <table>
     <colgroup>
-    <col style="width: 50%" />
-    <col style="width: 50%" />
-    </colgroup>
+            </colgroup>
     <thead>
     <tr>
     <th>Node Type</th>
@@ -192,10 +189,6 @@ various methods on the `Config` class to do this.
 
 <table>
 <caption>General Config Node Methods</caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr>
 <th>Method</th>

@@ -9,8 +9,7 @@ suitably annotated Java interface.
 # Maven Coordinates
 
 To enable gRPC MicroProfile Clients, add the following dependency to
-your project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -36,8 +35,7 @@ The following annotations are used to work with Helidon MP gRPC clients:
 For a gRPC client to connect to a server, it requires a channel.
 Channels are configured in the `grpc` section of the Helidon application
 configuration. The examples below use an `application.yaml` file but
-there are many other ways to to configure Helidon. See [Configuration in
-Helidon](../../mp/config/introduction.md)
+there are many other ways to to configure Helidon. See [Configuration in Helidon](../../mp/config/introduction.md)
 for more information.
 
 ```yaml
@@ -89,8 +87,7 @@ grpc:
 
 TLS in the gRPC MP client section is configured in the same way as in
 other Helidon components such as the webserver. For more information see
-[Configuring
-TLS](../../se/webserver/webserver.xml#_configuring_tls).
+[Configuring TLS](../../se/webserver/webserver.md#configuring-tls).
 
 Given that TLS is enabled by default in gRPC, it must be explicitly
 turned off by setting the `enabled` flag to `false` when connecting to
@@ -138,8 +135,7 @@ interface StringServiceClient {
 
 - The `@Grpc.GrpcChannel` annotation is the qualifier that supplies the
   channel name. This is the same name as used in the channel
-  configuration in the examples provided in the [Configuration
-  section](#configuration).
+  configuration in the examples provided in the [Configuration section](#configuration).
 
 There is no need to write any code to implement the client. The Helidon
 MP gRPC API will create a dynamic proxy for the interface using the
@@ -219,5 +215,4 @@ instantiating `protoc` generated stubs.
 
 # Examples
 
-Please refer to the [Helidon gRPC MP
-Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/grpc).
+Please refer to the [Helidon gRPC MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/grpc).

@@ -110,8 +110,7 @@ The application should respond with `{"message":"Hello World!"}`
 Now stop the running application (by pressing Ctrl+C).
 
 For more information about the Quickstart application and other
-endpoints it supports see the [Helidon MP quickstart
-Guide](../../mp/guides/quickstart.md).
+endpoints it supports see the [Helidon MP quickstart Guide](../../mp/guides/quickstart.md).
 
 # Building a Custom Runtime Image
 
@@ -149,8 +148,7 @@ your application using the provide `start` script:
 
 Also included in the custom image is a Class Data Sharing (CDS) archive
 that improves your application’s startup performance and in-memory
-footprint. You can learn more about Class Data Sharing in the [JDK
-documentation](https://docs.oracle.com/en/java/javase/21/vm/class-data-sharing.html).
+footprint. You can learn more about Class Data Sharing in the [JDK documentation](https://docs.oracle.com/en/java/javase/21/vm/class-data-sharing.html).
 
 The CDS archive increases your image size to get these performance
 optimizations. It can be of significant size (tens of MB). The size of

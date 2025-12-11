@@ -245,8 +245,7 @@ programmatically.
     format.
 
 You can also define custom sources, such as Git, and use them in your
-Helidon application. See [Advanced
-Config](../config/advanced-configuration.md) for more information.
+Helidon application. See [Advanced Config](../config/advanced-configuration.md) for more information.
 
 ## Classpath Sources
 
@@ -607,8 +606,7 @@ categorized as *key access* or *tree navigation*. You have been using
 *key access* for all the examples to this point. For example
 `app.greeting` is accessing the `greeting` child node of the `app`
 parent node. There are many options for access this data using
-navigation methods as described in [Hierarchical
-Config](../config/hierarchical-features.md) and [Advanced
+navigation methods as described in [Hierarchical Config](../config/hierarchical-features.md) and [Advanced
 Config\>](../config/advanced-configuration.md).
 
 ## Accessing Config Using Keys or Navigation
@@ -705,8 +703,7 @@ JSON response:
 Even though in-memory config trees are immutable, the config system
 internally records configuration source metadata that allows it to watch
 sources for changes. Your application listens for updates to the
-underlying config sources and reacts to the changes. See [Config
-Mutability Support](../config/mutability-support.md) for a full
+underlying config sources and reacts to the changes. See [Config Mutability Support](../config/mutability-support.md) for a full
 discussion on this topic. The following example demonstrates how to
 listen and react to configuration changes.
 
@@ -976,7 +973,7 @@ much more information including the following:
 
 - Mutability Support
 
-- and more…​
+- and more
 
 Refer to the following references for additional information:
 

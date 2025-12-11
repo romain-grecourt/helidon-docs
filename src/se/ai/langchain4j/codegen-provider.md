@@ -10,8 +10,7 @@ codegen tooling.
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4J core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 Extra dependency for LangChain4j provider you want to generate binding
@@ -70,7 +69,7 @@ needs to comply with convention and end with `Lc4jProvider`, prefix is
 by default used for deriving a config key and prefixes for generated
 classes. Interface needs to be annotated with `@AiProvider.ModelConfig`
 annotation, which takes as an argument LangChain4j model class we want
-to generate binding for. `@AiProvider.ModelConfig` is repeatable and you
+to generate binding for. `@AiProvider.ModelConfig` is repeatable, and you
 can configure multiple models for the same provider interface.
 
 Example of custom generating LangChain4j GoogleAiGeminiChatModel
@@ -125,7 +124,7 @@ langchain4j:
 
 # Injectable Properties
 
-Injectable properties can be specified in the Lc4j Provider, when such
+Injectable properties can be specified in the LangChain4J provider, when such
 property exists no properties with the same name are code generated.
 `@Option.RegistryService` annotation enables the property to be
 injectable. By default, beans of the same type are being looked up, when

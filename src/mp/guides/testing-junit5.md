@@ -55,8 +55,7 @@ Maven dependencies:
 
 # Create a Sample Helidon MP Project
 
-In this guide we will use the [Helidon MP
-Quickstart](../guides/quickstart.md) project in our examples.
+In this guide we will use the [Helidon MP Quickstart](../guides/quickstart.md) project in our examples.
 
 This application provides an endpoint `/greet`, and we want to make sure
 this endpoint is available and returns expected value.

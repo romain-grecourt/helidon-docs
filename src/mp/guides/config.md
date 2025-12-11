@@ -41,8 +41,7 @@ configuration data from a variety of sources using different formats,
 like JSON and YAML. Furthermore, you can customize the precedence of
 sources and make them optional or mandatory. This guide introduces
 Helidon MP configuration and demonstrates the fundamental concepts using
-several examples. Refer to [Helidon
-Config](../../mp/config/introduction.md)
+several examples. Refer to [Helidon Config](../../mp/config/introduction.md)
 for the full configuration concepts documentation.
 
 ## Create a Sample Helidon MP Project

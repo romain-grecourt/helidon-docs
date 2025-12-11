@@ -11,16 +11,14 @@ applications, since it traces workflow both within a service and across
 multiple services. This provides insight to sequence and timing data for
 specific blocks of work, which helps you identify performance and
 operational issues. Helidon includes support for distributed tracing
-through its own API, backed by either through the [OpenTelemetry
-API](https://opentelemetry.io/docs/instrumentation/js/api/tracing/), or
+through its own API, backed by either through the [OpenTelemetry API](https://opentelemetry.io/docs/instrumentation/js/api/tracing/), or
 by [OpenTracing API](https://opentracing.io). Tracing is integrated with
 WebServer and Security.
 
 # Maven Coordinates
 
 To enable Helidon Tracing, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependencies>
@@ -433,12 +431,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -728,12 +720,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -884,12 +870,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>

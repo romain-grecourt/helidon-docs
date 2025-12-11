@@ -27,8 +27,7 @@ Helidon WebClient provides the following features:
 # Maven Coordinates
 
 To enable WebClient, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -271,12 +270,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -513,12 +506,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -583,12 +570,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -860,8 +841,7 @@ client:
 > The `passphrase` value on the config file can be encrypted if stronger
 > security is required. For more information on how secrets can be
 > encrypted using a master password and store them in a configuration
-> file, please see [Configuration
-> Secrets](../mp/security/configuration-secrets.md).
+> file, please see [Configuration Secrets](../mp/security/configuration-secrets.md).
 
 In the application code, load the settings from the configuration file.
 

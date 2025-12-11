@@ -1,8 +1,7 @@
 # Overview
 
-Helidon MP implements the [MicroProfile GraphQL
-specification](https://download.eclipse.org/microprofile/microprofile-graphql-2.0/microprofile-graphql-spec-2.0.html).
-This specifcation describes how applications can be built to expose an
+Helidon MP implements the [MicroProfile GraphQL specification](https://download.eclipse.org/microprofile/microprofile-graphql-2.0/microprofile-graphql-spec-2.0.html).
+This specification describes how applications can be built to expose an
 endpoint for GraphQL. GraphQL is an open-source data query and
 manipulation language for APIs, and a runtime for fulfilling data
 queries. It provides an alternative to, though not necessarily a
@@ -11,8 +10,7 @@ replacement for, REST.
 # Maven Coordinates
 
 To enable MicroProfile GraphQL, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

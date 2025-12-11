@@ -1,7 +1,6 @@
 # Overview
 
-The [OpenAPI
-specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
+The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 provides a standard way to express RESTful APIs.
 
 Separately, the [OpenAPI generator](https://openapi-generator.tech)
@@ -28,8 +27,7 @@ Each of these generators supports two *libraries*:
 - `se` - for Helidon SE code generation
 
 Use the Helidon *client* generator and its `mp` library to create a
-[Helidon MicroProfile REST
-client](../../mp/restclient/restclient.md).
+[Helidon MicroProfile REST client](../../mp/restclient/restclient.md).
 The resulting client library works with any server that implements the
 API declared in the OpenAPI document you specified when you ran the
 generator. The client library provides an abstraction similar to remote
@@ -101,7 +99,6 @@ these pages:
 - [generic options](https://github.com/OpenAPITools/openapi-generator/blob/v7.6.0/docs/usage.md#generate)
 - [Helidon client generator options](https://github.com/OpenAPITools/openapi-generator/blob/v7.6.0/docs/generators/java-helidon-client.md)
 - [Helidon server generator options](https://github.com/OpenAPITools/openapi-generator/blob/v7.6.0/docs/generators/java-helidon-server.md)
-
 The OpenAPI generator loosely divides its settings into three types:
 
 - *global properties*
@@ -198,13 +195,6 @@ You must specify the following options:
 
 <table>
 <caption>Required OpenAPI Generator Options</caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 5%" />
-<col style="width: 20%" />
-<col style="width: 30%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr>
 <th>Option</th>
@@ -252,11 +242,6 @@ generator, both from the command line and using the Maven plug-in.
 
 <table>
 <caption>Recommended OpenAPI Generator Additional Properties</caption>
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 42%" />
-<col style="width: 35%" />
-</colgroup>
 <thead>
 <tr>
 <th>Property</th>
@@ -325,11 +310,6 @@ significantly more helpful code.</p></td>
 
 <table>
 <caption>Recommended OpenAPI Generator Plug-in Options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 47%" />
-<col style="width: 29%" />
-</colgroup>
 <thead>
 <tr>
 <th>Plug-in Option</th>
@@ -368,13 +348,6 @@ particularly consider are summarized in the table below. Refer to the
 
 <table>
 <caption>Common OpenAPI Generator Additional Properties</caption>
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 22%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 31%" />
-</colgroup>
 <thead>
 <tr>
 <th>Property</th>
@@ -436,7 +409,6 @@ This section covers two major topics:
 
 - [Planning your use of the OpenAPI generators](#planning-your-use-of-the-openapi-generators)
 - [Running the generators](#running-the-openapi-generators)
-
 ## Planning Your Use of the OpenAPI Generators
 
 Beyond the settings listed above, there are several important choices
@@ -450,8 +422,7 @@ files into an existing project. Some developers do both, using the
 generator to create the project at first and then to update the project
 as they evolve the OpenAPI document or change the generation options
 they select. Others create the project in some other way, for example,
-using the [Helidon
-CLI](../../about/cli.md).
+using the [Helidon CLI](../../about/cli.md).
 The OpenAPI generator CLI and plug-in both support each type of usage.
 
 If the OpenAPI generator finds a pre-existing API or model file, it
@@ -620,8 +591,7 @@ file, previously-generated test files, or files you create yourself.
 You can run the OpenAPI generator plug-in as part of your project build
 to generate or regenerate files.
 
-First, declare the plug-in as explained in the [earlier section on Maven
-coordinates](#maven-coordinates).
+First, declare the plug-in as explained in the [earlier section on Maven coordinates](#maven-coordinates).
 
 Then, in the `<build>` section of your `pom.xml` file, add an execution
 of the plug-in with the configuration you want. By default, the plug-in
@@ -669,7 +639,7 @@ Creating or updating a client project using the OpenAPI Maven plug-in:
 ### Using the Online Generator
 
 The OpenAPI tools project hosts and maintains the online OpenAPI
-generator at <http://api.openapi-generator.tech>. You can use the site’s
+generator at http://api.openapi-generator.tech. You can use the site’s
 API browser to explore the available generators and the settings each
 supports, expressed as JSON.
 
@@ -735,8 +705,7 @@ the interface directly to invoke the remote service. Alternatively, you
 can also explicitly use the
 [`RestClientBuilder`](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/apidocs/org/eclipse/microprofile/rest/client/RestClientBuilder.html)
 to create an instance programmatically and then invoke its methods to
-contact the remote service. The [Helidon MP REST
-Client](../../mp/restclient/restclient.md)
+contact the remote service. The [Helidon MP REST Client](../../mp/restclient/restclient.md)
 documentation describes both approaches in more detail.
 
 In the following example, `ExampleResource` (itself running in a server)

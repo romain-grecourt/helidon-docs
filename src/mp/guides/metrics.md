@@ -73,8 +73,7 @@ The built-in metrics fall into these categories:
 2.  basic key performance indicators for request handling (in the vendor
     scope).
 
-A later section describes the [key performance indicator
-metrics](#basic-and-extended-kpi) in detail.
+A later section describes the [key performance indicator metrics](#basic-and-extended-kpi) in detail.
 
 The following example demonstrates how to use the other built-in
 metrics. All examples are executed from the root directory of your
@@ -89,7 +88,7 @@ java -jar target/helidon-quickstart-mp.jar
 > [!NOTE]
 > Metrics output can be returned in either text format (the default), or
 > JSON. The text format uses OpenMetrics (Prometheus) Text Format, see
-> <https://prometheus.io/docs/instrumenting/exposition_formats/#text-format-details>.
+> https://prometheus.io/docs/instrumenting/exposition_formats/#text-format-details.
 
 Verify the metrics endpoint in a new terminal window:
 ```shell
@@ -180,11 +179,8 @@ control how the Helidon metrics subsystem behaves in any of several
 ways.
 
 - [Disable metrics subsystem entirely](#disabling-entirely).
-
 - [Control `REST.request` metrics.](#controlling-rest-request-metrics)
-
-- Select whether to collect [extended key performance indicator
-  metrics](#basic-and-extended-kpi).
+- Select whether to collect [extended key performance indicator metrics](#basic-and-extended-kpi).
 
 - Control reporting of [virtual threads metrics](#controlling-vthreads).
 
@@ -290,8 +286,7 @@ milliseconds.
 ### Controlling `REST.request` Metrics
 
 Helidon MP implements the optional family of metrics, all with the name
-`REST.request`, as described in the [MicroProfile Metrics
-specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html#_optional_rest).
+`REST.request`, as described in the [MicroProfile Metrics specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html#_optional_rest).
 Each instance is a `Timer` with tags `class` and `method` identifying
 exactly which REST endpoint Java method that instance measures.
 
@@ -929,7 +924,5 @@ using various combinations of metrics and scopes.
 Refer to the following references for additional information:
 
 - [MicroProfile Metrics specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/microprofile-metrics-spec-5.1.1.html)
-
 - [MicroProfile Metrics Javadoc](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/apidocs)
-
 - Helidon Javadoc at https://helidon.io/docs/v4/apidocs

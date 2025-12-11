@@ -33,10 +33,6 @@ ConfigValue<Boolean> value2 = configNode.as(Boolean.class);
 
 <table>
 <caption>Built-in Conversions to Simple Types (e.g., boolean)</caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr>
 <th>Java type</th>
@@ -509,8 +505,7 @@ POJO classes, using one of these patterns:
     invoking the builder’s `build` method to create an instance of the
     target POJO class.
 
-3.  [POJO with factory method or decorated
-    constructor](#pojoWithFactoryMethodOrConstructor) - The config
+3.  [POJO with factory method or decorated   constructor](#pojoWithFactoryMethodOrConstructor) - The config
     system finds a `from` method or a constructor on the POJO class
     itself which accepts annotated arguments, then invokes that method
     or constructor passing the specified arguments based on the config.
@@ -765,10 +760,10 @@ public static AppConfig from(
 }
 ```
 
-- The config system invokes the factory method `from(…​)`, passing
+- The config system invokes the factory method `from`, passing
   arguments it has fetched from the correspondingly-named config
   subtrees. The factory method returns the new initialized `AppConfig`
-  instance. Note the consistent use of `@Value(key = "…​")` on each
+  instance. Note the consistent use of `@Value(key = "a-value")` on each
   parameter.
 
 - Because the property `greeting` does not specify a default value the

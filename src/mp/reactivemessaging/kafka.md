@@ -10,8 +10,7 @@ configs can be propagated through messaging config.
 # Maven Coordinates
 
 To enable Reactive Kafka Connector, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

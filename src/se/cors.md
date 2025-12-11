@@ -62,8 +62,7 @@ The following sections briefly illustrate each approach.
 # Maven Coordinates
 
 To enable CORS, add the following dependency to your project’s `pom.xml`
-(see [Managing
-Dependencies](../about/managing-dependencies.md)).
+(see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -190,37 +189,26 @@ The following code shows one way to prepare your application’s routing
 to support CORS.
 
 ```java
-CorsSupport corsSupport = CorsSupport.builder()  
-        .addCrossOrigin(CrossOriginConfig.builder() 
-                                .allowOrigins("http://foo.com", "http://there.com") 
-                                .allowMethods("PUT", "DELETE") 
-                                .build()) 
-        .addCrossOrigin(CrossOriginConfig.create()) 
-        .build(); 
-routing.register("/greet", corsSupport, new GreetService()); 
+static void routing(HttpRouting.Builder routing) {
+    var corsSupport = CorsSupport.builder()
+            .addCrossOrigin(CrossOriginConfig.builder()
+                    // allowed origins (sites) allowed to share resources from this app
+                    .allowOrigins("https://foo.com", "https://there.com")
+
+                    // List the HTTP methods the constraint applies to
+                    .allowMethods("PUT", "DELETE")
+                    .build())
+
+            // handling for requests that do not match earlier entries
+            .addCrossOrigin(CrossOriginConfig.create())
+            .build();
+
+    // register the CorsSupport in front of our business logic
+    routing.register("/greet", corsSupport, new GreetService());
+}
 ```
 
-- Create a `CorsSupport.Builder` instance.
-
-- Add a `CrossOriginConfig` instance (using *its* builder) to constrain
-  resource sharing.
-
-- List the origins (sites) allowed to share resources from this app.
-
-- List the HTTP methods the constraint applies to.
-
-- Build the `CrossOriginConfig` instance.
-
-- Add a `CrossOriginConfig` instance that permits all sharing (the
-  default).
-
-- Build the `CorsSupport` instance.
-
-- Register the new `CorsSupport` instance with, but in front of the
-  service which implements the business logic.
-
-The order of steps 2 and 6 above is important. When processing an
-incoming request, the Helidon CORS implementation scans the
+When processing an incoming request, the Helidon CORS implementation scans the
 `CrossOriginConfig` instances in the order they were added to the
 `CorsSupport` object, stopping as soon as it finds a `CrossOriginConfig`
 instance for which `allowMethods` matches the HTTP method of the
@@ -277,15 +265,15 @@ characteristic of CORS behavior.
 The table below lists the configuration keys that identify the CORS
 characteristics.
 
-| builder method | config key | type | default | description | CORS header name |
-|----|----|----|----|----|----|
-| `allowCredentials` | `allow-credentials` | boolean | `false` | Sets the allow credentials flag. | `Access-Control-Allow-Credentials` |
-| `allowHeaders` | `allow-headers` | string\[\] | `*` | Sets the allowed headers. | `Access-Control-Allow-Headers` |
-| `allowMethods` | `allow-methods` | string\[\] | `*` | Sets the allowed methods. | `Access-Control-Allow-Methods` |
-| `allowOrigins` | `allow-origins` | string\[\] | `*` | Sets the allowed origins. | `Access-Control-Allow-Origins` |
-| `exposeHeaders` | `expose-headers` | string\[\] |  | Sets the expose headers. | `Access-Control-Expose-Headers` |
-| `maxAgeSeconds` | `max-age-seconds` | long | `3600` | Sets the maximum age. | `Access-Control-Max-Age` |
-| `enabled` | `enabled` | boolean | `true` | Sets whether this config should be enabled or not. | n/a |
+| builder method     | config key          | type       | default | description                                        | CORS header name                   |
+|--------------------|---------------------|------------|---------|----------------------------------------------------|------------------------------------|
+| `allowCredentials` | `allow-credentials` | boolean    | `false` | Sets the allow credentials flag.                   | `Access-Control-Allow-Credentials` |
+| `allowHeaders`     | `allow-headers`     | string\[\] | `*`     | Sets the allowed headers.                          | `Access-Control-Allow-Headers`     |
+| `allowMethods`     | `allow-methods`     | string\[\] | `*`     | Sets the allowed methods.                          | `Access-Control-Allow-Methods`     |
+| `allowOrigins`     | `allow-origins`     | string\[\] | `*`     | Sets the allowed origins.                          | `Access-Control-Allow-Origins`     |
+| `exposeHeaders`    | `expose-headers`    | string\[\] |         | Sets the expose headers.                           | `Access-Control-Expose-Headers`    |
+| `maxAgeSeconds`    | `max-age-seconds`   | long       | `3600`  | Sets the maximum age.                              | `Access-Control-Max-Age`           |
+| `enabled`          | `enabled`           | boolean    | `true`  | Sets whether this config should be enabled or not. | n/a                                |
 
 If the cross-origin configuration is disabled (`enabled` = false), then
 the Helidon CORS implementation ignores the cross-origin configuration
@@ -373,33 +361,31 @@ class.
 
 You use configuration in combination with the Helidon CORS SE API to add
 CORS support to your resources. The example in [Sample Routing Setup
-Using the `CrossOriginConfig` API](#se-api-routing-example) uses the
+Using the `CrossOriginConfig` API](#sample-routing-setup-using-the-crossoriginconfig-api) uses the
 low-level Helidon CORS SE API to create a `CrossOriginConfig` instance
 that is then used as part of a `CorsSupport` instance to create the
 routing rules. As an alternative to using the low-level API, this
 example uses config to create the `CrossOriginConfig` instance instead.
 
 ```java
-CorsSupport corsSupport = CorsSupport.builder()
-        .update(builder -> {
-            config.get("my-cors").ifExists(builder::mappedConfig); 
-            config.get("restrictive-cors").ifExists(builder::config); 
-            builder.addCrossOrigin(CrossOriginConfig.create()); 
-        }).build();
+static void routing(HttpRouting.Builder routing) {
+    var config = Services.get(Config.class); // get current config
+    var corsSupport = CorsSupport.builder()
+            .update(builder -> {
+                // If "my-cors" exists in the configuration, use it to add mapped CORS
+                config.get("my-cors").ifExists(builder::mappedConfig);
 
-routing.register("/greet", corsSupport, new GreetService()); 
+                // If "restrictive-cors" exists in the configuration, use it to add basic
+                config.get("restrictive-cors").ifExists(builder::config);
+
+                // handling for requests that do not match earlier entries
+                builder.addCrossOrigin(CrossOriginConfig.create());
+            }).build();
+
+    // register the CorsSupport in front of our business logic
+    routing.register("/greet", corsSupport, new GreetService());
+}
 ```
-
-- If `my-cors` exists in the configuration, use it to add mapped CORS
-  config to the `CorsSupport` builder.
-
-- If `restrictive-cors` exists in the configuration, use it to add basic
-  (not mapped) config to the builder.
-
-- Provide default CORS handling for requests that do not match earlier
-  entries.
-
-- Add the CORS routing **before** registering the GreetService routing.
 
 As each request arrives, Helidon checks it against the cross-origin
 config instances in the order that your application added them to the
@@ -419,8 +405,7 @@ established by the other `CrossOriginConfig` instance based on the
 
 # Examples
 
-For a complete example, see [Helidon SE CORS
-Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/cors).
+For a complete example, see [Helidon SE CORS Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/cors).
 
 # Additional Information
 
@@ -435,8 +420,7 @@ load balancers, between the origin of the request and your service.
 Well-behaved intermediate nodes preserve this important data in other
 headers, such as `Forwarded`. You can configure how the Helidon server
 handles these headers as described in the documentation for [requested
-URI
-discovery](../se/webserver/webserver.xml#_requested_uri_discovery).
+URI discovery](./webserver/webserver.md#requested-uri-discovery).
 
 The CORS support in Helidon uses the requested URI feature to discover
 the correct information about each request, according to your
@@ -468,7 +452,7 @@ resource from another origin, the `/openapi` endpoint which Helidon’s
 OpenAPI built-in service automatically adds to your application.
 
 Integrating CORS support into these built-in services allows such
-third-party web sites and their browser applications, or more
+third-party websites and their browser applications, or more
 generally, apps from any other origin, to work with your Helidon
 application.
 
@@ -476,7 +460,7 @@ Because all three of these built-in Helidon services serve primarily
 `GET` endpoints, by default the integrated CORS support in all three
 services permits any origin to share their resources using `GET`,
 `HEAD`, and `OPTIONS` HTTP requests. You can customize the CORS set-up
-for these built-in services independently from each other using either
+for these built-in services independently of each other using either
 the Helidon API, configuration, or both. You can use this override
 feature to control the CORS behavior of the built-in services even if
 you do not add CORS behavior to your own endpoints.
@@ -510,17 +494,17 @@ services works with CORS.
 
 In the `cors` configuration section add a block for each built-in
 service using its path as described in the [mapped
-](#mapped-config-descr) CORS configuration section. The following
+](#mapped-cross-origin-configuration) CORS configuration section. The following
 example restricts sharing of the `/observe/health` resource, provided by
 the health built-in service, to only the origin `https://there.com`.
 
-```json
+```yaml
 cors:
   paths:
     - path-pattern: "/observe/health"
-      allow-origins: [https://there.com]
+      allow-origins: [ "https://there.com" ]
     - path-pattern: "/observe/metrics"
-      allow-origins: [https://foo.com]
+      allow-origins: [ "https://foo.com" ]
 ```
 
 ### Accessing the Shared Resources
@@ -540,10 +524,6 @@ Build and run the QuickStart application as usual.
 ```shell
 mvn package
 java -jar target/helidon-quickstart-se.jar
-```
-
-```text
-WEB server is up! http://localhost:8080/greet
 ```
 
 #### Retrieve Metrics

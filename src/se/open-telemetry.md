@@ -21,8 +21,7 @@ Helidon SE supports OpenTelemetry in several important ways:
   - Programmatically, using the OpenTelemetry SDK API and the Helidon
     OpenTelemetry API
 
-- Conforms to the [OpenTelemetry semantic
-  conventions](https://github.com/open-telemetry/semantic-conventions/blob/v1.29.0/docs/http/http-spans.md#http-server)
+- Conforms to the [OpenTelemetry semantic conventions](https://github.com/open-telemetry/semantic-conventions/blob/v1.29.0/docs/http/http-spans.md#http-server)
   for automatically-created spans
 
 OpenTelemetry models observability as a set of
@@ -40,21 +39,14 @@ The Helidon OpenTelemetry configuration format, the Helidon
 OpenTelemetry API, and this documentation all follow this hierarchy:
 
 - [Top-level telemetry](#top-level-config)
-
   - Signals
 
     - [Tracing](#tracing-config)
-
       - [Attributes](#attributes-config)
-
       - [Span exporters](#span-exporters-config)
-
       - [Span processors](#span-processors-config)
-
       - [Span sampler](#span-sampler-config)
-
       - [Span limits](#span-limits-config)
-
 This document describes how to configure each level in the hierarchy and
 covers general topics related to Helidon’s support of OpenTelemetry.
 
@@ -82,8 +74,7 @@ Applications could even use both APIs together, reading configuration to
 construct a Helidon builder and then adding to that builder
 OpenTelemetry objects created separately using the OpenTelemetry API.
 
-The [Helidon OpenTelemetry API
-Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.telemetry.otelconfig/io/helidon/telemetry/otelconfig/package-summary.html)
+The [Helidon OpenTelemetry API Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.telemetry.otelconfig/io/helidon/telemetry/otelconfig/package-summary.html)
 page lists the various types developers can use to prepare OpenTelemetry
 objects programmatically. As a starting point, the
 [`OpenTelemetryConfig`](https://helidon.io/docs/v4/apidocs/io.helidon.telemetry.otelconfig/io/helidon/telemetry/otelconfig/OpenTelemetryConfig.html)
@@ -96,8 +87,7 @@ on.
 Later sections in this document also describe the configuration settings
 available.
 
-The [OpenTelemetry SDK
-documentation](https://opentelemetry.io/docs/languages/java/sdk/#sdk-components)
+The [OpenTelemetry SDK documentation](https://opentelemetry.io/docs/languages/java/sdk/#sdk-components)
 explains its API.
 
 > [!NOTE]
@@ -148,13 +138,11 @@ effects:
 # Maven Coordinates
 
 To enable various aspects of OpenTelemetry Support add one or more of
-the following dependencies to your project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+the following dependencies to your project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ## Using the OpenTelemetry implementation of the Helidon Tracing API
 
-Helidon offers an implementation of its [ neutral tracing
-API](tracing.md) that uses OpenTelemetry. Add the following dependency
+Helidon offers an implementation of its [ neutral tracing API](tracing.md) that uses OpenTelemetry. Add the following dependency
 to use OpenTelemetry for tracing.
 
 Dependency to use the Helidon OpenTelemetry implementation of Helidon
@@ -204,8 +192,7 @@ By default, when Helidon SE creates spans automatically for HTTP
 requests, it uses a set of rules, semantic conventions, for choosing the
 span name and adding tags to each span.
 
-OpenTelemetry prescribes its own [semantic
-conventions](https://github.com/open-telemetry/semantic-conventions/blob/v1.29.0/docs/http/http-spans.md#http-server).
+OpenTelemetry prescribes its own [semantic conventions](https://github.com/open-telemetry/semantic-conventions/blob/v1.29.0/docs/http/http-spans.md#http-server).
 If you add the following dependency, Helidon follows the OpenTelemetry
 semantic conventions for spans instead of its own.
 
@@ -224,8 +211,7 @@ Most applications need to declare other runtime dependencies on
 OpenTelemetry artifacts because the configuration specifies, or the
 application code uses, particular OpenTelemetry types packaged in other
 artifacts. For example, OpenTelemetry packages various span exporters
-individually. (See [this OpenTelemetry
-page](https://github.com/open-telemetry/opentelemetry-java/tree/v1.29.0/exporters)
+individually. (See [this OpenTelemetry page](https://github.com/open-telemetry/opentelemetry-java/tree/v1.29.0/exporters)
 on span exporters in particular.)
 
 # Configuration
@@ -258,12 +244,6 @@ Required configuration options
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -332,12 +312,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -423,7 +397,6 @@ Sections below describe how to set up the tracing signal configuration:
 - [Configuring Span Processors](#span-processors-config)
 - [Configuring the Span Sampler](#span-sampler-config)
 - [Configuring the Span Limits](#span-limits-config)
-
 ### Assigning Attributes
 
 Configured attributes are key/value pairs that OpenTelemetry attaches to
@@ -541,12 +514,6 @@ Type:
 
 <table>
 <caption>Required configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -573,12 +540,6 @@ BATCH)</p></td>
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -652,11 +613,7 @@ If you need to use an exporter that is *not* in the table:
   your exporter instance to the builder.
 
 <table>
-<colgroup>
-<col style="width: 12%" />
-<col style="width: 25%" />
-<col style="width: 62%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Exporter type</th>
@@ -712,12 +669,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -797,17 +748,12 @@ GRPC)</p></td>
 </tbody>
 </table>
 
-The [OpenTelemetry
-documentation](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)
+The [OpenTelemetry documentation](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)
 describes the defaults; see the "Properties for \`otlp \`span, metric,
 and log exporters" section there.
 
 <table>
 <caption>OpenTelemetry defaults for tracing</caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
-</colgroup>
 <thead>
 <tr>
 <th>Setting</th>
@@ -849,12 +795,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -898,8 +838,7 @@ exporter should transmit.</p></td>
 </tbody>
 </table>
 
-The [OpenTelemetry
-documentation](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)
+The [OpenTelemetry documentation](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)
 describes the defaults; see the "Properties for Zipkin span exporters"
 section there.
 
@@ -907,7 +846,7 @@ section there.
 |---------------|--------------------------------------|
 | `compression` | `none`                               |
 | `encoder`     | `JSON_V2`                            |
-| `endpoint`    | <http://localhost:9411/api/v2/spans> |
+| `endpoint`    | http://localhost:9411/api/v2/spans |
 | `timeout`     | 10 seconds                           |
 
 OpenTelemetry defaults for Zipkin exporters
@@ -915,8 +854,7 @@ OpenTelemetry defaults for Zipkin exporters
 ### Configuring the Span Sampler
 
 OpenTelemetry offers different ways of sampling data, deciding which
-tracing spans tp capture and send to the backend. The [OpenTelemetry
-documentation](https://opentelemetry.io/docs/languages/java/sdk/#sampler)
+tracing spans tp capture and send to the backend. The [OpenTelemetry documentation](https://opentelemetry.io/docs/languages/java/sdk/#sampler)
 describes sampling in more detail.
 
 Helidon configuration supports the sampler implementations that reside
@@ -938,12 +876,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1004,8 +936,7 @@ Type:
 
 Optional configuration options
 
-The [OpenTelemetry
-documentation](https://opentelemetry.io/docs/languages/java/sdk/#sampler)
+The [OpenTelemetry documentation](https://opentelemetry.io/docs/languages/java/sdk/#sampler)
 describes the defaults; see the "Properties for span limits" section
 there.
 
@@ -1024,7 +955,6 @@ OpenTelemetry defaults for span limits
 ## Helidon Documentation
 
 - [Helidon Tracing](tracing.md)
-
 ## OpenTelemetry Documentation
 
 - [Settings and defaults](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)

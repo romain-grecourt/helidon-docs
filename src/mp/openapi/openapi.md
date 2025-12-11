@@ -1,12 +1,10 @@
 # Overview
 
-The [OpenAPI
-specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
+The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 defines a standard way to express the interface exposed by a REST
 service.
 
-The [MicroProfile OpenAPI
-spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
+The [MicroProfile OpenAPI spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
 explains how MicroProfile embraces OpenAPI, adding annotations,
 configuration, and a service provider interface (SPI).
 
@@ -42,8 +40,7 @@ To enable MicroProfile OpenAPI, either add a dependency on the
 [helidon-microprofile
 bundle](../../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../../about/managing-dependencies.md)).
+[Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -125,8 +122,7 @@ although this endpoint uses none.
 This excerpt shows only a few annotations for illustration. The [Helidon
 MP OpenAPI basic
 example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi/basic)
-illustrates more, and the [MicroProfile OpenAPI
-spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
+illustrates more, and the [MicroProfile OpenAPI spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
 describes them all.
 
 #### A static OpenAPI file
@@ -161,8 +157,7 @@ fully-qualified name of your filter class.
 
 Beyond the two config properties that denote the model reader and
 filter, Helidon MP OpenAPI supports a number of other mandated settings.
-These are described in the [configuration
-section](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html#configuration)
+These are described in the [configuration section](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html#configuration)
 of the MicroProfile OpenAPI spec.
 
 ## Accessing the REST Endpoint
@@ -185,13 +180,11 @@ either `JSON` or `YAML` to receive `application/json` or
 
 # API
 
-The [MicroProfile OpenAPI
-specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
+The [MicroProfile OpenAPI specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
 gives a listing and brief examples of the annotations you can add to
 your code to convey OpenAPI information.
 
-The [MicroProfile OpenAPI
-Javadocs](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/apidocs)
+The [MicroProfile OpenAPI Javadocs](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/apidocs)
 give full details of the annotations and the other classes and
 interfaces you can use in your code.
 
@@ -213,12 +206,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -304,13 +291,11 @@ io.helidon.openapi.OpenApiFeature.WEIGHT.</p></td>
 </table>
 
 Further, Helidon OpenAPI supports the MicroProfile OpenAPI settings
-described in [the MicroProfile OpenAPI
-specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html#_configuration).
+described in [the MicroProfile OpenAPI specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html#_configuration).
 
 # Examples
 
-Helidon MP includes a [complete OpenAPI
-example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
+Helidon MP includes a [complete OpenAPI example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
 based on the MP quick-start sample app. The rest of this section shows,
 step-by-step, how one might change the original QuickStart service to
 adopt OpenAPI.
@@ -469,8 +454,7 @@ curl -X GET http://localhost:8080/openapi
 The output describes not only then endpoints from `GreetResource` but
 also one contributed by the `SimpleAPIModelReader`.
 
-Full example is available [in our official
-repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
+Full example is available [in our official repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
 
 # Additional Information
 
@@ -547,8 +531,7 @@ type from it.
   the generated index.
 
 You can add more than one dependency and scan for more than a single
-type. See the [Helidon MP OpenAPI expanded Jandex
-example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi/expanded-jandex)
+type. See the [Helidon MP OpenAPI expanded Jandex example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi/expanded-jandex)
 for more information and a complete project that indexes a dependency.
 
 > [!NOTE]
@@ -570,8 +553,5 @@ for more information and a complete project that indexes a dependency.
 
 # Reference
 
-- [MicroProfile OpenAPI GitHub
-  Repository](https://github.com/eclipse/microprofile-open-api)
-
-- [MicroProfile OpenAPI
-  Specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
+- [MicroProfile OpenAPI GitHub Repository](https://github.com/eclipse/microprofile-open-api)
+- [MicroProfile OpenAPI Specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)

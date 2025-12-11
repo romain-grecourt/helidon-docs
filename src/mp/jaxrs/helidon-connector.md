@@ -10,8 +10,7 @@ support for HTTP/2.
 # Maven Coordinates
 
 To enable Helidon Connector, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
  <dependency>
@@ -215,13 +214,9 @@ protocol configurations that are passed directly to the underlying
 
 # Additional Information
 
-For additional information, see the [Jakarta REST
-Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
+For additional information, see the [Jakarta REST Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
 
 # Reference
 
-- [Jakarta REST Client
-  Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)
-
-- [Jersey User
-  Guide](https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest31x/index.html)
+- [Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)
+- [Jersey User Guide](https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest31x/index.html)

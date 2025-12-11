@@ -141,7 +141,7 @@ WebServer.builder()
         .build();
 ```
 
-This replaces `Routing.builder().register(JsonSupport.create())…​`
+This replaces `Routing.builder().register(JsonSupport.create())`
 
 The new JSON MediaSupport classes are:
 

@@ -13,8 +13,7 @@ for proper installation.
 Handling routes based on the protocol version is now possible by
 registering specific routes on routing builder.
 
-For further information check [WebServer
-Documentation](../webserver/webserver.md)
+For further information check [WebServer Documentation](../webserver/webserver.md)
 
 # Http/2 Support
 
@@ -59,8 +58,7 @@ server:
   max-upgrade-content-length: 16384
 ```
 
-For further information check [WebServer
-Documentation](../webserver/webserver.md)
+For further information check [WebServer Documentation](../webserver/webserver.md)
 
 # WebSocket
 
@@ -87,44 +85,42 @@ Helidon 3 WebSocket support dependency:
 
 In Helidon 2, WebSocket routing is defined by registering `TyrusSupport`
 as additional service:
-
-Helidon 2 WebSocket route registering:
 ```java
-WebServer.builder(Routing.builder()
-                          .register("/rest", new SomeRestService()) 
-                          .register("/websocket", TyrusSupport.builder() 
-                                  .register(ServerEndpointConfig.Builder
-                                                    .create(MessageBoardEndpoint.class, "/")
-                                                    .encoders(encoders)
-                                                    .build())
-                                  .build()
-                          ))
-        .port(8080)
-        .build();
+void snippet()() {
+    WebServer.builder(Routing.builder()
+                // Traditional REST routing service registration
+                .register("/rest", new SomeRestService())
+            
+                // WebSocket setup with Tyrus service
+                .register("/websocket", TyrusSupport.builder()
+                        .register(ServerEndpointConfig.Builder
+                                .create(MessageBoardEndpoint.class, "/")
+                                .encoders(encoders)
+                                .build())
+                        .build()))
+            .port(8080)
+            .build();
+}
 ```
-
-- Traditional REST routing service registration
-- WebSocket setup with Tyrus service
 
 In Helidon 3, WebSocket routing is defined by adding another routing:
-
-Helidon 3 WebSocket route registering:
 ```java
-WebServer.builder()
-        .routing(r -> r
-                .register("/rest", new SomeRestService()) 
-        )
-        .addRouting(WebSocketRouting.builder() 
-                            .endpoint("/websocket", ServerEndpointConfig.Builder
-                                    .create(MessageBoardEndpoint.class, "/board")
-                                    .encoders(encoders)
-                                    .build())
+void snippet()() {
+    WebServer.builder()
+            // Traditional REST routing service registration
+            .routing(r -> r.register("/rest", new SomeRestService()))
+            
+            // New WebSocket routing setup
+            .addRouting(WebSocketRouting.builder()
+                    .endpoint("/websocket", ServerEndpointConfig.Builder
+                            .create(MessageBoardEndpoint.class, "/board")
+                            .encoders(encoders)
                             .build())
-        .port(8080)
+                    .build())
+            .port(8080)
+            .build();
+}
 ```
-
-- Traditional REST routing service registration
-- WebSocket routing setup
 
 # Deprecations
 
@@ -134,13 +130,7 @@ Use the OCI Java SDK instead. If you use Helidon MP you can inject OCI
 SDK clients by adding the dependency
 `io.helidon.integrations.oci.sdk:helidon-integrations-oci-sdk-cdi`.
 
-> [!NOTE]
-> See [Resolving compatibility issue with OCI
-> SDK](../../se/integrations/oci.xml#oci-compatibility)
-> for detailed information on how to work around this issue.
-
-- The MultiPart buffered readers have been deprecated ([See
-  PR](https://github.com/oracle/helidon/pull/4096)). Use the MultiPart
+- The MultiPart buffered readers have been deprecated ([See PR](https://github.com/oracle/helidon/pull/4096)). Use the MultiPart
   stream readers instead.
 
 ## Helidon Common
@@ -148,30 +138,22 @@ SDK clients by adding the dependency
 Deprecations in the following classes:
 
 - `Resource` - old configuration approach (since 2.0)
-
 - `ThreadPoolSupplier` - Named thread pools (since 2.4.2)
 
-More information in the following
-[Task](https://github.com/oracle/helidon/issues/4363).
+More information in the following [Task](https://github.com/oracle/helidon/issues/4363).
 
 ## Media Common
 
 Deprecations in the following classes:
 
 - `ContentReaders` - Methods with alternatives (since 2.0)
-
 - `ContentTypeCharset` - Class with alternative (since 2.0)
-
 - `ContentWriters` - Methods with alternatives (since 2.0)
-
 - `MessageBodyReaderContext` - Methods with alternatives (since 2.0)
-
 - `MessageBodyWriterContext` - Methods with alternatives (since 2.0)
-
 - `ReadableByteChannelPublisher` - Class with alternative (since 2.0)
 
-More information in the following
-[Task](https://github.com/oracle/helidon/issues/4364).
+More information in the following [Task](https://github.com/oracle/helidon/issues/4364).
 
 ## Metrics
 
@@ -185,8 +167,7 @@ Deprecations in the following classes:
 - `RegistryFactory` - New class in metrics API, for backward
   compatibility only
 
-More information in the following
-[Task](https://github.com/oracle/helidon/issues/4365).
+More information in the following [Task](https://github.com/oracle/helidon/issues/4365).
 
 ## Common Context
 
@@ -194,8 +175,7 @@ Deprecations in the following class:
 
 - `DataPropagationProvider` - clearData should use new method
 
-More information in the following
-[Task](https://github.com/oracle/helidon/issues/4366).
+More information in the following [Task](https://github.com/oracle/helidon/issues/4366).
 
 ## GRPC core
 

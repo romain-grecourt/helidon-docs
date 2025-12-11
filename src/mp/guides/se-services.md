@@ -94,5 +94,4 @@ You can leverage annotations:
 
 - @RoutingPath - path of the WebServer service
 
-- @RoutingName - select routing when [serving requests on multiple
-  ports](../server.md)
+- @RoutingName - select routing when [serving requests on multiple ports](../server.md)

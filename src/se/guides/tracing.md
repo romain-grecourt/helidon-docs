@@ -40,8 +40,7 @@ applications, since it traces workflow both within a service and across
 multiple services. This provides insight to sequence and timing data for
 specific blocks of work, which helps you identify performance and
 operational issues. Helidon includes support for distributed tracing
-through its own API, backed by either through the [OpenTelemetry
-API](https://opentelemetry.io/docs/instrumentation/js/api/tracing/), or
+through its own API, backed by either through the [OpenTelemetry API](https://opentelemetry.io/docs/instrumentation/js/api/tracing/), or
 by [OpenTracing API](https://opentracing.io).
 
 ## Tracing Concepts
@@ -702,7 +701,7 @@ JSON response:
 }
 ```
 
-Access the Jaeger UI at <http://localhost:9412/jaeger> and click on the
+Access the Jaeger UI at http://localhost:9412/jaeger and click on the
 refresh icon to see the trace that was just created.
 
 ## Cleanup

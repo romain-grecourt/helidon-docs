@@ -1,13 +1,9 @@
 # What is Helidon?
 
 - [What is Helidon?](#what_is_helidon)
-
 - [Helidon Flavors](#helidon_flavors)
-
   - [What flavor shall I use?](#what_flavor_shall_i_use)
-
 - [Prerequisites](#prerequisites)
-
 - [Next Steps](#next_steps)
 
 # What is Helidon?
@@ -127,12 +123,10 @@ To upgrade from Helidon 3.x to 4.x:
 
 - [Helidon SE 4x Upgrade Guide](../se/guides/upgrade_4x.md)
 - [Helidon MP 4x Upgrade Guide](../mp/guides/upgrade_4x.md)
-
 To upgrade from Helidon 2.x to 3.x:
 
 - [Helidon SE 3x Upgrade Guide](../se/guides/upgrade_3x.md)
 - [Helidon MP 3x Upgrade Guide](../mp/guides/upgrade_3x.md)
-
 To upgrade from Helidon 1.x to 2.x:
 
 - [Helidon SE 2x Upgrade Guide](../se/guides/upgrade.md)

@@ -8,8 +8,7 @@ apply backpressure to the message source.
 Reactive messaging uses reactive streams as message channels so you can
 construct very effective pipelines for working with the messages or, if
 you prefer, you can continue to use older messaging methods. Like the
-message-driven beans, [MicroProfile Reactive
-Messaging](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html)
+message-driven beans, [MicroProfile Reactive Messaging](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html)
 uses CDI beans to produce, consume or process messages over Reactive
 Streams. These messaging beans are expected to be either
 `ApplicationScoped` or `Dependent` scoped. Messages are managed by
@@ -20,8 +19,7 @@ message coming from the stream.
 # Maven Coordinates
 
 To enable MicroProfile Reactive Messaging, add the following dependency
-to your project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+to your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -47,7 +45,6 @@ To include health checks for Messaging add the following dependency:
 - [Message](#message)
 - [Acknowledgement](#acknowledgement)
 - [Health Check](#health-check)
-
 ## Channels
 
 Reactive messaging uses named channels to connect one source (upstream)
@@ -342,8 +339,7 @@ the messaging core. Explicit strategy configuration is possible with
 that expects the strategy type from enum
 `org.eclipse.microprofile.reactive.messaging.Acknowledgment.Strategy`.
 More information about supported signatures and implicit automatic
-acknowledgement can be found in specification [Message
-acknowledgement](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html#_message_acknowledgement).
+acknowledgement can be found in specification [Message acknowledgement](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html#_message_acknowledgement).
 
 |                                                            |                                                          |
 |------------------------------------------------------------|----------------------------------------------------------|
@@ -431,8 +427,7 @@ public CompletionStage<Void> receiveAndAckMessage(Message<String> msg) {
 ## Health Check
 
 Messaging in Helidon has built in health probes for liveness and
-readiness. To activate it add the [health check
-dependency](#maven-coordinates).
+readiness. To activate it add the [health check dependency](#maven-coordinates).
 
 - Liveness - channel is considered UP until `cancel` or `onError` signal
   is intercepted on it.

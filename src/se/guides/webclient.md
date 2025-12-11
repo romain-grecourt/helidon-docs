@@ -35,7 +35,6 @@ export JAVA_HOME=/usr/lib/jvm/jdk-21
 - [WebClient features](#WebClient-features)
 - [WebClient usage](#WebClient-usage)
 - [WebClient Metrics](#WebClient-Metrics)
-
 ## WebClient Features
 
 Helidon’s WebClient is used to perform HTTP REST requests to target

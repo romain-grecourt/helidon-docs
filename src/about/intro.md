@@ -1,22 +1,18 @@
 # What’s New in This Release
 
 - Introduction of the new Helidon WebServer (Project Níma): a virtual
-  threads-based web server implementation based on [JDK Project
-  Loom](https://openjdk.org/jeps/444) virtual threads.
+  threads-based web server implementation based on [JDK Project Loom](https://openjdk.org/jeps/444) virtual threads.
 
 - Removed Helidon’s Reactive WebServer and WebClient that were based on
   Netty. Our new implementations are based on virtual threads that have
-  a blocking style API (Project Níma). Learn more: [Helidon 4
-  WebServer.](#helidon_4_webserver)
+  a blocking style API (Project Níma). Learn more: [Helidon 4 WebServer.](#helidon_4_webserver)
 
 - Converted other *reactive* API modules to *blocking* style APIs. The
   `io.helidon.common.reactive` APIs will stay as general purpose
-  reactive utilities and operators. Learn more: [Helidon
-  SE](#helidon_se)
+  reactive utilities and operators. Learn more: [Helidon SE](#helidon_se)
 
 - Upgraded MicroProfile support to MicroProfile 6 and Jakarta 10 Core
-  Profile running on the Helidon WebServer. Learn more: [Helidon
-  MP](#helidon_mp)
+  Profile running on the Helidon WebServer. Learn more: [Helidon MP](#helidon_mp)
 
 - Java 21 is required to use Helidon 4. Java 25 or newer is recommended.
 

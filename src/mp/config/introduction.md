@@ -1,7 +1,6 @@
 # Overview
 
-Helidon MicroProfile Config is an implementation of [Eclipse
-MicroProfile Config](https://github.com/eclipse/microprofile-config/).
+Helidon MicroProfile Config is an implementation of [Eclipse MicroProfile Config](https://github.com/eclipse/microprofile-config/).
 You can configure your applications using MicroProfile’s config
 configuration sources and APIs. You can also extend the configuration
 using MicroProfile SPI to add custom `ConfigSource` and `Converter`.
@@ -12,8 +11,7 @@ To enable MicroProfile Config, either add a dependency on the
 [helidon-microprofile
 bundle](../../mp/introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
-[Managing
-Dependencies](../../about/managing-dependencies.md)).
+[Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -171,10 +169,7 @@ To enable polling for a config source created using meta configuration
 `YamlMpConfigSource.create(Path)`, use the following properties:
 
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 62%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Property</th>
@@ -206,8 +201,7 @@ See the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/ja
 
 You can encrypt secrets using a master password and store them in a
 configuration file. The config encryption filter in MicroProfile Config
-is enabled by default. For more information, see [Configuration
-Secrets](../../mp/security/configuration-secrets.md).
+is enabled by default. For more information, see [Configuration Secrets](../../mp/security/configuration-secrets.md).
 
 Example of encrypted secrets:
 ```properties

@@ -12,8 +12,7 @@ service instances through a constructor or a factory method.
 # Maven Coordinates
 
 To enable Injection, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -38,8 +37,7 @@ Let’s begin by explaining some basic terms.
 
 Injection is a way to automatically provide instances of dependencies
 without having to create them manually. Instead of a class creating an
-object itself, something else (like a [service
-registry](#service_registry)) hands it over when needed. This makes
+object itself, something else (like a [service registry](#service_registry)) hands it over when needed. This makes
 code cleaner, easier to manage, and more flexible.
 
 For example, if a Car needs an Engine, instead of the Car making an
@@ -124,8 +122,7 @@ choose.
 Services are defined by:
 
 1.  Java classes annotated with one of the
-    [`@Service.Scope`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/Service.Scope.html)
-    annotations (see [Scopes](#scopes))
+    [`@Service.Scope`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/Service.Scope.html)   annotations (see [Scopes](#scopes))
 
 2.  Any class with
     [`@Service.Inject`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/Service.Inject.html)
@@ -209,7 +206,7 @@ There are three built-in scopes:
 
 # Build time
 
-Helidon injection is compile/build time based injection. This provides a
+Helidon injection is a compile-time based injection. This provides a
 significant performance boost since it eliminates the need for
 reflection or dynamic proxying at runtime, resulting in faster startup.
 Additionally, it integrates well with Native Image, making it an
@@ -312,8 +309,7 @@ public static void main(String[] args) {
 ```
 
 The last step is ensuring that everything necessary for your application
-to compile correctly with injection is included. See [Build
-time](#build_time).
+to compile correctly with injection is included. See [Build time](#build_time).
 
 If everything went as expected, no problems occurred and a Service
 registry gave us fully initialized and ready to use service.
@@ -559,13 +555,9 @@ These challenges can be addressed by implementing one of the factory
 interfaces supported by the Helidon Service Registry:
 
 - [Supplier](#supplier)
-
 - [ServicesFactory](#servicesfactory)
-
 - [InjectionPointFactory](#injectionpointfactory)
-
 - [QualifiedFactory](#qualifiedfactory)
-
 ## Supplier
 
 A factory that supplies a single instance (it can also return
@@ -800,7 +792,6 @@ The
 annotation enables interception for classes that aren’t created through
 the service registry but are instead produced by a factory (More about
 factories can be found here - [Factory chapter](#factories)).
-
 Let’s make the same `@Traced` annotation and Interceptor as in the
 previous examples
 
@@ -1061,8 +1052,7 @@ A qualified event can be produced with two options:
     qualifier(s), note that if combined, the qualifier specified by the
     injection point will always be present!
 
-We are using qualifier created in the chapter [Custom
-qualifier](#custom_qualifiers), to demonstrate how events work with
+We are using qualifier created in the chapter [Custom qualifier](#custom_qualifiers), to demonstrate how events work with
 qualifiers. Now we need to create a new event producer, which fires
 event only to observers qualified with `@Blue`.
 
@@ -1192,22 +1182,22 @@ retrieve an instance from the registry to trigger its initialization.
 
 Registry methods:
 
-- `T get(…​)` - immediately get an instance of a contract from the
+- `T get()` - immediately get an instance of a contract from the
   registry; throws if implementation not available
 
-- `Optional<T> first(…​)` - immediately get an instance of a contract
+- `Optional<T> first()` - immediately get an instance of a contract
   from the registry; there may not be an implementation available
 
-- `List<T> all(…​)` - immediately get all instances of a contract from
+- `List<T> all()` - immediately get all instances of a contract from
   the registry; result may be empty
 
-- `Supplier<T> supply(…​)` - get a supplier of an instance; the service
+- `Supplier<T> supply()` - get a supplier of an instance; the service
   may be instantiated only when `get` is called
 
-- `Supplier<Optional<T>> supplyFirst(…​)` - get a supplier of an optional
+- `Supplier<Optional<T>> supplyFirst()` - get a supplier of an optional
   instance
 
-- `Supplier<List<T>> supplyAll(…​)` - get a supplier of all instances
+- `Supplier<List<T>> supplyAll()` - get a supplier of all instances
 
 Lookup parameter options:
 
@@ -1313,8 +1303,7 @@ When created programmatically, two possible methods can be chosen.
 - `start` - Creates a new
   [`ServiceRegistry`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/ServiceRegistry.html)
   instance and creates all services annotated with
-  [`@Service.RunLevel`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/Service.RunLevel.html).
-  See [RunLevel](#runlevel) chapter.
+  [`@Service.RunLevel`](https://helidon.io/docs/v4/apidocs/io.helidon.service.registry/io/helidon/service/registry/Service.RunLevel.html). See [RunLevel](#runlevel) chapter.
 
 It is important to note, that once you don’t need your service registry,
 method `shutdown` on the manager must be called to ensure proper

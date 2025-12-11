@@ -123,9 +123,7 @@ For more information about configuring these Concurrency Limit
 strategies see:
 
 - [FixedLimit](../../config/io_helidon_common_concurrency_limits_FixedLimit.md)
-
 - [AimdLimit](../../config/io_helidon_common_concurrency_limits_AimdLimit.md)
-
 # Metrics
 
 The Concurrency Limit module also has built-in support for metrics in
@@ -149,30 +147,29 @@ to a particular socket; for simplicity this metric tag is *omitted* for
 the default socket. All metrics provided by the Concurrency Limit module
 are in **vendor** scope.
 
-| Name | Description |
-|----|----|
-| `fixed_queue_length` | Gauge that returns the number of requests waiting on the queue at a certain time |
-| `fixed_rejected_requests` | Gauge that returns the number of requests that have been rejected so far |
-| `fixed_rtt` | Distribution summary of round-trip times, excluding any time waiting in the queue |
-| `fixed_queue_wait_time` | Distribution summary of queue wait times |
-| `fixed_concurrent_requests` | Gauge that returns the number of requests being processed at a certain time |
+| Name                        | Description                                                                       |
+|-----------------------------|-----------------------------------------------------------------------------------|
+| `fixed_queue_length`        | Gauge that returns the number of requests waiting on the queue at a certain time  |
+| `fixed_rejected_requests`   | Gauge that returns the number of requests that have been rejected so far          |
+| `fixed_rtt`                 | Distribution summary of round-trip times, excluding any time waiting in the queue |
+| `fixed_queue_wait_time`     | Distribution summary of queue wait times                                          |
+| `fixed_concurrent_requests` | Gauge that returns the number of requests being processed at a certain time       |
 
 Fixed
 
-| Name | Description |
-|----|----|
-| `aimd_queue_length` | Gauge that returns the number of requests waiting on the queue at a certain time |
-| `aimd_rejected_requests` | Gauge that returns the number of requests that have been rejected so far |
-| `aimd_rtt` | Distribution summary of round-trip times, excluding any time waiting in the queue |
-| `aimd_queue_wait_time` | Distribution summary of queue wait times |
-| `aimd_concurrent_requests` | Gauge that returns the number of requests being processed at a certain time |
-| `aimd_limit` | Gauge that returns the actual limit at a certain time |
+| Name                       | Description                                                                       |
+|----------------------------|-----------------------------------------------------------------------------------|
+| `aimd_queue_length`        | Gauge that returns the number of requests waiting on the queue at a certain time  |
+| `aimd_rejected_requests`   | Gauge that returns the number of requests that have been rejected so far          |
+| `aimd_rtt`                 | Distribution summary of round-trip times, excluding any time waiting in the queue |
+| `aimd_queue_wait_time`     | Distribution summary of queue wait times                                          |
+| `aimd_concurrent_requests` | Gauge that returns the number of requests being processed at a certain time       |
+| `aimd_limit`               | Gauge that returns the actual limit at a certain time                             |
 
 AIMD
 
 For more information regarding metrics support in Helidon and the
-dependencies that are required for metrics to work, see [Helidon
-Metrics](../../se/metrics/metrics.md).
+dependencies that are required for metrics to work, see [Helidon Metrics](../../se/metrics/metrics.md).
 
 # Tracing
 
@@ -200,6 +197,5 @@ server:
 - Turns on the addition of a span recording queued wait time.
 
 Be sure to add a dependency in your project for one of the Helidon
-tracing implementations. See the [Helidon
-tracing](../../se/tracing.md)
+tracing implementations. See the [Helidon tracing](../../se/tracing.md)
 documentation for more information.

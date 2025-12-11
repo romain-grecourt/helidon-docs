@@ -1,7 +1,6 @@
 # Overview
 
-SmallRye offers an [OpenAPI user interface
-component](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)
+SmallRye offers an [OpenAPI user interface component](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)
 which displays a web page based on your application’s OpenAPI document.
 Through that UI, users can invoke the operations declared in the
 document.
@@ -18,8 +17,7 @@ simply.
 # Maven Coordinates
 
 To enable Helidon OpenAPI UI support, add the following dependency to
-your project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>

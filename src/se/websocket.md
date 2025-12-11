@@ -2,8 +2,7 @@
 
 Helidon integrates with
 [Tyrus](https://projects.eclipse.org/projects/ee4j.tyrus) to provide
-support for the [Jakarta WebSocket
-API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).
+support for the [Jakarta WebSocket API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).
 The WebSocket API enables Java applications to participate in WebSocket
 interactions as both servers and clients. The server API supports two
 flavors: annotated and programmatic endpoints.
@@ -23,8 +22,7 @@ programmatic WebSocket endpoints.
 # Maven Coordinates
 
 To enable WebSocket, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -105,5 +103,4 @@ and associates.
 
 # Reference
 
-- [Helidon WebSocket
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.websocket/module-summary.html)
+- [Helidon WebSocket Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.websocket/module-summary.html)

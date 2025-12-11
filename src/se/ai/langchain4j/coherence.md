@@ -4,8 +4,7 @@ This module adds support for the Coherence embedding store.
 
 # Maven Coordinates
 
-In addition to the [Helidon integration with LangChain4J core
-dependencies](langchain4j.xml#maven-coordinates), you must add the
+In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
 
 ```xml
@@ -67,6 +66,4 @@ public interface ChatAiService {
 # Additional Information
 
 - [LangChain4J Integration](langchain4j.md)
-
-- [langChain4J Coherence Embedding Store
-  Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/coherence)
+- [langChain4J Coherence Embedding Store Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/coherence)

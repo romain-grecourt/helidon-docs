@@ -33,8 +33,7 @@ application accordingly.
 # Maven Coordinates
 
 To enable CORS, add the following dependency to your project’s `pom.xml`
-(see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+(see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -286,7 +285,7 @@ Well-behaved intermediate nodes preserve this important data in other
 headers, such as `Forwarded`. You can configure how the Helidon server
 handles these headers as described in the documentation for [requested
 URI
-discovery](../../mp/server.xml#_using_requested_uri_discovery).
+discovery](../../mp/server.md#using-requested-uri-discovery).
 
 The CORS support in Helidon uses the requested URI feature to discover
 the correct information about each request, according to your

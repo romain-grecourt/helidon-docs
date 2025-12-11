@@ -73,7 +73,7 @@ class for a complete list of the built-in config source types and how to
 use them.
 
 See the [advanced
-topics'](advanced-configuration.xml#_advanced_config_sources) page for
+topics'](advanced-configuration.md#advanced-config-sources) page for
 further information on some more involved aspects of config sources.
 
 ## Config Parsers
@@ -83,8 +83,7 @@ config parsers to translate that text into the in-memory data structures
 representing that configuration.
 
 The config system includes several built-in parsers, such as for the
-Java properties, YAML, JSON, and HOCON formats. See [this
-section](#built-in-formats) for how to change your `pom.xml` to make
+Java properties, YAML, JSON, and HOCON formats. See [this section](#built-in-formats) for how to change your `pom.xml` to make
 parsers for those formats available to your application. Then your
 application can invoke the [config builder’s
 `addParser`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.Builder.html#addParser-io.helidon.config.spi.ConfigParser-)
@@ -98,7 +97,7 @@ method, passing an instance of your customer parser. Invoke one of the
 then build the `Config` object.
 
 See the [advanced
-topics'](advanced-configuration.xml#_advanced_config_parsers) page for
+topics'](advanced-configuration.md#advanced-config-parsers) page for
 further information on some more involved aspects of config parsers.
 
 # Configuration
@@ -156,10 +155,8 @@ constructing the resulting `Config` object. The Javadoc explains how to
 use the
 [`Config.Builder`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.Builder.html).
 
-See the [Custom Configuration
-Sources](../../se/guides/config.xml#_custom_configuration_sources)
-and [advanced config
-sources](advanced-configuration.xml#_advanced_config_sources) sections
+See the [Custom Configuration Sources](../../se/guides/config.md#custom-configuration-sources)
+and [advanced config sources](advanced-configuration.md#advanced-config-sources) sections
 for detailed examples and further information.
 
 ## Accessing Config Values
@@ -292,7 +289,7 @@ This makes it easier to override values in testing and production, as
 you can just override the `host` key and leave the URIs same.
 
 See [Filter, Overrides, and Token
-Substitution](advanced-configuration.xml#filters-and-overrides) section
+Substitution](advanced-configuration.md#filters-overrides-and-token-substitution) section
 for further information on some more involved aspects.
 
 ## Typed config values
@@ -427,9 +424,9 @@ not* merge all such files it can find.
 
 | Source                   | Helidon maven artifact ID (group ID: `io.helidon.config`) | Notes                                                                            |
 |--------------------------|-----------------------------------------------------------|----------------------------------------------------------------------------------|
-| `application.yaml`       | `helidon-config-yaml`                                     | YAML format <http://yaml.org>                                                    |
-| `application.conf`       | `helidon-config-hocon`                                    | HOCON format <https://github.com/lightbend/config#using-hocon-the-json-superset> |
-| `application.json`       | `helidon-config-hocon`                                    | JSON format <https://json.org/>                                                  |
+| `application.yaml`       | `helidon-config-yaml`                                     | YAML format http://yaml.org                                                    |
+| `application.conf`       | `helidon-config-hocon`                                    | HOCON format https://github.com/lightbend/config#using-hocon-the-json-superset |
+| `application.json`       | `helidon-config-hocon`                                    | JSON format https://json.org/                                                  |
 | `application.properties` | `helidon-config`                                          | Java properties format                                                           |
 
 Default Config Files (most to the least important)

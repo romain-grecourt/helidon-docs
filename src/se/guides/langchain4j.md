@@ -142,8 +142,7 @@ langchain4j:
 
 # Ai Service
 
-Next we need to create LangChain4j [Ai
-service](https://docs.langchain4j.dev/tutorials/ai-services) and
+Next we need to create LangChain4j [Ai service](https://docs.langchain4j.dev/tutorials/ai-services) and
 annotate it with `@Ai.Service` so Helidon can make a superfast build
 time bean from it.
 
@@ -190,8 +189,7 @@ We can test our pirate service with curl:
 # Prompt Template Arguments
 
 Ofcourse all the features from LangChain4j Ai services are going to
-work, let’s try to expand the example with [template
-arguments](https://docs.langchain4j.dev/tutorials/ai-services#usermessage).
+work, let’s try to expand the example with [template arguments](https://docs.langchain4j.dev/tutorials/ai-services#usermessage).
 
 ```java
 @Ai.Service
@@ -230,8 +228,7 @@ We can test our pirate service with curl:
 
 # Custom Memory Provider
 
-We can also extend the pirate example with [conversation
-memory](https://docs.langchain4j.dev/tutorials/chat-memory). First, we
+We can also extend the pirate example with [conversation memory](https://docs.langchain4j.dev/tutorials/chat-memory). First, we
 need to create a memory provider so our memory works per conversation
 ID.
 

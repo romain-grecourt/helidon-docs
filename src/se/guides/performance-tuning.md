@@ -15,7 +15,7 @@ options from their default values.
 
 For details on the following options please see:
 
-- [WebServer Configuration](../../se/webserver/webserver.xml#_configuration_options)
+- [WebServer Configuration](../../se/webserver/webserver.md#configuration)
 - [WebServer Socket Configuration](../../config/io_helidon_common_socket_SocketOptions.md)
 
 # Summary of Tuning Options

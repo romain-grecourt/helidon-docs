@@ -6,10 +6,7 @@ to manually set up the Config from
 on `io.helidon.config.mp.MpConfigSources` class:
 
 <table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 62%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Method</th>
@@ -162,8 +159,7 @@ public class CustomConfigSource implements ConfigSource {
 
 Instead of directly specifying the configuration sources in your code,
 you can use meta-configuration in a file that declares the configuration
-sources, and their attributes as mentioned in [Microprofile
-Config](introduction.md).
+sources, and their attributes as mentioned in [Microprofile Config](introduction.md).
 
 When used, the Microprofile Config uses configuration sources and flags
 configured in the meta configuration file.

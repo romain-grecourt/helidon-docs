@@ -1,8 +1,7 @@
 # Overview
 
 Helidon supports Bean Validation via its integration with JAX-RS/Jersey.
-The [Jakarta Bean Validation
-specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)
+The [Jakarta Bean Validation specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)
 defines an API to validate Java beans. Bean Validation is supported in
 REST resource classes as well as in regular application beans.
 
@@ -15,8 +14,7 @@ which defines an API to validate Java beans.
 # Maven Coordinates
 
 To enable Bean Validation, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -58,10 +56,7 @@ All built-in constraints are in the `jakarta.validation.constraints`
 package. Here is the list of constraints and their declaration.
 
 <table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 71%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Annotation</th>
@@ -398,8 +393,7 @@ are left to Jakarta Bean Validation providers. Accepts
 Bean Validation can be configured using `META-INF/validation.xml`.
 
 For more information about configuring the validator factory in
-validation.xml, see [Hibernate Validator
-Documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/?v=7.0#chapter-xml-configuration).
+validation.xml, see [Hibernate Validator Documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/?v=7.0#chapter-xml-configuration).
 
 # Examples
 
@@ -451,16 +445,13 @@ Documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US
     > `beans.xml` is required to identify beans and for bean validation
     > to work properly.
 
-Examples are available in [our official GitHub
-repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/bean-validation).
+Examples are available in [our official GitHub repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/bean-validation).
 
 # Additional Information
 
-Helidon uses [Hibernate Bean
-Validator](https://hibernate.org/validator/) for general bean
+Helidon uses [Hibernate Bean Validator](https://hibernate.org/validator/) for general bean
 validation.
 
 # Reference
 
-- [Bean Validation
-  Specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)
+- [Bean Validation Specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)

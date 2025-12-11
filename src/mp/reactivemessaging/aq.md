@@ -7,8 +7,7 @@ AQ-specific API.
 # Maven Coordinates
 
 To enable AQ Connector, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -72,9 +71,7 @@ mp:
       type: queue
 ```
 
-Its also possible and preferable to refer to [configured
-datasource](../persistence.md), in our example [Oracle UCP
-datasource](../persistence.md):
+Its also possible and preferable to refer to [configured datasource](../persistence.md), in our example [Oracle UCP datasource](../persistence.md):
 
 Example of connector config with Oracle UCP datasource:
 ```yaml

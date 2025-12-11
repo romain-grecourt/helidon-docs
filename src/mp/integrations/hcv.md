@@ -7,8 +7,7 @@ are REST-based and Helidon implements them using
 # Maven Coordinates
 
 To enable HashiCorp Vault, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -574,5 +573,4 @@ too many rights, but it can be easily used with the examples below.
 
 # References
 
-- [Hashicorp Vault Usage
-  Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/vault)
+- [Hashicorp Vault Usage Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/vault)

@@ -9,8 +9,7 @@ prepared tools for repetitive use case scenarios .
 # Maven Coordinates
 
 To enable Reactive Messaging, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -30,8 +29,7 @@ orchestrate these tasks called **Reactive Messaging**. It’s basically an
 API for connecting and configuring connectors and emitters with your
 reactive streams through [Channels](#channel).
 
-Reactive Messaging relates to [MicroProfile Reactive
-Messaging](../mp/reactivemessaging/introduction.md) as the making of
+Reactive Messaging relates to [MicroProfile Reactive Messaging](../mp/reactivemessaging/introduction.md) as the making of
 connectors and configuring them can be a repetitive task that ultimately
 leads to the same results. Helidon SE Reactive Messaging supports the
 very same configuration format for connectors as its MicroProfile
@@ -106,10 +104,8 @@ acknowledgement is executed before the callback.
 ## Connectors
 
 Connectors are used to connect [channels](#channel) to external
-sources. To make the [creation and usage of
-connectors](#messaging_connector) as easy and versatile as possible,
-Helidon SE Messaging uses the same API for connectors that [MicroProfile
-Reactive Messaging](../mp/reactivemessaging/introduction.md) does. This
+sources. To make the [creation and usage of connectors](#messaging_connector) as easy and versatile as possible,
+Helidon SE Messaging uses the same API for connectors that [MicroProfile Reactive Messaging](../mp/reactivemessaging/introduction.md) does. This
 allows connectors to be used in both flavors of Helidon with one
 limitation which is that the connector has to be able to work without
 CDI.
@@ -119,7 +115,6 @@ Examples of versatile connectors in Helidon include the following:
 - [Kafka connector](#kafka_connector)
 - [JMS connector](#jms_connector)
 - [AQ Connector](#aq_connector)
-
 ### Messaging Connector
 
 A connector for Reactive Messaging is a factory that produces Publishers
@@ -188,8 +183,7 @@ Messaging.builder()
 #### Configuration for Messaging Connector
 
 A messaging connector in Helidon SE can be configured explicitly by API
-or implicitly by config following the notation of [MicroProfile Reactive
-Messaging](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_configuration).
+or implicitly by config following the notation of [MicroProfile Reactive Messaging](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_configuration).
 
 Configuration that is supplied to connector by the Messaging
 implementation must include two mandatory attributes:
@@ -269,8 +263,7 @@ Messaging messaging = Messaging.builder()
 
 ##### Implicit Config for Messaging Connector
 
-Implicit config without any hard-coding is possible with [Helidon
-Config](config/introduction.md) following notation of [MicroProfile
+Implicit config without any hard-coding is possible with [Helidon Config](config/introduction.md) following notation of [MicroProfile
 Reactive
 Messaging](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_configuration).
 
@@ -302,14 +295,12 @@ Messaging.builder()
 
 ### Re-usability in MP Messaging
 
-As the API is the same for [MicroProfile Reactive
-Messaging](../mp/reactivemessaging/introduction.md) connectors, all
+As the API is the same for [MicroProfile Reactive Messaging](../mp/reactivemessaging/introduction.md) connectors, all
 that is needed to make connector work in both ways is annotating it with
 `@ApplicationScoped`. Such connector is treated as a bean in Helidon MP.
 
 For specific information about creating messaging connectors for Helidon
-MP visit [MicroProfile Reactive
-Messaging](../mp/reactivemessaging/introduction.md).
+MP visit [MicroProfile Reactive Messaging](../mp/reactivemessaging/introduction.md).
 
 ### Kafka Connector
 
@@ -602,7 +593,6 @@ Don’t forget to check out the examples with pre-configured ActiveMQ
 docker image, for easy testing:
 
 - [Helidon Messaging Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/messaging)
-
 ### AQ Connector
 
 Maven dependency:

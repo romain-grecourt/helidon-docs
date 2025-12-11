@@ -44,8 +44,7 @@ export JAVA_HOME=/usr/lib/jvm/jdk-21
 
 # Install GraalVM and the Native Image Command
 
-After [downloading and
-installing](https://www.graalvm.org/jdk21//docs/getting-started/)
+After [downloading and installing](https://www.graalvm.org/jdk21//docs/getting-started/)
 GraalVM, set the `GRAALVM_HOME` environment variable to point at your
 GraalVM installation, or use the GraalVM installation as your Java home.
 
@@ -100,8 +99,7 @@ The application should respond with `{"message":"Hello World!"}`
 Now stop the running application (by pressing Ctrl+C).
 
 For more information about the Quickstart application and other
-endpoints it supports see the [Helidon MP Quickstart
-Guide](../../mp/guides/quickstart.md).
+endpoints it supports see the [Helidon MP Quickstart Guide](../../mp/guides/quickstart.md).
 
 # Building a Native Image
 

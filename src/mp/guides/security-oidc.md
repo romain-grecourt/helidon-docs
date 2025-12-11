@@ -61,7 +61,7 @@ Otherwise, you might face a connection timeout because docker cannot
 download the required data.
 
 To verify that Keycloak is running correctly, go to the admin console :
-<http://localhost:8080/admin> Log in using the username and password
+http://localhost:8080/admin Log in using the username and password
 mentioned above: `admin`.
 
 You should be logged in successfully, and it prompts the admin console.
@@ -121,7 +121,7 @@ After successfully logged in, the admin console is prompted.
 # Setup Keycloak
 
 To set up Keycloak properly, go to the admin console:
-<http://localhost:8080/admin>
+http://localhost:8080/admin
 
 If you are using Docker, use Username `admin` and password `admin` as it
 is the default admin user. Otherwise, use the username and password you
@@ -219,7 +219,7 @@ To create your first client:
     - Enable `Client authentication`
     - Enable `Authorization`
 8. Press `Next`
-   -Update `Valid Redirect URIs` : <http://localhost:7987/*>
+   -Update `Valid Redirect URIs` : http://localhost:7987/*
 9. Click on `Save`.
 
 A new tab named `Credentials` is created. Click on it to access this new

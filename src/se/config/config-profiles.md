@@ -15,8 +15,7 @@ To choose a configuration profile to use at runtime, you can use:
 
 There are two ways to define a profile configuration:
 
-1.  Use a config source with a [profile specific
-    name](#Profile-Config-Source)
+1.  Use a config source with a [profile specific   name](#Profile-Config-Source)
 
 2.  Use a [profile file](#Profile-File) defining all configuration
     sources
@@ -60,19 +59,14 @@ configuration support on classpath; config will look for the following
 profiles (in this order):
 
 1.  `config-profile-dev.yaml` on file system
-
 2.  `config-profile-dev.properties` on file system
-
 3.  `config-profile-dev.yaml` on classpath
-
 4.  `config-profile-dev.properties` on classpath
 
 If any of these files is discovered, it would be used to set up the
-configuration. In case none is found, the config falls back to [profile
-specific config sources](#Profile-Config-Source).
+configuration. In case none is found, the config falls back to [profile specific config sources](#Profile-Config-Source).
 
-The structure of the file is described below in [profile file
-format](#Config-Profile-Format).
+The structure of the file is described below in [profile file format](#Config-Profile-Format).
 
 In case you need to customize the location of the profile file, you can
 use the system property `io.helidon.config.meta-config`. For example if
@@ -124,12 +118,6 @@ The config system supports these built-in types:
 
 <table>
 <caption>Built-in Types</caption>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr>
 <th>Type</th>
@@ -338,11 +326,6 @@ Config Profile Support for Built-in Polling Strategies
 
 <table>
 <caption>Config Profile Support for Built-in Change Watchers</caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr>
 <th>Type</th>
@@ -365,11 +348,6 @@ for changes</p></td>
 
 <table>
 <caption>Config Profile Support for Built-in Retry Policies</caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr>
 <th>Policy Type</th>

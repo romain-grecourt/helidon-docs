@@ -6,8 +6,7 @@ threads and can handle nearly unlimited concurrent requests.
 # Maven Coordinates
 
 To enable WebServer, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -170,12 +169,6 @@ This is a standalone configuration type, prefix from configuration root:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -591,7 +584,7 @@ syntax:
 
 > [!IMPORTANT]
 > Path (matcher) routing is **exact**. For example, a `/foo/bar` request
-> is **not** routed to `.post('/foo', …​)`.
+> is **not** routed to `.post('/foo')`.
 
 > [!TIP]
 > Always start *path* and *path patterns* with the `/` character.
@@ -674,8 +667,7 @@ using `io.helidon.common.Weighted`).
 
 Each service has access to the routing builder. HTTP Features are
 configured for each routing builder. If there is a need to configure a
-feature for multiple sockets, you can use [Server
-Feature](#server_features) instead.
+feature for multiple sockets, you can use [Server Feature](#server_features) instead.
 
 # Request Handling
 
@@ -1091,12 +1083,6 @@ Type:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1285,8 +1271,7 @@ A server feature can be added by implementing
 `io.helidon.webserver.spi.ServerFeature`. Server features support
 automated discovery, as long as the implementation is available through
 Java `ServiceLoader`. Server features can also be added through
-configuration, as can be seen above in [Configuration
-Options](#configuration_options), configuration key `features`.
+configuration, as can be seen above in [Configuration Options](#configuration_options), configuration key `features`.
 
 All features (both `ServerFeature` and
 [HttpFeature](#anchor-http-feature)) honor weight of the feature
@@ -1424,12 +1409,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -1630,8 +1609,7 @@ server:
           location: "/static-content"
 ```
 
-See [Static Content Feature Configuration
-Reference](../../config/io_helidon_webserver_staticcontent_StaticContentFeature.md)
+See [Static Content Feature Configuration Reference](../../config/io_helidon_webserver_staticcontent_StaticContentFeature.md)
 for details of configuration options.
 
 # Media types support
@@ -2100,8 +2078,7 @@ include the header `Content-Encoding: gzip` and a compressed payload.
 
 # Proxy Protocol Support
 
-The [Proxy
-Protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+The [Proxy Protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
 provides a way to convey client information across reverse proxies or
 load balancers which would otherwise be lost given that new connections
 are established for each network hop. Often times, this information can
@@ -2189,20 +2166,9 @@ public static void main(String[] args) {
 
 # Reference
 
-- [Helidon WebServer
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver/module-summary.html)
-
-- [Helidon WebServer Static Content
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.staticcontent/module-summary.html)
-
-- [Helidon JSON-B Support
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jsonp/module-summary.html)
-
-- [Helidon JSON-P Support
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jsonb/module-summary.html)
-
-- [Helidon Jackson Support
-  Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jackson/module-summary.html)
-
-- [Proxy Protocol
-  Specification](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+- [Helidon WebServer Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver/module-summary.html)
+- [Helidon WebServer Static Content Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.staticcontent/module-summary.html)
+- [Helidon JSON-B Support Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jsonp/module-summary.html)
+- [Helidon JSON-P Support Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jsonb/module-summary.html)
+- [Helidon Jackson Support Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.http.media.jackson/module-summary.html)
+- [Proxy Protocol Specification](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)

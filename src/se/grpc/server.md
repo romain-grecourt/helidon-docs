@@ -22,8 +22,7 @@ several advantages:
 # Maven Coordinates
 
 To enable gRPC Server, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -33,8 +32,7 @@ Dependencies](../../about/managing-dependencies.md)).
 ```
 
 Additional dependencies may be required depending on your application
-needs. See the [gRPC SE
-Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/grpc)
+needs. See the [gRPC SE Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/grpc)
 for a complete example.
 
 # Usage
@@ -42,7 +40,6 @@ for a complete example.
 ## gRPC Server Routing
 
 - [Customizing Service Definitions](#customizing_service_definitions)
-
 Unlike the HTTP server, which routes requests based on path expressions
 and HTTP verbs, the gRPC server routes requests by service and method
 names. This simplifies routing configuration: all you need to do is
@@ -224,8 +221,7 @@ given its *higher* weight of `Interceptor.USER + 100`.
 ## Metrics
 
 Helidon supports a few metrics that are specific to gRPC and are based
-on those defined in [gRPC OpenTelemetry
-Metrics](https://grpc.io/docs/guides/opentelemetry-metrics/). Metrics
+on those defined in [gRPC OpenTelemetry Metrics](https://grpc.io/docs/guides/opentelemetry-metrics/). Metrics
 are disabled by default, but can be easily enabled via configuration as
 we shall discuss shortly.
 
@@ -258,8 +254,7 @@ server:
 ```
 
 The configuration above shall enable metrics on the Webserver’s default
-port 8080. For more information see [Helidon
-Metrics](../../se/metrics/metrics.md).
+port 8080. For more information see [Helidon Metrics](../../se/metrics/metrics.md).
 
 # Configuration
 
@@ -328,8 +323,7 @@ The feature accepts a list of sockets, or if omitted as seen above, it
 would enable the feature on all sockets. For security reasons, the gRPC
 reflection service is *disabled by default*; if enabled, it is
 recommended to disable the feature for production to avoid any unwanted
-requests. For more information about gRPC reflection, see [gRPC
-Reflection](https://grpc.io/docs/guides/reflection/).
+requests. For more information about gRPC reflection, see [gRPC Reflection](https://grpc.io/docs/guides/reflection/).
 
 ## Configuring Compression
 
@@ -356,8 +350,5 @@ disabled as shown above.
 
 The following gRPC examples for Helidon SE are available:
 
-- [gRPC SE
-  Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/grpc)
-
-- [Multiple protocols on a single
-  WebServer](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/protocols)
+- [gRPC SE Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/grpc)
+- [Multiple protocols on a single WebServer](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/protocols)

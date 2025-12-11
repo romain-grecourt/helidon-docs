@@ -10,15 +10,13 @@ There are two ways to use validation features in Helidon SE:
 2.  Invoke the constraint checks directly using `Validators` static
     methods
 
-The feature fit with our [Helidon
-Declarative](../se/injection/declarative.xml#Dec-Validation),
+The feature fit with our [Helidon Declarative](../se/injection/declarative.md#validation),
 which is a preview feature.
 
 # Maven Coordinates
 
 To enable Validation, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependencies>
@@ -57,17 +55,21 @@ Such code can then be validated using a service `TypeValidation`:
 
 Example of validating a type:
 ```java
-TypeValidation validator = Services.get(TypeValidation.class);
-var validationResponse = validator.validate(MyType.class, new MyType("valid", 43));
+void validate() {
+    TypeValidation validator = Services.get(TypeValidation.class);
+    var validationResponse = validator.validate(MyType.class, new MyType("valid", 43));
+}
 ```
 
 Or using the check method(s) that throw a `ValidationException`:
 
 Example of validating a type that throws an exception:
 ```java
-TypeValidation validator = Services.get(TypeValidation.class);
-// throws a ValidationException if the object is invalid
-validator.check(MyType.class, new MyType("valid", 43));
+void validate() {
+    TypeValidation validator = Services.get(TypeValidation.class);
+    // throws a ValidationException if the object is invalid
+    validator.check(MyType.class, new MyType("valid", 43));
+}
 ```
 
 The following annotation processing setup must be done to generate the
@@ -96,7 +98,6 @@ An object can be validated using one of the built-in constraints through
 methods on
 
 - [`io.helidon.validation.Validators`](https://helidon.io/docs/v4/apidocs/io.helidon.validation/io/helidon/validation/Validators.html)
-
 Example of validating an object using a built-in constraint:
 ```java
 var validationResponse = Validators.validateNotNull(anInstance);
@@ -119,11 +120,13 @@ The first approach gives as a validation response:
 Example of validating an object using any constraint:
 
 ```java
-var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName()); 
-var context = ValidationContext.create(MyType.class); 
-var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*")); 
-context.check(validator, anInstance); 
-var response = context.response(); 
+void validate() {
+    var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
+    var context = ValidationContext.create(MyType.class);
+    var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
+    context.check(validator, anInstance);
+    var response = context.response();
+}
 ```
 
 - Get the constraint validation provider from the registry, named by the
@@ -144,11 +147,13 @@ And the second throws an exception if validation failed:
 Example of validating an object using any constraint that throws an
 exception:
 ```java
-var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName()); 
-var context = ValidationContext.create(MyType.class); 
-var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*")); 
-context.check(validator, anInstance); 
-context.throwOnFailure(); 
+void validate() {
+    var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
+    var context = ValidationContext.create(MyType.class);
+    var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
+    context.check(validator, anInstance);
+    context.throwOnFailure();
+}
 ```
 
 - Get the constraint validation provider from the registry, named by the

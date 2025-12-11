@@ -65,8 +65,7 @@ you get started with tracing.
   spans from both services. Within a trace, spans are organized as a
   directed acyclic graph (DAG) and can belong to multiple services,
   running on multiple hosts. The *OpenTracing Data Model* describes the
-  details at [The OpenTracing Semantic
-  Specification](https://opentracing.io/specification). Spans are
+  details at [The OpenTracing Semantic Specification](https://opentracing.io/specification). Spans are
   automatically created by Helidon as needed during execution of the
   REST request.
 
@@ -177,7 +176,7 @@ JSON response:
 
 The tracing output data is verbose and can be difficult to interpret
 using the REST API, especially since it represents a structure of spans.
-Jaeger provides a web-based UI at <http://localhost:16686/search>, where
+Jaeger provides a web-based UI at http://localhost:16686/search, where
 you can see a visual representation of the same data and the
 relationship between spans within a trace. If you see a `Lens UI` button
 at the top center then click on it, and it will take you to the specific
@@ -629,7 +628,7 @@ JSON response:
 }
 ```
 
-Access the Jaeger UI at <http://localhost:16687/search> and click on the
+Access the Jaeger UI at http://localhost:16687/search and click on the
 refresh icon to see the trace that was just created.
 
 ## Cleanup

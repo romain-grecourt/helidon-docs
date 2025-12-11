@@ -148,8 +148,7 @@ Then you can try the application as you did before.
 
 # Deploy the application to Kubernetes
 
-If you don’t have access to a Kubernetes cluster, you can [install one
-on your desktop](../../about/kubernetes.md). Then deploy the example:
+If you don’t have access to a Kubernetes cluster, you can [install one on your desktop](../../about/kubernetes.md). Then deploy the example:
 
 Verify connectivity to cluster:
 ```shell

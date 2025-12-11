@@ -17,8 +17,7 @@ Your account must be in the `Administrators` group or another group that
 has the `REPOSITORY_CREATE` permission.
 
 Sign in to the Oracle Cloud Infrastructure (OCI) web console and
-generate an authentication token. See [Getting an Auth
-Token](https://docs.cloud.oracle.com/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm).
+generate an authentication token. See [Getting an Auth Token](https://docs.cloud.oracle.com/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm).
 
 > [!NOTE]
 > Remember to copy the generated token. You won’t be able to access it

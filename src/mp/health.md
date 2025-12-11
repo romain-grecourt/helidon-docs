@@ -10,8 +10,7 @@ service is unable to process incoming requests normally.
 
 To enable MicroProfile Health add the [helidon-microprofile
 bundle](introduction/microprofile.md) dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -53,8 +52,7 @@ the [helidon-microprofile bundle](introduction/microprofile.md) )
 
 # Usage
 
-Helidon implements [MicroProfile
-Health](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html)
+Helidon implements [MicroProfile Health](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html)
 Specification. The spec prescribes how external tools probe a service’s
 health checks and how you implement health checks as part of your
 microservice that are specific to your service’s needs.
@@ -138,10 +136,10 @@ prefix.
 
 For example, you can specify a custom port and root context for the root
 health endpoint path. However, you cannot use different ports, such as
-<http://localhost:8080/myhealth> and
-<http://localhost:8081/myhealth/live>. Likewise, you cannot use
-different paths, such as <http://localhost:8080/health> and
-<http://localhost:8080/probe/live>. The example below will change the
+http://localhost:8080/myhealth and
+http://localhost:8081/myhealth/live. Likewise, you cannot use
+different paths, such as http://localhost:8080/health and
+http://localhost:8080/probe/live. The example below will change the
 root path.
 
 Create a file named `microprofile-config.properties` in the
@@ -160,13 +158,7 @@ You can use Helidon-provided health checks to report various common
 health check statuses:
 
 <table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 13%" />
-<col style="width: 65%" />
-<col style="width: 13%" />
-</colgroup>
+
 <thead>
 <tr>
 <th>Built-in health check</th>
@@ -547,10 +539,10 @@ JSON response:
 
 When using the health check URLs, you can get the following health check data:
 
-- liveness only - <http://localhost:8080/health/live>
-- readiness only - <http://localhost:8080/health/ready>
-- startup checks only - <http://localhost:8080/health/started>
-- all health check data - <http://localhost:8080/health>
+- liveness only - http://localhost:8080/health/live
+- readiness only - http://localhost:8080/health/ready
+- startup checks only - http://localhost:8080/health/started
+- all health check data - http://localhost:8080/health
 
 Get all the health check data, including custom data:
 ```shell

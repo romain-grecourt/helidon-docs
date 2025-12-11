@@ -10,8 +10,7 @@ alternative to other protocols such as REST or GRPC.
 # Maven Coordinates
 
 To enable GraphQL, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -130,5 +129,4 @@ following endpoints:
 
 # Additional Information
 
-- [GraphQL
-  Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.graphql.server/module-summary.html)
+- [GraphQL Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.graphql.server/module-summary.html)

@@ -23,12 +23,8 @@ For this 10 minute tutorial, you will need the following:
 
 There are two JDK builds with CRaC support as of now to choose from.
 
-- [Azul
-  Zulu](https://www.azul.com/downloads/?version=java-21-lts&package=jdk-crac#zulu)
-
-- [BellSoft Liberica
-  JDK](https://bell-sw.com/pages/downloads/?package=jdk-crac&version=java-21)
-
+- [Azul Zulu](https://www.azul.com/downloads/?version=java-21-lts&package=jdk-crac#zulu)
+- [BellSoft Liberica JDK](https://bell-sw.com/pages/downloads/?package=jdk-crac&version=java-21)
 In this example we will use Azul implementation with Warp CRaC engine.
 Warp CRaC engine allows creating snapshots without elevated privileges.
 That not only simplifies the example, but it is very practical for K8s
@@ -117,8 +113,7 @@ curl -X GET http://localhost:8080/greet
 The application should respond with `{"message":"Hello World!"}`
 
 For more information about the Quickstart application and other
-endpoints it supports see the [Helidon SE Quickstart
-Guide](../../se/guides/quickstart.md).
+endpoints it supports see the [Helidon SE Quickstart Guide](../../se/guides/quickstart.md).
 
 # Creating snapshot
 

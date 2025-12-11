@@ -1,12 +1,10 @@
 # Overview
 
-The [OpenAPI
-specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
+The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 defines a standard way to express the interface exposed by a REST
 service.
 
-The [MicroProfile OpenAPI
-spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
+The [MicroProfile OpenAPI spec](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
 explains how MicroProfile embraces OpenAPI, adding annotations,
 configuration, and a service provider interface (SPI).
 
@@ -28,8 +26,7 @@ service.
 # Maven Coordinates
 
 To enable OpenAPI, add the following dependency to your project’s
-`pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+`pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -125,12 +122,6 @@ This type provides the following service implementations:
 
 <table>
 <caption>Optional configuration options</caption>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr>
 <th>key</th>
@@ -217,8 +208,7 @@ io.helidon.openapi.OpenApiFeature.WEIGHT.</p></td>
 
 # Examples
 
-Helidon SE provides a [complete OpenAPI
-example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/openapi)
+Helidon SE provides a [complete OpenAPI example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/openapi)
 based on the SE QuickStart sample app.
 
 ## Configure OpenAPI behavior

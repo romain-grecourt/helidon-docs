@@ -9,8 +9,7 @@ container is started lazily during test execution.
 # Maven Coordinates
 
 To enable Testing with TestNG, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -243,8 +242,7 @@ class MyTest {
 ### Configuration Ordering
 
 The ordering of the test configuration can be controlled using the
-mechanism defined by the [MicroProfile Config
-specification](https://download.eclipse.org/microprofile/microprofile-config-3.1/microprofile-config-spec-3.1.html#_configsource_ordering).
+mechanism defined by the [MicroProfile Config specification](https://download.eclipse.org/microprofile/microprofile-config-3.1/microprofile-config-spec-3.1.html#_configsource_ordering).
 
 Add a properties text block with ordinal:
 

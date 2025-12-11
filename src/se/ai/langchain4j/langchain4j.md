@@ -35,83 +35,48 @@ use of LangChain4j in Helidon applications.
 
 - **Declarative AI Services**
 
-  Supports [LangChain4j’s AI
-  Services](https://docs.langchain4j.dev/tutorials/ai-services/) within
+  Supports [LangChain4j’s AI Services](https://docs.langchain4j.dev/tutorials/ai-services/) within
   the declarative programming model, allowing for clean, easy-to-manage
   code structures.
 
 ## Supported LangChain4j Components
 
 - [**LangChain4j Core**](core.md)
-
   - [AI Services](#ai_services)
-
   - [`EmbeddingStoreContentRetriever`](core.md#_embeddingstorecontentretriever)
-
   - `MessageWindowChatMemory`
 
 - [**Open AI**](open-ai.md)
-
   - [`OpenAiChatModel`](open-ai.md#_openaichatmodel)
-
   - [`OpenAiStreamingChatModel`](open-ai.md#_openaistreamingchatmodel)
-
   - [`OpenAiEmbeddingModel`](open-ai.md#_openaiembeddingmodel)
-
   - [`OpenAiImageModel`](open-ai.md#_openaiimagemodel)
-
   - [`OpenAiLanguageModel`](open-ai.md#_openailanguagemodel)
-
   - [`OpenAiModerationModel`](open-ai.md#_openaimoderationmodel)
-
 - [**OCI GenAI**](oci-genai.md)
-
   - [`OciGenAiChatModel`](oci-genai.md#_ocigenaichatmodel)
-
   - [`OciGenAiStreamingChatModel`](oci-genai.md#_ocigenaistreamingchatmodel)
-
   - [`OciGenAiCohereChatModel`](oci-genai.md#_ocigenaicoherechatmodel)
-
   - [`OciGenAiCohereStreamingChatModel`](oci-genai.md#_ocigenaicoherestreamingchatmodel)
-
 - [**Ollama**](ollama.md)
-
   - [`OllamaChatModel`](ollama.md#_ollamachatmodel)
-
   - [`OllamaStreamingChatModel`](ollama.md#_ollamastreamingchatmodel)
-
   - [`OllamaEmbeddingModel`](ollama.md#_ollamaembeddingmodel)
-
   - [`OllamaLanguageModel`](ollama.md#_ollamalanguagemodel)
-
 - [**Cohere**](cohere.md)
-
   - [`CohereEmbeddingModel`](cohere.md#_cohereembeddingmodel)
-
   - [`CohereScoringModel`](cohere.md#_coherescoringmodel)
-
 - [**Oracle**](oracle.md)
-
   - [`OracleEmbeddingStore`](oracle.md#_oracleembeddingmodel)
-
 - [**Coherence**](coherence.md)
-
   - [`CoherenceEmbeddingStore`](coherence.md#_coherenceembeddingstore)
-
   - [`CoherenceChatMemoryStore`](coherence.md#_coherencechatmemorystorestore)
-
 - [**Jlama**](jlama.md)
-
   - [`JlamaChatModel`](jlama.md#_jlamachatmodel)
-
   - [`JlamaStreamingChatModel`](jlama.md#_jlamastreamingchatmodel)
-
   - [`JlamaEmbeddingModel`](jlama.md#_jlamaembeddingmodel)
-
   - [`JlamaLanguageModel`](jlama.md#_jlamalanguagemodel)
-
 - [**LangChain4j Model Provider Generator**](codegen-provider.md)
-
 > [!NOTE]
 > This integration does not limit the use of other LangChain4j
 > components in your application. The components listed above receive
@@ -123,8 +88,7 @@ We will extend the number of supported components in future releases.
 # Maven Coordinates
 
 To enable LangChain4j Integration, add the following dependency to your
-project’s `pom.xml` (see [Managing
-Dependencies](../../../about/managing-dependencies.md)).
+project’s `pom.xml` (see [Managing Dependencies](../../../about/managing-dependencies.md)).
 
 ```xml
 <dependency>
@@ -262,8 +226,7 @@ LangChain4j AI Services provide a declarative and type-safe way to
 define AI-powered functionality. It allows combining chat models,
 retrieval-augmented generation (RAG), chat memory, and other building
 blocks to create sophisticated AI-driven workflows. Read more about it
-in [LangChain4j
-documentation](https://docs.langchain4j.dev/tutorials/ai-services).
+in [LangChain4j documentation](https://docs.langchain4j.dev/tutorials/ai-services).
 
 Helidon’s LangChain4j integration introduces a declarative Helidon
 Inject-based approach for creating AI Services. It supports the
@@ -307,8 +270,7 @@ following components:
 ## Creating AI Service
 
 AI Service is defined by a Java interface. It’s a pure LangChain4j
-component. Refer to [LangChain4j
-documentation](https://docs.langchain4j.dev/tutorials/ai-services) to
+component. Refer to [LangChain4j documentation](https://docs.langchain4j.dev/tutorials/ai-services) to
 read more details about it.
 
 Helidon’s LangChain4j integration provides a specialized set of
@@ -408,8 +370,7 @@ public class OrderService {
 > CDI beans, you must annotate the CDI bean with the `@Ai.Tool`
 > qualifier.
 
-For more details, read the [LangChain4j Documentation on
-Tools](https://docs.langchain4j.dev/tutorials/tools#high-level-tool-api).
+For more details, read the [LangChain4j Documentation on Tools](https://docs.langchain4j.dev/tutorials/tools#high-level-tool-api).
 
 ## MCP Client
 
@@ -462,8 +423,7 @@ Optional configuration options
 
 While LangChain4j doesn’t provide Observability out-of-box, it provides
 for user to supplement it using `ChatModelListener`. For more details,
-read the [LangChain4j Documentation on
-Observability](https://docs.langchain4j.dev/tutorials/observability/).
+read the [LangChain4j Documentation on Observability](https://docs.langchain4j.dev/tutorials/observability/).
 
 Helidon provides `MetricsChatModelListener` which generates metrics that
 follow the [OpenTelemetry Semantic Conventions for GenAI Metrics
@@ -473,21 +433,13 @@ This is done out-of-box for Chat API calls.
 # Additional Information
 
 - [LangChain4j documentation](https://docs.langchain4j.dev/)
-
 - Components Reference
 
   - [Core LangChain4j Components](core.md)
-
   - [Open AI](open-ai.md)
-
   - [Ollama](ollama.md)
-
   - [Cohere](cohere.md)
-
   - [Oracle](oracle.md)
-
   - [Coherence](coherence.md)
-
   - [Jlama](jlama.md)
-
   - [Code generated Lc4j Provider](codegen-provider.md)

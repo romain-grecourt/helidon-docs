@@ -18,8 +18,7 @@ can be aware of updates to the underlying config sources by:
 ## Loading Time
 
 The config system records when it loads each configuration into memory.
-Your application can retrieve it by invoking the [timestamp
-method](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.html#timestamp--)
+Your application can retrieve it by invoking the [timestamp method](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.html#timestamp--)
 on any config node:
 
 ```java
@@ -68,8 +67,7 @@ detection for that source. This is called *polling* in the Helidon API
 but specific change detection algorithms might not use actual polling.
 You choose a specific
 [`PollingStrategy`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/spi/PollingStrategy.html)
-for each config source you want to monitor. See the section on [polling
-strategies](extensions.xml#Config-SPI-PollingStrategy) in the config
+for each config source you want to monitor. See the section on [polling strategies](extensions.md#pollingstrategy-spi) in the config
 extensions doc page for more information.
 
 The config system provides some built-in polling strategies, exposed as

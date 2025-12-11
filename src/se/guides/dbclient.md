@@ -114,7 +114,7 @@ that is easy to use and lightweight. If H2 is not installed on your
 machine, here are few steps to quickly download and set it up:
 
 1.  Download the latest H2 version from the official website:
-    <https://www.h2database.com/html/main.html>
+    https://www.h2database.com/html/main.html
 
     - Note: Windows operating system users can download the Windows
       Installer.
@@ -138,7 +138,7 @@ java -jar h2-{latest-version}.jar -webAllowOthers -tcpAllowOthers -web -tcp
 
 ## Connect to the Database
 
-Open the console at <http://127.0.0.1:8082> in your favorite browser. It
+Open the console at http://127.0.0.1:8082 in your favorite browser. It
 displays a login window. Select `Generic H2` from `Saved Settings`. The
 following settings should be set by default:
 
