@@ -87,15 +87,17 @@ In Helidon SE, REST and WebSocket classes need to be manually registered
 into the web server. This is accomplished via a `Routing` builder:
 
 ```java
-StaticContentService staticContent = StaticContentService.builder("/WEB")
-        .welcomeFileName("index.html")
-        .build();
-Queue<String> messageQueue = new ConcurrentLinkedQueue<>();
-server.routing(it -> it
-                .register("/web", staticContent)
-                .register("/rest", new MessageQueueService(messageQueue)))
-        .addRouting(WsRouting.builder()
-                            .endpoint("/websocket/board", new MessageBoardEndpoint(messageQueue)));
+void snippet() {
+    var staticContent = StaticContentService.builder("/WEB")
+            .welcomeFileName("index.html")
+            .build();
+    var messageQueue = new ConcurrentLinkedQueue<String>();
+    server.routing(it -> it
+                    .register("/web", staticContent)
+                    .register("/rest", new MessageQueueService(messageQueue)))
+            .addRouting(WsRouting.builder()
+                    .endpoint("/websocket/board", new MessageBoardEndpoint(messageQueue)));   
+}
 ```
 
 This code snippet registers `MessageBoardEndpoint` at `/websocket/board`

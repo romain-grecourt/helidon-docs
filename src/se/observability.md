@@ -166,7 +166,7 @@ the following endpoints:
 | `/health/started/{name}` | `HEAD` | Returns whether the service `name` is started without details |
 | `/health/check/{name}`   | `HEAD` | Returns all checks for service `name` without details         |
 
-For more information, please, check [Health](../se/health.md) documentation.
+For more information, please, check [Health](health.md) documentation.
 
 ### Information Observability
 
@@ -226,7 +226,7 @@ path:
 - `/observe/metrics/vendor`
 - `/observe/metrics/application`
 
-For more information see [Metrics](../se/metrics/metrics.md) documentation.
+For more information see [Metrics](metrics/metrics.md) documentation.
 
 # Configuration
 
@@ -361,5 +361,5 @@ developer).
 # Reference
 
 - [MicroProfile Metrics Specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.0.0/microprofile-metrics-spec-5.0.0.pdf)
-- [Metrics](../se/metrics/metrics.md) documentation.
-- [Health](../se/health.md) documentation.
+- [Metrics](metrics/metrics.md) documentation.
+- [Health](health.md) documentation.

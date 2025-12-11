@@ -491,35 +491,20 @@ millisecond.
 Supported types for calendar/time validations:
 
 - `java.util.Date`
-
 - `java.util.Calendar`
-
 - `java.time.Instant`
-
 - `java.time.LocalDate`
-
 - `java.time.LocalDateTime`
-
 - `java.time.LocalTime`
-
 - `java.time.MonthDay`
-
 - `java.time.OffsetDateTime`
-
 - `java.time.OffsetTime`
-
 - `java.time.Year`
-
 - `java.time.YearMonth`
-
 - `java.time.ZonedDateTime`
-
 - `java.time.chrono.HijrahDate`
-
 - `java.time.chrono.JapaneseDate`
-
 - `java.time.chrono.MinguoDate`
-
 - `java.time.chrono.ThaiBuddhistDate`
 
 ### Type Validation

@@ -149,5 +149,5 @@ update it and add the following dependency:
 
 # Conclusion
 
-Please proceed to [Helidon MP Introduction](../introduction.md) to find
+Please proceed to [Helidon MP Introduction](../README.md) to find
 more information and documentation about each module.

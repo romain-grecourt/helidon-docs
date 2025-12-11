@@ -12,7 +12,7 @@ Helidon MP applications.
 # Maven Coordinates
 
 To enable JWT Authentication, either add a dependency on the
-[helidon-microprofile bundle](../mp/introduction/microprofile.md)
+[helidon-microprofile bundle](introduction/microprofile.md)
 or add the following dependency to your project’s `pom.md` (see
 [Managing Dependencies](../about/managing-dependencies.md)).
 

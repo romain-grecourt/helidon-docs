@@ -51,7 +51,7 @@ register the `OpenApiFeature` service.
 # Usage
 
 Make sure your application incorporates Helidon OpenAPI support as
-described in detail in [the Helidon OpenAPI documentation](./openapi.md).
+described in detail in [the Helidon OpenAPI documentation](openapi.md).
 Helidon automatically prepares the OpenAPI UI with default settings if
 you also declare a dependency on the Helidon OpenAPI UI integration
 component as explained above. The [API](#api) section below illustrates
@@ -243,7 +243,7 @@ You can use configuration to affect the UI path in two ways:
 
 - Configure the OpenAPI endpoint path (the `/openapi` part).
 
-  Recall that you can [configure the Helidon OpenAPI component](./openapi.md#configuration)
+  Recall that you can [configure the Helidon OpenAPI component](openapi.md#configuration)
   to change where it serves the OpenAPI document.
 
   Configuring the OpenAPI web context:

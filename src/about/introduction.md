@@ -37,7 +37,7 @@ offering different developer experiences.
 | Microframework model with a very small footprint and limited functionality (~7 MB).                                                                                                                                                             | [MicroProfile](https://projects.eclipse.org/proposals/eclipse-microprofile) implementation; slightly larger footprint than SE (~13 MB).               |
 | Helidon SE is Helidon’s foundational set of APIs. As of Helidon 4, virtual threads have enabled these APIs to change from asynchronous to blocking. This results in much simpler code that is easier to write, maintain, debug and understand.. | Declarative style with dependency injection.                                                                                                          |
 | Transparent "no magic" development experience; pure java application development with no annotations and no dependency injections.                                                                                                              | Developer experience similar to that of Spring Boot, Jakarta EE and MicroProfile; layers on some Jakarta EE components (CDI, JAX-RS, JSON-P, JSON-B). |
-| Learn more about [Helidon SE](../se/introduction.md).                                                                                                                                                                                           | Learn more about [Helidon MP](../mp/introduction.md).                                                                                                 |
+| Learn more about [Helidon SE](../se/README.md).                                                                                                                                                                                           | Learn more about [Helidon MP](../mp/README.md).                                                                                                 |
 
 To help illustrate the differences, below are two samples implementing a
 simple RESTful service. One uses Helidon SE, the other Helidon MP.
@@ -137,5 +137,5 @@ To upgrade from Helidon 1.x to 2.x:
 Choose a Helidon flavor to explore and start using it. Check out the
 following:
 
-- [Helidon SE Documentation](../se/introduction.md)
-- [Helidon MP Documentation](../mp/introduction.md)
+- [Helidon SE Documentation](../se/README.md)
+- [Helidon MP Documentation](../mp/README.md)

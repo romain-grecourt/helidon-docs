@@ -365,7 +365,7 @@ There is a new testing framework for Helidon SE.
 </dependency>
 ```
 
-Find more information, see [Helidon SE testing](../introduction.md)
+Find more information, see [Helidon SE testing](../README.md)
 
 ### Observability
 
@@ -470,7 +470,7 @@ update it and add the following dependency:
 
 # Conclusion
 
-Please proceed to [Helidon SE Introduction](../introduction.md) to find
+Please proceed to [Helidon SE Introduction](../README.md) to find
 more information and documentation about each module.
 
 Also, the [Helidon examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/)

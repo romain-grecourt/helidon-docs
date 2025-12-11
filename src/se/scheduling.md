@@ -256,7 +256,7 @@ are available through CronInvocation provided as task parameter.
 
 # Configuration
 
-Scheduling is configurable with [Helidon Config](../se/config/introduction.md).
+Scheduling is configurable with [Helidon Config](config/introduction.md).
 
 Example of configuring:
 ```java

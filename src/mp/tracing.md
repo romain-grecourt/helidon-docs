@@ -2,7 +2,7 @@
 
 > [!WARNING]
 > This feature is marked as `@Deprecated` in Helidon. Please use the
-> [Telemetry](../mp/telemetry.md)
+> [Telemetry](telemetry.md)
 > feature instead. The OpenTracing Specification that MP OpenTracing is
 > based on is no longer maintained. The MP OpenTracing specification is
 > no longer required by MicroProfile. The specification is superseded by
@@ -21,7 +21,7 @@ integrated with WebServer and Security.
 
 To enable MicroProfile Tracing, either add a dependency on the
 [helidon-microprofile
-bundle](../mp/introduction/microprofile.md)
+bundle](introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../about/managing-dependencies.md)).
 

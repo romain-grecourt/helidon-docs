@@ -181,7 +181,7 @@ lets you change the greeting by sending a `PUT` request to the
 
 This example, based on the QuickStart greeting app, uses the low-level
 `CrossOriginConfig` API and the `CorsSupport` API to influence the
-[routing](../se/webserver/webserver.md#routing),
+[routing](webserver/webserver.md#routing),
 thereby determining how that resource is shared. (If desired, you can
 use [configuration](#configuration) instead of the low-level API.)
 
@@ -420,7 +420,7 @@ load balancers, between the origin of the request and your service.
 Well-behaved intermediate nodes preserve this important data in other
 headers, such as `Forwarded`. You can configure how the Helidon server
 handles these headers as described in the documentation for [requested
-URI discovery](./webserver/webserver.md#requested-uri-discovery).
+URI discovery](webserver/webserver.md#requested-uri-discovery).
 
 The CORS support in Helidon uses the requested URI feature to discover
 the correct information about each request, according to your
@@ -430,10 +430,10 @@ cross-origin accesses.
 ## Using CORS Support in Built-in Helidon Services
 
 Several built-in Helidon
-services, [health](../se/health.md),
-[metrics](../se/metrics/metrics.md),
+services, [health](health.md),
+[metrics](metrics/metrics.md),
 and
-[OpenAPI](../se/openapi/openapi.md)--have
+[OpenAPI](openapi/openapi.md)--have
 integrated CORS support. You can include these services in your
 application and control how those resources can be shared across
 origins.

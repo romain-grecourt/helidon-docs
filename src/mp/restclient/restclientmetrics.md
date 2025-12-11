@@ -14,7 +14,7 @@ For more information about support for REST clients in Helidon see [REST Client]
 
 To enable MicroProfile Rest Client Metrics, either add a dependency on
 the [helidon-microprofile
-bundle](../../mp/introduction/microprofile.md)
+bundle](../introduction/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../../about/managing-dependencies.md)).
 

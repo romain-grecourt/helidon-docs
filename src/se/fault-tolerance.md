@@ -280,7 +280,7 @@ The Helidon Fault Tolerance module has support for some basic metrics to
 monitor certain application conditions. Metrics are disabled by default,
 but can be enabled programmatically as described in [Enabling Metrics Programmatically](#enabling_metrics_programmatically), and by including
 an actual metrics implementation in your classpath. For more information
-about metrics implementations see [Helidon Metrics](../se/metrics/metrics.md).
+about metrics implementations see [Helidon Metrics](metrics/metrics.md).
 
 The following tables list all the metrics created by the Fault Tolerance
 module. Note that these metrics are generated per command instance, and

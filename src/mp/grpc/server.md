@@ -1,6 +1,6 @@
 # Overview
 
-The gRPC MicroProfile (MP) API is an extension to [Helidon MP](../../mp/introduction.md)
+The gRPC MicroProfile (MP) API is an extension to [Helidon MP](../README.md)
 that enables building gRPC services integrated with MicroProfile APIs.
 Using Helidon MP simplifies the process of developing gRPC services
 compared to traditional approaches. Services can be implemented as plain

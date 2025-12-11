@@ -10,7 +10,7 @@ There are two ways to use validation features in Helidon SE:
 2.  Invoke the constraint checks directly using `Validators` static
     methods
 
-The feature fit with our [Helidon Declarative](../se/injection/declarative.md#validation),
+The feature fit with our [Helidon Declarative](injection/declarative.md#validation),
 which is a preview feature.
 
 # Maven Coordinates
@@ -55,7 +55,7 @@ Such code can then be validated using a service `TypeValidation`:
 
 Example of validating a type:
 ```java
-void validate() {
+void snippet() {
     TypeValidation validator = Services.get(TypeValidation.class);
     var validationResponse = validator.validate(MyType.class, new MyType("valid", 43));
 }
@@ -65,7 +65,7 @@ Or using the check method(s) that throw a `ValidationException`:
 
 Example of validating a type that throws an exception:
 ```java
-void validate() {
+void snippet() {
     TypeValidation validator = Services.get(TypeValidation.class);
     // throws a ValidationException if the object is invalid
     validator.check(MyType.class, new MyType("valid", 43));
@@ -100,14 +100,18 @@ methods on
 - [`io.helidon.validation.Validators`](https://helidon.io/docs/v4/apidocs/io.helidon.validation/io/helidon/validation/Validators.html)
 Example of validating an object using a built-in constraint:
 ```java
-var validationResponse = Validators.validateNotNull(anInstance);
+void snippet() {
+    var validationResponse = Validators.validateNotNull(anInstance);
+}
 ```
 
 Example of validating an object using a built-in constraint that throws
 an exception:
 ```java
-// throws a ValidationException if the object is invalid
-Validators.checkNotNull(anInstance);
+void snippet() {
+    // throws a ValidationException if the object is invalid
+    Validators.checkNotNull(anInstance);
+}
 ```
 
 The low-level approach allows use of any constraint (including custom
@@ -120,47 +124,43 @@ The first approach gives as a validation response:
 Example of validating an object using any constraint:
 
 ```java
-void validate() {
+void snippet() {
+    // Get the constraint validation provider from the registry, named by the annotation it handles
     var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
+    
+    // Create a new validation context (can be used to validate multiple constraints)
     var context = ValidationContext.create(MyType.class);
+    
+    // Create a new validator for a specific type and annotation
     var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
+    
+    // Check the constraint using the validator and the provided instance
+    // (instance must match the type provided in previous step)
     context.check(validator, anInstance);
+    
+    // Get a validation response from the context
     var response = context.response();
 }
 ```
 
-- Get the constraint validation provider from the registry, named by the
-  annotation it handles
-
-- Create a new validation context (can be used to validate multiple
-  constraints)
-
-- Create a new validator for a specific type and annotation
-
-- Check the constraint using the validator and the provided instance
-  (instance must match the type provided in previous step)
-
-- Get a validation response from the context
-
-And the second throws an exception if validation failed:
-
-Example of validating an object using any constraint that throws an
-exception:
+Example of validating an object using any constraint that throws an exception:
 ```java
-void validate() {
+void snippet() {
+    // Get the constraint validation provider from the registry
+    // named by the annotation it handles
     var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
+    
+    // Create a new validation context (can be used to validate multiple constraints)
     var context = ValidationContext.create(MyType.class);
+    
+    // Create a new validator for a specific type and annotation
     var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
+    
+    // Check the constraint using the validator and the provided instance
+    // (instance must match the type provided in previous step)
     context.check(validator, anInstance);
+    
+    // Throw and exception in case any of the checks failed
     context.throwOnFailure();
 }
 ```
-
-- Get the constraint validation provider from the registry, named by the
-  annotation it handles
-- Create a new validation context (can be used to validate multiple
-  constraints)
-- Create a new validator for a specific type and annotation
-- Check the constraint using the validator and the provided instance
-  (instance must match the type provided in previous step)
-- Throw and exception in case any of the checks failed

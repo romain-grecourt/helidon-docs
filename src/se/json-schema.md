@@ -46,10 +46,12 @@ constraints directly in code. This is useful when schemas need to be
 generated dynamically or when fine-grained customization is required.
 
 ```java
-Schema.builder()
-        .rootObject(builder -> builder.description("Example JSON Schema")
-                .addIntegerProperty("exampleProperty", intBuilder -> intBuilder.minimum(0)))
-        .build();
+void snippet() {
+    Schema.builder()
+            .rootObject(builder -> builder.description("Example JSON Schema")
+                    .addIntegerProperty("exampleProperty", intBuilder -> intBuilder.minimum(0)))
+            .build();
+}
 ```
 
 Once the
@@ -131,9 +133,11 @@ public void myMethod(@Service.Named(ExampleSchema.class) Schema schema) {
 
 Or obtain it over the static `find` method on the
 [`Schema`](https://helidon.io/docs/v4/apidocs/io.helidon.json.schema/io/helidon/json/schema/Schema.html)
-class. This methods searches the ServiceRegistry for a Schema bound to
+class. This method searches the ServiceRegistry for a Schema bound to
 the provided class over the parameter.
 
 ```java
-Schema.find(MyClass.class);
+void snippet() {
+    Schema mySchema = Schema.find(MyClass.class);
+}
 ```

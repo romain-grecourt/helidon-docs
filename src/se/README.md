@@ -51,7 +51,7 @@ In case you need to upgrade the version of Helidon, follow the upgrade guides:
 [gRPC]: ./grpc/server.md
 [Health Checks]: ./health.md
 [Injection]: ./injection/injection.md
-[JSON Schema]: ./json/schema.md
+[JSON Schema]: ./json-schema.md
 [Metrics]: ./metrics/metrics.md
 [OpenAPI]: ./openapi/openapi.md
 [Reactive Messaging]: ./reactive-messaging.md

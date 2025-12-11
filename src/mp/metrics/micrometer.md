@@ -3,7 +3,7 @@
 > [!NOTE]
 > Micrometer integration is deprecated beginning in Helidon 4.1 and is
 > planned for removal in a future major release. Please use the [Helidon
-> MicroProfile Metrics API implementation and> annotations](./metrics.md).
+> MicroProfile Metrics API implementation and> annotations](metrics.md).
 
 Helidon MP simplifies how you can use Micrometer for
 application-specific metrics:

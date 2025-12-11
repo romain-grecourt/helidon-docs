@@ -7,9 +7,9 @@ to Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE).
 |                                                                                                                                 |
 |---------------------------------------------------------------------------------------------------------------------------------|
 | About 10 minutes                                                                                                                |
-| [Helidon prerequisites](../../about/prerequisites.md)                                                                           |
+| [Helidon prerequisites](../about/prerequisites.md)                                                                              |
 | An OKE cluster. See the [OKE documentation](http://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/oke-full/index.html). |
-| A Helidon project created from the quickstart Maven archetype. See [quickstart Maven archetype](./quickstart.md).               |
+| A Helidon project. See [archetypes](../about/archetype.md).                                                                     |
 
 # Push Your Image to OCIR
 

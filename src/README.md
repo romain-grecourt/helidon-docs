@@ -3,10 +3,10 @@
 Start here to learn how Helidon’s open-source set of Java libraries can
 help you write cloud-native Java microservices.
 
-- [What is Helidon?](./about/introduction.md)
-- [What’s New in Helidon 4](./about/intro.md)
-- [Helidon Archetypes](./about/archetype.md)
-- [Helidon Community and Support](./about/additional_info.md)
+- [What is Helidon?](about/introduction.md)
+- [What’s New in Helidon 4](about/intro.md)
+- [Helidon Archetypes](about/archetype.md)
+- [Helidon Community and Support](about/additional_info.md)
 
 ## Getting Started
 
@@ -14,18 +14,18 @@ There are several ways to generate your first Helidon project. In a
 hurry? Try the Helidon CLI or Project Starter which provide a set of
 predefined archetypes to choose from.
 
-- [Prerequisites and System Requirements](./about/prerequisites.md)
-- [Using the Helidon  CLI](./about/cli.md)
-- [Using the MP Quickstart Guide](./mp/guides/quickstart.md)
-- [Using the SE Quick Start Guide](./se/guides/quickstart.md)
+- [Prerequisites and System Requirements](about/prerequisites.md)
+- [Using the Helidon  CLI](about/cli.md)
+- [Using the MP Quickstart Guide](mp/guides/quickstart.md)
+- [Using the SE Quick Start Guide](se/guides/quickstart.md)
 
 ## Upgrading Helidon
 
 Use the upgrade guides to help you upgrade your existing Helidon
 applications to the latest version of Helidon.
 
-- [Upgrade From Helidon MP 3.x](./mp/guides/upgrade_4x.md)
-- [Upgrade From Helidon SE 3.x](./se/guides/upgrade_4x.md)
+- [Upgrade From Helidon MP 3.x](mp/guides/upgrade_4x.md)
+- [Upgrade From Helidon SE 3.x](se/guides/upgrade_4x.md)
 
 ## Developing Your First Application From Scratch
 
@@ -33,22 +33,22 @@ Use these hands-on development tutorials to learn how to generate a
 small "Hello World!" greeting service that demonstrates some of
 Helidon’s core features.
 
-- [Helidon MP Tutorial](./mp/guides/mp-tutorial.md)
-- [Helidon SE Quickstart](./se/guides/quickstart.md)
+- [Helidon MP Tutorial](mp/guides/mp-tutorial.md)
+- [Helidon SE Quickstart](se/guides/quickstart.md)
 
 ## How-To Guides
 
 Ready for more hands-on learning? Explore the features of Helidon with
 these quick step-by-step guides.
 
-- [SE Guides](./se/guides/README.md)
-- [MP Guides](./mp/guides/README.md)
+- [SE Guides](se/guides/README.md)
+- [MP Guides](mp/guides/README.md)
 
 ## Advanced SE Features
 
-- [Helidon WebServer](./se/webserver/webserver.md)
-- [Helidon Metrics](./se/metrics/metrics.md)
-- [Helidon Config](./se/config/introduction.md)
+- [Helidon WebServer](se/webserver/webserver.md)
+- [Helidon Metrics](se/metrics/metrics.md)
+- [Helidon Config](se/config/introduction.md)
 
 ## Training and Certification
 
