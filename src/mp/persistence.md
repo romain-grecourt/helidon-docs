@@ -640,6 +640,7 @@ need to understand:
 
 - [Helidon MP’s named data source integration](#named-data-source-integration)
 - [Helidon MP’s Jakarta Transactions integration](#jakarta-transactions-jta-integration)
+
 ## Project Setup
 
 ### Setting Up a JPA Provider

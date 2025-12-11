@@ -7,6 +7,7 @@ help you write cloud-native Java microservices.
 - [What’s New in Helidon 4](./about/intro.md)
 - [Helidon Archetypes](./about/archetype.md)
 - [Helidon Community and Support](./about/additional_info.md)
+
 ## Getting Started
 
 There are several ways to generate your first Helidon project. In a
@@ -17,6 +18,7 @@ predefined archetypes to choose from.
 - [Using the Helidon  CLI](./about/cli.md)
 - [Using the MP Quickstart Guide](./mp/guides/quickstart.md)
 - [Using the SE Quick Start Guide](./se/guides/quickstart.md)
+
 ## Upgrading Helidon
 
 Use the upgrade guides to help you upgrade your existing Helidon
@@ -24,6 +26,7 @@ applications to the latest version of Helidon.
 
 - [Upgrade From Helidon MP 3.x](./mp/guides/upgrade_4x.md)
 - [Upgrade From Helidon SE 3.x](./se/guides/upgrade_4x.md)
+
 ## Developing Your First Application From Scratch
 
 Use these hands-on development tutorials to learn how to generate a
@@ -32,6 +35,7 @@ Helidon’s core features.
 
 - [Helidon MP Tutorial](./mp/guides/mp-tutorial.md)
 - [Helidon SE Quickstart](./se/guides/quickstart.md)
+
 ## How-To Guides
 
 Ready for more hands-on learning? Explore the features of Helidon with
@@ -39,11 +43,13 @@ these quick step-by-step guides.
 
 - [SE Guides](./se/guides/README.md)
 - [MP Guides](./mp/guides/README.md)
+
 ## Advanced SE Features
 
 - [Helidon WebServer](./se/webserver/webserver.md)
 - [Helidon Metrics](./se/metrics/metrics.md)
 - [Helidon Config](./se/config/introduction.md)
+
 ## Training and Certification
 
 - Training: [Become a Helidon Microservices Developer Professional]
@@ -58,7 +64,7 @@ and to follow the evolution of Helidon.
 
 - Project website: https://helidon.io
 - Medium publication: https://medium.com/helidon
-- GitHub repository: https://github.com/helidon-io/helidon>
+- GitHub repository: https://github.com/helidon-io/helidon
 - Public Slack workspace: https://slack.helidon.io/
 - Twitter account: https://twitter.com/helidon_project
 - YouTube channel: https://youtube.helidon.io

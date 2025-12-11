@@ -788,6 +788,7 @@ metrics:
 
 - [Example Application Code](#example-application-code)
 - [Example Configuration](#example-configuration)
+
 ## Example Application Code
 
 ### Adding Method-level Annotations

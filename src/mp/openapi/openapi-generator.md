@@ -409,6 +409,7 @@ This section covers two major topics:
 
 - [Planning your use of the OpenAPI generators](#planning-your-use-of-the-openapi-generators)
 - [Running the generators](#running-the-openapi-generators)
+
 ## Planning Your Use of the OpenAPI Generators
 
 Beyond the settings listed above, there are several important choices

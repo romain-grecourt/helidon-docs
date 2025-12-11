@@ -115,6 +115,7 @@ Examples of versatile connectors in Helidon include the following:
 - [Kafka connector](#kafka_connector)
 - [JMS connector](#jms_connector)
 - [AQ Connector](#aq_connector)
+
 ### Messaging Connector
 
 A connector for Reactive Messaging is a factory that produces Publishers
@@ -593,6 +594,7 @@ Don’t forget to check out the examples with pre-configured ActiveMQ
 docker image, for easy testing:
 
 - [Helidon Messaging Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/messaging)
+
 ### AQ Connector
 
 Maven dependency:

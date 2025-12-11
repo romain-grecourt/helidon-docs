@@ -45,6 +45,7 @@ To include health checks for Messaging add the following dependency:
 - [Message](#message)
 - [Acknowledgement](#acknowledgement)
 - [Health Check](#health-check)
+
 ## Channels
 
 Reactive messaging uses named channels to connect one source (upstream)

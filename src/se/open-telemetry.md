@@ -397,6 +397,7 @@ Sections below describe how to set up the tracing signal configuration:
 - [Configuring Span Processors](#span-processors-config)
 - [Configuring the Span Sampler](#span-sampler-config)
 - [Configuring the Span Limits](#span-limits-config)
+
 ### Assigning Attributes
 
 Configured attributes are key/value pairs that OpenTelemetry attaches to
@@ -955,6 +956,7 @@ OpenTelemetry defaults for span limits
 ## Helidon Documentation
 
 - [Helidon Tracing](tracing.md)
+
 ## OpenTelemetry Documentation
 
 - [Settings and defaults](https://opentelemetry.io/docs/languages/java/configuration/#properties-exporters)
