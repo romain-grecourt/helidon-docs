@@ -5,9 +5,7 @@ Web browsers) using standard HTTP or HTTPS through a unidirectional
 server-to-client connection. In the server-sent events communication
 model, the client establishes the initial connection, and the server
 provides the data in the form of *event streams*. For more information
-about server-sent events, see the
-[`Server-sent events`](https://html.spec.whatwg.org/multipage/server-sent-events.html)
-specification.
+about server-sent events, see the [`Server-sent events`][sse-spec] specification.
 
 SSE is an alternative technology to WebSockets when only
 server-to-client messaging is required and can be accomplished without
@@ -45,9 +43,11 @@ example converts the response into an `SseSink`, emits two string
 messages and then closes the connection.
 
 ```java
-try (SseSink sseSink = res.sink(SseSink.TYPE)) {
-    sseSink.emit(SseEvent.create("hello"))
-            .emit(SseEvent.create("world"));
+void handle(ServerRequest req, ServerResponse res) {
+    try (SseSink sseSink = res.sink(SseSink.TYPE)) {
+        sseSink.emit(SseEvent.create("hello"))
+                .emit(SseEvent.create("world"));
+    }
 }
 ```
 
@@ -73,11 +73,13 @@ SSE event from a `JsonObject` and Helidon will find the appropriate
 media converter and serialize the event data on your behalf.
 
 ```java
-JsonObject json = Json.createObjectBuilder()
-        .add("hello", "world")
-        .build();
-try (SseSink sseSink = res.sink(SseSink.TYPE)) {
-    sseSink.emit(SseEvent.create(json));
+void handle(ServerRequest req, ServerResponse res) {
+    JsonObject json = Json.createObjectBuilder()
+            .add("message", "Hello World")
+            .build();
+    try (SseSink sseSink = res.sink(SseSink.TYPE)) {
+        sseSink.emit(SseEvent.create(json));
+    }
 }
 ```
 
@@ -86,24 +88,13 @@ can be created from an arbitrary Java class and serialized as shown
 next:
 
 ```java
-class HelloWorld {
-
-    private String hello;
-
-    public String getHello() {
-        return hello;
-    }
-
-    public void setHello(String hello) {
-        this.hello = hello;
-    }
+record Greeting(String message) {
 }
 
 void handle(ServerRequest req, ServerResponse res) {
-    HelloWorld json = new HelloWorld();
-    json.setHello("world");
+    Greeting greeting = new Greeting("Hello World");
     try (SseSink sseSink = res.sink(SseSink.TYPE)) {
-        sseSink.emit(SseEvent.create(json));
+        sseSink.emit(SseEvent.create(greeting));
     }
 }
 ```
@@ -138,39 +129,46 @@ example, obtains an `Http1ClientResponse` from a request and registers
 an `SseSource` to process a single event.
 
 ```java
-try (Http1ClientResponse r = client.get("/sseJson")
-        .header(ACCEPT_EVENT_STREAM)
-        .request()) {
-    CountDownLatch latch = new CountDownLatch(1);
-    r.source(SseSource.TYPE, event -> {
-        // ...
-        latch.countDown();
-    });
+@Test
+void test(Http1Client client) {
+    try (var clientRes = client.get("/sseJson")
+            .header(HeaderValues.ACCEPT_EVENT_STREAM)
+            .request()) {
+        var latch = new CountDownLatch(1);
+        clientRes.source(SseSource.TYPE, event -> latch.countDown());
+        assertThat(latch.await(1, TimeUnit.SECONDS), is(true));
+    }
 }
 ```
 
 The `SseSource` type defines other methods such as `onOpen`, `onClose`
-and `onError`. The following example waits for zero or more string
+and `onError`.
+
+The following example waits for zero or more string
 events until the connection is closed. A `CountDownLatch` is a
 convenient way to asynchronously wait until all the events are received.
 
 ```java
-try (Http1ClientResponse r = client.get("/sseString")
-        .header(ACCEPT_EVENT_STREAM)
-        .request()) {
-    CountDownLatch latch = new CountDownLatch(1);
-    r.source(SseSource.TYPE, new SseSource() {
-        @Override
-        public void onEvent(SseEvent event) {
-            // ...
-        }
+@Test
+void test(Http1Client client) {
+    try (var clientRes = client.get("/sseString")
+            .header(HeaderValues.ACCEPT_EVENT_STREAM)
+            .request()) {
+        var latch = new CountDownLatch(1);
+        clientRes.source(SseSource.TYPE, new SseSource() {
+            @Override
+            public void onEvent(SseEvent event) {
+                latch.countDown();
+            }
 
-        @Override
-        public void onClose() {
-            latch.countDown();
-        }
-    });
-    assertThat(latch.await(5, TimeUnit.SECONDS), is(true));
+            @Override
+            public void onClose() {
+                latch.countDown();
+            }
+        });
+        assertThat(latch.await(5, TimeUnit.SECONDS), is(true));
+    }
+}
 ```
 
 ## Integration with Media Types
@@ -187,25 +185,27 @@ single `text/event-stream` content type for the whole response.
 
 For example, to convert an event into a Java instance using JSON-B, the
 `application/json` media type is required as a second parameter --the
-first parameter `HelloWorld.class` simply does not convey sufficient
+first parameter `Greeting.class` simply does not convey sufficient
 information to select the appropriate converter for the event’s data in
 this case.
 
 ```java
-try (Http1ClientResponse r = client.get("/sseJson")
-        .header(ACCEPT_EVENT_STREAM)
-        .request()) {
-    CountDownLatch latch = new CountDownLatch(1);
-    r.source(SseSource.TYPE, event -> {
-        HelloWorld json = event.data(HelloWorld.class, MediaTypes.APPLICATION_JSON);
-        // ...
-        latch.countDown();
-    });
+@Test
+void test(Http1Client client) {
+    try (Http1ClientResponse r = client.get("/sseJson")
+            .header(HeaderValues.ACCEPT_EVENT_STREAM)
+            .request()) {
+        CountDownLatch latch = new CountDownLatch(1);
+        r.source(SseSource.TYPE, event -> {
+            Greeting greeting = event.data(Greeting.class, MediaTypes.APPLICATION_JSON);
+            latch.countDown();
+        });
+    }
 }
 ```
 
-# Additional Information
+# Reference
 
-The
-[`Server-sent events`](https://html.spec.whatwg.org/multipage/server-sent-events.html)
-specification.
+- [`SSE` specification][sse-spec]
+
+[sse-spec]: https://html.spec.whatwg.org/multipage/server-sent-events.html

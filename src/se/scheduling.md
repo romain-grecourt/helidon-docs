@@ -25,23 +25,27 @@ a Cron expression.
 
 Scheduling with fixed rate using `Scheduling.fixedRate()` builder:
 ```java
-FixedRate.builder()
-        .delay(10)
-        .initialDelay(5)
-        .timeUnit(TimeUnit.MINUTES)
-        .task(inv -> System.out.println("Every 10 minutes, first invocation 5 minutes after start"))
-        .build();
+void snippet() {
+    FixedRate.builder()
+            .delay(10)
+            .initialDelay(5)
+            .timeUnit(TimeUnit.MINUTES)
+            .task(inv -> System.out.println("Every 10 minutes, first invocation 5 minutes after start"))
+            .build();
+}
 ```
 
 Metadata like human-readable interval description or configured values
-are available through FixedRateInvocation provided as task parameter.
+are available through `FixedRateInvocation` provided as task parameter.
 
 Invocation metadata:
 ```java
-FixedRate.builder()
-        .delay(10)
-        .task(inv -> System.out.println("Method invoked " + inv.description()))
-        .build();
+void snippet() {
+    FixedRate.builder()
+            .delay(10)
+            .task(inv -> System.out.println("Method invoked " + inv.description()))
+            .build();
+}
 ```
 
 Type:
@@ -160,10 +164,12 @@ leveraged with `Scheduling.cron()` builder.
 Scheduling with Cron expression:
 
 ```java
-Cron.builder()
-        .expression("0 15 8 ? * *")
-        .task(inv -> System.out.println("Executer every day at 8:15"))
-        .build();
+void snippet() {
+    Cron.builder()
+            .expression("0 15 8 ? * *")
+            .task(inv -> System.out.println("Executed every day at 8:15"))
+            .build();
+}
 ```
 
 Type:
@@ -171,106 +177,83 @@ Type:
 
 ### Configuration options
 
-<table>
-<caption>Required configuration options</caption>
-<thead>
-<tr>
-<th>key</th>
-<th>type</th>
-<th>default value</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><code>expression</code></p></td>
-<td><p>string</p></td>
-<td></td>
-<td><p>Cron expression for specifying period
-of execution.</p>
-<p><strong>Examples:</strong></p>
-<ul>
-<li><p><code>0/2 * * * * ? *</code> - Every 2 seconds</p></li>
-<li><p><code>0 45 9 ? * *</code> - Every day at 9:45</p></li>
-<li><p><code>0 15 8 ? * MON-FRI</code> - Every workday at 8:15</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Required configuration options:
 
-| key          | type    | default value | description                                                                                                   |
+| Key          | Type    | Default value | Description                                                                                                   |
+|--------------|---------|---------------|---------------------------------------------------------------------------------------------------------------|
+| `expression` | string  |               | Cron expression for specifying period of execution                                                            |
+
+Optional configuration options:
+
+| Key          | Type    | Default value | Description                                                                                                   |
 |--------------|---------|---------------|---------------------------------------------------------------------------------------------------------------|
 | `concurrent` | boolean | `true`        | Allow concurrent execution if previous task didn’t finish before next execution. Default value is `true`.     |
 | `id`         | string  |               | Identification of the started task. This can be used to later look up the instance, for example to cancel it. |
 
-Optional configuration options
-
 ## Cron expression syntax
-
-Cron expressions should be configured as follows.
-
-## Cron expression
 
 Cron expression format:
 ```text
-<seconds> <minutes> <hours> <day-of-month> <month> <day-of-week> <year>
+<seconds> <minutes> <hours> <day-of-month> <month> <day-of-week> (<year>)
 ```
 
-| Order | Name         | Supported values | Supported field format                                      | Optional |
-|-------|--------------|------------------|-------------------------------------------------------------|----------|
-| 1     | seconds      | 0-59             | CONST, LIST, RANGE, WILDCARD, INCREMENT                     | false    |
-| 2     | minutes      | 0-59             | CONST, LIST, RANGE, WILDCARD, INCREMENT                     | false    |
-| 3     | hours        | 0-23             | CONST, LIST, RANGE, WILDCARD, INCREMENT                     | false    |
-| 4     | day-of-month | 1-31             | CONST, LIST, RANGE, WILDCARD, INCREMENT, ANY, LAST, WEEKDAY | false    |
-| 5     | month        | 1-12 or JAN-DEC  | CONST, LIST, RANGE, WILDCARD, INCREMENT                     | false    |
-| 6     | day-of-week  | 1-7 or SUN-SAT   | CONST, LIST, RANGE, WILDCARD, INCREMENT, ANY, NTH, LAST     | false    |
-| 7     | year         | 1970-2099        | CONST, LIST, RANGE, WILDCARD, INCREMENT                     | true     |
+Cron expression fields:
 
-Cron expression fields
+| Order | Name           | Supported values    | Supported field format                                                      |
+|-------|----------------|---------------------|-----------------------------------------------------------------------------|
+| 1     | `seconds`      | `0-59`              | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`                           |
+| 2     | `minutes`      | `0-59`              | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`                           |
+| 3     | `hours`        | `0-23`              | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`                           |
+| 4     | `day-of-month` | `1-31`              | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`, `ANY`, `LAST`, `WEEKDAY` |
+| 5     | `month`        | `1-12` or `JAN-DEC` | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`                           |
+| 6     | `day-of-week`  | `1-7` or `SUN-SAT`  | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`, `ANY`, `NTH`, `LAST`     |
+| 7     | `year`         | `1970-2099`         | `CONST`, `LIST`, `RANGE`, `WILDCARD`, `INCREMENT`                           |
 
-| Name      | Regex format        | Example | Description                                                                 |
-|-----------|---------------------|---------|-----------------------------------------------------------------------------|
-| CONST     | \d+                 | 12      | exact value                                                                 |
-| LIST      | \d+,\d+(,\d+)\*     | 1,2,3,4 | list of constants                                                           |
-| RANGE     | \d+-\d+             | 15-30   | range of values from-to                                                     |
-| WILDCARD  | \\                  | \*      | all values withing the field                                                |
-| INCREMENT | \d+\\\d+            | 0/5     | initial number / increments, 2/5 means 2,7,9,11,16, etc.                    |
-| ANY       | \\                  | ?       | any day(apply only to day-of-week and day-of-month)                         |
-| NTH       | \\                  | 1#3     | nth day of the month, 2#3 means third monday of the month                   |
-| LAST      | \d\*L(+\d+\|\\\d+)? | 3L-3    | last day of the month in day-of-month or last nth day in the day-of-week    |
-| WEEKDAY   | \\                  | 1#3     | nearest weekday of the nth day of month, 1W is the first monday of the week |
+Field formats:
 
-Field formats
+| Name      | Regex format         | Example   | Description                                                                  |
+|-----------|----------------------|-----------|------------------------------------------------------------------------------|
+| CONST     | `\d+`                | `12`      | Exact value                                                                  |
+| LIST      | `\d+,\d+(,\d+)\*`    | `1,2,3,4` | List of constants                                                            |
+| RANGE     | `\d+-\d+`            | `15-30`   | Range of values `from-to`                                                    |
+| WILDCARD  | `\*`                 | `\*`      | All values within the field                                                  |
+| INCREMENT | `\d+\/\d+`           | `0/5`     | Initial number / increments, `2/5` means `2,7,9,11,16`                       |
+| ANY       | `\?`                 | `?`       | Any day(apply only to `day-of-week` and `day-of-month`)                      |
+| NTH       | `\#`                 | `1#3`     | Nth day of the month, `2#3` means 3rd monday of the month                    |
+| LAST      | `\d*L(+\d+\|\-\d+)?` | `3L-3`    | Last day of the month in `day-of-month` or last nth day in the `day-of-week` |
+| WEEKDAY   | `\#`                 | `1#3`     | Nearest weekday of the nth day of month, `1W` is the 1st monday of the week  |
 
-| Cron expression      | Description           |
-|----------------------|-----------------------|
-| \* \* \* \* \* ?     | Every second          |
-| 0/2 \* \* \* \* ? \* | Every 2 seconds       |
-| 0 45 9 ? \* \*       | Every day at 9:45     |
-| 0 15 8 ? \* MON-FRI  | Every workday at 8:15 |
+Examples:
 
-Examples
+| Cron expression      | Description             |
+|----------------------|-------------------------|
+| `* * * * * ?`        | Every second            |
+| `0/2 * * * * ? *`    | Every 2 seconds         |
+| `0 45 9 ? * *`       | Every day at `9:45`     |
+| `0 15 8 ? * MON-FRI` | Every workday at `8:15` |
 
 Metadata like human-readable interval description or configured values
 are available through CronInvocation provided as task parameter.
 
-# Configuration
+## Configuration
 
 Scheduling is configurable with [Helidon Config](config/introduction.md).
 
 Example of configuring:
 ```java
-FixedRate.builder()
-        .config(Config.create(() -> ConfigSources.create(
-                """
-                        delay: 4
-                        delay-type: SINCE_PREVIOUS_END
-                        initial-delay: 1
-                        time-unit: SECONDS
-                        """,
-                MediaTypes.APPLICATION_X_YAML)))
-        .task(inv -> System.out.println("Every 4 minutes, first invocation 1 minutes after start"))
-        .build();
+void snippet() {
+    FixedRate.builder()
+            .config(Config.create(() -> ConfigSources.create(
+                    """
+                            delay: 4
+                            delay-type: SINCE_PREVIOUS_END
+                            initial-delay: 1
+                            time-unit: SECONDS
+                            """,
+                    MediaTypes.APPLICATION_X_YAML)))
+            .task(inv -> System.out.println("Every 4 minutes, first invocation 1 minutes after start"))
+            .build();
+}
 ```
 
 # Task Management
@@ -297,12 +280,14 @@ For simple fixed rate invocation use .
 
 Example of scheduling with fixed rate using `FixedRate.builder()` builder:
 ```java
-FixedRate.builder()
-        .delay(10)
-        .initialDelay(5)
-        .timeUnit(TimeUnit.MINUTES)
-        .task(inv -> System.out.println("Every 10 minutes, first invocation 5 minutes after start"))
-        .build();
+void snippet() {
+    FixedRate.builder()
+            .delay(10)
+            .initialDelay(5)
+            .timeUnit(TimeUnit.MINUTES)
+            .task(inv -> System.out.println("Every 10 minutes, first invocation 5 minutes after start"))
+            .build();
+}
 ```
 
 Metadata like human-readable interval description or configured values
@@ -310,10 +295,12 @@ are available through `FixedRateInvocation` provided as task parameter.
 
 Example with invocation metadata:
 ```java
-FixedRate.builder()
-        .delay(10)
-        .task(inv -> System.out.println("Method invoked " + inv.description()))
-        .build();
+void snippet() {
+    FixedRate.builder()
+            .delay(10)
+            .task(inv -> System.out.println("Method invoked " + inv.description()))
+            .build();
+}
 ```
 
 # Reference
