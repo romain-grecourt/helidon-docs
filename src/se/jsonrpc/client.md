@@ -22,45 +22,35 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 
 ## Simple Requests
 
-An instance of `JsonRpcClient` can be obtained from a configured
-`WebClient` instance as shown next:
-
 ```java
-WebClient webClient = WebClient.builder()
-        .baseUri("http://localhost:8080/rpc")
-        .build();
+void sample() {
+    var webClient = WebClient.builder()
+            .baseUri("http://localhost:8080/rpc")
+            .build();
 
-JsonRpcClient client = webClient.client(JsonRpcClient.PROTOCOL);
-```
+    // Obtain the JsonRpcClient instance from a WebClient instance
+    var rpcClient = webClient.client(JsonRpcClient.PROTOCOL);
 
-The `WebClient` instance is configured with a base URI and the
-`JsonRpcClient` instance is created from it passing the
-`JsonRpcClient.PROTOCOL` selector.
+    // Create the JSON-RPC request
+     rpcReq = client.rpcMethod("start")
+            .rpcId(1)
 
-To create a request, simply pass the method name, the ID and some
-parameters using the fluent API provided. Parameters must be JSON
-values, but simple Java types such as `String` and `int` are supported
-and mapped to the corresponding JSON types automatically.
+             // Parameters must be JSON values
+             // simple Java types such as `String` and `int` are supported
+            .param("when", "NOW")
+            .param("duration", "PT0S")
+            .path("/machine");
 
-```java
-JsonRpcClientResponse res = client.rpcMethod("start")
-        .rpcId(1)
-        .param("when", "NOW")
-        .param("duration", "PT0S")
-        .path("/machine")
-        .submit();
-```
+    // Get the JSON-RPC response
+    try (var rpcRes = rpcReq.submit()) {
+        if (rpcRes.status() == Status.OK_200 && rpcRes.result().isPresent()) {
 
-A `JsonRpcClientResponse` is a subtype of `HttpClientResponse`, so any
-methods available in the latter apply to the former. Thus, we can easily
-verify the HTTP status and then inspect if any JSON-RPC result has been
-returned as follows:
-
-```java
-if (res.status() == Status.OK_200 && res.result().isPresent()) {
-    StartStopResult result = res.result().get().as(StartStopResult.class);
-    if (result.status().equals("RUNNING")) {
-        // success start!
+            // convert the response entity to a POJO using JSON-B
+            var result = rpcRes.result().get().as(StartStopResult.class);
+            if (result.status().equals("RUNNING")) {
+                System.out.println("SUCCESS");
+            }
+        }
     }
 }
 ```
@@ -70,11 +60,9 @@ if (res.status() == Status.OK_200 && res.result().isPresent()) {
 > JSON-RPC error response.
 
 Every JSON-RPC response contains either a result or an error, and that
-is the reason why `res.result()` returns an optional value. The last
-step shows how the result is mapped to a `StartStopResult` instance
-using JSON-B. See [JSON-RPC
-Server](../../se/jsonrpc/server.md)
-for more information on these types.
+is the reason why `res.result()` returns an optional value.
+
+See [JSON-RPC Server](../../se/jsonrpc/server.md) for more information on these types.
 
 ## Batch Requests
 
@@ -88,43 +76,39 @@ Here is an example that constructs a batch request to start and then
 stop a machine:
 
 ```java
-JsonRpcClientBatchRequest batch = client.batch("/machine");
+void sample() {
+    var webClient = WebClient.builder()
+            .baseUri("http://localhost:8080/rpc")
+            .build();
 
-batch.rpcMethod("start")
-        .rpcId(1)
-        .param("when", "NOW")
-        .param("duration", "PT0S")
-        .addToBatch()
-        .rpcMethod("stop")
-        .rpcId(2)
-        .param("when", "NOW")
-        .addToBatch();
+    // Obtain the JsonRpcClient instance from a WebClient instance
+    var rpcClient = webClient.client(JsonRpcClient.PROTOCOL);
 
-JsonRpcClientBatchResponse batchRes = batch.submit();
-```
+    // Make 2 batch requests
+    var rpcReq = rpcClient.batch("/machine")
+            .rpcMethod("start")
+            .rpcId(1)
+            .param("when", "NOW")
+            .param("duration", "PT0S")
+            .addToBatch()
+            .rpcMethod("stop")
+            .rpcId(2)
+            .param("when", "NOW")
+            .addToBatch();
 
-The response of type `JsonClientBatchResponse` shall include an entry
-for each of the invocations in the request. In this example, we can test
-that the response returned HTTP status 200 and has a size of 2, and then
-verify the results by binding them to `StartStopResult` instances using
-JSON-B.
+    try (var batchRes = rpcReq.submit()) {
+        if (batchRes.status() == Status.OK_200) {
 
-```java
-if (batchRes.status() == Status.OK_200 && batchRes.size() == 2) {
-    Optional<JsonRpcResult> result0 = batchRes.get(0).result();
-    if (result0.get().as(StartStopResult.class).status().equals("RUNNING")) {
-        // successful start!
-    }
-    Optional<JsonRpcResult> result1 = batchRes.get(1).result();
-    if (result0.get().as(StartStopResult.class).status().equals("STOPPED")) {
-        // successful stop!
+            // iterate over the nested responses
+            for (var rpcRes : batchRes) {
+                // convert the result entity to a POJO using JSON-B
+                var entity = rpcRes.result().get().as(StartStopResult.class);
+                System.out.println(entity.status());
+            }
+        }
     }
 }
 ```
-
-As explained above, optional values are returned when trying to get a
-result since every individual batch response may include a result or an
-error.
 
 # Configuration
 
