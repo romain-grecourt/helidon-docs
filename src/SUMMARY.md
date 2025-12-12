@@ -1,21 +1,14 @@
 
 # Introduction
 
-- [Documentation Overview](README.md)
-- [Get Started](about/prerequisites.md)
-- [About]()
-  - [additional_info](about/additional_info.md)
-  - [archetype](about/archetype.md)
-  - [benefits](about/benefits.md)
-  - [cli](about/cli.md)
-  - [community](about/community.md)
-  - [doc_sitemap](about/doc_sitemap.md)
-  - [generating_project](about/generating_project.md)
-  - [intro](about/intro.md)
-  - [introduction](about/introduction.md)
-  - [kubernetes](about/kubernetes.md)
-  - [managing-dependencies](about/managing-dependencies.md)
-  - [windows](about/windows.md)
+- [About](README.md)
+  - [Overview](about/overview.md)
+  - [Prerequisites](about/prerequisites.md)
+  - [Get Started](about/get-started.md)
+  - [CLI](about/cli.md)
+  - [Starter](about/starter.md)
+  - [What's New](about/new.md)
+  - [Managing Dependencies](about/managing-dependencies.md)
 
 ---
 

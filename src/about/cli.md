@@ -1,4 +1,4 @@
-# Introduction
+# Helidon CLI
 
 The Helidon CLI lets you easily create a Helidon project by picking from
 a set of archetypes. It also supports a developer loop that performs
@@ -10,23 +10,11 @@ GraalVM) for ease of installation. It is currently available as a
 download for Linux, Mac and Windows. Simply download the binary, install
 it at a location accessible from your PATH, and you’re ready to go.
 
-# Prerequisites
+## Prerequisites
 
-|                                                                                                        |                                              |
-|--------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| [Java 21](https://www.oracle.com/technetwork/java/javase/downloads) ([OpenJDK21](http://jdk.java.net)) | Helidon requires Java 21+ (25+ recommended). |
-| [Maven 3.8+](https://maven.apache.org/download.cgi)                                                    | Helidon requires Maven 3.8+.                 |
+Please see [Helidon Prerequisites](../../about/prerequisites.md).
 
-Prerequisite product versions for Helidon 4.4.0-SNAPSHOT
-
-You should make sure `java` and `mvn` are in your path.
-
-```shell
-java -version
-mvn --version
-```
-
-# Installation
+## Installation
 
 macOS:
 ```shell
@@ -60,7 +48,7 @@ Verify CLI installation:
 helidon version
 ```
 
-# Create a New Project
+## Create a New Project
 
 ```shell
 helidon init
@@ -68,7 +56,7 @@ helidon init
 
 Then answer the questions.
 
-# Developer Loop
+## Developer Loop
 
 ```shell
 cd myproject
@@ -78,7 +66,7 @@ helidon dev
 As you make source code changes the project will automatically recompile
 and restart your application.
 
-# Demo
+## Demo
 
 <figure>
 <img src="../images/cli-demo.gif" alt="CLI Demo" />

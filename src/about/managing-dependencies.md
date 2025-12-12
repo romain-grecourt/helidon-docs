@@ -1,10 +1,12 @@
+# Managing Dependencies
+
 Helidon provides a “Bill Of Materials” (BOM) to manage dependencies.
 This is a special Maven pom file that provides dependency management.
 
 Using the Helidon BOM allows you to use Helidon component dependencies
 with a single version: the Helidon version.
 
-# The Helidon Application POMs
+## The Helidon Application POMs
 
 If you created your application using the [Helidon CLI](cli.md) or
 [archetypes](prerequisites.md) then your project will have a Helidon
@@ -14,7 +16,7 @@ dependency management automatically.
 If your project doesn’t use a Helidon Application POM as its parent,
 then you will need to import the Helidon BOM POM.
 
-# The Helidon BOM POM
+## The Helidon BOM POM
 
 To import the Helidon BOM POM add the following snippet to your pom.xml
 file.
@@ -34,7 +36,7 @@ Import the Helidon BOM:
 </dependencyManagement>
 ```
 
-# Using Helidon Component Dependencies
+## Using Helidon Component Dependencies
 
 Once you have imported the BOM, you can declare dependencies on Helidon
 components without specifying a version.
@@ -47,7 +49,7 @@ Component dependency:
 </dependency>
 ```
 
-# For More Information
+## For More Information
 
 - Maven Build Guide for [SE](../se/guides/maven-build.md) and [MP](../mp/guides/maven-build.md)
 - Gradle Build Guide for [SE](../se/guides/gradle-build.md) and [MP](../mp/guides/gradle-build.md)

@@ -16,7 +16,7 @@
 
 - Java 21 is required to use Helidon 4. Java 25 or newer is recommended.
 
-# Helidon 4 WebServer
+## Helidon 4 WebServer
 
 Before Helidon 4, the Helidon WebServer was built on Netty and had a
 reactive API. In Helidon 4 we have replaced this with a new server
@@ -33,7 +33,7 @@ blocking a platform thread and starving other requests. You no longer
 need to resort to complicated asynchronous code to implement a
 low-overhead, highly concurrent service.
 
-# Helidon SE
+## Helidon SE
 
 Helidon SE is Helidon’s foundational set of APIs. The big change in
 Helidon 4 is that the use of virtual threads have enabled these APIs to
@@ -41,7 +41,7 @@ change from asynchronous to blocking. This results in much simpler code
 that is easier to write, maintain, debug and understand. Existing
 Helidon 3 SE code will require modification to run on these new APIs,
 but the effort is well worth the improved performance and simplicity of
-the resulting code.
+the resulting code
 
 To give a very simple example of the differences between Helidon 3 SE
 and Helidon 4 SE, let’s take a look at extracting a JSON body from an
@@ -58,7 +58,7 @@ Helidon 4:
 doSomething(request.content().as(JsonObject.class), response);
 ```
 
-# Helidon MP
+## Helidon MP
 
 Helidon MP is Helidon’s MicroProfile implementation and in Helidon 4 it
 supports MicroProfile 6 and the Jakarta EE 10 Core Profile. Your Helidon
