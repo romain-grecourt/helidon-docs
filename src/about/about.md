@@ -1,9 +1,9 @@
 # About Helidon
 
-Helidon is a collection of Java libraries for writing microservices. Helidon is open source under the Apache License, Version 2.0.
-You can find us on GitHub: https://github.com/helidon-io/helidon
-
 Helidon is a collection of Java libraries for writing microservices. To learn more see the [Helidon Overview](overview.md).
+
+You can find us on GitHub: [helidon-io/helidon](https://github.com/helidon-io/helidon)
+
 
 ## Getting Started
 

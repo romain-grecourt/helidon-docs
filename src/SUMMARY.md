@@ -1,7 +1,7 @@
 
 # Introduction
 
-- [About](README.md)
+- [About](about/about.md)
   - [Overview](about/overview.md)
   - [Prerequisites](about/prerequisites.md)
   - [Get Started](about/get-started.md)

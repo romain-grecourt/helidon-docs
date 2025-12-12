@@ -23,7 +23,7 @@ Helidon has dozens of components, but here are some key areas:
 
 ## Get Started
 
-You can have your first Helidon server up and running in under a minute. See [Getting Started](./getting-started.md).
+You can have your first Helidon server up and running in under a minute. See [Getting Started](./get-started.md).
 
 ## Stay in Touch
 
