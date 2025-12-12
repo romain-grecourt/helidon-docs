@@ -163,7 +163,7 @@ class `PirateResource` like following example shows.
 public class PirateResource {
 
     @Inject
-    PirateService pirateService; 
+    PirateService pirateService;
 
     @POST
     public String chat(String message) {

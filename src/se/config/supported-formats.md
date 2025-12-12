@@ -48,7 +48,7 @@ The YAML parser handles the following media type:
 Automatic selection:
 ```java
 void snippet_1() {
-    Config config = Config.create(classpath("application.yaml")); 
+    Config config = Config.create(classpath("application.yaml"));
 ```
 
 - The config system automatically maps the file type `.yaml` to the
@@ -56,8 +56,8 @@ void snippet_1() {
 
 YAML parser specified - no file type on source:
 ```java
-Config config = Config.create(classpath("my-config") 
-                                      .parser(YamlConfigParser.create())); 
+Config config = Config.create(classpath("my-config")
+                                      .parser(YamlConfigParser.create()));
 ```
 
 - The media type of the source `my-config` is unknown, so the config
@@ -70,8 +70,8 @@ Config config = Config.create(classpath("my-config")
 
 Media type specified:
 ```java
-Config config = Config.create(classpath("my-config") 
-                                      .mediaType(MediaTypes.APPLICATION_X_YAML)); 
+Config config = Config.create(classpath("my-config")
+                                      .mediaType(MediaTypes.APPLICATION_X_YAML));
 ```
 
 - The media type of the source `my-config` is unknown, so the config
@@ -84,8 +84,8 @@ Config config = Config.create(classpath("my-config")
 YAML parser specified because parser services disabled:
 ```java
 Config config = Config.builder(classpath("application.yaml"))
-        .disableParserServices() 
-        .addParser(YamlConfigParser.create()) 
+        .disableParserServices()
+        .addParser(YamlConfigParser.create())
         .build();
 ```
 - Disables automatic parser lookup and registration.
@@ -116,7 +116,7 @@ The parser handles the following media types:
 
 Automatic selection:
 ```java
-Config config = Config.create(classpath("application.conf")); 
+Config config = Config.create(classpath("application.conf"));
 ```
 
 - The config system automatically maps the file type `.conf` to the
@@ -127,8 +127,8 @@ The same module and parser supports file type `.json` and the media type
 
 HOCON parser specified - no file type on source:
 ```java
-Config config = Config.create(classpath("my-config") 
-                                      .parser(HoconConfigParser.create())); 
+Config config = Config.create(classpath("my-config")
+                                      .parser(HoconConfigParser.create()));
 ```
 
 - the media type of the source `my-config` is unknown, so the config
@@ -141,8 +141,8 @@ Config config = Config.create(classpath("my-config")
 
 Media type specified:
 ```java
-Config config = Config.create(classpath("my-config") 
-                                      .mediaType(MediaTypes.APPLICATION_HOCON)); 
+Config config = Config.create(classpath("my-config")
+                                      .mediaType(MediaTypes.APPLICATION_HOCON));
 ```
 
 - The media type of the source `my-config` is unknown, so the config
@@ -155,8 +155,8 @@ Config config = Config.create(classpath("my-config")
 HOCON parser specified because parser services disabled:
 ```java
 Config config = Config.builder(classpath("application.conf"))
-        .disableParserServices() 
-        .addParser(HoconConfigParser.create()) 
+        .disableParserServices()
+        .addParser(HoconConfigParser.create())
         .build();
 ```
 
@@ -168,9 +168,9 @@ Customized HOCON parser:
 ```java
 Config config = Config.builder(classpath("application.conf"))
         .disableParserServices()
-        .addParser(HoconConfigParser.builder() 
-                           .resolvingEnabled(false) 
-                           .build()) 
+        .addParser(HoconConfigParser.builder()
+                           .resolvingEnabled(false)
+                           .build())
         .build();
 ```
 
@@ -209,10 +209,10 @@ To read configuration from an Etcd source, your application uses the
 Use Etcd config source:
 ```java
 Config config = Config.create(
-        EtcdConfigSource 
-                .create(URI.create("http://my-etcd:2379"), 
-                        "/config.yaml", 
-                        EtcdConfigSourceBuilder.EtcdApi.v3)); 
+        EtcdConfigSource
+                .create(URI.create("http://my-etcd:2379"),
+                        "/config.yaml",
+                        EtcdConfigSourceBuilder.EtcdApi.v3));
 ```
 
 - Use the factory method `EtcdConfigSource.create` to create the
@@ -245,7 +245,7 @@ Config config = Config.create(
                 .uri(URI.create("http://my-etcd:2379"))
                 .key("/config.yaml")
                 .api(EtcdConfigSourceBuilder.EtcdApi.v3)
-                .changeWatcher(EtcdWatcher.create())); 
+                .changeWatcher(EtcdWatcher.create()));
 ```
 
 - Use the etcd-specific change watcher strategy.
@@ -278,13 +278,13 @@ Config config = Config.create(classpath("config-meta-etcd.yaml"));
 Meta-config `config-meta-etcd.yaml` for the etcd source:
 ```YAML
 sources:
-    - type: "etcd"                                                 
+    - type: "etcd"
       properties:
-          uri: "http://my-etcd:2379"                               
-          key: "/config.yaml"                                      
-          api: "v3"                                                
+          uri: "http://my-etcd:2379"
+          key: "/config.yaml"
+          api: "v3"
           change-watcher:
-              type: "etcd"                                         
+              type: "etcd"
 ```
 
 - `etcd` config source type
@@ -318,10 +318,10 @@ Use git config source:
 ```java
 Config config = Config.create(
         GitConfigSource
-                .builder() 
-                .uri(URI.create("https://github.com/okosatka/test-config.git")) 
-                .directory(Paths.get("/config")) 
-                .branch("dev")); 
+                .builder()
+                .uri(URI.create("https://github.com/okosatka/test-config.git"))
+                .directory(Paths.get("/config"))
+                .branch("dev"));
 ```
 
 - Use the factory method `GitConfigSource.builder` to initialize the
@@ -351,7 +351,7 @@ Config config = Config.create(
         GitConfigSource.builder()
                 .uri(URI.create("https://github.com/okosatka/test-config.git"))
                 .pollingStrategy(PollingStrategies.regular(Duration.ofMinutes(
-                        5)))); 
+                        5))));
 ```
 
 - Use `PollingStrategies.regular(Duration duration)` to monitor for
@@ -394,16 +394,16 @@ Config config = Config.create(classpath("config-meta-git.yaml"));
 Meta-config `config-meta-git.yaml` for the git source:
 ```YAML
 sources:
-    - type: "git" 
+    - type: "git"
       properties:
-          path: "application.conf" 
-          uri: "https://github.com/okosatka/test-config.git" 
-          directory: "/config" 
-          branch: "dev" 
+          path: "application.conf"
+          uri: "https://github.com/okosatka/test-config.git"
+          directory: "/config"
+          branch: "dev"
           polling-strategy:
-              type: "regular" 
+              type: "regular"
               properties:
-                  interval: "PT5M" 
+                  interval: "PT5M"
 ```
 
 - `git` config source type

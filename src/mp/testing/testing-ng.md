@@ -23,7 +23,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 
 Basic usage:
 ```java
-@HelidonTest // Enable the test class 
+@HelidonTest // Enable the test class
 class MyTest {
 }
 ```
@@ -353,14 +353,14 @@ public @interface MyTestMethod {
 @HelidonTest
 class AnnotationOnMethod {
 
-    // org.testng.annotations.Test is not inheritable 
+    // org.testng.annotations.Test is not inheritable
     // and should be placed on methods
     @Test
     @MyTestMethod
     void testOne() {
     }
 
-    @Test 
+    @Test
     @MyTestMethod
     void testTwo() {
     }
@@ -506,7 +506,7 @@ class MyTest {
     void testService() {
         // Customize the behavior
         Mockito.when(myService.test()).thenReturn("Mocked");
-        
+
         // Test assertions
         String response = target.path("/test").request().get(String.class);
         assertThat(response, is("Mocked"));
@@ -558,7 +558,7 @@ class MyTest {
 
     // Create a CDI producer method annotated with @Alternative
     @Produces
-    @Alternative 
+    @Alternative
     MyService mockService() {
         return myService;
     }
@@ -621,7 +621,7 @@ that is also the default when detecting it within tests.
 Pinning threshold can be changed with:
 ```java
 // Change pinning threshold from default(20) to 50 milliseconds.
-@HelidonTest(pinningDetection = true, pinningThreshold = 50) 
+@HelidonTest(pinningDetection = true, pinningThreshold = 50)
 class MyTest {
 }
 ```

@@ -59,11 +59,11 @@ Add the Helidon tracing component itself:
 <dependencies>
     <dependency>
         <groupId>io.helidon.tracing</groupId>
-        <artifactId>helidon-tracing</artifactId>    
+        <artifactId>helidon-tracing</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.webserver.observe</groupId>
-        <artifactId>helidon-webserver-observe-tracing</artifactId> 
+        <artifactId>helidon-webserver-observe-tracing</artifactId>
     </dependency>
 </dependencies>
 ```

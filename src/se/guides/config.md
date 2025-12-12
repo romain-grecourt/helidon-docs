@@ -101,7 +101,7 @@ project you created.
 
 View `Main#main`:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 ```
 
 - The `Config` object is created with default settings.
@@ -269,10 +269,10 @@ Update the `Main` class, Replace the `Config.create()` call with
 ```java
 private static Config buildConfig() {
     return Config.builder()
-            .disableEnvironmentVariablesSource() 
+            .disableEnvironmentVariablesSource()
             .sources(
-                    classpath("config.properties"), 
-                    classpath("application.yaml")) 
+                    classpath("config.properties"),
+                    classpath("application.yaml"))
             .build();
 }
 ```
@@ -294,7 +294,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFrom-config.properties World!" 
+  "message": "HelloFrom-config.properties World!"
 }
 ```
 
@@ -315,7 +315,7 @@ Update the `Main` class and replace the `buildConfig` method:
 return Config.builder()
         .disableEnvironmentVariablesSource()
         .sources(
-                classpath("application.yaml"), 
+                classpath("application.yaml"),
                 classpath("config.properties"))
         .build();
 ```
@@ -330,7 +330,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFrom-application.yaml World!" 
+  "message": "HelloFrom-application.yaml World!"
 }
 ```
 
@@ -361,7 +361,7 @@ Update the `Main` class and replace the `buildConfig` method:
 ```java
 return Config.builder()
         .sources(
-                file("config-file.properties"), 
+                file("config-file.properties"),
                 classpath("application.yaml"))
         .build();
 ```
@@ -376,7 +376,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFrom-config-file.properties World!" 
+  "message": "HelloFrom-config-file.properties World!"
 }
 ```
 
@@ -393,7 +393,7 @@ Update the `Main` class and replace the `buildConfig` method:
 ```java
 return Config.builder()
         .sources(
-                file("missing-file"), 
+                file("missing-file"),
                 classpath("application.yaml"))
         .build();
 ```
@@ -408,7 +408,7 @@ Exception in thread "main" io.helidon.config.ConfigException: Cannot load data f
 To fix this, use the `optional` method as shown below, then rerun the
 test.
 
-    file("missing-file").optional(), 
+    file("missing-file").optional(),
 
 - The `missing-file` configuration file is now optional.
 
@@ -428,7 +428,7 @@ Update the `Main` class and replace the `buildConfig` method:
 ```java
 return Config.builder()
         .sources(
-                directory("conf"), 
+                directory("conf"),
                 classpath("config.properties").optional(),
                 classpath("application.yaml"))
         .build();
@@ -445,7 +445,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFromFileInDirectoryConf World!" 
+  "message": "HelloFromFileInDirectoryConf World!"
 }
 ```
 
@@ -459,7 +459,7 @@ as shown below.
 Update the `Main` class and replace the `buildConfig` method:
 ```java
 return Config.builder()
-        .addSource(directory("conf"))  
+        .addSource(directory("conf"))
         .addSource(file("config-file.properties"))
         .addSource(classpath("config.properties").optional())
         .addSource(classpath("application.yaml"))
@@ -500,9 +500,9 @@ Create a file named `config-profile.yaml` in the `helidon-quickstart-se`
 directory with the following contents:
 ```yaml
 sources:
-  - type: "classpath" 
+  - type: "classpath"
     properties:
-      resource: "application.yaml" 
+      resource: "application.yaml"
 ```
 
 - The source type.
@@ -511,7 +511,7 @@ sources:
 
 Update the `Main` class and replace the `buildConfig` method:
 ```java
-return Config.create(); 
+return Config.create();
 ```
 
 - Will use `config-profile.yaml` by default
@@ -524,7 +524,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFrom-application.yaml World!" 
+  "message": "HelloFrom-application.yaml World!"
 }
 ```
 
@@ -537,16 +537,16 @@ in the file. This is demonstrated below where the
 Replace the contents of the `config-profile.yaml` file:
 ```yaml
 sources:
-  - type: "file" 
+  - type: "file"
     properties:
-      path: "./config-file.properties" 
+      path: "./config-file.properties"
   - type: "classpath"
     properties:
       resource: "application.yaml"
   - type: "file"
     properties:
       path: "optional-config-file"
-      optional: true 
+      optional: true
 ```
 
 - The source type specifies a file.
@@ -563,7 +563,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFrom-config-file.properties World!" 
+  "message": "HelloFrom-config-file.properties World!"
 }
 ```
 
@@ -576,8 +576,8 @@ use them.
 Replace the contents of the `config-profile.yaml` file:
 ```yaml
 sources:
-  - type: "environment-variables" 
-  - type: "system-properties" 
+  - type: "environment-variables"
+  - type: "system-properties"
   - type: "classpath"
     properties:
       resource: "application.yaml"
@@ -617,7 +617,7 @@ below:
 
 View the `GreetService` constructor:
 ```java
-greeting.set(Config.global().get("app.greeting").asString().orElse("Ciao")); 
+greeting.set(Config.global().get("app.greeting").asString().orElse("Ciao"));
 ```
 
 - Get the `app.greeting` node using a composite key.
@@ -626,7 +626,7 @@ You can also access the same greeting by navigating the nodes.
 
 Replace the `GreetService` constructor with the following code:
 ```java
-greeting.set(Config.global().get("app").get("greeting").asString().orElse("Ciao")); 
+greeting.set(Config.global().get("app").get("greeting").asString().orElse("Ciao"));
 ```
 
 - Get the `app` node, then get the child node, `greeting`.
@@ -673,9 +673,9 @@ constructor with the following:
 ```java
 List<Config> appGreetings = Config.global()
         .get("app")
-        .traverse()  
-        .filter(node -> node.name().equals("greeting")) 
-        .toList(); 
+        .traverse()
+        .filter(node -> node.name().equals("greeting"))
+        .toList();
 
 greeting.set(appGreetings.get(0).asString().get());
 ```
@@ -724,9 +724,9 @@ Update the `GreetService` class and replace the `GreetService`
 constructor:
 
 ```java
-Config greetingConfig = Config.global().get("app.greeting"); 
+Config greetingConfig = Config.global().get("app.greeting");
 greeting.set(greetingConfig.asString().orElse("Ciao"));
-greetingConfig.onChange(cfg -> greeting.set(cfg.asString().orElse("Ciao"))); 
+greetingConfig.onChange(cfg -> greeting.set(cfg.asString().orElse("Ciao")));
 ```
 
 - Get the greeting `Config` node.
@@ -761,7 +761,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "Updated HelloFrom-config-file.properties World!" 
+  "message": "Updated HelloFrom-config-file.properties World!"
 }
 ```
 
@@ -786,8 +786,8 @@ Update the `Main` class and replace the `buildConfig` method:
 ```java
 return Config.builder()
         .sources(
-                file("/etc/config/config-file.properties").optional(), 
-                classpath("application.yaml")) 
+                file("/etc/config/config-file.properties").optional(),
+                classpath("application.yaml"))
         .build();
 ```
 
@@ -810,7 +810,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "Hello World!" 
+  "message": "Hello World!"
 }
 ```
 
@@ -837,7 +837,7 @@ Output (partial):
 ```yaml
 apiVersion: v1
 data:
-  config-file.properties: |    
+  config-file.properties: |
     app.greeting=Updated HelloFrom-config-file.properties
 kind: ConfigMap
 # ...
@@ -855,7 +855,7 @@ the following contents:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-config 
+  name: helidon-config
   labels:
     app: helidon-config
 spec:
@@ -872,7 +872,7 @@ apiVersion: apps/v1
 metadata:
   name: helidon-config
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-config
@@ -890,13 +890,13 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: config-volume
-              mountPath: /etc/config 
+              mountPath: /etc/config
       volumes:
         - name: config-volume
           configMap:
             # Provide the name of the ConfigMap containing the files you want
             # to add to the container
-            name:  helidon-configmap 
+            name:  helidon-configmap
 ```
 
 - A service of type `NodePort` that serves the default routes on port
@@ -921,7 +921,7 @@ kubectl get service/helidon-config
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-config   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s 
+helidon-config   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s
 ```
 
 - A service of type `NodePort` that serves the default routes on port
@@ -936,7 +936,7 @@ curl http://localhost:31143/greet
 JSON response:
 ```json
 {
-  "message": "Updated HelloFrom-config-file.properties World!" 
+  "message": "Updated HelloFrom-config-file.properties World!"
 }
 ```
 

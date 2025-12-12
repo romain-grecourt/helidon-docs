@@ -57,12 +57,12 @@ Custom Map:
 ```java
 ConfigProviderResolver resolver = ConfigProviderResolver.instance();
 
-Config config = resolver.getBuilder() 
-        .withSources(MpConfigSources.environmentVariables()) 
-        .withSources(MpConfigSources.create(Map.of("key", "value"))) 
-        .build(); 
+Config config = resolver.getBuilder()
+        .withSources(MpConfigSources.environmentVariables())
+        .withSources(MpConfigSources.create(Map.of("key", "value")))
+        .build();
 
-resolver.registerConfig(config, null); 
+resolver.registerConfig(config, null);
 ```
 
 - Creates MicroProfile Config Source builder.
@@ -120,12 +120,12 @@ public class CustomConfigSource implements ConfigSource {
 
     @Override
     public String getName() {
-        return NAME; 
+        return NAME;
     }
 
     @Override
     public Map<String, String> getProperties() {
-        return PROPERTIES; 
+        return PROPERTIES;
     }
 
     @Override
@@ -135,12 +135,12 @@ public class CustomConfigSource implements ConfigSource {
 
     @Override
     public String getValue(String key) {
-        return PROPERTIES.get(key); 
+        return PROPERTIES.get(key);
     }
 
     @Override
     public int getOrdinal() {
-        return ORDINAL; 
+        return ORDINAL;
     }
 }
 ```
@@ -178,23 +178,23 @@ SE Meta Configuration file, which may cause erroneous behavior.
 
 Example of a YAML meta configuration file:
 ```yaml
-add-discovered-sources: true 
-add-discovered-converters: false 
-add-default-sources: false 
+add-discovered-sources: true
+add-discovered-converters: false
+add-default-sources: false
 
 sources:
-  - type: "environment-variables" 
-  - type: "system-properties" 
-  - type: "properties" 
-    path: "/conf/prod.properties" 
-    ordinal: 50 
-    optional: true 
-  - type: "yaml" 
-    classpath: "META-INF/database.yaml" 
-  - type: "hocon" 
-    classpath: "custom-application.conf" 
-  - type: "json" 
-    path: "path: conf/custom-application.json" 
+  - type: "environment-variables"
+  - type: "system-properties"
+  - type: "properties"
+    path: "/conf/prod.properties"
+    ordinal: 50
+    optional: true
+  - type: "yaml"
+    classpath: "META-INF/database.yaml"
+  - type: "hocon"
+    classpath: "custom-application.conf"
+  - type: "json"
+    path: "path: conf/custom-application.json"
 ```
 
 - If configured to `true`, config sources discovered through service
@@ -270,34 +270,34 @@ public class CustomMpMetaConfigProvider implements MpMetaConfigProvider {
 
     @Override
     public Set<String> supportedTypes() {
-        return Set.of("custom"); 
+        return Set.of("custom");
     }
 
     @Override
     public List<? extends ConfigSource> create(String type, io.helidon.config.Config metaConfig, String profile) {
         ConfigValue<Path> pathConfig = metaConfig.get("path").as(Path.class);
         String location;
-        if (pathConfig.isPresent()) { 
+        if (pathConfig.isPresent()) {
             Path path = pathConfig.get();
-            List<ConfigSource> sources = sourceFromPath(path, profile); 
+            List<ConfigSource> sources = sourceFromPath(path, profile);
             if (sources != null && !sources.isEmpty()) {
                 return sources;
             }
             location = "path " + path.toAbsolutePath();
         } else {
             ConfigValue<String> classpathConfig = metaConfig.get("classpath").as(String.class);
-            if (classpathConfig.isPresent()) { 
+            if (classpathConfig.isPresent()) {
                 String classpath = classpathConfig.get();
-                List<ConfigSource> sources = sourceFromClasspath(classpath, profile); 
+                List<ConfigSource> sources = sourceFromClasspath(classpath, profile);
                 if (sources != null && !sources.isEmpty()) {
                     return sources;
                 }
                 location = "classpath " + classpath;
             } else {
                 ConfigValue<URL> urlConfig = metaConfig.get("url").as(URL.class);
-                if (urlConfig.isPresent()) { 
+                if (urlConfig.isPresent()) {
                     URL url = urlConfig.get();
-                    List<ConfigSource> sources = sourceFromUrlMeta(url, profile); 
+                    List<ConfigSource> sources = sourceFromUrlMeta(url, profile);
                     if (sources != null && !sources.isEmpty()) {
                         return sources;
                     }
@@ -308,9 +308,9 @@ public class CustomMpMetaConfigProvider implements MpMetaConfigProvider {
             }
         }
         if (metaConfig.get("optional").asBoolean().orElse(false)) {
-            return List.of(); 
+            return List.of();
         }
-        throw new ConfigException("Meta configuration could not find non-optional config source on " + location); 
+        throw new ConfigException("Meta configuration could not find non-optional config source on " + location);
     }
 }
 ```
@@ -346,7 +346,7 @@ regardless of configured polling strategy or change watchers.
 ```java
 Config config = ConfigProviderResolver.instance()
         .getBuilder()
-        .withSources(MpConfigSources.create(helidonConfigSource)) 
+        .withSources(MpConfigSources.create(helidonConfigSource))
         .build();
 ```
 
@@ -363,12 +363,12 @@ is called.
 
 ```java
 io.helidon.config.Config helidonConfig = io.helidon.config.Config.builder()
-        .addSource(ConfigSources.create(Map.of("key", "value"))) 
+        .addSource(ConfigSources.create(Map.of("key", "value")))
         .build();
 ConfigProviderResolver.instance();
 Config config = ConfigProviderResolver.instance()
         .getBuilder()
-        .withSources(MpConfigSources.create(helidonConfig)) 
+        .withSources(MpConfigSources.create(helidonConfig))
         .build();
 ```
 

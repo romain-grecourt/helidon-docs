@@ -76,7 +76,7 @@ security from a program directly:
 
 Security direct usage:
 ```java
-SecurityContext context = security.contextBuilder(UUID.randomUUID().toString()) 
+SecurityContext context = security.contextBuilder(UUID.randomUUID().toString())
         .env(SecurityEnvironment.builder()
                      .method("get")
                      .path("/test")
@@ -85,7 +85,7 @@ SecurityContext context = security.contextBuilder(UUID.randomUUID().toString())
                      .build())
         .build();
 
-AuthenticationResponse response = context.atnClientBuilder().submit(); 
+AuthenticationResponse response = context.atnClientBuilder().submit();
 if (response.status().isSuccess()) {
     System.out.println(response.user());
     System.out.println(response.service());
@@ -103,7 +103,7 @@ if (response.status().isSuccess()) {
 Security through a builder:
 ```java
 Security security = Security.builder()
-        .addProvider(HttpBasicAuthProvider.builder()) 
+        .addProvider(HttpBasicAuthProvider.builder())
         .build();
 ```
 
@@ -116,7 +116,7 @@ configuration files.
 
 Security from configuration:
 ```java
-Security security = Security.create(config); 
+Security security = Security.create(config);
 ```
 
 - Uses `io.helidon.Config`
@@ -170,11 +170,11 @@ key of the provider must match.
 
 Security from configuration and builder:
 ```java
-Security security1 = Security.builder(config) 
+Security security1 = Security.builder(config)
         .addProvider(HttpBasicAuthProvider.builder())
         .build();
 
-Security security2 = Security.builder() 
+Security security2 = Security.builder()
         .addProvider(HttpBasicAuthProvider.builder())
         .config(config)
         .build();

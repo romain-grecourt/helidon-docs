@@ -79,7 +79,7 @@ For upgrade from Helidon 3.x to 4.x:
 [jsonb-spec]: https://jakarta.ee/specifications/jsonb/3.0/jakarta-jsonb-spec-3.0.html
 [jaxrs-spec]: https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html
 [jpa-spec]: https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.html
-[jta-spec]: https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html 
+[jta-spec]: https://jakarta.ee/specifications/transactions/2.0/jakarta-transactions-spec-2.0.html
 [websocket-spec]: https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html
 [mp-config-spec]: https://download.eclipse.org/microprofile/microprofile-config-3.1/microprofile-config-spec-3.1.html
 [mp-ft-spec]: https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html

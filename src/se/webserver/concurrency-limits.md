@@ -185,7 +185,7 @@ server:
     observe:
       observers:
         tracing:
-          wait-tracing-enabled: true 
+          wait-tracing-enabled: true
 
   concurrency-limit:
     fixed:

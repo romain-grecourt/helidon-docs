@@ -125,7 +125,7 @@ follows:
 
 <!-- -->
 
-    vault.auth.k8s.token-role=my-role 
+    vault.auth.k8s.token-role=my-role
 
 - The token role must be configured in Vault
 
@@ -190,7 +190,7 @@ public class CubbyholeResource {
 
     @POST
     @Path("/secrets/{path: .*}")
-    public Response createSecret(@PathParam("path") String path, String secret) { 
+    public Response createSecret(@PathParam("path") String path, String secret) {
         CreateCubbyhole.Response response = secrets.create(path, Map.of("secret", secret));
 
         return Response.ok()
@@ -203,7 +203,7 @@ public class CubbyholeResource {
 
     @DELETE
     @Path("/secrets/{path: .*}")
-    public Response deleteSecret(@PathParam("path") String path) { 
+    public Response deleteSecret(@PathParam("path") String path) {
         DeleteCubbyhole.Response response = secrets.delete(path);
 
         return Response.ok()
@@ -216,7 +216,7 @@ public class CubbyholeResource {
 
     @GET
     @Path("/secrets/{path: .*}")
-    public Response getSecret(@PathParam("path") String path) { 
+    public Response getSecret(@PathParam("path") String path) {
         Optional<Secret> secret = secrets.get(path);
 
         if (secret.isPresent()) {
@@ -256,7 +256,7 @@ public class Kv1Resource {
 
     @Path("/engine")
     @GET
-    public Response enableEngine() { 
+    public Response enableEngine() {
         EnableEngine.Response response = sys.enableEngine(Kv1Secrets.ENGINE);
 
         return Response.ok()
@@ -267,7 +267,7 @@ public class Kv1Resource {
 
     @Path("/engine")
     @DELETE
-    public Response disableEngine() { 
+    public Response disableEngine() {
         DisableEngine.Response response = sys.disableEngine(Kv1Secrets.ENGINE);
         return Response.ok()
                 .entity("Key/value version 1 secret engine is now disabled."
@@ -277,7 +277,7 @@ public class Kv1Resource {
 
     @POST
     @Path("/secrets/{path: .*}")
-    public Response createSecret(@PathParam("path") String path, String secret) { 
+    public Response createSecret(@PathParam("path") String path, String secret) {
         CreateKv1.Response response = secrets.create(path, Map.of("secret", secret));
 
         return Response.ok()
@@ -290,7 +290,7 @@ public class Kv1Resource {
 
     @DELETE
     @Path("/secrets/{path: .*}")
-    public Response deleteSecret(@PathParam("path") String path) { 
+    public Response deleteSecret(@PathParam("path") String path) {
         DeleteKv1.Response response = secrets.delete(path);
 
         return Response.ok()
@@ -303,7 +303,7 @@ public class Kv1Resource {
 
     @GET
     @Path("/secrets/{path: .*}")
-    public Response getSecret(@PathParam("path") String path) { 
+    public Response getSecret(@PathParam("path") String path) {
         Optional<Secret> secret = secrets.get(path);
 
         if (secret.isPresent()) {
@@ -346,7 +346,7 @@ public class Kv2Resource {
 
     @POST
     @Path("/secrets/{path: .*}")
-    public Response createSecret(@PathParam("path") String path, String secret) { 
+    public Response createSecret(@PathParam("path") String path, String secret) {
         CreateKv2.Response response = secrets.create(path, Map.of("secret", secret));
         return Response.ok()
                 .entity(String.format(
@@ -358,7 +358,7 @@ public class Kv2Resource {
 
     @DELETE
     @Path("/secrets/{path: .*}")
-    public Response deleteSecret(@PathParam("path") String path) { 
+    public Response deleteSecret(@PathParam("path") String path) {
         DeleteAllKv2.Response response = secrets.deleteAll(path);
         return Response.ok()
                 .entity(String.format(
@@ -370,7 +370,7 @@ public class Kv2Resource {
 
     @GET
     @Path("/secrets/{path: .*}")
-    public Response getSecret(@PathParam("path") String path) { 
+    public Response getSecret(@PathParam("path") String path) {
 
         Optional<Kv2Secret> secret = secrets.get(path);
 
@@ -417,7 +417,7 @@ public class TransitResource {
 
     @Path("/engine")
     @GET
-    public Response enableEngine() { 
+    public Response enableEngine() {
         EnableEngine.Response response = sys.enableEngine(TransitSecrets.ENGINE);
 
         return Response.ok()
@@ -428,7 +428,7 @@ public class TransitResource {
 
     @Path("/engine")
     @DELETE
-    public Response disableEngine() { 
+    public Response disableEngine() {
         DisableEngine.Response response = sys.disableEngine(TransitSecrets.ENGINE);
         return Response.ok()
                 .entity("Transit secret engine is now disabled."
@@ -438,7 +438,7 @@ public class TransitResource {
 
     @Path("/keys")
     @GET
-    public Response createKeys() { 
+    public Response createKeys() {
         secrets.createKey(CreateKey.Request.builder()
                                   .name(ENCRYPTION_KEY));
 
@@ -453,7 +453,7 @@ public class TransitResource {
 
     @Path("/keys")
     @DELETE
-    public Response deleteKeys() { 
+    public Response deleteKeys() {
         // we must first enable deletion of the key (by default it cannot be deleted)
         secrets.updateKeyConfig(UpdateKeyConfig.Request.builder()
                                         .name(ENCRYPTION_KEY)
@@ -473,7 +473,7 @@ public class TransitResource {
 
     @Path("/encrypt/{secret: .*}")
     @GET
-    public String encryptSecret(@PathParam("secret") String secret) { 
+    public String encryptSecret(@PathParam("secret") String secret) {
         return secrets.encrypt(Encrypt.Request.builder()
                                        .encryptionKeyName(ENCRYPTION_KEY)
                                        .data(Base64Value.create(secret)))
@@ -483,7 +483,7 @@ public class TransitResource {
 
     @Path("/decrypt/{cipherText: .*}")
     @GET
-    public String decryptSecret(@PathParam("cipherText") String cipherText) { 
+    public String decryptSecret(@PathParam("cipherText") String cipherText) {
         return secrets.decrypt(Decrypt.Request.builder()
                                        .encryptionKeyName(ENCRYPTION_KEY)
                                        .cipherText(cipherText))
@@ -493,7 +493,7 @@ public class TransitResource {
 
     @Path("/hmac/{text}")
     @GET
-    public String hmac(@PathParam("text") String text) { 
+    public String hmac(@PathParam("text") String text) {
         return secrets.hmac(Hmac.Request.builder()
                                     .hmacKeyName(ENCRYPTION_KEY)
                                     .data(Base64Value.create(text)))
@@ -502,7 +502,7 @@ public class TransitResource {
 
     @Path("/sign/{text}")
     @GET
-    public String sign(@PathParam("text") String text) { 
+    public String sign(@PathParam("text") String text) {
         return secrets.sign(Sign.Request.builder()
                                     .signatureKeyName(SIGNATURE_KEY)
                                     .data(Base64Value.create(text)))
@@ -512,7 +512,7 @@ public class TransitResource {
     @Path("/verify/hmac/{secret}/{hmac: .*}")
     @GET
     public String verifyHmac(@PathParam("secret") String secret,
-                             @PathParam("hmac") String hmac) { 
+                             @PathParam("hmac") String hmac) {
         boolean isValid = secrets.verify(Verify.Request.builder()
                                                  .digestKeyName(ENCRYPTION_KEY)
                                                  .data(Base64Value.create(secret))
@@ -525,7 +525,7 @@ public class TransitResource {
     @Path("/verify/sign/{secret}/{signature: .*}")
     @GET
     public String verifySignature(@PathParam("secret") String secret,
-                                  @PathParam("signature") String signature) { 
+                                  @PathParam("signature") String signature) {
         boolean isValid = secrets.verify(Verify.Request.builder()
                                                  .digestKeyName(SIGNATURE_KEY)
                                                  .data(Base64Value.create(secret))

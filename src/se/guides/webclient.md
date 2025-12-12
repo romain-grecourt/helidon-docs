@@ -125,7 +125,7 @@ code.
 Add WebClient instance to the main method:
 ```java
 WebClient webClient = WebClient.builder()
-        .baseUri("http://localhost:8080") 
+        .baseUri("http://localhost:8080")
         .build();
 ```
 
@@ -139,10 +139,10 @@ request to the greeting application.
 
 Send a GET request to the target endpoint:
 ```java
-ClientResponseTyped<String> response = webClient.get() 
-        .path("/greet") 
-        .request(String.class); 
-String entityString = response.entity(); 
+ClientResponseTyped<String> response = webClient.get()
+        .path("/greet")
+        .request(String.class);
+String entityString = response.entity();
 System.out.println(entityString);
 ```
 
@@ -212,8 +212,8 @@ Replace String with JsonObject:
 ```java
 ClientResponseTyped<JsonObject> response = webClient.get()
         .path("/greet/David")
-        .request(JsonObject.class); 
-String value = response.entity().getString("message"); 
+        .request(JsonObject.class);
+String value = response.entity().getString("message");
 System.out.println(value);
 ```
 
@@ -234,16 +234,16 @@ JSON type and using a structure like `{"greeting" : "value"}`.
 
 Modify the application greeting:
 ```java
-JsonObject entity = Json.createObjectBuilder() 
+JsonObject entity = Json.createObjectBuilder()
         .add("greeting", "Bonjour")
         .build();
-webClient.put() 
+webClient.put()
         .path("/greet/greeting")
-        .submit(entity); 
-ClientResponseTyped<JsonObject> response = webClient.get() 
+        .submit(entity);
+ClientResponseTyped<JsonObject> response = webClient.get()
         .path("/greet/David")
         .request(JsonObject.class);
-String entityString = response.entity().getString("message"); 
+String entityString = response.entity().getString("message");
 System.out.println(entityString);
 ```
 
@@ -292,9 +292,9 @@ Example of metric creation:
 ```java
 MeterRegistry METER_REGISTRY = Metrics.globalRegistry();
 
-String metricName = "counter.GET.localhost"; 
+String metricName = "counter.GET.localhost";
 
-Counter counter = METER_REGISTRY.getOrCreate(Counter.builder(metricName)); 
+Counter counter = METER_REGISTRY.getOrCreate(Counter.builder(metricName));
 System.out.println(metricName + ": " + counter.count());
 
 WebClientService clientServiceMetric = WebClientMetrics.counter()
@@ -302,8 +302,8 @@ WebClientService clientServiceMetric = WebClientMetrics.counter()
         .success(true)                      // OPTIONAL
         .errors(true)                       // OPTIONAL
         .description("Metric Description")  // OPTIONAL
-        .nameFormat("counter.%1$s.%2$s") 
-        .build(); 
+        .nameFormat("counter.%1$s.%2$s")
+        .build();
 ```
 
 - Specify the metric name.
@@ -340,10 +340,10 @@ Add the metric service to the WebClient:
 ```java
 WebClient webClient = WebClient.builder()
         .baseUri("http://localhost:8080")
-        .addService(clientServiceMetric) 
+        .addService(clientServiceMetric)
         .build();
 
-webClient.get().path("/greet").request(); 
+webClient.get().path("/greet").request();
 ```
 
 - Register the metric service to the webclient.
@@ -396,19 +396,19 @@ Add the metric service to the WebClient via the Configuration:
 ```java
 MeterRegistry METER_REGISTRY = Metrics.globalRegistry();
 
-String counterName = "counter.GET.localhost"; 
+String counterName = "counter.GET.localhost";
 
-Counter counter = METER_REGISTRY.getOrCreate(Counter.builder(counterName)); 
+Counter counter = METER_REGISTRY.getOrCreate(Counter.builder(counterName));
 System.out.println(counterName + ": " + counter.count());
 
-Config config = Config.create(); 
+Config config = Config.create();
 
 WebClient webClient = WebClient.builder()
         .baseUri("http://localhost:8080")
-        .config(config.get("client")) 
+        .config(config.get("client"))
         .build();
-webClient.get().path("/greet").request(); 
-System.out.println(counterName + ": " + counter.count()); 
+webClient.get().path("/greet").request();
+System.out.println(counterName + ": " + counter.count());
 ```
 
 - Choose the metric name.

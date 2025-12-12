@@ -28,7 +28,7 @@ mp.messaging:
   incoming.from-kafka:
     connector: helidon-kafka
     topic: messaging-test-topic-1
-    auto.offset.reset: latest 
+    auto.offset.reset: latest
     enable.auto.commit: true
     group.id: example-group-id
 
@@ -38,7 +38,7 @@ mp.messaging:
 
   connector:
     helidon-kafka:
-      bootstrap.servers: localhost:9092 
+      bootstrap.servers: localhost:9092
       key.serializer: org.apache.kafka.common.serialization.StringSerializer
       value.serializer: org.apache.kafka.common.serialization.StringSerializer
       key.deserializer: org.apache.kafka.common.serialization.StringDeserializer

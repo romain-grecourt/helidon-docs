@@ -47,9 +47,9 @@ Then, in your application code, load the configuration from that file.
 WebServer initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebServer.builder()
-        .config(config.get("server")); 
+        .config(config.get("server"));
 ```
 
 - `application.yaml` is a default configuration source loaded when YAML
@@ -95,14 +95,14 @@ server:
         trust-store: true
         resource:
           # load from classpath
-          resource-path: "keystore.p12" 
+          resource-path: "keystore.p12"
     # Keystore with private key and server certificate
     private-key:
       keystore:
         passphrase: "password"
         resource:
           # load from file system
-          path: "/path/to/keystore.p12" 
+          path: "/path/to/keystore.p12"
 ```
 
 - File loaded from classpath.
@@ -114,9 +114,9 @@ Then, in your application code, load the configuration from that file.
 WebServer initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebServer.builder()
-        .config(config.get("server")); 
+        .config(config.get("server"));
 ```
 
 - `application.yaml` is a default configuration source loaded when YAML
@@ -515,8 +515,8 @@ Using HttpRouting.Builder to specify how HTTP requests are handled
 ```java
 WebServer.builder()
         .routing(it -> it
-                .get("/hello", (req, res) -> res.send("Hello World!"))) 
-        .build(); 
+                .get("/hello", (req, res) -> res.send("Hello World!")))
+        .build();
 ```
 
 - Handle all GETs to `/hello` path. Send the `Hello World!` string.
@@ -603,10 +603,10 @@ interface using its `Builder`.
 ```java
 routing.route(HttpRoute.builder()
                       .path("/hello")
-                      .methods(Method.POST, Method.PUT) 
+                      .methods(Method.POST, Method.PUT)
                       .handler((req, res) -> {
                           String requestEntity = req.content().as(String.class);
-                          res.send(requestEntity); 
+                          res.send(requestEntity);
                       }));
 ```
 
@@ -721,9 +721,9 @@ The handler forwards the request to the downstream handlers by
 - call `res.next()`
 
   ```java
-  rules.any("/hello", (req, res) -> { 
-      // filtering logic  
-      res.next(); 
+  rules.any("/hello", (req, res) -> {
+      // filtering logic
+      res.next();
   });
   ```
 
@@ -736,12 +736,12 @@ The handler forwards the request to the downstream handlers by
 - throw an exception to forward to [error handling](#error_handling)
 
   ```java
-  rules.any("/hello", (req, res) -> { 
-      // filtering logic (e.g., validating parameters) 
+  rules.any("/hello", (req, res) -> {
+      // filtering logic (e.g., validating parameters)
       if (userParametersOk()) {
-          res.next(); 
+          res.next();
       } else {
-          throw new IllegalArgumentException("Invalid parameters."); 
+          throw new IllegalArgumentException("Invalid parameters.");
       }
   });
   ```
@@ -766,10 +766,10 @@ the `res.send()` method.
 > sending a response
 
 ```java
-rules.get("/hello", (req, res) -> { 
+rules.get("/hello", (req, res) -> {
     // terminating logic
     res.status(Status.ACCEPTED_202)
-            .send("Saved!"); 
+            .send("Saved!");
 });
 ```
 
@@ -785,9 +785,9 @@ specific routes on routing builder.
 
 Routing based on HTTP version:
 ```java
-rules.get("/any-version", (req, res) -> res.send("HTTP Version " + req.prologue().protocolVersion())) 
-        .route(Http1Route.route(Method.GET, "/version-specific", (req, res) -> res.send("HTTP/1.1 route"))) 
-        .route(Http2Route.route(Method.GET, "/version-specific", (req, res) -> res.send("HTTP/2 route"))); 
+rules.get("/any-version", (req, res) -> res.send("HTTP Version " + req.prologue().protocolVersion()))
+        .route(Http1Route.route(Method.GET, "/version-specific", (req, res) -> res.send("HTTP/1.1 route")))
+        .route(Http2Route.route(Method.GET, "/version-specific", (req, res) -> res.send("HTTP/2 route")));
 ```
 
 - An HTTP route registered on `/any-version` path that prints the
@@ -861,13 +861,13 @@ import static io.helidon.http.RequestedUriDiscoveryContext.RequestedUriDiscovery
 AllowList trustedProxies = AllowList.builder()
         .addAllowedPattern(Pattern.compile("lb.+\\.mycorp\\.com"))
         .addDenied("lbtest.mycorp.com")
-        .build(); 
+        .build();
 
 WebServer.builder()
         .requestedUriDiscoveryContext(it -> it
-                .addDiscoveryType(FORWARDED) 
+                .addDiscoveryType(FORWARDED)
                 .addDiscoveryType(X_FORWARDED)
-                .trustedProxies(trustedProxies)); 
+                .trustedProxies(trustedProxies));
 ```
 
 - Create the `AllowList` describing the intermediate networks nodes to
@@ -932,9 +932,9 @@ You may register an error handler for a specific `Throwable` in a
 `HttpRouting.Builder` method.
 
 ```java
-routing.error(MyException.class, (req, res, ex) -> { 
+routing.error(MyException.class, (req, res, ex) -> {
     // handle the error, set the HTTP status code
-    res.send(errorDescriptionObject); 
+    res.send(errorDescriptionObject);
 });
 ```
 
@@ -984,7 +984,7 @@ HTTP response as follows:
   rules.get((req, res) -> {
       throw new HttpException(
               "Amount of money must be greater than 0.",
-              Status.NOT_ACCEPTABLE_406); 
+              Status.NOT_ACCEPTABLE_406);
   });
   ```
 
@@ -1568,12 +1568,12 @@ classpath (`/`):
 
 server feature using `WebServerConfig.Builder`:
 ```java
-builder.addFeature(StaticContentFeature.builder() 
-                           .addPath(p -> p.location(Paths.get("/some/WEB/pics")) 
-                                   .context("/pictures")) 
-                           .addClasspath(cl -> cl.location("/static-content") 
-                                   .welcome("index.html") 
-                                   .context("/")) 
+builder.addFeature(StaticContentFeature.builder()
+                           .addPath(p -> p.location(Paths.get("/some/WEB/pics"))
+                                   .context("/pictures"))
+                           .addClasspath(cl -> cl.location("/static-content")
+                                   .welcome("index.html")
+                                   .context("/"))
                            .build());
 ```
 
@@ -1665,14 +1665,14 @@ To enable JSON Support add the following dependency to your project’s
 
 Handler that receives and returns JSON objects:
 ```java
-static final JsonBuilderFactory JSON_FACTORY = Json.createBuilderFactory(Map.of()); 
+static final JsonBuilderFactory JSON_FACTORY = Json.createBuilderFactory(Map.of());
 
 rules.post("/hello", (req, res) -> {
-    JsonObject requestEntity = req.content().as(JsonObject.class); 
-    JsonObject responseEntity = JSON_FACTORY.createObjectBuilder() 
+    JsonObject requestEntity = req.content().as(JsonObject.class);
+    JsonObject responseEntity = JSON_FACTORY.createObjectBuilder()
             .add("message", "Hello " + requestEntity.getString("name"))
             .build();
-    res.send(responseEntity); 
+    res.send(responseEntity);
 });
 ```
 
@@ -1791,7 +1791,7 @@ public class Person {
 Then you can set up a `Handler` like this:
 ```java
 rules.post("/echo", (req, res) -> {
-    res.send(req.content().as(Person.class)); 
+    res.send(req.content().as(Person.class));
 });
 ```
 
@@ -1892,7 +1892,7 @@ public class Person {
 Then you can set up a `Handler` like this:
 ```java
 rules.post("/echo", (req, res) -> {
-    res.send(req.content().as(Person.class)); 
+    res.send(req.content().as(Person.class));
 });
 ```
 
@@ -1997,7 +1997,7 @@ Then you can set up a `Handler` like this:
 A `Handler` that works with Java objects instead of raw JSON:
 ```java
 rules.post("/echo", (req, res) -> {
-    res.send(req.content().as(Person.class)); 
+    res.send(req.content().as(Person.class));
 });
 ```
 
@@ -2148,11 +2148,11 @@ free port:
 ```java
 public static void main(String[] args) {
     WebServer webServer = WebServer.builder()
-            .routing(it -> it.any((req, res) -> res.send("It works!"))) 
-            .build() 
-            .start(); 
+            .routing(it -> it.any((req, res) -> res.send("It works!")))
+            .build()
+            .start();
 
-    System.out.println("Server started at: http://localhost:" + webServer.port()); 
+    System.out.println("Server started at: http://localhost:" + webServer.port());
 }
 ```
 

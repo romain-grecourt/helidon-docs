@@ -41,10 +41,10 @@ for more information.
 ```yaml
 grpc:
   client:
-    channels:  
-      - name: "string-channel"  
-        host: localhost  
-        port: 8080  
+    channels:
+      - name: "string-channel"
+        host: localhost
+        port: 8080
 ```
 
 - Channels are configured in the `channels` section under `grpc.client`.
@@ -120,8 +120,8 @@ for this service, all that is required is an interface as shown next:
 
 ```java
 @ApplicationScoped
-@Grpc.GrpcService("StringService")  
-@Grpc.GrpcChannel("string-channel")  
+@Grpc.GrpcService("StringService")
+@Grpc.GrpcChannel("string-channel")
 interface StringServiceClient {
 
     @Grpc.Unary
@@ -168,8 +168,8 @@ the client proxy into the field.
 @ApplicationScoped
 public class MyAppBean {
 
-    @Inject  
-    @Grpc.GrpcProxy  
+    @Inject
+    @Grpc.GrpcProxy
     private StringServiceClient stringServiceClient;
 }
 ```
@@ -199,8 +199,8 @@ For example, a class might have an injectable `io.grpc.Channel` field as
 follows:
 
 ```java
-    @Inject  
-    @Grpc.GrpcChannel("string-channel")  
+    @Inject
+    @Grpc.GrpcChannel("string-channel")
     private Channel channel;
 ```
 

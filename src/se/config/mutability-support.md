@@ -91,13 +91,13 @@ Build a `Config` with a different `PollingStrategy` for each config source:
 ```java
 Config config = Config.create(
         ConfigSources.file("conf/dev.properties")
-                .pollingStrategy(PollingStrategies.regular(Duration.ofSeconds(2))) 
+                .pollingStrategy(PollingStrategies.regular(Duration.ofSeconds(2)))
                 .optional(),
         ConfigSources.file("conf/config.properties")
-                .changeWatcher(FileSystemWatcher.create()) 
+                .changeWatcher(FileSystemWatcher.create())
                 .optional(),
         ConfigSources.file("my.properties")
-                .pollingStrategy(PollingStrategies::nop)); 
+                .pollingStrategy(PollingStrategies::nop));
 ```
 
 - Optional `file` source `conf/dev.properties` will be checked for
@@ -130,8 +130,8 @@ method on the node of interest.
 Subscribe on `greeting` property changes via `onChange` method:
 
 ```java
-config.get("greeting") 
-        .onChange(changedNode -> { 
+config.get("greeting")
+        .onChange(changedNode -> {
             System.out.println("Node " + changedNode.key() + " has changed!");
         });
 ```
@@ -158,10 +158,10 @@ Access `greeting` property as `Supplier<String>`:
 ```java
 // Construct a Config with the appropriate PollingStrategy on each config source.
 
-Supplier<String> greetingSupplier = config.get("greeting") 
-        .asString().supplier(); 
+Supplier<String> greetingSupplier = config.get("greeting")
+        .asString().supplier();
 
-System.out.println("Always actual greeting value: " + greetingSupplier.get()); 
+System.out.println("Always actual greeting value: " + greetingSupplier.get());
 ```
 
 - Navigate to the `Config` node for which you want access to the

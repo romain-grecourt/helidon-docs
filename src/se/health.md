@@ -117,12 +117,12 @@ static HealthCheckResponse slowStartLivenessResponse() {
 Registering a health check using a method reference:
 ```java
 ObserveFeature observe = ObserveFeature.builder()
-        .config(config.get("server.features.observe")) 
-        .addObserver(HealthObserver.builder() 
-                             .useSystemServices(true) 
-                             .addCheck(Main::slowStartLivenessResponse, 
-                                       HealthCheckType.LIVENESS, 
-                                       "live-after-8-seconds") 
+        .config(config.get("server.features.observe"))
+        .addObserver(HealthObserver.builder()
+                             .useSystemServices(true)
+                             .addCheck(Main::slowStartLivenessResponse,
+                                       HealthCheckType.LIVENESS,
+                                       "live-after-8-seconds")
                              .build())
         .build();
 ```
@@ -151,14 +151,14 @@ Registering a health check using an in-line lambda expression:
 ```java
 ObserveFeature observe = ObserveFeature.builder()
         .config(config.get("server.features.observe"))
-        .addObserver(HealthObserver.builder() 
+        .addObserver(HealthObserver.builder()
                              .useSystemServices(true) // Include Helidon-provided health checks.
-                             .addCheck(() -> HealthCheckResponse.builder() 
-                                               .status(System.currentTimeMillis() - serverStartTime >= 8000) 
-                                               .detail("time", System.currentTimeMillis()) 
-                                               .build(), 
-                                       HealthCheckType.READINESS, 
-                                       "live-after-8-seconds") 
+                             .addCheck(() -> HealthCheckResponse.builder()
+                                               .status(System.currentTimeMillis() - serverStartTime >= 8000)
+                                               .detail("time", System.currentTimeMillis())
+                                               .build(),
+                                       HealthCheckType.READINESS,
+                                       "live-after-8-seconds")
                              .build())
         .build();
 ```
@@ -200,19 +200,19 @@ Declaring a concrete `HealthCheck` implementation:
 /**
  * A custom readiness health check that reports UP 8 seconds after server start-up.
  */
-class SlowStartHealthCheck implements HealthCheck { 
+class SlowStartHealthCheck implements HealthCheck {
 
     @Override
     public HealthCheckType type() {
-        return HealthCheckType.READINESS; 
+        return HealthCheckType.READINESS;
     }
 
     @Override
     public HealthCheckResponse call() {
         long now = System.currentTimeMillis();
         return HealthCheckResponse.builder()
-                .detail("time", now) 
-                .status(now - serverStartTime >= 8000) 
+                .detail("time", now)
+                .status(now - serverStartTime >= 8000)
                 .build();
     }
 }
@@ -236,8 +236,8 @@ Registering a `HealthCheck` instance:
 ```java
 ObserveFeature observe = ObserveFeature.builder()
         .config(config.get("server.features.observe"))
-        .addObserver(HealthObserver.builder() 
-                             .addCheck(new SlowStartHealthCheck()) 
+        .addObserver(HealthObserver.builder()
+                             .addCheck(new SlowStartHealthCheck())
                              .build())
         .build();
 ```
@@ -259,7 +259,7 @@ Register the observe feature with the server and start it:
 ```java
 WebServer server = WebServer.builder()
         .featuresDiscoverServices(false)
-        .addFeature(observe) 
+        .addFeature(observe)
         .routing(Main::routing)
         .build()
         .start();
@@ -421,9 +421,9 @@ Adding selected built-in health checks:
 WebServer server = WebServer.builder()
         .config(config.get("server"))
         .addFeature(ObserveFeature.create(HealthObserver.builder()
-                                                  .useSystemServices(false) 
-                                                  .addCheck(HealthChecks.deadlockCheck()) 
-                                                  .addCheck(hc) 
+                                                  .useSystemServices(false)
+                                                  .addCheck(HealthChecks.deadlockCheck())
+                                                  .addCheck(hc)
                                                   .details(true)
                                                   .build()))
         .routing(Main::routing)
@@ -548,8 +548,8 @@ pods. The event message contains only the status code.
 
 Get the events of a single pod:
 ```shell
-POD_NAME=$(kubectl get pod -l app=acme -o jsonpath='{.items[0].metadata.name}') 
-kubectl get event --field-selector involvedObject.name=${POD_NAME} 
+POD_NAME=$(kubectl get pod -l app=acme -o jsonpath='{.items[0].metadata.name}')
+kubectl get event --field-selector involvedObject.name=${POD_NAME}
 ```
 
 - Get the effective pod name by filtering pods with the label
@@ -629,27 +629,27 @@ Application code:
 ObserveFeature observeFeature = ObserveFeature.builder()
         .addObserver(HealthObserver.builder()
                              .useSystemServices(false)
-                             .endpoint("/health/live") 
-                             .addChecks(HealthChecks.healthChecks()) 
+                             .endpoint("/health/live")
+                             .addChecks(HealthChecks.healthChecks())
                              .build())
         .addObserver(HealthObserver.builder()
                              .useSystemServices(false)
-                             .endpoint("/health/ready") 
-                             .addCheck(() -> HealthCheckResponse.builder() 
+                             .endpoint("/health/ready")
+                             .addCheck(() -> HealthCheckResponse.builder()
                                                .status(true)
                                                .build(),
                                        HealthCheckType.READINESS,
                                        "database")
                              .build())
-        .sockets(List.of("observe")) 
+        .sockets(List.of("observe"))
         .build();
 WebServer server = WebServer.builder()
         .putSocket("@default", socket -> socket
-                .port(8080) 
-                .routing(r -> r.any((req, res) -> res.send("It works!")))) 
+                .port(8080)
+                .routing(r -> r.any((req, res) -> res.send("It works!"))))
         .addFeature(observeFeature)
         .putSocket("observe", socket -> socket
-                .port(8081)) 
+                .port(8081))
         .build()
         .start();
 ```
@@ -670,7 +670,7 @@ Kubernetes descriptor:
 kind: Service
 apiVersion: v1
 metadata:
-  name: acme 
+  name: acme
   labels:
     app: acme
 spec:
@@ -685,7 +685,7 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: acme 
+  name: acme
 spec:
   replicas: 1
   selector:
@@ -705,17 +705,17 @@ spec:
         - containerPort: 8080
         livenessProbe:
           httpGet:
-            path: /observe/health/live 
+            path: /observe/health/live
             port: 8081
-          initialDelaySeconds: 3 
+          initialDelaySeconds: 3
           periodSeconds: 10
           timeoutSeconds: 3
           failureThreshold: 3
         readinessProbe:
           httpGet:
-            path: /observe/health/ready 
+            path: /observe/health/ready
             port: 8081
-          initialDelaySeconds: 10 
+          initialDelaySeconds: 10
           periodSeconds: 30
           timeoutSeconds: 10
 ---

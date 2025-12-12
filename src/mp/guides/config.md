@@ -87,7 +87,7 @@ First define your own `Main`:
 public final class Main {
 
     private Main() {
-    } 
+    }
 
     public static void main(final String[] args) {
         Server server = startServer();
@@ -95,7 +95,7 @@ public final class Main {
     }
 
     static Server startServer() {
-        return Server.create().start(); 
+        return Server.create().start();
     }
 }
 ```
@@ -125,7 +125,7 @@ following code from the project you created.
 View `Main#startServer`:
 ```java
 static Server startServer() {
-    return Server.create().start(); 
+    return Server.create().start();
 }
 ```
 
@@ -189,7 +189,7 @@ curl http://localhost:8080/greet
 
 ```json
 {
-  "message": "HelloFromMPConfig World!" 
+  "message": "HelloFromMPConfig World!"
 }
 ```
 
@@ -215,7 +215,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFromEnvironment World!" 
+  "message": "HelloFromEnvironment World!"
 }
 ```
 
@@ -241,7 +241,7 @@ curl http://localhost:8080/greet
 JSON response:
 ```json
 {
-  "message": "HelloFromSystemProperty World!" 
+  "message": "HelloFromSystemProperty World!"
 }
 ```
 
@@ -260,12 +260,12 @@ The generated project already accesses configuration data in the
 View the following code from `GreetingProvider.java`:
 
 ```java
-@ApplicationScoped 
+@ApplicationScoped
 public class GreetingProvider {
-    private final AtomicReference<String> message = new AtomicReference<>(); 
+    private final AtomicReference<String> message = new AtomicReference<>();
 
     @Inject
-    public GreetingProvider(@ConfigProperty(name = "app.greeting") String message) {   
+    public GreetingProvider(@ConfigProperty(name = "app.greeting") String message) {
         this.message.set(message);
     }
 
@@ -300,7 +300,7 @@ Update the `meta-config.yaml` with the following contents:
 sources:
   - type: "classpath"
     properties:
-      resource: "META-INF/microprofile-config.properties"  
+      resource: "META-INF/microprofile-config.properties"
 ```
 
 - This example only uses the default classpath source.
@@ -311,8 +311,8 @@ Update the following code from `GreetingProvider.java`:
 public class GreetingProvider {
 
     @Inject
-    @ConfigProperty(name = "app.greeting") 
-    private volatile String message; 
+    @ConfigProperty(name = "app.greeting")
+    private volatile String message;
 
     String getMessage() {
         return message;
@@ -350,9 +350,9 @@ Replace the `GreetingProvider` class:
 public class GreetingProvider {
     private final AtomicReference<String> message = new AtomicReference<>();
 
-    @Inject 
+    @Inject
     public GreetingProvider(Config config) {
-        String message = config.get("app.greeting").asString().get(); 
+        String message = config.get("app.greeting").asString().get();
         this.message.set(message);
     }
 
@@ -425,9 +425,9 @@ public class GreetingProvider {
     Config config;
 
     public void onStartUp(@Observes @Initialized(ApplicationScoped.class) Object init) {
-        Config appNode = config.get("app.greeting"); 
-        message.set(appNode.get("message").asString().get());  
-        sender.set(appNode.get("sender").asString().get());   
+        Config appNode = config.get("app.greeting");
+        message.set(appNode.get("message").asString().get());
+        sender.set(appNode.get("sender").asString().get());
     }
 
     String getMessage() {
@@ -473,8 +473,8 @@ Update the `Main` class and replace the `buildConfig` method:
 private static Config buildConfig() {
     return Config.builder()
             .sources(
-                    file("/etc/config/config-file.properties").optional(), 
-                    classpath("META-INF/microprofile-config.properties")) 
+                    file("/etc/config/config-file.properties").optional(),
+                    classpath("META-INF/microprofile-config.properties"))
             .build();
 }
 ```
@@ -492,8 +492,8 @@ Update the following code from `GreetingProvider.java`:
 public class GreetingProvider {
 
     @Inject
-    @ConfigProperty(name = "app.greeting") 
-    private volatile String message; 
+    @ConfigProperty(name = "app.greeting")
+    private volatile String message;
 
     String getMessage() {
         return message;
@@ -536,7 +536,7 @@ kubectl get configmap helidon-configmap -o yaml
 ```yaml
 apiVersion: v1
 data:
-  config-file.properties: |  
+  config-file.properties: |
     app.greeting=HelloFromConfigFile
 kind: ConfigMap
 ```
@@ -553,7 +553,7 @@ the following contents:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-config 
+  name: helidon-config
   labels:
     app: helidon-config
 spec:
@@ -570,7 +570,7 @@ apiVersion: apps/v1
 metadata:
   name: helidon-config
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-config
@@ -588,13 +588,13 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: config-volume
-              mountPath: /etc/config 
+              mountPath: /etc/config
       volumes:
         - name: config-volume
           configMap:
             # Provide the name of the ConfigMap containing the files you want
             # to add to the container
-            name:  helidon-configmap 
+            name:  helidon-configmap
 ```
 
 - A service of type `NodePort` that serves the default routes on port
@@ -619,7 +619,7 @@ kubectl get service/helidon-config
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-config   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s 
+helidon-config   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s
 ```
 
 - A service of type `NodePort` that serves the default routes on port
@@ -634,7 +634,7 @@ curl http://localhost:31143/greet
 JSON response:
 ```json
 {
-  "message": "HelloFromConfigFile World!" 
+  "message": "HelloFromConfigFile World!"
 }
 ```
 

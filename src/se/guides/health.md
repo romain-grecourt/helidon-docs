@@ -115,7 +115,7 @@ under `server`):
 server:
   port: 8080
   host: 0.0.0.0
-  features: 
+  features:
     observe:
       observers:
         health:
@@ -146,8 +146,8 @@ detailed output for all health checks.
 Health check details:
 ```json
 {
-  "status": "UP", 
-  "checks": [ 
+  "status": "UP",
+  "checks": [
     {
       "name": "diskSpace",
       "status": "UP",
@@ -204,11 +204,11 @@ Updated `Main#main`, augmenting the creation of `WebServer` instance
 with a custom health check:
 ```java
 void snippet1(Config config) {
-    AtomicLong serverStartTime = new AtomicLong();  
+    AtomicLong serverStartTime = new AtomicLong();
 
-    HealthObserver healthObserver = HealthObserver.builder() 
-            .details(true) 
-            .addCheck(() -> HealthCheckResponse.builder() 
+    HealthObserver healthObserver = HealthObserver.builder()
+            .details(true)
+            .addCheck(() -> HealthCheckResponse.builder()
                               .status(System.currentTimeMillis() - serverStartTime.get() >= 8000)
                               .detail("time", System.currentTimeMillis())
                               .build(),
@@ -217,18 +217,18 @@ void snippet1(Config config) {
             .build();
 
     ObserveFeature observe = ObserveFeature.builder()
-            .config(config.get("server.features.observe")) 
-            .addObserver(healthObserver) 
+            .config(config.get("server.features.observe"))
+            .addObserver(healthObserver)
             .build();
 
     WebServer server = WebServer.builder()
             .config(config.get("server"))
-            .addFeature(observe)            
+            .addFeature(observe)
             .routing(Main::routing)
             .build()
             .start();
 
-    serverStartTime.set(System.currentTimeMillis()); 
+    serverStartTime.set(System.currentTimeMillis());
 ```
 
 - Declare a variable for holding the server start-up time. (This is set
@@ -407,7 +407,7 @@ method on the `HealthObserver.Builder`.
 Set a custom endpoint path:
 ```java
 HealthObserver healthObserver = HealthObserver.builder()
-        .endpoint("/myhealth") 
+        .endpoint("/myhealth")
         .build();
 ```
 
@@ -446,7 +446,7 @@ the example code.
 Apply health configuration to your custom health observer:
 ```java
 HealthObserver healthObserver = HealthObserver.builder()
-        .config(config.get("server.features.observe.observers.health")) 
+        .config(config.get("server.features.observe.observers.health"))
         .build();
 ```
 
@@ -494,22 +494,22 @@ checks:
 ObserveFeature observe = ObserveFeature.builder()
         .config(config.get("server.features.observe"))
         .addObserver(HealthObserver.builder()
-                             .useSystemServices(true) 
+                             .useSystemServices(true)
                              .addCheck(() -> HealthCheckResponse.builder()
                                      .status(readyTime.get() != 0)
                                      .detail("time", readyTime.get())
-                                     .build(), HealthCheckType.READINESS) 
+                                     .build(), HealthCheckType.READINESS)
                              .addCheck(() -> HealthCheckResponse.builder()
                                      .status(readyTime.get() != 0
                                              && Duration.ofMillis(System.currentTimeMillis()
                                                                   - readyTime.get())
                                                         .getSeconds() >= 3)
                                      .detail("time", readyTime.get())
-                                     .build(), HealthCheckType.STARTUP) 
+                                     .build(), HealthCheckType.STARTUP)
                              .addCheck(() -> HealthCheckResponse.builder()
                                      .status(HealthCheckResponse.Status.UP)
                                      .detail("time", System.currentTimeMillis())
-                                     .build(), HealthCheckType.LIVENESS) 
+                                     .build(), HealthCheckType.LIVENESS)
                              .build())
         .build();
 ```
@@ -538,7 +538,7 @@ following content:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-health 
+  name: helidon-health
   labels:
     app: helidon-health
 spec:
@@ -553,7 +553,7 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: helidon-health 
+  name: helidon-health
 spec:
   replicas: 1
   selector:
@@ -573,24 +573,24 @@ spec:
             - containerPort: 8080
           livenessProbe:
             httpGet:
-              path: /health/live 
+              path: /health/live
               port: 8080
-            initialDelaySeconds: 5 
+            initialDelaySeconds: 5
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /health/ready 
+              path: /health/ready
               port: 8080
-            initialDelaySeconds: 5 
+            initialDelaySeconds: 5
             periodSeconds: 2
             timeoutSeconds: 3
           startupProbe:
             httpGet:
-              path: /health/started 
+              path: /health/started
               port: 8080
-            initialDelaySeconds: 8 
+            initialDelaySeconds: 8
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
@@ -626,7 +626,7 @@ kubectl get service/helidon-health
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-health   NodePort   10.107.226.62   <none>        8080:30116/TCP   4s 
+helidon-health   NodePort   10.107.226.62   <none>        8080:30116/TCP   4s
 ```
 
 - A service of type `NodePort` that serves the default routes on port

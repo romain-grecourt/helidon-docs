@@ -129,13 +129,13 @@ custom liveness health check.
 Create a new `GreetLivenessCheck` class with the following content:
 
 ```java
-@Liveness 
-@ApplicationScoped 
+@Liveness
+@ApplicationScoped
 public class GreetLivenessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("LivenessCheck")  
+        return HealthCheckResponse.named("LivenessCheck")
                 .up()
                 .withData("time", System.currentTimeMillis())
                 .build();
@@ -181,14 +181,14 @@ becomes ready.
 
 Create a new `GreetReadinessCheck` class with the following content:
 ```java
-@Readiness 
+@Readiness
 @ApplicationScoped
 public class GreetReadinessCheck implements HealthCheck {
     private final AtomicLong readyTime = new AtomicLong(0);
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("ReadinessCheck")  
+        return HealthCheckResponse.named("ReadinessCheck")
                 .status(isReady())
                 .withData("time", readyTime.get())
                 .build();
@@ -196,7 +196,7 @@ public class GreetReadinessCheck implements HealthCheck {
 
     public void onStartUp(
             @Observes @Initialized(ApplicationScoped.class) Object init) {
-        readyTime.set(System.currentTimeMillis()); 
+        readyTime.set(System.currentTimeMillis());
     }
 
     /**
@@ -226,7 +226,7 @@ curl -v  http://localhost:8080/health/ready
 
 HTTP response status:
 ```text
-< HTTP/1.1 503 Service Unavailable 
+< HTTP/1.1 503 Service Unavailable
 ```
 
 - The HTTP status is `503` since the application is not ready.
@@ -254,7 +254,7 @@ curl -v http://localhost:8080/health/ready
 
 HTTP response status:
 ```text
-< HTTP/1.1 200 OK 
+< HTTP/1.1 200 OK
 ```
 
 - The HTTP status is `200` indicating that the application is ready.
@@ -285,14 +285,14 @@ itself started.
 
 Create a new `GreetStartedCheck` class with the following content:
 ```java
-@Startup 
+@Startup
 @ApplicationScoped
 public class GreetStartedCheck implements HealthCheck {
     private final AtomicLong readyTime = new AtomicLong(0);
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("StartedCheck")  
+        return HealthCheckResponse.named("StartedCheck")
                 .status(isStarted())
                 .withData("time", readyTime.get())
                 .build();
@@ -300,7 +300,7 @@ public class GreetStartedCheck implements HealthCheck {
 
     public void onStartUp(
             @Observes @Initialized(ApplicationScoped.class) Object init) {
-        readyTime.set(System.currentTimeMillis()); 
+        readyTime.set(System.currentTimeMillis());
     }
 
     boolean isStarted() {
@@ -325,7 +325,7 @@ curl -v  http://localhost:8080/health/started
 
 HTTP response status:
 ```text
-< HTTP/1.1 503 Service Unavailable 
+< HTTP/1.1 503 Service Unavailable
 ```
 
 - The HTTP status is `503` since the application has not started.
@@ -352,7 +352,7 @@ curl -v http://localhost:8080/health/started
 
 HTTP response status:
 ```text
-< HTTP/1.1 200 OK 
+< HTTP/1.1 200 OK
 ```
 
 - The HTTP status is `200` indicating that the application is started.
@@ -466,7 +466,7 @@ the following contents:
 
 ```yaml
 health:
-  endpoint: "/myhealth" 
+  endpoint: "/myhealth"
 ```
 
 - The `endpoint` settings specifies the root path for the health
@@ -487,15 +487,15 @@ Update application.yaml to use a different port and root path for the
 health endpoint:
 ```yaml
 server:
-  port: 8080 
+  port: 8080
   sockets:
-    - name: "admin" 
-      port: 8081 
+    - name: "admin"
+      port: 8081
   features:
     observe:
-      sockets: "admin" 
+      sockets: "admin"
 health:
-  endpoint: "/myhealth" 
+  endpoint: "/myhealth"
 ```
 
 - The default port for the application.
@@ -543,7 +543,7 @@ following content:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-health 
+  name: helidon-health
   labels:
     app: helidon-health
 spec:
@@ -558,7 +558,7 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: helidon-health 
+  name: helidon-health
 spec:
   replicas: 1
   selector:
@@ -578,24 +578,24 @@ spec:
             - containerPort: 8080
           livenessProbe:
             httpGet:
-              path: /health/live 
+              path: /health/live
               port: 8080
-            initialDelaySeconds: 5 
+            initialDelaySeconds: 5
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /health/ready 
+              path: /health/ready
               port: 8080
-            initialDelaySeconds: 5 
+            initialDelaySeconds: 5
             periodSeconds: 2
             timeoutSeconds: 3
           startupProbe:
             httpGet:
-              path: /health/started 
+              path: /health/started
               port: 8080
-            initialDelaySeconds: 8 
+            initialDelaySeconds: 8
             periodSeconds: 10
             timeoutSeconds: 3
             failureThreshold: 3
@@ -631,7 +631,7 @@ kubectl get service/helidon-health
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-health   NodePort   10.107.226.62   <none>        8080:30116/TCP   4s 
+helidon-health   NodePort   10.107.226.62   <none>        8080:30116/TCP   4s
 ```
 
 - A service of type `NodePort` that serves the default routes on port

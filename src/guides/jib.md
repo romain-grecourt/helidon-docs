@@ -100,7 +100,7 @@ docker images jib-quickstart-se:latest
 
 ```shell
 REPOSITORY          TAG           IMAGE ID      CREATED        SIZE
-jib-quickstart-se   latest        384aebda5594  48 years ago   124MB 
+jib-quickstart-se   latest        384aebda5594  48 years ago   124MB
 ```
 
 - Ignore the fact that it says the image was created 48 years ago. Refer

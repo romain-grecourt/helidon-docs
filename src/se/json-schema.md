@@ -85,7 +85,7 @@ data model and ensures schemas are generated automatically without
 manual coding.
 
 ```java
-@JsonSchema.Schema 
+@JsonSchema.Schema
 @JsonSchema.Description("Example JSON Schema")
 public record ExampleSchema(@JsonSchema.Integer.Minimum(0) int exampleProperty) {
 }

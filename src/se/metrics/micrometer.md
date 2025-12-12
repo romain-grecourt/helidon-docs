@@ -150,7 +150,7 @@ static void routing(HttpRouting.Builder routing) {
 
             // Pass the registry to your service
             .register("/myapp", new MyService(micrometerFeature.registry()))
-            .build();   
+            .build();
 }
 ```
 
@@ -164,20 +164,20 @@ class MyService implements HttpService {
 
     MyService(MeterRegistry registry) {
         // Use the Micrometer meter registry to create the request counter
-        requestCounter = registry.counter("allRequests"); 
+        requestCounter = registry.counter("allRequests");
     }
 
     @Override
     public void routing(HttpRules rules) {
         rules
-                .any(this::countRequests) 
+                .any(this::countRequests)
                 .get("/", this::myGet);
     }
 
     // A non-terminating handler that "filters" all requests
     // Increment the access counter for every request
     void countRequests(ServerRequest request, ServerResponse response) {
-        requestCounter.increment(); 
+        requestCounter.increment();
         response.next();
     }
 
@@ -222,7 +222,7 @@ Overriding defaults for built-in meter registries using
 `MicrometerSupport.Builder`:
 ```java
 MeterRegistryFactory meterRegistryFactory = MeterRegistryFactory.builder()
-        .enrollBuiltInRegistry(BuiltInRegistryType.PROMETHEUS, myPrometheusConfig) 
+        .enrollBuiltInRegistry(BuiltInRegistryType.PROMETHEUS, myPrometheusConfig)
         .build();
 MicrometerFeature micrometerFeature = MicrometerFeature.builder()
         .meterRegistryFactorySupplier(meterRegistryFactory)
@@ -279,7 +279,7 @@ void snippet(PrometheusMeterRegistry registry) {
             // enroll the registry with a registry "handler" function
             // I.e., Function<ServerRequest, Optional<Handler>>
             .enrollRegistry(registry, request -> request
-                    // E.g. return the prometheus metrics 
+                    // E.g. return the prometheus metrics
                     // when TEXT_PLAIN is an acceptable content-type
                     .headers()
                     .bestAccepted(MediaTypes.TEXT_PLAIN)

@@ -308,7 +308,7 @@ server:
   features:
     security:
         # protected paths on the web server
-        paths: 
+        paths:
           - path: "/greet"
             methods: ["get"]
             authenticate: true
@@ -317,14 +317,14 @@ security:
   - abac:
       # Adds ABAC Provider - it does not require any configuration
   - oidc:
-      client-id: "myClientID" 
-      client-secret: "changeit" 
-      identity-uri: "http://localhost:8080/realms/myRealm" 
+      client-id: "myClientID"
+      client-secret: "changeit"
+      identity-uri: "http://localhost:8080/realms/myRealm"
       audience: "account"
       header-use: "true"
       # proxy-host should be defined if you operate behind a proxy, can be removed otherwise
       proxy-host: ""
-      frontend-uri: "http://localhost:7987" 
+      frontend-uri: "http://localhost:7987"
       server-type: "oidc"
 ```
 
@@ -361,7 +361,7 @@ Once the properties are added, the web server must be setup. The
 Add the following to the `Main#routing` method:
 ```java
 Config config = Config.global();
-routing.addFeature(OidcFeature.create(config));   
+routing.addFeature(OidcFeature.create(config));
 ```
 
 - Create and register `OidcFeature`.
@@ -541,8 +541,8 @@ security:
           - login: "jack"
             password: "jackIsGreat"
     - oidc:
-        client-id: "myClientID" 
-        client-secret: "Your client secret" 
+        client-id: "myClientID"
+        client-secret: "Your client secret"
         identity-uri: "http://localhost:8080/realms/myRealm"
         audience: "account"
         frontend-uri: "http://localhost:7987"

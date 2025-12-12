@@ -105,7 +105,7 @@ For each resource you want to configure, add a section to
 
 General form of CORS configuration:
 ```properties
-cors.enabled= 
+cors.enabled=
 cors.paths.i.path-pattern=
 cors.paths.i.allow-headers=
 cors.paths.i.max-age-seconds=
@@ -113,7 +113,7 @@ cors.paths.i.allow-credentials=
 cors.paths.i.allow-origins=
 cors.paths.i.expose-headers=
 cors.paths.i.allow-methods=
-cors.paths.i.enabled= 
+cors.paths.i.enabled=
 ```
 
 - You can disable CORS processing for all resources by setting
@@ -186,10 +186,10 @@ The discussion below describes the changes in the application which:
 Using annotations to declare CORS behavior:
 ```java
 @Path("/greet")
-public class GreetResource { 
+public class GreetResource {
 
     @GET
-    public JsonObject getDefaultMessage() { 
+    public JsonObject getDefaultMessage() {
         return Json.createObjectBuilder()
                 .add("message", "Hello")
                 .build();
@@ -197,20 +197,20 @@ public class GreetResource {
 
     @Path("/greeting")
     @PUT
-    public Response updateGreeting(JsonObject jsonObject) { 
+    public Response updateGreeting(JsonObject jsonObject) {
         return Response.ok().build();
     }
 
     @OPTIONS
     @CrossOrigin()
-    public void optionsForRetrievingUnnamedGreeting() { 
+    public void optionsForRetrievingUnnamedGreeting() {
     }
 
     @OPTIONS
     @Path("/greeting")
     @CrossOrigin(value = {"http://foo.com", "http://there.com"},
                  allowMethods = {HttpMethod.PUT})
-    public void optionsForUpdatingGreeting() { 
+    public void optionsForUpdatingGreeting() {
     }
 }
 ```
@@ -238,9 +238,9 @@ to set up the same CORS behavior.
 
 Using configuration to set up the same CORS behavior:
 ```properties
-cors.paths.0.path-pattern=/greet 
+cors.paths.0.path-pattern=/greet
 
-cors.paths.1.path-pattern=/greet/greeting 
+cors.paths.1.path-pattern=/greet/greeting
 cors.paths.1.allow-origins=https://foo.com,https://there.com
 cors.paths.1.allow-methods=PUT
 ```
@@ -255,11 +255,11 @@ settings from the `@CrossOrigin` annotations in the code.
 
 Using configuration to augment or override declared CORS behavior:
 ```properties
-cors.paths.0.path-pattern=/greet 
+cors.paths.0.path-pattern=/greet
 cors.paths.0.allow-methods=GET
 cors.paths.0.allow-origins=https://here.com,https://foo.com,https://there.com
 
-cors.paths.1.path-pattern=/greet/greeting 
+cors.paths.1.path-pattern=/greet/greeting
 cors.paths.1.allow-methods=PUT
 cors.paths.1.allow-origins=https://foo.com
 ```

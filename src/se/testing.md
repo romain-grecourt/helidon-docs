@@ -104,26 +104,26 @@ the correct response:
 
 Basic Helidon test framework usage:
 ```java
-@ServerTest 
+@ServerTest
 class MyServerTest {
 
     final Http1Client client;
 
-    MyServerTest(Http1Client client) { 
+    MyServerTest(Http1Client client) {
         this.client = client;
     }
 
-    @SetUpRoute 
+    @SetUpRoute
     static void routing(HttpRouting.Builder builder) {
         Main.routing(builder);
     }
 
     @Test
-    void testRootRoute() { 
+    void testRootRoute() {
         try (Http1ClientResponse response = client
                 .get("/greet")
-                .request()) { 
-            assertThat(response.status(), is(Status.OK_200)); 
+                .request()) {
+            assertThat(response.status(), is(Status.OK_200));
         }
     }
 }
@@ -160,26 +160,26 @@ directly invokes the router.
 
 Routing test using `@RoutingTest` and `DirectClient`:
 ```java
-@RoutingTest 
+@RoutingTest
 class MyRoutingTest {
 
     final Http1Client client;
 
-    MyRoutingTest(DirectClient client) { 
+    MyRoutingTest(DirectClient client) {
         this.client = client;
     }
 
-    @SetUpRoute 
+    @SetUpRoute
     static void routing(HttpRouting.Builder builder) {
         Main.routing(builder);
     }
 
     @Test
-    void testRootRoute() { 
+    void testRootRoute() {
         try (Http1ClientResponse response = client
                 .get("/greet")
-                .request()) { 
-            JsonObject json = response.as(JsonObject.class); 
+                .request()) {
+            JsonObject json = response.as(JsonObject.class);
             assertThat(json.getString("message"), is("Hello World!"));
         }
     }
@@ -266,22 +266,22 @@ WebSocket sample test:
 class WsSocketTest {
 
     static final ServerSideListener WS_LISTENER = new ServerSideListener();
-    final WsClient wsClient; 
+    final WsClient wsClient;
 
     WsSocketTest(WsClient wsClient) {
         this.wsClient = wsClient;
     }
 
     @SetUpRoute
-    static void routing(WsRouting.Builder ws) { 
+    static void routing(WsRouting.Builder ws) {
         ws.endpoint("/testWs", WS_LISTENER);
     }
 
     @Test
-    void testWsEndpoint() { 
+    void testWsEndpoint() {
         ClientSideListener clientListener = new ClientSideListener();
-        wsClient.connect("/testWs", clientListener); 
-        assertThat(clientListener.message, is("ws")); 
+        wsClient.connect("/testWs", clientListener);
+        assertThat(clientListener.message, is("ws"));
     }
 }
 ```
@@ -300,18 +300,18 @@ static class ClientSideListener implements WsListener {
     volatile Throwable error;
 
     @Override
-    public void onOpen(WsSession session) { 
+    public void onOpen(WsSession session) {
         session.send("hello", true);
     }
 
     @Override
-    public void onMessage(WsSession session, String text, boolean last) { 
+    public void onMessage(WsSession session, String text, boolean last) {
         message = text;
         session.close(WsCloseCodes.NORMAL_CLOSE, "End");
     }
 
     @Override
-    public void onError(WsSession session, Throwable t) { 
+    public void onError(WsSession session, Throwable t) {
         error = t;
     }
 }
@@ -330,7 +330,7 @@ static class ServerSideListener implements WsListener {
     volatile String message;
 
     @Override
-    public void onMessage(WsSession session, String text, boolean last) { 
+    public void onMessage(WsSession session, String text, boolean last) {
         message = text;
         session.send("ws", true);
     }

@@ -48,10 +48,10 @@ register your services.
 ```java
 private static GrpcRouting.Builder createRouting(Config config) {
     return GrpcRouting.builder()
-            .service(new GreetService(config)) 
-            .service(new EchoService())        
-            .service(new MathService())        
-            .unary(Strings.getDescriptor(),    
+            .service(new GreetService(config))
+            .service(new EchoService())
+            .service(new MathService())
+            .unary(Strings.getDescriptor(),
                    "StringService",
                    "Upper",
                    Main::grpcUpper);
@@ -134,12 +134,12 @@ implementation:
 class EchoService implements GrpcService {
     @Override
     public Descriptors.FileDescriptor proto() {
-        return Echo.getDescriptor(); 
+        return Echo.getDescriptor();
     }
 
     @Override
     public void update(Routing routing) {
-        routing.unary("Echo", this::echo); 
+        routing.unary("Echo", this::echo);
     }
 
     /**
@@ -148,10 +148,10 @@ class EchoService implements GrpcService {
      * @param request  the echo request containing the message to echo
      * @param observer the response observer
      */
-    public void echo(Echo.EchoRequest request, StreamObserver<Echo.EchoResponse> observer) {  
-        String message = request.getMessage();  
-        Echo.EchoResponse response = Echo.EchoResponse.newBuilder().setMessage(message).build();  
-        complete(observer, response);  
+    public void echo(Echo.EchoRequest request, StreamObserver<Echo.EchoResponse> observer) {
+        String message = request.getMessage();
+        Echo.EchoResponse response = Echo.EchoResponse.newBuilder().setMessage(message).build();
+        complete(observer, response);
     }
 }
 ```
@@ -273,8 +273,8 @@ configuration)
 ```java
 WebServer.builder()
         .port(8080)
-        .routing(httpRouting -> httpRouting.get("/greet", (req, res) -> res.send("Hi!"))) 
-        .addRouting(GrpcRouting.builder()  
+        .routing(httpRouting -> httpRouting.get("/greet", (req, res) -> res.send("Hi!")))
+        .addRouting(GrpcRouting.builder()
                             .unary(Strings.getDescriptor(),
                                    "StringService",
                                    "Upper",

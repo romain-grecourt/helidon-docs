@@ -220,11 +220,11 @@ the OpenAPI document.
 Configure OpenAPI behavior:
 ```yaml
 server:
-  port: 8080                  
+  port: 8080
   host: 0.0.0.0
   features:
-    openapi:                  
-      web-context: /myopenapi 
+    openapi:
+      web-context: /myopenapi
 ```
 
 - The `port` and `host` settings are for the server as a whole, not
@@ -246,7 +246,7 @@ Java Code to Create and Register `OpenApiFeature`:
 ```java
 WebServer server = WebServer.builder()
         .config(config.get("server"))
-        .addFeature(OpenApiFeature.create(config.get("openapi"))) 
+        .addFeature(OpenApiFeature.create(config.get("openapi")))
         .routing(Main::routing)
         .build()
         .start();

@@ -82,11 +82,11 @@ import io.helidon.integrations.langchain4j.AiProvider;
 import dev.langchain4j.model.googleai.GeminiSafetySetting;
 import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 
-@AiProvider.ModelConfig(GoogleAiGeminiChatModel.class) 
-interface GoogleAiGeminiLc4jProvider { 
+@AiProvider.ModelConfig(GoogleAiGeminiChatModel.class)
+interface GoogleAiGeminiLc4jProvider {
 
     @Option.Configured
-    @Option.RegistryService 
+    @Option.RegistryService
     List<GeminiSafetySetting> safetySettings();
 }
 ```
@@ -113,7 +113,7 @@ interface name, example: `NameOfTheProviderLc4jProvider` →
 
 ```yaml
 langchain4j:
-  google-ai-gemini: 
+  google-ai-gemini:
     chat-model:
       enabled: true
       model-name: gemini-2.5-flash
@@ -150,7 +150,7 @@ langchain4j:
       model-name: gemini-2.5-flash
       api-key: ${GEMINI_AI_KEY}
       safety-settings:
-        service-registry.named: custom-named-settings 
+        service-registry.named: custom-named-settings
 ```
 
 - Named qualifier can be a string value used for looking up desired

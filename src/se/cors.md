@@ -318,13 +318,13 @@ The following example illustrates the mapped cross-origin configuration
 format.
 
 ```yaml
-my-cors: 
-  paths: 
-    - path-pattern: /greeting 
-      allow-origins: ["https://foo.com", "https://there.com", "https://other.com"] 
+my-cors:
+  paths:
+    - path-pattern: /greeting
+      allow-origins: ["https://foo.com", "https://there.com", "https://other.com"]
       allow-methods: ["PUT", "DELETE"]
-    - path-pattern: / 
-      allow-methods: ["GET", "HEAD", "OPTIONS", "POST"] 
+    - path-pattern: /
+      allow-methods: ["GET", "HEAD", "OPTIONS", "POST"]
 ```
 
 - Assigns a unique identifier for this mapped CORS config section.

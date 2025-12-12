@@ -365,7 +365,7 @@ public Publisher<Message<String>> streamOfMessages() {
 @Acknowledgment(Acknowledgment.Strategy.MANUAL)
 public CompletionStage<Void> receiveAndAckMessage(Message<String> msg) {
     // prints "This particular message was acked!" to System.out
-    return msg.ack(); 
+    return msg.ack();
 }
 ```
 
@@ -383,7 +383,7 @@ public Publisher<Message<String>> streamOfMessages() {
 @Acknowledgment(Acknowledgment.Strategy.MANUAL)
 public CompletionStage<Void> receiveAndAckMessage(Message<String> msg) {
     // prints "This particular message was acked!" to System.out
-    return msg.ack(); 
+    return msg.ack();
 }
 ```
 
@@ -468,7 +468,7 @@ mp.messaging.outgoing.to-connector-channel.connector: example-connector
 
 # Use connector `example-connector` as an upstream for channel to-connector-channel
 # to produce messages to the channel
-mp.messaging.incoming.from-connector-channel.connector: example-connector 
+mp.messaging.incoming.from-connector-channel.connector: example-connector
 ```
 
 Example producing to connector:
@@ -513,9 +513,9 @@ public class ExampleConnector implements IncomingConnectorFactory {
     @Override
     public PublisherBuilder<? extends Message<?>> getPublisherBuilder(final Config config) {
 
-        String firstPropValue = config.getValue("channel-specific-prop", String.class); 
+        String firstPropValue = config.getValue("channel-specific-prop", String.class);
         String secondPropValue = config.getValue("connector-specific-prop", String.class);
-        String channelName = config.getValue("channel-name", String.class); 
+        String channelName = config.getValue("channel-name", String.class);
 
         return ReactiveStreams.of(firstPropValue, secondPropValue)
                 .map(Message::of);

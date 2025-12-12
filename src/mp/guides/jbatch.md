@@ -212,13 +212,13 @@ Add this code to your job descriptor.xml file:
                 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd"
                 version="2.0">
     <step id="step1" next="step2">
-        <chunk item-count="3"> 
+        <chunk item-count="3">
             <reader ref="io.helidon.examples.jbatch.jobs.MyItemReader"/>
             <processor ref="io.helidon.examples.jbatch.jobs.MyItemProcessor"/>
             <writer ref="io.helidon.examples.jbatch.jobs.MyItemWriter"/>
         </chunk>
     </step>
-    <step id="step2"> 
+    <step id="step2">
         <batchlet ref="io.helidon.examples.jbatch.jobs.MyBatchlet"/>
     </step>
 </job>

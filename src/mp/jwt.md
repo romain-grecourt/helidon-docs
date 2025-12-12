@@ -346,7 +346,7 @@ Which means that the request successfully passed authentication.
 
 # Additional Information
 
-Learn more about JWT authentication at:  
+Learn more about JWT authentication at:
 [Eclipse MicroProfile Interoperable JWT RBAC](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.1#_introduction)
 
 # Reference

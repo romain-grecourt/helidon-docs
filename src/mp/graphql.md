@@ -45,22 +45,22 @@ public class ContactGraphQLApi {
     private CustomerService customerService;
 
     @Query
-    public Collection<Customer> findAllCustomers() { 
+    public Collection<Customer> findAllCustomers() {
         return customerService.getAllCustomers();
     }
 
     @Query
-    public Customer findCustomer(@Name("customerId") int id) { 
+    public Customer findCustomer(@Name("customerId") int id) {
         return customerService.getCustomer(id);
     }
 
     @Query
-    public Collection<Customer> findCustomersByName(@Name("name") String name) { 
+    public Collection<Customer> findCustomersByName(@Name("name") String name) {
         return customerService.getAllCustomers(name);
     }
 
     @Mutation
-    public Customer createCustomer(@Name("customerId") int id, 
+    public Customer createCustomer(@Name("customerId") int id,
                                   @Name("name") String name,
                                   @Name("balance") float balance) {
         return customerService.createCustomer(id, name, balance);

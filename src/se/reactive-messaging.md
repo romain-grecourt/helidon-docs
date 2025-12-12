@@ -205,7 +205,7 @@ public class ExampleConnector implements IncomingConnectorFactory {
     @Override
     public PublisherBuilder<? extends Message<?>> getPublisherBuilder(Config config) {
 
-        String firstPropValue = config.getValue("first-test-prop", String.class); 
+        String firstPropValue = config.getValue("first-test-prop", String.class);
         String secondPropValue = config.getValue("second-test-prop", String.class);
 
         return ReactiveStreams.of(firstPropValue, secondPropValue)
@@ -230,7 +230,7 @@ Example consuming from Kafka connector with explicit config:
 String kafkaServer = config.get("app.kafka.bootstrap.servers").asString().get();
 String topic = config.get("app.kafka.topic").asString().get();
 
-Channel<String> fromKafka = Channel.<String>builder()  
+Channel<String> fromKafka = Channel.<String>builder()
         .name("from-kafka")
         .publisherConfig(KafkaConnector.configBuilder()
                                  .bootstrapServers(kafkaServer)
@@ -243,7 +243,7 @@ Channel<String> fromKafka = Channel.<String>builder()
                                  .build())
         .build();
 
-KafkaConnector kafkaConnector = KafkaConnector.create(); 
+KafkaConnector kafkaConnector = KafkaConnector.create();
 
 Messaging messaging = Messaging.builder()
         .connector(kafkaConnector)
@@ -323,7 +323,7 @@ Example of consuming from Kafka:
 String kafkaServer = config.get("app.kafka.bootstrap.servers").asString().get();
 String topic = config.get("app.kafka.topic").asString().get();
 
-Channel<String> fromKafka = Channel.<String>builder() 
+Channel<String> fromKafka = Channel.<String>builder()
         .name("from-kafka")
         .publisherConfig(KafkaConnector.configBuilder()
                                  .bootstrapServers(kafkaServer)
@@ -336,7 +336,7 @@ Channel<String> fromKafka = Channel.<String>builder()
                                  .build())
         .build();
 
-KafkaConnector kafkaConnector = KafkaConnector.create(); 
+KafkaConnector kafkaConnector = KafkaConnector.create();
 Messaging messaging = Messaging.builder()
         .connector(kafkaConnector)
         .listener(fromKafka, payload -> {
@@ -359,7 +359,7 @@ Example of producing to Kafka:
 String kafkaServer = config.get("app.kafka.bootstrap.servers").asString().get();
 String topic = config.get("app.kafka.topic").asString().get();
 
-Channel<String> toKafka = Channel.<String>builder()  
+Channel<String> toKafka = Channel.<String>builder()
         .subscriberConfig(KafkaConnector.configBuilder()
                                   .bootstrapServers(kafkaServer)
                                   .topic(topic)
@@ -368,7 +368,7 @@ Channel<String> toKafka = Channel.<String>builder()
                                   .build())
         .build();
 
-KafkaConnector kafkaConnector = KafkaConnector.create(); 
+KafkaConnector kafkaConnector = KafkaConnector.create();
 
 Messaging messaging = Messaging.builder()
         .publisher(toKafka, Multi.just("test1", "test2").map(Message::of))
@@ -394,7 +394,7 @@ mp.messaging:
   incoming.from-kafka:
     connector: helidon-kafka
     topic: messaging-test-topic-1
-    auto.offset.reset: latest 
+    auto.offset.reset: latest
     enable.auto.commit: true
     group.id: example-group-id
 
@@ -404,7 +404,7 @@ mp.messaging:
 
   connector:
     helidon-kafka:
-      bootstrap.servers: localhost:9092 
+      bootstrap.servers: localhost:9092
       key.serializer: org.apache.kafka.common.serialization.StringSerializer
       value.serializer: org.apache.kafka.common.serialization.StringSerializer
       key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -422,7 +422,7 @@ Example of consuming from Kafka:
 ```java
 Channel<String> fromKafka = Channel.create("from-kafka");
 
-KafkaConnector kafkaConnector = KafkaConnector.create(); 
+KafkaConnector kafkaConnector = KafkaConnector.create();
 
 Messaging messaging = Messaging.builder()
         .config(config)
@@ -440,7 +440,7 @@ Example of producing to Kafka:
 ```java
 Channel<String> toKafka = Channel.create("to-kafka");
 
-KafkaConnector kafkaConnector = KafkaConnector.create(); 
+KafkaConnector kafkaConnector = KafkaConnector.create();
 
 Messaging messaging = Messaging.builder()
         .config(config)
@@ -473,7 +473,7 @@ Connecting streams to JMS with Reactive Messaging couldn’t be easier.
 
 Example of consuming from JMS:
 ```java
-Channel<String> fromJms = Channel.<String>builder() 
+Channel<String> fromJms = Channel.<String>builder()
         .name("from-jms")
         .publisherConfig(JmsConnector.configBuilder()
                                  .jndiInitialFactory(ActiveMQInitialContextFactory.class)
@@ -483,7 +483,7 @@ Channel<String> fromJms = Channel.<String>builder()
                                  .build())
         .build();
 
-JmsConnector jmsConnector = JmsConnector.create(); 
+JmsConnector jmsConnector = JmsConnector.create();
 
 Messaging messaging = Messaging.builder()
         .connector(jmsConnector)
@@ -504,7 +504,7 @@ Messaging messaging = Messaging.builder()
 
 Example of producing to JMS:
 ```java
-Channel<String> toJms = Channel.<String>builder()  
+Channel<String> toJms = Channel.<String>builder()
         .subscriberConfig(JmsConnector.configBuilder()
                                   .jndiInitialFactory(ActiveMQInitialContextFactory.class)
                                   .jndiProviderUrl("tcp://127.0.0.1:61616")
@@ -513,7 +513,7 @@ Channel<String> toJms = Channel.<String>builder()
                                   .build()
         ).build();
 
-JmsConnector jmsConnector = JmsConnector.create(); 
+JmsConnector jmsConnector = JmsConnector.create();
 
 Messaging messaging = Messaging.builder()
         .publisher(toJms, Multi.just("test1", "test2").map(Message::of))
@@ -560,7 +560,7 @@ Example of consuming from JMS:
 ```java
 Channel<String> fromJms = Channel.create("from-jms");
 
-JmsConnector jmsConnector = JmsConnector.create(); 
+JmsConnector jmsConnector = JmsConnector.create();
 
 Messaging messaging = Messaging.builder()
         .config(config)
@@ -578,7 +578,7 @@ Example of producing to JMS:
 ```java
 Channel<String> toJms = Channel.create("to-jms");
 
-JmsConnector jmsConnector = JmsConnector.create(); 
+JmsConnector jmsConnector = JmsConnector.create();
 
 Messaging messaging = Messaging.builder()
         .config(config)
@@ -612,15 +612,15 @@ Maven dependency:
 
 Example of producing to and consuming from Oracle AQ:
 ```java
-PoolDataSource pds = PoolDataSourceFactory.getPoolDataSource(); 
+PoolDataSource pds = PoolDataSourceFactory.getPoolDataSource();
 pds.setConnectionFactoryClassName("oracle.jdbc.pool.OracleDataSource");
 pds.setURL(jdbcUrl);
 pds.setUser("frank");
 pds.setPassword("frank");
-AqConnector connector = AqConnector.builder() 
+AqConnector connector = AqConnector.builder()
         .dataSource("test-ds", pds)
         .build();
-Channel<String> toAq = Channel.<String>builder() 
+Channel<String> toAq = Channel.<String>builder()
         .name("toAq")
         .subscriberConfig(AqConnector.configBuilder()
                                   .queue("example_queue_1")
@@ -628,7 +628,7 @@ Channel<String> toAq = Channel.<String>builder()
                                   .build())
         .build();
 
-Channel<String> fromAq = Channel.<String>builder() 
+Channel<String> fromAq = Channel.<String>builder()
         .name("fromAq")
         .publisherConfig(AqConnector.configBuilder()
                                  .queue("example_queue_1")
@@ -636,12 +636,12 @@ Channel<String> fromAq = Channel.<String>builder()
                                  .build())
         .build();
 
-Messaging.builder() 
+Messaging.builder()
         .connector(connector)
         .publisher(toAq,
                    Multi.just("Hello", "world", "from", "Oracle", "DB!")
-                           .map(Message::of)) 
-        .listener(fromAq, s -> System.out.println("Message received: " + s)) 
+                           .map(Message::of))
+        .listener(fromAq, s -> System.out.println("Message received: " + s))
         .build()
         .start();
 ```

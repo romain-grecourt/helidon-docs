@@ -128,8 +128,8 @@ machine, here are few steps to quickly download and set it up:
 
 Replace `{latest-version}` with your current H2 version:
 ```shell
-java -cp h2-{latest-version}.jar org.h2.tools.Shell -url dbc:h2:~/test -user sa -password "" -sql "" 
-java -jar h2-{latest-version}.jar -webAllowOthers -tcpAllowOthers -web -tcp 
+java -cp h2-{latest-version}.jar org.h2.tools.Shell -url dbc:h2:~/test -user sa -password "" -sql ""
+java -jar h2-{latest-version}.jar -webAllowOthers -tcpAllowOthers -web -tcp
 ```
 
 - Pre-create the database (optional if the file `~/test` already exists)
@@ -189,19 +189,19 @@ Copy these dependencies to pom.xml:
     <!-- ... -->
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient</artifactId> 
+        <artifactId>helidon-dbclient</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient-jdbc</artifactId> 
+        <artifactId>helidon-dbclient-jdbc</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient-hikari</artifactId> 
+        <artifactId>helidon-dbclient-hikari</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.integrations.db</groupId>
-        <artifactId>h2</artifactId> 
+        <artifactId>h2</artifactId>
     </dependency>
     <dependency>
         <groupId>org.slf4j</groupId>
@@ -209,11 +209,11 @@ Copy these dependencies to pom.xml:
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient-health</artifactId> 
+        <artifactId>helidon-dbclient-health</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient-metrics</artifactId> 
+        <artifactId>helidon-dbclient-metrics</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
@@ -221,7 +221,7 @@ Copy these dependencies to pom.xml:
     </dependency>
     <dependency>
         <groupId>io.helidon.dbclient</groupId>
-        <artifactId>helidon-dbclient-jsonp</artifactId> 
+        <artifactId>helidon-dbclient-jsonp</artifactId>
     </dependency>
     <!-- ... -->
 </dependencies>
@@ -250,12 +250,12 @@ here: `src/main/resources`.
 Copy these properties into `application.yaml`:
 ```yaml
 db:
-  source: jdbc 
-  connection: 
+  source: jdbc
+  connection:
     url: "jdbc:h2:tcp://localhost:9092/~/test"
     username: "sa"
     password:
-  statements: 
+  statements:
     health-check: "SELECT 0"
     create-table: "CREATE TABLE IF NOT EXISTS LIBRARY (NAME VARCHAR NOT NULL, INFO VARCHAR NOT NULL)"
     insert-book: "INSERT INTO LIBRARY (NAME, INFO) VALUES (:name, :info)"
@@ -266,7 +266,7 @@ db:
     statementName: "health-check"
   services:
     metrics:
-      - type: COUNTER 
+      - type: COUNTER
         statement-names: [ "select-book" ]
 ```
 
@@ -282,7 +282,7 @@ Copy these properties into `application-test.yaml`:
 ```yaml
 db:
   connection:
-    url: "jdbc:h2:mem:test" 
+    url: "jdbc:h2:mem:test"
 ```
 
 - Override the JDBC URL to use an in-memory database for the tests
@@ -298,23 +298,23 @@ public static void main(String[] args) {
 
     Config config = Config.global();
 
-    DbClient dbClient = DbClient.create(config.get("db")); 
-    Contexts.globalContext().register(dbClient); 
+    DbClient dbClient = DbClient.create(config.get("db"));
+    Contexts.globalContext().register(dbClient);
 
     HealthObserver healthObserver = HealthObserver.builder()
             .useSystemServices(false)
             .details(true)
-            .addCheck(DbClientHealthCheck.create(dbClient, config.get("db.health-check"))) 
+            .addCheck(DbClientHealthCheck.create(dbClient, config.get("db.health-check")))
             .build();
 
     ObserveFeature observe = ObserveFeature.builder()
             .config(config.get("server.features.observe"))
-            .addObserver(healthObserver) 
+            .addObserver(healthObserver)
             .build();
 
     WebServer server = WebServer.builder()
             .config(config.get("server"))
-            .addFeature(observe) 
+            .addFeature(observe)
             .routing(Main::routing)
             .build()
             .start();
@@ -342,14 +342,14 @@ package.
 ```java
 public class LibraryService implements HttpService {
 
-    private final DbClient dbClient;    
+    private final DbClient dbClient;
 
     LibraryService() {
         dbClient = Contexts.globalContext()
                 .get(DbClient.class)
-                .orElseGet(this::newDbClient); 
+                .orElseGet(this::newDbClient);
         dbClient.execute()
-                .namedDml("create-table"); 
+                .namedDml("create-table");
     }
 
     private DbClient newDbClient() {
@@ -378,10 +378,10 @@ Add update method to `LibraryService`:
 @Override
 public void routing(HttpRules rules) {
     rules
-            .get("/{name}", this::getBook)      
-            .put("/{name}", this::addBook)      
-            .delete("/{name}", this::deleteBook)   
-            .get("/json/{name}", this::getJsonBook); 
+            .get("/{name}", this::getBook)
+            .put("/{name}", this::addBook)
+            .delete("/{name}", this::deleteBook)
+            .get("/json/{name}", this::getJsonBook);
 }
 ```
 
@@ -406,14 +406,14 @@ private void getBook(ServerRequest request,
 
     String bookName = request.path()
             .pathParameters()
-            .get("name"); 
+            .get("name");
 
     String bookInfo = dbClient.execute()
-            .namedGet("select-book", bookName)   
+            .namedGet("select-book", bookName)
             .map(row -> row.column("INFO").asString().get())
             .orElseThrow(() -> new NotFoundException(
-                    "Book not found: " + bookName)); 
-    response.send(bookInfo); 
+                    "Book not found: " + bookName));
+    response.send(bookInfo);
 }
 ```
 
@@ -477,10 +477,10 @@ private void addBook(ServerRequest request,
     String newValue = request.content().as(String.class);
     dbClient.execute()
             .createNamedInsert("insert-book")
-            .addParam("name", bookName) 
+            .addParam("name", bookName)
             .addParam("info", newValue)
             .execute();
-    response.status(Status.CREATED_201).send(); 
+    response.status(Status.CREATED_201).send();
 }
 ```
 
@@ -506,8 +506,8 @@ private void deleteBook(ServerRequest request,
             .pathParameters()
             .get("name");
 
-    dbClient.execute().namedDelete("delete-book", bookName); 
-    response.status(Status.NO_CONTENT_204).send(); 
+    dbClient.execute().namedDelete("delete-book", bookName);
+    response.status(Status.NO_CONTENT_204).send();
 }
 ```
 
@@ -527,7 +527,7 @@ Modify the `routing` method in `Main.java`:
 static void routing(HttpRouting.Builder routing) {
     routing
             .register("/greet", new GreetService())
-            .register("/library", new LibraryService()) 
+            .register("/library", new LibraryService())
             .get("/simple-greet", (req, res) -> res.send("Hello World!"));
 }
 ```

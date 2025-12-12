@@ -26,7 +26,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 <dependencies>
     <dependency>
         <groupId>io.helidon.discovery</groupId>
-        <artifactId>helidon-discovery</artifactId> 
+        <artifactId>helidon-discovery</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -79,9 +79,9 @@ public class MyClass {
 
     private final Discovery discovery;
 
-    @Service.Inject 
-    public MyClass(Discovery discovery) { 
-        this.discovery = Objects.requireNonNull(discovery, "discovery"); 
+    @Service.Inject
+    public MyClass(Discovery discovery) {
+        this.discovery = Objects.requireNonNull(discovery, "discovery");
     }
 
 }
@@ -117,7 +117,7 @@ public class MyOtherClass {
     private final Discovery discovery;
 
     public MyOtherClass() {
-        this.discovery = Services.get(Discovery.class); 
+        this.discovery = Services.get(Discovery.class);
     }
 
 }
@@ -156,10 +156,10 @@ import java.util.SequencedSet;
 import io.helidon.discovery.DiscoveredUri;
 import io.helidon.discovery.Discovery;
 
-SequencedSet<DiscoveredUri> uris = 
-    discovery.uris("EXAMPLE", 
-                   URI.create("https://example.com/")); 
-URI uri = uris.getFirst().uri(); 
+SequencedSet<DiscoveredUri> uris =
+    discovery.uris("EXAMPLE",
+                   URI.create("https://example.com/"));
+URI uri = uris.getFirst().uri();
 ```
 
 - URIs that are discovered are represented as a
@@ -222,8 +222,8 @@ Dependencies](../about/managing-dependencies.md)).
 <dependencies>
     <dependency>
         <groupId>io.helidon.discovery.providers</groupId>
-        <artifactId>helidon-discovery-providers-eureka</artifactId> 
-        <scope>runtime</scope> 
+        <artifactId>helidon-discovery-providers-eureka</artifactId>
+        <scope>runtime</scope>
     </dependency>
 </dependencies>
 ```
@@ -413,13 +413,13 @@ Dependencies](../about/managing-dependencies.md)):
 <dependencies>
     <dependency>
         <groupId>io.helidon.webclient</groupId>
-        <artifactId>helidon-webclient-discovery</artifactId> 
-        <scope>runtime</scope> 
+        <artifactId>helidon-webclient-discovery</artifactId>
+        <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>io.helidon.discovery.providers</groupId>
-        <artifactId>helidon-discovery-providers-eureka</artifactId> 
-        <scope>runtime</scope> 
+        <artifactId>helidon-discovery-providers-eureka</artifactId>
+        <scope>runtime</scope>
     </dependency>
 </dependencies>
 ```

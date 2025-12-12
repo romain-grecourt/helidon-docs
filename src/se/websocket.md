@@ -96,7 +96,7 @@ void snippet() {
                     .register("/web", staticContent)
                     .register("/rest", new MessageQueueService(messageQueue)))
             .addRouting(WsRouting.builder()
-                    .endpoint("/websocket/board", new MessageBoardEndpoint(messageQueue)));   
+                    .endpoint("/websocket/board", new MessageBoardEndpoint(messageQueue)));
 }
 ```
 

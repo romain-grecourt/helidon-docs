@@ -154,11 +154,11 @@ All the following lines retrieve the same `Config` node.
 Equivalent Config Retrievals:
 ```java
 assert config.get("") == config;
-Config provName1 = config.get("data.providers.0.name"); 
-Config provName2 = config.get("data.providers.0").get("name"); 
+Config provName1 = config.get("data.providers.0.name");
+Config provName2 = config.get("data.providers.0").get("name");
 Config provName3 = config.get("data.providers").get("0.name");
 Config provName4 = config.get("data").get("providers.0").get("name");
-Config provName5 = config.get("data").get("providers").get("0").get("name"); 
+Config provName5 = config.get("data").get("providers").get("0").get("name");
 ```
 
 - using a single key
@@ -248,19 +248,19 @@ value for the node: <code>OBJECT</code>, <code>LIST</code>,
 List names of child nodes of an *object* node:
 ```java
 List<String> appNodeNames = config.get("app")
-        .asNodeList() 
-        .map(nodes -> { 
+        .asNodeList()
+        .map(nodes -> {
             return nodes
                     .stream()
                     .map(Config::name)
                     .sorted()
                     .toList();
         })
-        .orElse(List.of()); 
+        .orElse(List.of());
 
-assert appNodeNames.get(0).equals("basic-range"); 
-assert appNodeNames.get(1).equals("greeting"); 
-assert appNodeNames.get(2).equals("page-size"); 
+assert appNodeNames.get(0).equals("basic-range");
+assert appNodeNames.get(1).equals("greeting");
+assert appNodeNames.get(2).equals("page-size");
 ```
 
 - Get the ConfigValue with child `Config` instances.
@@ -272,10 +272,10 @@ assert appNodeNames.get(2).equals("page-size");
 List child nodes of a *list* node:
 ```java
 List<Config> providers = config.get("data.providers")
-        .asNodeList().orElse(List.of()); 
+        .asNodeList().orElse(List.of());
 
-assert providers.get(0).key().toString().equals("data.providers.0"); 
-assert providers.get(1).key().toString().equals("data.providers.1"); 
+assert providers.get(0).key().toString().equals("data.providers.0");
+assert providers.get(1).key().toString().equals("data.providers.1");
 ```
 
 - Get child nodes of the `data.providers` *list* node as a `List` of
@@ -291,8 +291,8 @@ object, list or leaf value nodes.
 Traverse subtree below a *list* node:
 ```java
 config.get("data.providers")
-        .traverse() 
-        .forEach(node -> System.out.println(node.type() + " \t" + node.key())); 
+        .traverse()
+        .forEach(node -> System.out.println(node.type() + " \t" + node.key()));
 ```
 
 - Visit the subtree rooted at the `data.providers` *list* node.
@@ -312,8 +312,8 @@ allows the application to prune the traversal of a subtree at any point.
 
 Traverse *root* (*object*) node, skipping the entire `data` subtree:
 ```java
-config.traverse(node -> !node.name().equals("data")) 
-        .forEach(node -> System.out.println(node.type() + " \t" + node.key())); 
+config.traverse(node -> !node.name().equals("data"))
+        .forEach(node -> System.out.println(node.type() + " \t" + node.key()));
 ```
 
 - Visit all *root* sub-nodes, excluding whole `data` tree structure but
@@ -370,11 +370,11 @@ Detaching a Subtree:
 Config detachedFromOriginal = originalRoot.get("web").detach();
 Config detachedFromAlternate = alternateRoot.get("server.web").detach();
 
-assert originalRoot.get("web.debug").equals("true"); 
-assert alternateRoot.get("server.web.debug").equals("true"); 
+assert originalRoot.get("web.debug").equals("true");
+assert alternateRoot.get("server.web.debug").equals("true");
 
-assert detachedFromOriginal.get("debug").equals("true"); 
-assert detachedFromAlternate.get("debug").equals("true"); 
+assert detachedFromOriginal.get("debug").equals("true");
+assert detachedFromAlternate.get("debug").equals("true");
 ```
 
 - Navigation depends on knowing the full structure of the config and so

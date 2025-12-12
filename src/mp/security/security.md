@@ -63,20 +63,20 @@ The following shows an example we will explain in detail:
 ```yaml
 security:
   providers:
-    - abac: 
-    - provider-key: 
+    - abac:
+    - provider-key:
   web-server:
     defaults:
-      authenticate: true 
+      authenticate: true
     paths:
-      - path: "/metrics/*" 
+      - path: "/metrics/*"
         roles-allowed: "admin"
-      - path: "/health/*" 
+      - path: "/health/*"
         roles-allowed: "monitor"
-      - path: "/openapi/*" 
+      - path: "/openapi/*"
         abac:
           scopes: ["openapi"]
-      - path: "/static/*" 
+      - path: "/static/*"
         roles-allowed: ["user", "monitor"]
 ```
 

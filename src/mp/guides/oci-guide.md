@@ -387,10 +387,10 @@ streaming connection properties:
 Example of an `application.yaml` configured for OCI Streaming:
 ```yaml
 oci:
- tenant: helidon-app-example 
- user: email@domain.com 
- token: oci-auth-token 
- test-stream: 
+ tenant: helidon-app-example
+ user: email@domain.com
+ token: oci-auth-token
+ test-stream:
    name: TestStream
    endpoint: cell-1.streaming.us-phoenix-1.oci.oraclecloud.com
    port: 9092
@@ -412,25 +412,25 @@ mp.messaging:
 
   incoming.from-stream:
     connector: helidon-kafka
-    topic: TestStream 
+    topic: TestStream
     auto.offset.reset: latest
     enable.auto.commit: true
-    group.id: example-group-id 
+    group.id: example-group-id
 
   outgoing.to-stream:
     connector: helidon-kafka
-    topic: TestStream 
+    topic: TestStream
 
   connector:
      helidon-kafka:
-       bootstrap.servers: ocid1.streampool.oci1.phoenix.amaaaaaamevwycaap72ouurhfjrakuccakjpse5kenpkm5oikbgaadtq6byq:9092 
+       bootstrap.servers: ocid1.streampool.oci1.phoenix.amaaaaaamevwycaap72ouurhfjrakuccakjpse5kenpkm5oikbgaadtq6byq:9092
        sasl.mechanism: PLAIN
        security.protocol: SASL_SSL
        sasl.jaas.config:  >-
          org.apache.kafka.common.security.plain.PlainLoginModule
          required
-         username="helidon-app-example/person@domain.com/ocid1.streampool.oci1.phoenix.amaaaaaamevwycaap72ouurhfjrakuccakjpse5kenpkm5oikbgaadtq6byq" 
-         password="oci-auth-token"; 
+         username="helidon-app-example/person@domain.com/ocid1.streampool.oci1.phoenix.amaaaaaamevwycaap72ouurhfjrakuccakjpse5kenpkm5oikbgaadtq6byq"
+         password="oci-auth-token";
 
        key.serializer: org.apache.kafka.common.serialization.StringSerializer
        value.serializer: org.apache.kafka.common.serialization.StringSerializer

@@ -380,7 +380,7 @@ public Response whenLRAFinishes(@HeaderParam(LRA_HTTP_ENDED_CONTEXT_HEADER) URI 
 ### Non JAX-RS variant with supported LRA context values:
 
 - URI with finished LRA ID
-- Final [status](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html) of the LRA 
+- Final [status](https://download.eclipse.org/microprofile/microprofile-lra-1.0-RC3/apidocs/org/eclipse/microprofile/lra/annotation/LRAStatus.html) of the LRA
 
 ```java
 public void whenLRAFinishes(URI lraId, LRAStatus status) {
@@ -404,9 +404,9 @@ Optional configuration options
 Example of LRA configuration:
 ```yaml
 mp.lra:
-  coordinator.url: http://localhost:8070/lra-coordinator 
-  propagation.active: true 
-  participant.url: https://coordinator.visible.host:443/awesomeapp 
+  coordinator.url: http://localhost:8070/lra-coordinator
+  propagation.active: true
+  participant.url: https://coordinator.visible.host:443/awesomeapp
 ```
 
 - Url of coordinator
@@ -434,18 +434,18 @@ to compensate for cancelled LRA transaction.
 Example of simple LRA participant:
 ```java
 @PUT
-@LRA(LRA.Type.REQUIRES_NEW) 
+@LRA(LRA.Type.REQUIRES_NEW)
 @Path("start-example")
 public Response startExample(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraId, String data) {
     if (data.contains("BOOM")) {
-        throw new RuntimeException("BOOM 💥"); 
+        throw new RuntimeException("BOOM 💥");
     }
     LOGGER.info("Data " + data + " processed 🏭");
-    return Response.ok().build(); 
+    return Response.ok().build();
 }
 
 @PUT
-@Complete 
+@Complete
 @Path("complete-example")
 public Response completeExample(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraId) {
     LOGGER.log(Level.INFO, "LRA ID: {0} completed 🎉", lraId);
@@ -453,7 +453,7 @@ public Response completeExample(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraId)
 }
 
 @PUT
-@Compensate 
+@Compensate
 @Path("compensate-example")
 public Response compensateExample(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraId) {
     LOGGER.log(Level.SEVERE, "LRA ID: {0} compensated 🦺", lraId);
@@ -537,14 +537,14 @@ Helidon test with enabled CDI discovery can look like this.
 HelidonTest with LRA test support:
 ```java
 @HelidonTest
-@AddBean(TestLraCoordinator.class) 
+@AddBean(TestLraCoordinator.class)
 public class LraTest {
 
     @Inject
     private WithdrawResource withdrawTestResource;
 
     @Inject
-    private TestLraCoordinator coordinator; 
+    private TestLraCoordinator coordinator;
 
     @Inject
     private WebTarget target;
@@ -557,8 +557,8 @@ public class LraTest {
                 .put(Entity.entity("test", MediaType.TEXT_PLAIN_TYPE))) {
             assertThat(res.getStatus(), is(200));
             String lraId = res.getHeaderString(LRA.LRA_HTTP_CONTEXT_HEADER);
-            Lra lra = coordinator.lra(lraId); 
-            assertThat(lra.status(), is(LRAStatus.Closed)); 
+            Lra lra = coordinator.lra(lraId);
+            assertThat(lra.status(), is(LRAStatus.Closed));
             assertThat(withdrawTestResource.getCompletedLras(), contains(lraId));
         }
     }
@@ -601,10 +601,10 @@ HelidonTest override LRA test feature default settings:
 ```java
 @HelidonTest
 @AddBean(TestLraCoordinator.class)
-@AddConfig(key = "server.sockets.500.port", value = "8070") 
-@AddConfig(key = "server.sockets.500.bind-address", value = "custom.bind.name") 
-@AddConfig(key = "helidon.lra.coordinator.persistence", value = "true") 
-@AddConfig(key = "helidon.lra.participant.use-build-time-index", value = "true") 
+@AddConfig(key = "server.sockets.500.port", value = "8070")
+@AddConfig(key = "server.sockets.500.bind-address", value = "custom.bind.name")
+@AddConfig(key = "helidon.lra.coordinator.persistence", value = "true")
+@AddConfig(key = "helidon.lra.participant.use-build-time-index", value = "true")
 public class LraCustomConfigTest {
 }
 ```
@@ -701,7 +701,7 @@ tmmConfiguration:
   serveTLS:
     enabled: false
   narayanaLraCompatibilityMode:
-    enabled: true 
+    enabled: true
 ```
 
 - Enable Narayana compatibility mode

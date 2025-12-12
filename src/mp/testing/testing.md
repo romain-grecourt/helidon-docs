@@ -23,7 +23,7 @@ dependency to your project’s `pom.xml` (see [Managing Dependencies](../../abou
 
 Basic usage:
 ```java
-@HelidonTest // Enable the test class 
+@HelidonTest // Enable the test class
 class MyTest {
 }
 ```
@@ -113,7 +113,7 @@ Reset the CDI container between methods:
 class MyTest {
 
     @Test
-    void testOne() { 
+    void testOne() {
         // executes in a dedicated CDI container
     }
 
@@ -433,7 +433,7 @@ class MyTest {
 class MyBean {
 
     // Inject the configuration
-    @ConfigProperty(name = "app.greeting") 
+    @ConfigProperty(name = "app.greeting")
     String greeting;
 
     String greeting() {
@@ -451,7 +451,7 @@ with JAX-RS without CDI discovery.
 Request Scope Example:
 ```java
 @HelidonTest
-@DisableDiscovery //  CDI discovery is disabled 
+@DisableDiscovery //  CDI discovery is disabled
 @AddJaxRs // Add JAX-RS (Jersey) support
 @AddBean(MyResource.class) // Add MyResource to the CDI container
 class MyTest {
@@ -515,7 +515,7 @@ Mocking using `@MockBean`:
 class MyTest {
 
     // Instrument MyService using Answers.CALLS_REAL_METHODS
-    @MockBean(answer = Answers.CALLS_REAL_METHODS) 
+    @MockBean(answer = Answers.CALLS_REAL_METHODS)
     MyService myService;
 
     @Inject
@@ -525,7 +525,7 @@ class MyTest {
     void testService() {
         // Customize the behavior
         Mockito.when(myService.test()).thenReturn("Mocked");
-        
+
         // Test assertions
         String response = target.path("/test").request().get(String.class);
         assertThat(response, is("Mocked"));
@@ -572,12 +572,12 @@ class MyTest {
     @BeforeEach
     void initMock() {
         // Create the mock instance in the test class
-        myService = Mockito.mock(MyService.class, Answers.CALLS_REAL_METHODS); 
+        myService = Mockito.mock(MyService.class, Answers.CALLS_REAL_METHODS);
     }
 
     // Create a CDI producer method annotated with @Alternative
     @Produces
-    @Alternative 
+    @Alternative
     MyService mockService() {
         return myService;
     }
@@ -585,8 +585,8 @@ class MyTest {
     @Test
     void testService() {
         // Customize the behavior
-        Mockito.when(myService.test()).thenReturn("Mocked"); 
-        
+        Mockito.when(myService.test()).thenReturn("Mocked");
+
         // Test assertions
         Response response = target.path("/test").request().get();
         assertThat(response, is("Mocked"));
@@ -640,7 +640,7 @@ that is also the default when detecting it within tests.
 Pinning threshold can be changed with:
 ```java
 // Change pinning threshold from default(20) to 50 milliseconds.
-@HelidonTest(pinningDetection = true, pinningThreshold = 50) 
+@HelidonTest(pinningDetection = true, pinningThreshold = 50)
 class MyTest {
 }
 ```

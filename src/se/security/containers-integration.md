@@ -21,12 +21,12 @@ There are two steps to configure security with WebServer:
 Example using builders:
 ```java
 WebServer.builder()
-        .addFeature(SecurityFeature.builder() 
+        .addFeature(SecurityFeature.builder()
                             .security(security)
                             .defaults(SecurityFeature.authenticate())
                             .build())
         .routing(r -> r
-                .get("/service1", SecurityFeature.rolesAllowed("user"), this::processService1Request)) 
+                .get("/service1", SecurityFeature.rolesAllowed("user"), this::processService1Request))
         .build();
 ```
 
@@ -41,9 +41,9 @@ WebServer.builder()
         // This is step 1 - register security instance with web server processing
         // security - instance of security either from config or from a builder
         // securityDefaults - default enforcement for each route that has a security definition
-        .addFeature(SecurityFeature.create(builder -> builder.config(config))) 
+        .addFeature(SecurityFeature.create(builder -> builder.config(config)))
         .routing(r -> r
-                .get("/service1", this::processService1Request)) 
+                .get("/service1", this::processService1Request))
         .build();
 ```
 
@@ -55,7 +55,7 @@ WebServer.builder()
 Example using configuration (YAML):
 ```yaml
 security:
-  web-server: 
+  web-server:
       defaults:
         # defaults for paths configured in the section below
         authenticate: true
@@ -100,20 +100,20 @@ The following shows an example we will explain in detail:
 ```yaml
 security:
   providers:
-    - abac: 
-    - provider-key: 
+    - abac:
+    - provider-key:
   web-server:
     defaults:
-      authenticate: true 
+      authenticate: true
     paths:
-      - path: "/metrics/*" 
+      - path: "/metrics/*"
         roles-allowed: "admin"
-      - path: "/health/*" 
+      - path: "/health/*"
         roles-allowed: "monitor"
-      - path: "/openapi/*" 
+      - path: "/openapi/*"
         abac:
           scopes: ["openapi"]
-      - path: "/static/*" 
+      - path: "/static/*"
         roles-allowed: ["user", "monitor"]
 ```
 

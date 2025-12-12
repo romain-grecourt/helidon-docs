@@ -166,7 +166,7 @@ support:
 <dependency>
     <groupId>io.helidon.telemetry</groupId>
     <artifactId>helidon-telemetry-opentelemetry-config</artifactId>
-    <scope>runtime</scope> 
+    <scope>runtime</scope>
 </dependency>
 ```
 

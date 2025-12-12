@@ -23,8 +23,8 @@ Assume a local variable has been assigned something like
 
 ```java
 Config configNode = config.get("someKey");
-ConfigValue<Boolean> value = configNode.asBoolean(); 
-ConfigValue<Boolean> value2 = configNode.as(Boolean.class); 
+ConfigValue<Boolean> value = configNode.asBoolean();
+ConfigValue<Boolean> value2 = configNode.as(Boolean.class);
 ```
 
 - Shorthand method
@@ -161,15 +161,15 @@ Config config = Config.just(ConfigSources.create(Map.of(
         "warning", "YELLOW"
 )));
 
-Color house = config.get("house.tint") 
-        .as(Color.class) 
-        .get(); 
+Color house = config.get("house.tint")
+        .as(Color.class)
+        .get();
 Color car = config.get("car.color")
         .as(Color.class)
-        .get(); 
+        .get();
 Color warning = config.get("warning")
         .as(Color.class)
-        .get(); 
+        .get();
 ```
 
 - Retrieve the `Config` object corresponding to the key `house.tint`.
@@ -568,10 +568,10 @@ public class AppConfig {
     private int pageSize;
     private List<Integer> basicRange;
 
-    public AppConfig() { 
+    public AppConfig() {
     }
 
-    public void setGreeting(String greeting) { 
+    public void setGreeting(String greeting) {
         this.greeting = greeting;
     }
 
@@ -579,8 +579,8 @@ public class AppConfig {
         return greeting;
     }
 
-    @Value(key = "page-size", 
-           withDefault = "10") 
+    @Value(key = "page-size",
+           withDefault = "10")
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
@@ -589,8 +589,8 @@ public class AppConfig {
         return pageSize;
     }
 
-    @Value(key = "basic-range", 
-           withDefaultSupplier = BasicRangeSupplier.class) 
+    @Value(key = "basic-range",
+           withDefaultSupplier = BasicRangeSupplier.class)
     public void setBasicRange(List<Integer> basicRange) {
         this.basicRange = basicRange;
     }
@@ -599,7 +599,7 @@ public class AppConfig {
         return basicRange;
     }
 
-    @Transient 
+    @Transient
     public void setTimestamp(Instant timestamp) {
         this.timestamp = timestamp;
     }
@@ -609,7 +609,7 @@ public class AppConfig {
     }
 
     public static class BasicRangeSupplier
-            implements Supplier<List<Integer>> { 
+            implements Supplier<List<Integer>> {
         @Override
         public List<Integer> get() {
             return List.of(-10, 10);
@@ -648,7 +648,7 @@ Config config = Config.create(classpath("application.conf"));
 
 AppConfig app = config.get("app")
         .as(AppConfig.class)
-        .get(); 
+        .get();
 
 //assert that all values are loaded from file
 assert app.getGreeting().equals("Hello");
@@ -658,7 +658,7 @@ assert app.getBasicRange().size() == 2
        && app.getBasicRange().get(1) == 20;
 
 //assert that Transient property is not set
-assert app.getTimestamp() == null; 
+assert app.getTimestamp() == null;
 ```
 
 - The config system finds no registered `ConfigMapper` for `AppConfig`
@@ -689,7 +689,7 @@ method:
 
 JavaBean for `app` properties, via a `Builder`:
 ```java
-public static class Builder { 
+public static class Builder {
 
     private String greeting;
     private int pageSize;
@@ -698,24 +698,24 @@ public static class Builder {
     private Builder() {
     }
 
-    public Builder setGreeting(String greeting) { 
+    public Builder setGreeting(String greeting) {
         this.greeting = greeting;
         return this;
     }
 
     @Value(key = "page-size", withDefault = "10")
-    public Builder setPageSize(int pageSize) { 
+    public Builder setPageSize(int pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
     @Value(key = "basic-range", withDefaultSupplier = BasicRangeSupplier.class)
-    public Builder setBasicRange(List<Integer> basicRange) { 
+    public Builder setBasicRange(List<Integer> basicRange) {
         this.basicRange = basicRange;
         return this;
     }
 
-    public AppConfig build() { 
+    public AppConfig build() {
         return new AppConfig(this);
     }
 }
@@ -753,8 +753,8 @@ each parameter to the corresponding config key.
 Target Class with Factory Method `from`:
 ```java
 public static AppConfig from(
-        @Value(key = "greeting") String greeting, 
-        @Value(key = "page-size", withDefault = "10") int pageSize, 
+        @Value(key = "greeting") String greeting,
+        @Value(key = "page-size", withDefault = "10") int pageSize,
         @Value(key = "basic-range", withDefaultSupplier = BasicRangeSupplier.class) List<Integer> basicRange) {
     return new AppConfig(greeting, pageSize, basicRange);
 }
@@ -777,8 +777,8 @@ method.
 
 Target Class with Annotated Public Constructor:
 ```java
-public AppConfig( 
-                  @Value(key = "greeting") 
+public AppConfig(
+                  @Value(key = "greeting")
                   String greeting,
                   @Value(key = "page-size",
                          withDefault = "10")

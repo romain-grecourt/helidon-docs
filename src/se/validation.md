@@ -22,11 +22,11 @@ To enable Validation, add the following dependency to your project’s
 <dependencies>
     <dependency>
         <groupId>io.helidon.validation</groupId>
-        <artifactId>helidon-validation</artifactId>    
+        <artifactId>helidon-validation</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.webserver</groupId>
-        <artifactId>helidon-webserver-validation</artifactId> 
+        <artifactId>helidon-webserver-validation</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -127,17 +127,17 @@ Example of validating an object using any constraint:
 void snippet() {
     // Get the constraint validation provider from the registry, named by the annotation it handles
     var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
-    
+
     // Create a new validation context (can be used to validate multiple constraints)
     var context = ValidationContext.create(MyType.class);
-    
+
     // Create a new validator for a specific type and annotation
     var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
-    
+
     // Check the constraint using the validator and the provided instance
     // (instance must match the type provided in previous step)
     context.check(validator, anInstance);
-    
+
     // Get a validation response from the context
     var response = context.response();
 }
@@ -149,17 +149,17 @@ void snippet() {
     // Get the constraint validation provider from the registry
     // named by the annotation it handles
     var provider = Services.getNamed(ConstraintValidatorProvider.class, Validation.String.Pattern.class.getName());
-    
+
     // Create a new validation context (can be used to validate multiple constraints)
     var context = ValidationContext.create(MyType.class);
-    
+
     // Create a new validator for a specific type and annotation
     var validator = provider.create(TypeNames.STRING, Annotation.create(Validation.String.Pattern.class, ".*valid.*"));
-    
+
     // Check the constraint using the validator and the provided instance
     // (instance must match the type provided in previous step)
     context.check(validator, anInstance);
-    
+
     // Throw and exception in case any of the checks failed
     context.throwOnFailure();
 }

@@ -199,7 +199,7 @@ Composite config source example:
 Config config = Config.builder()
         .addSource(file("config-file.properties"))
         .addSource(classpath("application.yaml"))
-        .mergingStrategy(MergingStrategy.fallback()) 
+        .mergingStrategy(MergingStrategy.fallback())
         .build();
 ```
 
@@ -301,8 +301,8 @@ alternatives to the parsers available for a given media type.
 
 Specify `parser` for config source:
 ```java
-Config config = Config.create(classpath("props") 
-    .parser(ConfigParsers.properties())); 
+Config config = Config.create(classpath("props")
+    .parser(ConfigParsers.properties()));
 ```
 
 - The config system cannot infer the media type because there is no file
@@ -327,7 +327,7 @@ secrets:
     username: "jose"
     password: "^ery$ecretP&ssword"
 
-app: > 
+app: >
     {
         "greeting": "Hello",
         "page-size": 20,
@@ -511,9 +511,9 @@ Initialize `Config` with Override Definition from `overrides.properties`
 file:
 ```java
 Config config = Config.builder()
-        .overrides(OverrideSources.file("conf/overrides.properties")) 
-        .sources(file("conf/env.yaml"), 
-                 classpath("resolving-tokens.yaml")) 
+        .overrides(OverrideSources.file("conf/overrides.properties"))
+        .sources(file("conf/env.yaml"),
+                 classpath("resolving-tokens.yaml"))
         .build();
 ```
 
@@ -567,17 +567,17 @@ strategy instances.
 
 Customize polling strategy executors:
 ```java
-ScheduledExecutorService executor = Executors.newScheduledThreadPool(2); 
+ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 
 Config config = Config.create(
         file("conf/dev.properties")
                 .pollingStrategy(
-                        PollingStrategies.regular(Duration.ofSeconds(2)) 
-                                .executor(executor)), 
+                        PollingStrategies.regular(Duration.ofSeconds(2))
+                                .executor(executor)),
         file("conf/config.properties")
                 .pollingStrategy(
-                        PollingStrategies.regular(Duration.ofSeconds(5)) 
-                                .executor(executor))); 
+                        PollingStrategies.regular(Duration.ofSeconds(5))
+                                .executor(executor)));
 ```
 
 - Prepares a thread pool executor with core pool size set `2`.
@@ -604,17 +604,17 @@ method to tell the builder to use a different `Executor`.
 
 Customize config and override sources' executors:
 ```java
-ScheduledExecutorService executor = Executors.newScheduledThreadPool(2); 
+ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 
 Config config = Config.builder()
         .overrides(OverrideSources
                            .file("conf/overrides.properties")
                            .changeWatcher(FileSystemWatcher.builder()
-                                                  .executor(executor) 
+                                                  .executor(executor)
                                                   .build()))
         .sources(file("conf/env.yaml")
                          .changeWatcher(FileSystemWatcher.builder()
-                                                .executor(executor) 
+                                                .executor(executor)
                                                 .build()))
         .build();
 ```

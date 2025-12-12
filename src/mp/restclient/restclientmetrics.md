@@ -168,10 +168,10 @@ To create this REST client metrics example follow these steps.
 
     ```java
     @Path("/greet")
-    @Timed(name = "timedGreet", absolute = true) 
+    @Timed(name = "timedGreet", absolute = true)
     public interface GreetRestClient {
 
-        @Counted                            
+        @Counted
         @GET
         @Produces(MediaType.APPLICATION_JSON)
         GreetingMessage getDefaultMessage();
@@ -203,7 +203,7 @@ To create this REST client metrics example follow these steps.
     @Path("/delegate")
     public class DelegatingResource {
 
-        private static LazyValue<GreetRestClient> greetRestClient = LazyValue.create(DelegatingResource::prepareClient); 
+        private static LazyValue<GreetRestClient> greetRestClient = LazyValue.create(DelegatingResource::prepareClient);
 
         /**
          * Return a worldly greeting message.
@@ -213,7 +213,7 @@ To create this REST client metrics example follow these steps.
         @GET
         @Produces(MediaType.APPLICATION_JSON)
         public GreetingMessage getDefaultMessage() {
-            return greetRestClient.get().getDefaultMessage();           
+            return greetRestClient.get().getDefaultMessage();
         }
 
         /**
@@ -243,7 +243,7 @@ To create this REST client metrics example follow these steps.
             return greetRestClient.get().updateGreeting(message);
         }
 
-        private static GreetRestClient prepareClient() {            
+        private static GreetRestClient prepareClient() {
             Config config = ConfigProvider.getConfig();
             String serverHost = config.getOptionalValue("server.host", String.class).orElse("localhost");
             String serverPort = config.getOptionalValue("server.port", String.class).orElse("8080");

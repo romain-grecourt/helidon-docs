@@ -131,7 +131,7 @@ follows:
     vault:
       auth:
         k8s:
-          token-role: "my-role" 
+          token-role: "my-role"
 
 - The token role must be configured in Vault Minimal configuration to
   connect to Vault:
@@ -205,12 +205,12 @@ public void routing(HttpRules rules) {
             .get("/secrets/{path:.*}", this::getSecret);
 }
 
-void createSecrets(ServerRequest req, ServerResponse res) { 
+void createSecrets(ServerRequest req, ServerResponse res) {
     secrets.create("first/secret", Map.of("key", "secretValue"));
     res.send("Created secret on path /first/secret");
 }
 
-void getSecret(ServerRequest req, ServerResponse res) { 
+void getSecret(ServerRequest req, ServerResponse res) {
     String path = req.path().pathParameters().get("path");
     Optional<Secret> secret = secrets.get(path);
     if (secret.isPresent()) {
@@ -241,28 +241,28 @@ public void routing(HttpRules rules) {
             .get("/disable", this::disableEngine);
 }
 
-void disableEngine(ServerRequest req, ServerResponse res) { 
+void disableEngine(ServerRequest req, ServerResponse res) {
     sys.disableEngine(Kv1Secrets.ENGINE);
     res.send("KV1 Secret engine disabled");
 }
 
-void enableEngine(ServerRequest req, ServerResponse res) { 
+void enableEngine(ServerRequest req, ServerResponse res) {
     sys.enableEngine(Kv1Secrets.ENGINE);
     res.send("KV1 Secret engine enabled");
 }
 
-void createSecrets(ServerRequest req, ServerResponse res) { 
+void createSecrets(ServerRequest req, ServerResponse res) {
     secrets.create("first/secret", Map.of("key", "secretValue"));
     res.send("Created secret on path /first/secret");
 }
 
-void deleteSecret(ServerRequest req, ServerResponse res) { 
+void deleteSecret(ServerRequest req, ServerResponse res) {
     String path = req.path().pathParameters().get("path");
     secrets.delete(path);
     res.send("Deleted secret on path " + path);
 }
 
-void getSecret(ServerRequest req, ServerResponse res) { 
+void getSecret(ServerRequest req, ServerResponse res) {
     String path = req.path().pathParameters().get("path");
 
     Optional<Secret> secret = secrets.get(path);
@@ -298,18 +298,18 @@ public void routing(HttpRules rules) {
             .delete("/secrets/{path:.*}", this::deleteSecret);
 }
 
-void createSecrets(ServerRequest req, ServerResponse res) { 
+void createSecrets(ServerRequest req, ServerResponse res) {
     secrets.create("first/secret", Map.of("key", "secretValue"));
     res.send("Created secret on path /first/secret");
 }
 
-void deleteSecret(ServerRequest req, ServerResponse res) { 
+void deleteSecret(ServerRequest req, ServerResponse res) {
     String path = req.path().pathParameters().get("path");
     secrets.deleteAll(path);
     res.send("Deleted secret on path " + path);
 }
 
-void getSecret(ServerRequest req, ServerResponse res) { 
+void getSecret(ServerRequest req, ServerResponse res) {
     String path = req.path().pathParameters().get("path");
 
     Optional<Kv2Secret> secret = secrets.get(path);
@@ -350,17 +350,17 @@ public void routing(HttpRules rules) {
             .get("/disable", this::disableEngine);
 }
 
-void enableEngine(ServerRequest req, ServerResponse res) { 
+void enableEngine(ServerRequest req, ServerResponse res) {
     sys.enableEngine(TransitSecrets.ENGINE);
     res.send("Transit Secret engine enabled");
 }
 
-void disableEngine(ServerRequest req, ServerResponse res) { 
+void disableEngine(ServerRequest req, ServerResponse res) {
     sys.disableEngine(TransitSecrets.ENGINE);
     res.send("Transit Secret engine disabled");
 }
 
-void createKeys(ServerRequest req, ServerResponse res) { 
+void createKeys(ServerRequest req, ServerResponse res) {
     CreateKey.Request request = CreateKey.Request.builder()
             .name(ENCRYPTION_KEY);
 
@@ -372,7 +372,7 @@ void createKeys(ServerRequest req, ServerResponse res) {
     res.send("Created keys");
 }
 
-void deleteKeys(ServerRequest req, ServerResponse res) { 
+void deleteKeys(ServerRequest req, ServerResponse res) {
     secrets.updateKeyConfig(UpdateKeyConfig.Request.builder()
                                     .name(ENCRYPTION_KEY)
                                     .allowDeletion(true));
@@ -383,7 +383,7 @@ void deleteKeys(ServerRequest req, ServerResponse res) {
     res.send("Deleted key.");
 }
 
-void encryptSecret(ServerRequest req, ServerResponse res) { 
+void encryptSecret(ServerRequest req, ServerResponse res) {
     String secret = req.path().pathParameters().get("text");
 
     Encrypt.Response encryptResponse = secrets.encrypt(Encrypt.Request.builder()
@@ -393,7 +393,7 @@ void encryptSecret(ServerRequest req, ServerResponse res) {
     res.send(encryptResponse.encrypted().cipherText());
 }
 
-void decryptSecret(ServerRequest req, ServerResponse res) { 
+void decryptSecret(ServerRequest req, ServerResponse res) {
     String encrypted = req.path().pathParameters().get("text");
 
     Decrypt.Response decryptResponse = secrets.decrypt(Decrypt.Request.builder()
@@ -403,7 +403,7 @@ void decryptSecret(ServerRequest req, ServerResponse res) {
     res.send(String.valueOf(decryptResponse.decrypted().toDecodedString()));
 }
 
-void hmac(ServerRequest req, ServerResponse res) { 
+void hmac(ServerRequest req, ServerResponse res) {
     Hmac.Response hmacResponse = secrets.hmac(Hmac.Request.builder()
                                                       .hmacKeyName(ENCRYPTION_KEY)
                                                       .data(SECRET_STRING));
@@ -411,7 +411,7 @@ void hmac(ServerRequest req, ServerResponse res) {
     res.send(hmacResponse.hmac());
 }
 
-void sign(ServerRequest req, ServerResponse res) { 
+void sign(ServerRequest req, ServerResponse res) {
     Sign.Response signResponse = secrets.sign(Sign.Request.builder()
                                                       .signatureKeyName(SIGNATURE_KEY)
                                                       .data(SECRET_STRING));
@@ -419,7 +419,7 @@ void sign(ServerRequest req, ServerResponse res) {
     res.send(signResponse.signature());
 }
 
-void verifyHmac(ServerRequest req, ServerResponse res) { 
+void verifyHmac(ServerRequest req, ServerResponse res) {
     String hmac = req.path().pathParameters().get("text");
 
     Verify.Response verifyResponse = secrets.verify(Verify.Request.builder()
@@ -430,7 +430,7 @@ void verifyHmac(ServerRequest req, ServerResponse res) {
     res.send("Valid: " + verifyResponse.isValid());
 }
 
-void verify(ServerRequest req, ServerResponse res) { 
+void verify(ServerRequest req, ServerResponse res) {
     String signature = req.path().pathParameters().get("text");
 
     Verify.Response verifyResponse = secrets.verify(Verify.Request.builder()
@@ -485,7 +485,7 @@ class K8sExample {
         this.config = config;
     }
 
-    public String run() { 
+    public String run() {
         // The following tasks must be run before we authenticate
         enableK8sAuth();
         // Now we can login using k8s - must run within a k8s cluster
@@ -496,7 +496,7 @@ class K8sExample {
         return "k8s example finished successfully.";
     }
 
-    private void workWithSecrets() { 
+    private void workWithSecrets() {
         Kv2Secrets secrets = k8sVault.secrets(Kv2Secrets.ENGINE);
 
         secrets.create(SECRET_PATH, Map.of(
@@ -514,12 +514,12 @@ class K8sExample {
         secrets.deleteAll(SECRET_PATH);
     }
 
-    private void disableK8sAuth() { 
+    private void disableK8sAuth() {
         sys.deletePolicy(POLICY_NAME);
         sys.disableAuth(K8sAuth.AUTH_METHOD.defaultPath());
     }
 
-    private void enableK8sAuth() { 
+    private void enableK8sAuth() {
         // enable the method
         sys.enableAuth(K8sAuth.AUTH_METHOD);
         sys.createPolicy(POLICY_NAME, VaultPolicy.POLICY);

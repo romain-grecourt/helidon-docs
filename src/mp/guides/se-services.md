@@ -65,7 +65,7 @@ It’s easy to use it with Helidon SE:
 ```java
 WebServer.builder()
         .routing(it -> it
-                .register("/cool", new CoolingService())) 
+                .register("/cool", new CoolingService()))
         .config(config)
         .mediaContext(it -> it
                 .addMediaSupport(JsonpSupport.create()))

@@ -60,7 +60,7 @@ non-relational databases.
   statement against a relational or non-relations databases (such as
   MySQL and MongoDB) without modifying source code
 
-- Observability  
+- Observability
 
   The API offers support for health checks, metrics and tracing.
 
@@ -77,15 +77,15 @@ include the following dependencies in your project:
 ```xml
 <dependencies>
      <dependency>
-         <groupId>io.helidon.dbclient</groupId> 
+         <groupId>io.helidon.dbclient</groupId>
          <artifactId>helidon-dbclient</artifactId>
      </dependency>
      <dependency>
-         <groupId>io.helidon.dbclient</groupId> 
+         <groupId>io.helidon.dbclient</groupId>
          <artifactId>helidon-dbclient-jdbc</artifactId>
      </dependency>
      <dependency>
-         <groupId>com.h2database</groupId> 
+         <groupId>com.h2database</groupId>
          <artifactId>h2</artifactId>
     </dependency>
 </dependencies>
@@ -104,13 +104,13 @@ we’ll use Helidon Config to set up JDBC-based client:
 
 ```yaml
 db:
-  source: "jdbc" 
+  source: "jdbc"
   connection:
-    url: "jdbc:mysql://127.0.0.1:3306/pokemon?useSSL=false" 
+    url: "jdbc:mysql://127.0.0.1:3306/pokemon?useSSL=false"
     username: "user"
     password: "password"
-  statements: 
-    ping: "DO 0" 
+  statements:
+    ping: "DO 0"
     select-all-pokemons: "SELECT id, name FROM Pokemons"
 ```
 

@@ -98,7 +98,7 @@ Run Jaeger within a docker container, then check the Jaeger server
 working:
 
 ```shell
-docker run -d --name jaeger \ 
+docker run -d --name jaeger \
   -e COLLECTOR_OTLP_ENABLED=true \
   -p 6831:6831/udp \
   -p 6832:6832/udp \
@@ -127,16 +127,16 @@ Add the following dependencies to `pom.xml`:
 <dependencies>
      <dependency>
          <groupId>io.helidon.tracing</groupId>
-         <artifactId>helidon-tracing</artifactId>   
+         <artifactId>helidon-tracing</artifactId>
      </dependency>
      <dependency>
          <groupId>io.helidon.webserver.observe</groupId>
-         <artifactId>helidon-webserver-observe-tracing</artifactId> 
+         <artifactId>helidon-webserver-observe-tracing</artifactId>
          <scope>runtime</scope>
      </dependency>
      <dependency>
          <groupId>io.helidon.tracing.providers</groupId>
-         <artifactId>helidon-tracing-providers-jaeger</artifactId>  
+         <artifactId>helidon-tracing-providers-jaeger</artifactId>
          <scope>runtime</scope>
      </dependency>
 </dependencies>
@@ -237,15 +237,15 @@ Update the `GreetService` class, replacing the
 ```java
 private void getDefaultMessageHandler(ServerRequest request,
                                       ServerResponse response) {
-    var spanBuilder = Tracer.global().spanBuilder("secondchildSpan"); 
-    request.context().get(SpanContext.class).ifPresent(sc -> sc.asParent(spanBuilder)); 
-    var span = spanBuilder.start(); 
+    var spanBuilder = Tracer.global().spanBuilder("secondchildSpan");
+    request.context().get(SpanContext.class).ifPresent(sc -> sc.asParent(spanBuilder));
+    var span = spanBuilder.start();
 
-    try (Scope scope = span.activate()) { 
+    try (Scope scope = span.activate()) {
         sendResponse(response, "World");
-        span.end(); 
+        span.end();
     } catch (Throwable t) {
-        span.end(t);    
+        span.end(t);
     }
 }
 ```
@@ -335,16 +335,16 @@ Add the following dependencies to `pom.xml`:
 <dependencies>
      <dependency>
          <groupId>io.helidon.tracing</groupId>
-         <artifactId>helidon-tracing</artifactId>   
+         <artifactId>helidon-tracing</artifactId>
      </dependency>
      <dependency>
          <groupId>io.helidon.webserver.observe</groupId>
-         <artifactId>helidon-webserver-observe-tracing</artifactId> 
+         <artifactId>helidon-webserver-observe-tracing</artifactId>
          <scope>runtime</scope>
      </dependency>
      <dependency>
          <groupId>io.helidon.tracing.providers</groupId>
-         <artifactId>helidon-tracing-providers-jaeger</artifactId>  
+         <artifactId>helidon-tracing-providers-jaeger</artifactId>
          <scope>runtime</scope>
      </dependency>
 </dependencies>
@@ -509,7 +509,7 @@ Build, run, and access the application:
 ```shell
 mvn clean package
 java -jar target/helidon-quickstart-se.jar
-curl -i http://localhost:8080/greet/outbound 
+curl -i http://localhost:8080/greet/outbound
 ```
 
 - The request goes to the service on `8080`, which then invokes the
@@ -518,7 +518,7 @@ curl -i http://localhost:8080/greet/outbound
 JSON response:
 ```json
 {
-  "message": "Hello From SE-2 World!" 
+  "message": "Hello From SE-2 World!"
 }
 ```
 
@@ -563,7 +563,7 @@ application running in Kubernetes.
 Replace the tracing configuration in `resources/application.yaml` with
 the following:
 ```yaml
-tracing: 
+tracing:
   service: helidon-se-1
   host: jaeger
 ```
@@ -631,7 +631,7 @@ following contents:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-tracing 
+  name: helidon-tracing
   labels:
     app: helidon-tracing
 spec:
@@ -648,7 +648,7 @@ apiVersion: apps/v1
 metadata:
   name: helidon-tracing
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-tracing
@@ -683,7 +683,7 @@ kubectl get service/helidon-tracing
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-tracing   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s 
+helidon-tracing   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s
 ```
 
 - A service of type `NodePort` that serves the default routes on port

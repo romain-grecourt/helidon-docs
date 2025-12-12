@@ -43,9 +43,9 @@ runtime environment:
 ```yaml
 server:
   features:
-    eureka: 
-      client: 
-        base-uri: "http://localhost:8761/eureka"  
+    eureka:
+      client:
+        base-uri: "http://localhost:8761/eureka"
 ```
 
 - The feature’s configuration is a child of the `server.features.eureka`
@@ -69,9 +69,9 @@ but some are best set explicitly:
 server:
   features:
     eureka:
-      instance: 
-        name: "My Application" 
-        hostName: example.com 
+      instance:
+        name: "My Application"
+        hostName: example.com
 ```
 
 - The feature’s configuration pertaining to the registration itself is a

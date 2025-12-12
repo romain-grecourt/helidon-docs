@@ -182,8 +182,8 @@ might look like this:
 public class MyExtension implements GrpcMpExtension {
 
     @Override
-    public void configure(GrpcMpContext context) {           
-        context.routing().service(new StringService());      
+    public void configure(GrpcMpContext context) {
+        context.routing().service(new StringService());
     }
 }
 ```

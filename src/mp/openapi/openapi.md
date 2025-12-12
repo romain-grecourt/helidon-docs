@@ -98,9 +98,9 @@ mentioned earlier:
 
 ```java
 @GET
-@Operation(summary = "Returns a generic greeting", 
+@Operation(summary = "Returns a generic greeting",
            description = "Greets the user generically")
-@APIResponse(description = "Simple JSON containing the greeting", 
+@APIResponse(description = "Simple JSON containing the greeting",
              content = @Content(mediaType = "application/json",
                                 schema = @Schema(implementation = GreetingMessage.class)))
 @Produces(MediaType.APPLICATION_JSON)
@@ -309,8 +309,8 @@ from the Helidon MP QuickStart, enhanced with OpenAPI support.
 @Path("/greeting")
 @PUT
 @Operation(summary = "Set the greeting prefix",
-           description = "Permits the client to set the prefix part of the greeting (\"Hello\")") 
-@RequestBody( 
+           description = "Permits the client to set the prefix part of the greeting (\"Hello\")")
+@RequestBody(
               name = "greeting",
               description = "Conveys the new greeting prefix to use in building greetings",
               content = @Content(
@@ -506,14 +506,14 @@ type from it.
 ```xml
 <execution>
     <id>make-index</id>
-    <configuration> 
+    <configuration>
         <fileSets>
             <fileSet>
-                <dependency> 
+                <dependency>
                     <groupId>jakarta.ws.rs</groupId>
                     <artifactId>jakarta.ws.rs-api</artifactId>
                 </dependency>
-                <includes> 
+                <includes>
                     <include>**/MediaType.class</include>
                 </includes>
             </fileSet>

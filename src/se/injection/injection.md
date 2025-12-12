@@ -772,12 +772,12 @@ interceptor and effectively bypass the original method execution.
 Sample Interceptor interface implementation:
 ```java
 @Service.Singleton
-@Service.NamedByType(Traced.class) 
+@Service.NamedByType(Traced.class)
 class MyServiceInterceptor implements Interception.Interceptor {
     @Override
     public <V> V proceed(InterceptionContext ctx, Chain<V> chain, Object... args) throws Exception {
         //Do something
-        return chain.proceed(args); 
+        return chain.proceed(args);
     }
 }
 ```

@@ -26,9 +26,9 @@ generate an authentication token. See [Getting an Auth Token](https://docs.cloud
 Log in to the OCIR Docker registry:
 ```shell
 docker login \
-       -u <username> \ 
-       -p <password> \ 
-       <region-code>.ocir.io 
+       -u <username> \
+       -p <password> \
+       <region-code>.ocir.io
 ```
 
 - The username in the format `<tenancy_name>/<username>`.
@@ -40,8 +40,8 @@ Tag the image that you want to push to the registry:
 
 ```shell
 docker tag \
-       helidon-quickstart-se:latest \ 
-       <region-code>.ocir.io/<tenancy-name>/<repo-name>/<image-name>:<tag> 
+       helidon-quickstart-se:latest \
+       <region-code>.ocir.io/<tenancy-name>/<repo-name>/<image-name>:<tag>
 ```
 
 - the local image to tag
@@ -72,12 +72,12 @@ must create and use an image-pull secret.
 Create an image-pull secret:
 ```shell
 kubectl create secret docker-registry \
-    ocirsecret \ 
-    --docker-server=<region-code>.ocir.io \ 
-    --docker-username='<tenancy-name>/<oci-username>' \ 
-    --docker-password='<oci-auth-token>' \ 
+    ocirsecret \
+    --docker-server=<region-code>.ocir.io \
+    --docker-username='<tenancy-name>/<oci-username>' \
+    --docker-password='<oci-auth-token>' \
     --docker-email='<email-address>' \
-    --namespace helidon 
+    --namespace helidon
 ```
 
 - The name of the config secret
@@ -96,10 +96,10 @@ Then edit `app.yaml` and add the following under `spec` in the
 ```yaml
 spec:
   imagePullSecrets:
-  - name: ocirsecret 
+  - name: ocirsecret
   containers:
   - name: helidon-quickstart-se
-    image: phx.ocir.io/helidon/example/helidon-quickstart-se:latest 
+    image: phx.ocir.io/helidon/example/helidon-quickstart-se:latest
     imagePullPolicy: Always
     ports:
     - containerPort: 8080

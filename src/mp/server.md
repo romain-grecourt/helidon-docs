@@ -621,14 +621,14 @@ server:
         trust-store: true
         resource:
           # load from classpath
-          resource-path: "keystore.p12" 
+          resource-path: "keystore.p12"
     #Keystore with private key and server certificate
     private-key:
       keystore:
         passphrase: "password"
         resource:
           # load from file system
-          path: "/path/to/keystore.p12" 
+          path: "/path/to/keystore.p12"
 ```
 
 - File loaded from the classpath.

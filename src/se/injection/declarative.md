@@ -142,14 +142,14 @@ Annotations on endpoint methods:
 |-------------------------------------------------------------|---------------------------------------------------------------|
 | [`@RestServer.Header`][rest-server-header]                  | Header to return with each response from this method          |
 | [`@RestServer.ComputedHeader`][rest-server-computed-header] | Computed header to return with each response from this method |
-| [`@RestServer.Status`][rest-server-status]                  | Status to return (if a custom one is required)                | 
+| [`@RestServer.Status`][rest-server-status]                  | Status to return (if a custom one is required)                |
 | [`@Http.Path`][http-path]                                   | Subpath of the endpoint path (context)                        |
-| [`@Http.GET`][http-get]                                     | Definition of an HTTP GET method                              | 
-| [`@Http.PUT`][http-put]                                     | Definition of an HTTP PUT method                              | 
-| [`@Http.POST`][http-post]                                   | Definition of an HTTP POST method                             | 
-| [`@Http.DELETE`][http-delete]                               | Definition of an HTTP DELETE method                           | 
-| [`@Http.HEAD`][http-head]                                   | Definition of an HTTP HEAD method                             | 
-| [`@Http.PATCH`][http-patch]                                 | Definition of an HTTP PATCH method                            | 
+| [`@Http.GET`][http-get]                                     | Definition of an HTTP GET method                              |
+| [`@Http.PUT`][http-put]                                     | Definition of an HTTP PUT method                              |
+| [`@Http.POST`][http-post]                                   | Definition of an HTTP POST method                             |
+| [`@Http.DELETE`][http-delete]                               | Definition of an HTTP DELETE method                           |
+| [`@Http.HEAD`][http-head]                                   | Definition of an HTTP HEAD method                             |
+| [`@Http.PATCH`][http-patch]                                 | Definition of an HTTP PATCH method                            |
 | [`@Http.HttpMethod`][http-http-method]                      | Custom HTTP method names                                      |
 | [`@Http.Produces`][http-produces]                           | Produced Content-Type                                         |
 | [`@Http.Consumes`][http-consumes]                           | Consumed Content-Type                                         |
@@ -211,12 +211,12 @@ Annotations on endpoint methods:
 | [`@RestClient.Header`][rest-client-header]                  | Header to include in every request to the server             |
 | [`@RestClient.ComputedHeader`][rest-client-computed-header] | Header to compute and include in every request to the server |
 | [`@Http.Path`][http-path]                                   | Subpath of the endpoint path (context)                       |
-| [`@Http.GET`][http-get]                                     | Definition of an HTTP GET method                             | 
-| [`@Http.PUT`][http-put]                                     | Definition of an HTTP PUT method                             | 
-| [`@Http.POST`][http-post]                                   | Definition of an HTTP POST method                            | 
-| [`@Http.DELETE`][http-delete]                               | Definition of an HTTP DELETE method                          | 
-| [`@Http.HEAD`][http-head]                                   | Definition of an HTTP HEAD method                            | 
-| [`@Http.PATCH`][http-patch]                                 | Definition of an HTTP PATCH method                           | 
+| [`@Http.GET`][http-get]                                     | Definition of an HTTP GET method                             |
+| [`@Http.PUT`][http-put]                                     | Definition of an HTTP PUT method                             |
+| [`@Http.POST`][http-post]                                   | Definition of an HTTP POST method                            |
+| [`@Http.DELETE`][http-delete]                               | Definition of an HTTP DELETE method                          |
+| [`@Http.HEAD`][http-head]                                   | Definition of an HTTP HEAD method                            |
+| [`@Http.PATCH`][http-patch]                                 | Definition of an HTTP PATCH method                           |
 | [`@Http.HttpMethod`][http-http-method]                      | Custom HTTP method                                           |
 | [`@Http.Produces`][http-produces]                           | Produced Content-Type                                        |
 | [`@Http.Consumes`][http-consumes]                           | Consumed Content-Type                                        |
@@ -360,7 +360,7 @@ always converted as an unsigned number, i.e. its values are from `0` to
 Constraints for `Integer` data types. These constraints accept
 `int, long, byte, char, short` and their boxed counterparts. `byte` is
 always converted as an unsigned number, i.e. its values are from `0` to
-`255` inclusive. 
+`255` inclusive.
 
 These are convenience annotation that use `int` data type:
 

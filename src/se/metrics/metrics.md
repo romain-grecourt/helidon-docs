@@ -325,20 +325,20 @@ in the following example.
 JSON metrics output structured by scope (partial):
 ```json
 {
-  "application": {  
+  "application": {
     "getTimer": {
       "type": "timer",
       "unit": "seconds",
       "description": "Timer for getting the default greeting"
     }
   },
-  "vendor": {       
+  "vendor": {
     "requests.count": {
       "type": "counter",
       "description": "Each request (regardless of HTTP method) will increase this counter"
     }
   },
-  "base": {         
+  "base": {
     "cpu.systemLoadAverage": {
       "type": "gauge",
       "description": "Displays the system load average for the last minute."
@@ -453,7 +453,7 @@ Setting default timer units for JSON in `application.yaml`:
 ```yaml
 metrics:
   timers:
-    json-units-default: units 
+    json-units-default: units
 ```
 
 - For *units* specify any valid name for a
@@ -820,14 +820,14 @@ public class GreetService implements HttpService {
 
     // Get the global meter registry
     private final MeterRegistry meterRegistry = Metrics.globalRegistry();
-    
+
     // Create (or find) a counter named "accessctr" in the global registry
-    private final Counter accessCtr = meterRegistry.getOrCreate(Counter.builder("accessctr")); 
+    private final Counter accessCtr = meterRegistry.getOrCreate(Counter.builder("accessctr"));
 
     @Override
     public void routing(HttpRules rules) {
         rules
-                .any(this::countAccess) 
+                .any(this::countAccess)
                 .get("/", this::getDefaultMessageHandler)
                 .get("/{name}", this::getMessageHandler)
                 .put("/greeting", this::updateGreetingHandler);
@@ -837,10 +837,10 @@ public class GreetService implements HttpService {
     // A non-terminating handler that "filters" all requests
     // Increment the access counter for every request
     void countAccess(ServerRequest request, ServerResponse response) {
-        accessCtr.increment(); 
+        accessCtr.increment();
         response.next();
     }
-    
+
     // ...
 }
 ```
@@ -862,7 +862,7 @@ Response:
 ```text
 # HELP accessctr_total
 # TYPE accessctr_total counter
-accessctr_total{scope="application",} 0.0 
+accessctr_total{scope="application",} 0.0
 ```
 
 Note the counter is zero; we have not accessed a service endpoint yet.
@@ -886,7 +886,7 @@ Response:
 ```text
 # HELP accessctr_total
 # TYPE accessctr_total counter
-accessctr_total{scope="application",} 1.0 
+accessctr_total{scope="application",} 1.0
 ```
 
 The counter now reports 1, reflecting our earlier access to the `/greet` endpoint.
@@ -1047,7 +1047,7 @@ example) or by using its
 static void routing(HttpRouting.Builder routing) {
     routing
             .addFeature(PrometheusSupport.create())
-            .register("/myapp", new MyService()); 
+            .register("/myapp", new MyService());
 }
 ```
 

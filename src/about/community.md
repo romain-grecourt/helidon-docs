@@ -20,7 +20,7 @@ Have a question?
 
 Helidon source is hosted on [GitHub](https://github.com/oracle/helidon).
 
-If you’d like to report a bug, enhancement request, or check if an issue is on our list, visit the 
+If you’d like to report a bug, enhancement request, or check if an issue is on our list, visit the
 [Helidon GitHub issue tracker](https://github.com/oracle/helidon/issues).
 
 # Stay Informed

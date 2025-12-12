@@ -301,13 +301,13 @@ custom liveness health check.
 
 Create a new `GreetLivenessCheck` class with the following content:
 ```java
-@Liveness 
-@ApplicationScoped 
+@Liveness
+@ApplicationScoped
 public class GreetLivenessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("LivenessCheck")  
+        return HealthCheckResponse.named("LivenessCheck")
                 .up()
                 .withData("time", System.currentTimeMillis())
                 .build();
@@ -350,14 +350,14 @@ becomes ready.
 
 Create a new `GreetReadinessCheck` class with the following content:
 ```java
-@Readiness 
+@Readiness
 @ApplicationScoped
 public class GreetReadinessCheck implements HealthCheck {
     private final AtomicLong readyTime = new AtomicLong(0);
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("ReadinessCheck")  
+        return HealthCheckResponse.named("ReadinessCheck")
                 .status(isReady())
                 .withData("time", readyTime.get())
                 .build();
@@ -365,10 +365,10 @@ public class GreetReadinessCheck implements HealthCheck {
 
     public void onStartUp(
             @Observes @Initialized(ApplicationScoped.class) Object init) {
-        readyTime.set(System.currentTimeMillis()); 
+        readyTime.set(System.currentTimeMillis());
     }
 
-    private boolean isReady() { 
+    private boolean isReady() {
         return Duration.ofMillis(System.currentTimeMillis() - readyTime.get()).getSeconds() >= 5;
     }
 }
@@ -389,7 +389,7 @@ curl -v  http://localhost:8080/health/ready
 HTTP response status:
 
 ```
-< HTTP/1.1 503 Service Unavailable 
+< HTTP/1.1 503 Service Unavailable
 ```
 
 - The HTTP status is `503` since the application is not ready.
@@ -449,14 +449,14 @@ itself started.
 
 Create a new `GreetStartedCheck` class with the following content:
 ```java
-@Startup 
+@Startup
 @ApplicationScoped
 public class GreetStartedCheck implements HealthCheck {
     private final AtomicLong readyTime = new AtomicLong(0);
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("StartedCheck")  
+        return HealthCheckResponse.named("StartedCheck")
                 .status(isStarted())
                 .withData("time", readyTime.get())
                 .build();
@@ -464,10 +464,10 @@ public class GreetStartedCheck implements HealthCheck {
 
     public void onStartUp(
             @Observes @Initialized(ApplicationScoped.class) Object init) {
-        readyTime.set(System.currentTimeMillis()); 
+        readyTime.set(System.currentTimeMillis());
     }
 
-    private boolean isStarted() { 
+    private boolean isStarted() {
         return Duration.ofMillis(System.currentTimeMillis() - readyTime.get()).getSeconds() >= 8;
     }
 }
@@ -488,7 +488,7 @@ curl -v  http://localhost:8080/health/started
 
 HTTP response status:
 ```
-< HTTP/1.1 503 Service Unavailable 
+< HTTP/1.1 503 Service Unavailable
 ```
 
 - The HTTP status is `503` since the application has not started.
@@ -516,7 +516,7 @@ curl -v http://localhost:8080/health/started
 
 HTTP response status:
 ```
-< HTTP/1.1 200 OK 
+< HTTP/1.1 200 OK
 ```
 
 - The HTTP status is `200` indicating that the application is started.

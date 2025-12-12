@@ -41,8 +41,8 @@ process queries. The `buildSchema` method creates the schema and defines
 
 ```java
 static GraphQLSchema buildSchema() {
-    String schema = 
-            """ 
+    String schema =
+            """
             type Query {
                 hello: String\s
                 helloInDifferentLanguages: [String]\s
@@ -52,7 +52,7 @@ static GraphQLSchema buildSchema() {
     SchemaParser schemaParser = new SchemaParser();
     TypeDefinitionRegistry typeDefinitionRegistry = schemaParser.parse(schema);
 
-    DataFetcher<List<String>> dataFetcher = env -> List.of( 
+    DataFetcher<List<String>> dataFetcher = env -> List.of(
             "Bonjour",
             "Hola",
             "Zdravstvuyte",
@@ -62,7 +62,7 @@ static GraphQLSchema buildSchema() {
             "Konnichiwa",
             "Guten Tag");
 
-    RuntimeWiring runtimeWiring = RuntimeWiring.newRuntimeWiring() 
+    RuntimeWiring runtimeWiring = RuntimeWiring.newRuntimeWiring()
             .type("Query", builder -> builder
                     .dataFetcher("hello", new StaticDataFetcher("world")))
             .type("Query", builder -> builder
@@ -70,7 +70,7 @@ static GraphQLSchema buildSchema() {
             .build();
 
     SchemaGenerator generator = new SchemaGenerator();
-    return generator.makeExecutableSchema(typeDefinitionRegistry, runtimeWiring);  
+    return generator.makeExecutableSchema(typeDefinitionRegistry, runtimeWiring);
 }
 ```
 

@@ -5,21 +5,21 @@ requests and retrieve corresponding responses in a programmatic way.
 
 Helidon WebClient provides the following features:
 
-- **Blocking approach**  
+- **Blocking approach**
   The Webclient uses the blocking approach to synchronously process a
   request and its correspond response. Both `HTTP/1.1` and `HTTP/2`
   request and response will run in the thread of the user. Additionally,
   for `HTTP/2`, virtual thread is employed to manage the connection.
 
-- **Builder-like setup and execution**  
+- **Builder-like setup and execution**
   Creates every client and request as a builder pattern. This improves
   readability and code maintenance.
 
-- **Redirect chain**  
+- **Redirect chain**
   Follows the redirect chain and perform requests on the correct
   endpoint by itself.
 
-- **Tracing and security propagation**  
+- **Tracing and security propagation**
   Automatically propagates the configured tracing and security settings
   of the Helidon WebServer to the WebClient and uses them during request
   and response.
@@ -92,11 +92,11 @@ Configuration can be set for every request type before it is sent.
 Customizing a request:
 ```java
 client.get()
-        .uri("http://example.com") 
-        .path("/path") 
-        .queryParam("query", "parameter") 
-        .fragment("someFragment") 
-        .headers(headers -> headers.accept(MediaTypes.APPLICATION_JSON)); 
+        .uri("http://example.com")
+        .path("/path")
+        .queryParam("query", "parameter")
+        .fragment("someFragment")
+        .headers(headers -> headers.accept(MediaTypes.APPLICATION_JSON));
 ```
 
 - Overrides `baseUri` from WebClient
@@ -225,7 +225,7 @@ them work by following either of the approaches:
 ```java
 WebClient.builder()
         .mediaContext(it -> it
-                .addMediaSupport(CustomMediaSupport.create())) 
+                .addMediaSupport(CustomMediaSupport.create()))
         .build();
 ```
 
@@ -674,16 +674,16 @@ WebClient client = WebClient.builder()
 client:
   connect-timeout-millis: 2000
   read-timeout-millis: 2000
-  follow-redirects: true 
+  follow-redirects: true
   max-redirects: 5
-  cookie-manager: 
+  cookie-manager:
     automatic-store-enabled: true
     default-cookies:
       flavor3: strawberry
       flavor4: raspberry
-  default-headers: 
+  default-headers:
     Accept: '"application/json", "text/plain"'
-  services: 
+  services:
     metrics:
       - methods: ["PUT", "POST", "DELETE"]
         type: METER
@@ -702,17 +702,17 @@ client:
         name-format: "wc.counter.%1$s.error"
         description: "Counter of failed PUT, POST and DELETE requests"
     tracing:
-  protocol-configs: 
+  protocol-configs:
     http_1_1:
       max-header-size: 20000
       validate-request-headers: true
     h2:
       prior-knowledge: true
-  proxy: 
+  proxy:
     host: "hostName"
     port: 80
     no-proxy: ["localhost:8080", ".helidon.io", "192.168.1.1"]
-  tls: 
+  tls:
     trust:
       keystore:
         passphrase: "password"
@@ -761,9 +761,9 @@ Alternative is to set proxy directly from the request via
 `HttpClientRequest`.
 
 ```java
-Proxy proxy = Proxy.create(); 
+Proxy proxy = Proxy.create();
 HttpClientResponse response = client.get("/proxiedresource")
-        .proxy(proxy) 
+        .proxy(proxy)
         .request();
 ```
 
@@ -791,9 +791,9 @@ Then, in your application code, load the configuration from that file.
 WebClient initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebClient.builder()
-        .config(config.get("client")) 
+        .config(config.get("client"))
         .build();
 ```
 
@@ -848,9 +848,9 @@ In the application code, load the settings from the configuration file.
 WebClient initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebClient.builder()
-        .config(config.get("client")) 
+        .config(config.get("client"))
         .build();
 ```
 
@@ -901,10 +901,10 @@ Services can be added in WebClient as shown in the code below.
 WebClientService clientService = WebClientMetrics.counter()
         .methods(Method.GET)
         .nameFormat("example.metric.%1$s.%2$s")
-        .build(); 
+        .build();
 
 WebClient.builder()
-        .addService(clientService) 
+        .addService(clientService)
         .build();
 ```
 
@@ -941,9 +941,9 @@ Then, in your application code, load the configuration from that file.
 WebClient initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebClient.builder()
-        .config(config.get("client")) 
+        .config(config.get("client"))
         .build();
 ```
 
@@ -994,9 +994,9 @@ Then, in your application code, load the configuration from that file.
 WebClient initialization using the `application.yaml` file located on
 the classpath:
 ```java
-Config config = Config.create(); 
+Config config = Config.create();
 WebClient.builder()
-        .config(config.get("client")) 
+        .config(config.get("client"))
         .build();
 ```
 

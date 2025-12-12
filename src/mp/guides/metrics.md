@@ -363,15 +363,15 @@ annotation to track the number of times the `/cards` endpoint is called.
 
 Create a new class `GreetingCards` with the following code:
 ```java
-@Path("/cards") 
-@RequestScoped 
+@Path("/cards")
+@RequestScoped
 public class GreetingCards {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(name = "any-card")  
+    @Counted(name = "any-card")
     public JsonObject anyCard() throws InterruptedException {
         return createResponse("Here are some random cards ...");
     }
@@ -405,7 +405,7 @@ curl -H "Accept: application/json"  'http://localhost:8080/metrics?scope=applica
 JSON response (partial):
 ```json
 {
-  "io.helidon.examples.quickstart.mp.GreetingCards.any-card":2 
+  "io.helidon.examples.quickstart.mp.GreetingCards.any-card":2
 }
 ```
 
@@ -436,8 +436,8 @@ public class GreetingCards {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(name = "cardCount", absolute = true) 
-    @Timed(name = "cardTimer", absolute = true, unit = MetricUnits.MILLISECONDS) 
+    @Counted(name = "cardCount", absolute = true)
+    @Timed(name = "cardTimer", absolute = true, unit = MetricUnits.MILLISECONDS)
     public JsonObject anyCard() {
         return createResponse("Here are some random cards ...");
     }
@@ -503,7 +503,7 @@ public class GreetingCards {
     @GET
     @Path("/birthday")
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(name = "specialEventCard", absolute = true)  
+    @Counted(name = "specialEventCard", absolute = true)
     public JsonObject birthdayCard() throws InterruptedException {
         return createResponse("Here are some birthday cards ...");
     }
@@ -511,7 +511,7 @@ public class GreetingCards {
     @GET
     @Path("/wedding")
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(name = "specialEventCard", absolute = true)  
+    @Counted(name = "specialEventCard", absolute = true)
     public JsonObject weddingCard() throws InterruptedException {
         return createResponse("Here are some wedding cards ...");
     }
@@ -521,7 +521,7 @@ public class GreetingCards {
     }
 }
 ```
-- 
+-
 - The `/birthday` endpoint uses a `Counter` metric, named
   `specialEventCard`.
 
@@ -540,7 +540,7 @@ JSON response (partial):
 ```json
 {
   "anyCard": 1,
-  "specialEventCard": 2 
+  "specialEventCard": 2
 }
 ```
 
@@ -560,14 +560,14 @@ Replace the `GreetingCards` class with the following code:
 ```java
 @Path("/cards")
 @RequestScoped
-@Counted(name = "totalCards") 
+@Counted(name = "totalCards")
 public class GreetingCards {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(absolute = true) 
+    @Counted(absolute = true)
     public JsonObject anyCard() throws InterruptedException {
         return createResponse("Here are some random cards ...");
     }
@@ -575,7 +575,7 @@ public class GreetingCards {
     @Path("/birthday")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Counted(absolute = true) 
+    @Counted(absolute = true)
     public JsonObject birthdayCard() throws InterruptedException {
         return createResponse("Here are some birthday cards ...");
     }
@@ -605,7 +605,7 @@ JSON response (partial):
 {
   "anyCard": 1,
   "birthdayCard": 1,
-  "io.helidon.examples.quickstart.mp.totalCards.GreetingCards": 2 
+  "io.helidon.examples.quickstart.mp.totalCards.GreetingCards": 2
 }
 ```
 
@@ -631,14 +631,14 @@ public class GreetingCards {
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
 
     @Inject
-    @Metric(name = "cacheHits", absolute = true) 
+    @Metric(name = "cacheHits", absolute = true)
     private Counter cacheHits;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Counted(absolute = true)
     public JsonObject anyCard() throws InterruptedException {
-        updateStats(); 
+        updateStats();
         return createResponse("Here are some random cards ...");
     }
 
@@ -647,7 +647,7 @@ public class GreetingCards {
     @Produces(MediaType.APPLICATION_JSON)
     @Counted(absolute = true)
     public JsonObject birthdayCard() throws InterruptedException {
-        updateStats();  
+        updateStats();
         return createResponse("Here are some birthday cards ...");
     }
 
@@ -657,7 +657,7 @@ public class GreetingCards {
 
     private void updateStats() {
         if (new Random().nextInt(3) == 1) {
-            cacheHits.inc(); 
+            cacheHits.inc();
         }
     }
 }
@@ -686,7 +686,7 @@ JSON response (partial):
 {
   "anyCard": 2,
   "birthdayCard": 3,
-  "cacheHits": 2, 
+  "cacheHits": 2,
   "io.helidon.examples.quickstart.mp.totalCards.GreetingCards": 5
 }
 ```
@@ -705,18 +705,18 @@ application up-time.
 
 Create a new `GreetingCardsAppMetrics` class with the following code:
 ```java
-@ApplicationScoped 
+@ApplicationScoped
 public class GreetingCardsAppMetrics {
 
-    private AtomicLong startTime = new AtomicLong(0); 
+    private AtomicLong startTime = new AtomicLong(0);
 
     public void onStartUp(@Observes @Initialized(ApplicationScoped.class) Object init) {
-        startTime = new AtomicLong(System.currentTimeMillis()); 
+        startTime = new AtomicLong(System.currentTimeMillis());
     }
 
     @Gauge(unit = "TimeSeconds")
     public long appUpTimeSeconds() {
-        return Duration.ofMillis(System.currentTimeMillis() - startTime.get()).getSeconds();  
+        return Duration.ofMillis(System.currentTimeMillis() - startTime.get()).getSeconds();
     }
 }
 ```
@@ -766,7 +766,7 @@ JSON response from `/metrics/application`:
 ```json
 {
   "cardCount": 0,
-  "io.helidon.examples.quickstart.mp.GreetingCardsAppMetrics.appUpTimeSeconds": 6 
+  "io.helidon.examples.quickstart.mp.GreetingCardsAppMetrics.appUpTimeSeconds": 6
 }
 ```
 
@@ -790,11 +790,11 @@ following content:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-metrics 
+  name: helidon-metrics
   labels:
     app: helidon-metrics
   annotations:
-    prometheus.io/scrape: "true" 
+    prometheus.io/scrape: "true"
 spec:
   type: NodePort
   selector:
@@ -809,7 +809,7 @@ apiVersion: apps/v1
 metadata:
   name: helidon-metrics
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-metrics
@@ -847,7 +847,7 @@ kubectl get service/helidon-metrics
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-metrics   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s 
+helidon-metrics   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s
 ```
 
 - A service of type `NodePort` that serves the default routes on port

@@ -319,7 +319,7 @@ this tracer at runtime.
 Run Jaeger within a docker container, then check the Jaeger server
 working:
 ```shell
-docker run -d --name jaeger \                  
+docker run -d --name jaeger \
   -e COLLECTOR_OTLP_ENABLED=true \
   -p 6831:6831/udp \
   -p 6832:6832/udp \
@@ -423,7 +423,7 @@ Replace the `GreetResource` class with the following code:
 public class GreetResource {
 
     @Uri("http://localhost:8081/greet")
-    private WebTarget target; 
+    private WebTarget target;
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
     private final GreetingProvider greetingProvider;
@@ -440,7 +440,7 @@ public class GreetResource {
     }
 
     @GET
-    @Path("/outbound") 
+    @Path("/outbound")
     public JsonObject outbound() {
         return target.request().accept(MediaType.APPLICATION_JSON_TYPE).get(JsonObject.class);
     }
@@ -461,7 +461,7 @@ public class GreetResource {
 Build and run the application, then invoke the endpoint and check the
 response:
 ```shell
-curl -i http://localhost:8080/greet/outbound 
+curl -i http://localhost:8080/greet/outbound
 ```
 
 - The request went to the service on `8080`, which then invoked the
@@ -470,7 +470,7 @@ curl -i http://localhost:8080/greet/outbound
 Response body:
 ```json
 {
-  "message": "Hello From MP-2 World!" 
+  "message": "Hello From MP-2 World!"
 }
 ```
 
@@ -547,7 +547,7 @@ kubectl apply -f ./jaeger.yaml
 
 Create a Jaeger external server and expose it on port 9142:
 ```shell
-kubectl expose pod jaeger --name=jaeger-external --port=16687 --target-port=16686 --type=LoadBalancer 
+kubectl expose pod jaeger --name=jaeger-external --port=16687 --target-port=16686 --type=LoadBalancer
 ```
 
 - Create a service so that you can access the Jaeger UI.
@@ -564,7 +564,7 @@ following contents:
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-tracing 
+  name: helidon-tracing
   labels:
     app: helidon-tracing
 spec:
@@ -581,7 +581,7 @@ apiVersion: apps/v1
 metadata:
   name: helidon-tracing
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-tracing
@@ -618,7 +618,7 @@ kubectl get service/helidon-tracing
 
 ```shell
 NAME             TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-helidon-tracing   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s 
+helidon-tracing   NodePort   10.99.159.2   <none>        8080:31143/TCP   8s
 ```
 
 - A service of type `NodePort` that serves the default routes on port

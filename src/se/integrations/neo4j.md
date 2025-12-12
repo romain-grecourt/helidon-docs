@@ -218,9 +218,9 @@ propagation.
 Finally, we are able to use the `Neo4j` driver.
 
 ```java
-record MovieRepository(Driver driver) { 
+record MovieRepository(Driver driver) {
 
-    List<Movie> findAll() { 
+    List<Movie> findAll() {
         try (var session = driver.session()) {
             var query = """
                         match (m:Movie)
@@ -278,22 +278,22 @@ following routing should be created:
 
 ```java
 Neo4j neo4j = Neo4j.create(config.get("neo4j"));
-Driver driver = neo4j.driver(); 
+Driver driver = neo4j.driver();
 
 Neo4jMetricsSupport.builder()
         .driver(driver)
         .build()
-        .initialize(); 
+        .initialize();
 
 ObserveFeature observeFeature = ObserveFeature.builder()
         .addObserver(HealthObserver.builder()
                              .addCheck(Neo4jHealthCheck.create(driver))
                              .build())
-        .build(); 
+        .build();
 
 WebServer server = WebServer.builder()
         .addFeature(observeFeature)
-        .routing(it -> it.register(new MovieService(new MovieRepository(driver)))) 
+        .routing(it -> it.register(new MovieService(new MovieRepository(driver))))
         .build()
         .start();
 

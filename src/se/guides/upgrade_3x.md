@@ -90,7 +90,7 @@ void snippet()() {
     WebServer.builder(Routing.builder()
                 // Traditional REST routing service registration
                 .register("/rest", new SomeRestService())
-            
+
                 // WebSocket setup with Tyrus service
                 .register("/websocket", TyrusSupport.builder()
                         .register(ServerEndpointConfig.Builder
@@ -109,7 +109,7 @@ void snippet()() {
     WebServer.builder()
             // Traditional REST routing service registration
             .routing(r -> r.register("/rest", new SomeRestService()))
-            
+
             // New WebSocket routing setup
             .addRouting(WebSocketRouting.builder()
                     .endpoint("/websocket", ServerEndpointConfig.Builder

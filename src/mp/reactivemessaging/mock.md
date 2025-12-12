@@ -33,7 +33,7 @@ MockConnector mockConnector;
 
 Emitting String values `a`, `b`, `c`:
 ```java
-mockConnector.incoming("my-incoming-channel", String.class) 
+mockConnector.incoming("my-incoming-channel", String.class)
         .emit("a", "b", "c");
 ```
 
@@ -44,8 +44,8 @@ mockConnector.incoming("my-incoming-channel", String.class)
 Awaiting and asserting payloads with custom mapper:
 ```java
 mockConnector
-        .outgoing("my-outgoing-channel", String.class) 
-        .awaitData(TIMEOUT, Message::getPayload, "a", "b", "c"); 
+        .outgoing("my-outgoing-channel", String.class)
+        .awaitData(TIMEOUT, Message::getPayload, "a", "b", "c");
 ```
 
 - Get outgoing channel of given name and payload type
@@ -72,29 +72,29 @@ MockConnector directly into it.
 ```java
 @HelidonTest
 @DisableDiscovery
-@AddBean(MockConnector.class) 
-@AddExtension(MessagingCdiExtension.class) 
-@AddConfig(key = "mp.messaging.incoming.test-channel-in.connector", value = MockConnector.CONNECTOR_NAME) 
-@AddConfig(key = "mp.messaging.incoming.test-channel-in.mock-data-type", value = "java.lang.Integer") 
-@AddConfig(key = "mp.messaging.incoming.test-channel-in.mock-data", value = "6,7,8") 
-@AddConfig(key = "mp.messaging.outgoing.test-channel-out.connector", value = MockConnector.CONNECTOR_NAME) 
+@AddBean(MockConnector.class)
+@AddExtension(MessagingCdiExtension.class)
+@AddConfig(key = "mp.messaging.incoming.test-channel-in.connector", value = MockConnector.CONNECTOR_NAME)
+@AddConfig(key = "mp.messaging.incoming.test-channel-in.mock-data-type", value = "java.lang.Integer")
+@AddConfig(key = "mp.messaging.incoming.test-channel-in.mock-data", value = "6,7,8")
+@AddConfig(key = "mp.messaging.outgoing.test-channel-out.connector", value = MockConnector.CONNECTOR_NAME)
 public class MessagingTest {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
     @Inject
     @TestConnector
-    private MockConnector mockConnector; 
+    private MockConnector mockConnector;
 
     @Incoming("test-channel-in")
     @Outgoing("test-channel-out")
-    int multiply(int payload) {  
+    int multiply(int payload) {
         return payload * 10;
     }
 
     @Test
     void testMultiplyChannel() {
-        mockConnector.outgoing("test-channel-out", Integer.TYPE) 
+        mockConnector.outgoing("test-channel-out", Integer.TYPE)
                 .awaitPayloads(TIMEOUT, 60, 70, 80);
     }
 }

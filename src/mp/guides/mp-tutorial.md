@@ -50,7 +50,7 @@ Initial Maven POM file:
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent> 
+    <parent>
         <groupId>io.helidon.applications</groupId>
         <artifactId>helidon-mp</artifactId>
         <version>4.4.0-SNAPSHOT</version>
@@ -58,21 +58,21 @@ Initial Maven POM file:
     </parent>
 
     <groupId>io.helidon.examples</groupId>
-    <artifactId>helidon-mp-tutorial</artifactId> 
+    <artifactId>helidon-mp-tutorial</artifactId>
     <name>${project.artifactId}</name>
 
     <properties>
-        <mainClass>io.helidon.examples.Main</mainClass> 
+        <mainClass>io.helidon.examples.Main</mainClass>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.helidon.microprofile.bundles</groupId>
-            <artifactId>helidon-microprofile</artifactId> 
+            <artifactId>helidon-microprofile</artifactId>
         </dependency>
     </dependencies>
 
-    <build> 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -168,18 +168,18 @@ the Helidon server and the application.
 
 The `GreetResource` is defined in the `GreetResource.java` class as shown below:
 ```java
-@Path("/greet") 
-@RequestScoped 
+@Path("/greet")
+@RequestScoped
 public class GreetResource {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public JsonObject getDefaultMessage() { 
+    public JsonObject getDefaultMessage() {
         return JSON.createObjectBuilder()
                 .add("message", "Hello World")
-                .build(); 
+                .build();
     }
 }
 ```
@@ -220,7 +220,7 @@ public final class Main {
     }
 
     static Server startServer() {
-        return Server.create().start(); 
+        return Server.create().start();
     }
 }
 ```
@@ -246,7 +246,7 @@ the following content:
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                            http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        version="2.0"
-       bean-discovery-mode="annotated"> 
+       bean-discovery-mode="annotated">
 </beans>
 ```
 
@@ -329,11 +329,11 @@ Add a new "provider" class to read this property and make it available
 to the application. The class will be called `GreetingProvider.java` and
 have the following content:
 ```java
-@ApplicationScoped 
+@ApplicationScoped
 public class GreetingProvider {
-    private final AtomicReference<String> message = new AtomicReference<>(); 
+    private final AtomicReference<String> message = new AtomicReference<>();
 
-    @Inject 
+    @Inject
     public GreetingProvider(@ConfigProperty(name = "app.greeting") String message) {
         this.message.set(message);
     }
@@ -374,7 +374,7 @@ public class GreetResource {
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Map.of());
     private final GreetingProvider greetingProvider;
 
-    @Inject 
+    @Inject
     public GreetResource(GreetingProvider greetingConfig) {
         this.greetingProvider = greetingConfig;
     }
@@ -382,10 +382,10 @@ public class GreetResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public JsonObject getDefaultMessage() {
-        return createResponse("World"); 
+        return createResponse("World");
     }
 
-    private JsonObject createResponse(String who) { 
+    private JsonObject createResponse(String who) {
         String msg = String.format("%s %s!", greetingProvider.getMessage(), who);
         return JSON.createObjectBuilder()
                 .add("message", msg)
@@ -424,7 +424,7 @@ Here are the two new methods to add to `GreetResource.java`:
 @Path("/{name}")
 @GET
 @Produces(MediaType.APPLICATION_JSON)
-public JsonObject getMessage(@PathParam("name") String name) { 
+public JsonObject getMessage(@PathParam("name") String name) {
     return createResponse(name);
 }
 
@@ -432,7 +432,7 @@ public JsonObject getMessage(@PathParam("name") String name) {
 @PUT
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public Response updateGreeting(JsonObject jsonObject) { 
+public Response updateGreeting(JsonObject jsonObject) {
 
     if (!jsonObject.containsKey("greeting")) {
         JsonObject entity = Json.createObjectBuilder()
@@ -585,7 +585,7 @@ Updated GreetResource.java with custom metrics
 ```java
 @GET
 @Produces(MediaType.APPLICATION_JSON)
-@Timed 
+@Timed
 public JsonObject getDefaultMessage() {
     return createResponse("World");
 }
@@ -687,21 +687,21 @@ Helidon allows the addition of custom health checks to applications.
 Create a new class `GreetHealthcheck.java` with the following content:
 
 ```java
-@Liveness 
-@ApplicationScoped 
+@Liveness
+@ApplicationScoped
 public class GreetHealthcheck implements HealthCheck {
 
     private GreetingProvider provider;
 
-    @Inject 
+    @Inject
     public GreetHealthcheck(GreetingProvider provider) {
         this.provider = provider;
     }
 
     @Override
-    public HealthCheckResponse call() { 
+    public HealthCheckResponse call() {
         String message = provider.getMessage();
-        return HealthCheckResponse.named("greeting") 
+        return HealthCheckResponse.named("greeting")
                 .status("Hello".equals(message))
                 .withData("greeting", message)
                 .build();
@@ -738,13 +738,13 @@ Custom health check reporting unhealthy state:
 
 ```shell
 curl -i -X GET http://localhost:8080/health/live
-HTTP/1.1 503 Service Unavailable 
+HTTP/1.1 503 Service Unavailable
 Content-Type: application/json
 Date: Fri, 23 Aug 2019 10:07:23 -0400
 transfer-encoding: chunked
 connection: keep-alive
 
-{"outcome":"DOWN","status":"DOWN","checks":[{"name":"deadlock","state":"UP","status":"UP"},{"name":"diskSpace","state":"UP","status":"UP","data":{"free":"381.08 GB","freeBytes":409182306304,"percentFree":"43.37%","total":"878.70 GB","totalBytes":943491723264}},{"name":"greeting","state":"DOWN","status":"DOWN","data":{"greeting":"Hey"}},{"name":"heapMemory","state":"UP","status":"UP","data":{"free":"243.81 MB","freeBytes":255651048,"max":"3.46 GB","maxBytes":3715629056,"percentFree":"98.58%","total":"294.00 MB","totalBytes":308281344}}]} 
+{"outcome":"DOWN","status":"DOWN","checks":[{"name":"deadlock","state":"UP","status":"UP"},{"name":"diskSpace","state":"UP","status":"UP","data":{"free":"381.08 GB","freeBytes":409182306304,"percentFree":"43.37%","total":"878.70 GB","totalBytes":943491723264}},{"name":"greeting","state":"DOWN","status":"DOWN","data":{"greeting":"Hey"}},{"name":"heapMemory","state":"UP","status":"UP","data":{"free":"243.81 MB","freeBytes":255651048,"max":"3.46 GB","maxBytes":3715629056,"percentFree":"98.58%","total":"294.00 MB","totalBytes":308281344}}]}
 ```
 
 - The HTTP return code is now 503 Service Unavailable.
@@ -756,19 +756,19 @@ then check health again:
 ```shell
 # update greeting
 curl -i -X PUT -H "Content-Type: application/json" -d '{"greeting": "Hello"}' http://localhost:8080/greet/greeting
-HTTP/1.1 204 No Content 
+HTTP/1.1 204 No Content
 Date: Thu, 22 Aug 2019 13:29:57 -0400
 connection: keep-alive
 
 # check health
 curl -i -X GET http://localhost:8080/health/live
-HTTP/1.1 200 OK 
+HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Fri, 23 Aug 2019 10:08:09 -0400
 connection: keep-alive
 content-length: 536
 
-{"outcome":"UP","status":"UP","checks":[{"name":"deadlock","state":"UP","status":"UP"},{"name":"diskSpace","state":"UP","status":"UP","data":{"free":"381.08 GB","freeBytes":409179811840,"percentFree":"43.37%","total":"878.70 GB","totalBytes":943491723264}},{"name":"greeting","state":"UP","status":"UP","data":{"greeting":"Hello"}},{"name":"heapMemory","state":"UP","status":"UP","data":{"free":"237.25 MB","freeBytes":248769720,"max":"3.46 GB","maxBytes":3715629056,"percentFree":"98.40%","total":"294.00 MB","totalBytes":308281344}}]} 
+{"outcome":"UP","status":"UP","checks":[{"name":"deadlock","state":"UP","status":"UP"},{"name":"diskSpace","state":"UP","status":"UP","data":{"free":"381.08 GB","freeBytes":409179811840,"percentFree":"43.37%","total":"878.70 GB","totalBytes":943491723264}},{"name":"greeting","state":"UP","status":"UP","data":{"greeting":"Hello"}},{"name":"heapMemory","state":"UP","status":"UP","data":{"free":"237.25 MB","freeBytes":248769720,"max":"3.46 GB","maxBytes":3715629056,"percentFree":"98.40%","total":"294.00 MB","totalBytes":308281344}}]}
 ```
 
 - The PUT returns an HTTP 204.
@@ -789,7 +789,7 @@ have Docker installed and running on your system.
 Add a new `Dockerfile` in the project root directory with the following
 content:
 ```shell
-FROM container-registry.oracle.com/java/openjdk:21 as build 
+FROM container-registry.oracle.com/java/openjdk:21 as build
 
 # Install maven
 WORKDIR /usr/share
@@ -803,19 +803,19 @@ RUN set -x && \
 WORKDIR /helidon
 
 ADD pom.xml .
-RUN mvn package -DskipTests 
+RUN mvn package -DskipTests
 
 ADD src src
-RUN mvn package -DskipTests 
+RUN mvn package -DskipTests
 RUN echo "done!"
 
 FROM container-registry.oracle.com/java/openjdk:21
 WORKDIR /helidon
 
-COPY --from=build /helidon/target/helidon-mp-tutorial.jar ./ 
+COPY --from=build /helidon/target/helidon-mp-tutorial.jar ./
 COPY --from=build /helidon/target/libs ./libs
 
-CMD ["java", "-jar", "helidon-mp-tutorial.jar"] 
+CMD ["java", "-jar", "helidon-mp-tutorial.jar"]
 EXPOSE 8080
 ```
 
@@ -875,14 +875,14 @@ Create a file called `app.yaml` in the project’s root directory with the
 following content:
 ```yaml
 ---
-kind: Service 
+kind: Service
 apiVersion: v1
 metadata:
   name: helidon-mp-tutorial
   labels:
     app: helidon-mp-tutorial
 spec:
-  type: NodePort 
+  type: NodePort
   selector:
     app: helidon-mp-tutorial
   ports:
@@ -890,12 +890,12 @@ spec:
       targetPort: 8080
       name: http
 ---
-kind: Deployment 
+kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: helidon-mp-tutorial
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: helidon-mp-tutorial
@@ -907,7 +907,7 @@ spec:
     spec:
       containers:
         - name: helidon-mp-tutorial
-          image: helidon-mp-tutorial 
+          image: helidon-mp-tutorial
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

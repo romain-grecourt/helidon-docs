@@ -140,12 +140,12 @@ Span sample:
 @ApplicationScoped
 class HelidonBean {
 
-    @WithSpan 
+    @WithSpan
     void doSomethingWithinSpan() {
         // do something here
     }
 
-    @WithSpan("name") 
+    @WithSpan("name")
     void complexSpan(@SpanAttribute(value = "arg") String arg) {
         // do something here
     }
@@ -167,12 +167,12 @@ SpanBuilder usage:
 public class HelidonEndpoint {
 
     @Inject
-    Tracer tracer; 
+    Tracer tracer;
 
     @GET
     @Path("/span")
     public Response span() {
-        Span span = tracer.spanBuilder("new") 
+        Span span = tracer.spanBuilder("new")
                 .setSpanKind(SpanKind.CLIENT)
                 .setAttribute("someAttribute", "someValue")
                 .startSpan();
@@ -198,7 +198,7 @@ private io.helidon.tracing.Tracer helidonTracerInjected;
 
 @Inject
 GreetResource(io.helidon.tracing.Tracer helidonTracerInjected) {
-    this.helidonTracerInjected = helidonTracerInjected; 
+    this.helidonTracerInjected = helidonTracerInjected;
 }
 
 @GET
@@ -206,7 +206,7 @@ GreetResource(io.helidon.tracing.Tracer helidonTracerInjected) {
 @Produces(MediaType.APPLICATION_JSON)
 @WithSpan("mixed_parent_injected")
 public GreetingMessage mixedSpanInjected() {
-    io.helidon.tracing.Span mixedSpan = helidonTracerInjected.spanBuilder("mixed_injected") 
+    io.helidon.tracing.Span mixedSpan = helidonTracerInjected.spanBuilder("mixed_injected")
             .kind(io.helidon.tracing.Span.Kind.SERVER)
             .tag("attribute", "value")
             .start();
@@ -234,8 +234,8 @@ Obtain the Global tracer:
 @Produces(MediaType.APPLICATION_JSON)
 @WithSpan("mixed_parent")
 public GreetingMessage mixedSpan() {
-    io.helidon.tracing.Tracer helidonTracer = io.helidon.tracing.Tracer.global(); 
-    io.helidon.tracing.Span mixedSpan = helidonTracer.spanBuilder("mixed") 
+    io.helidon.tracing.Tracer helidonTracer = io.helidon.tracing.Tracer.global();
+    io.helidon.tracing.Span mixedSpan = helidonTracer.spanBuilder("mixed")
             .kind(io.helidon.tracing.Span.Kind.SERVER)
             .tag("attribute", "value")
             .start();
@@ -262,18 +262,18 @@ Inject the current span:
 @Path("/")
 public class HelidonEndpoint {
     @Inject
-    Span span; 
+    Span span;
 
     @GET
     @Path("/current")
     public Response currentSpan() {
-        return Response.ok(span).build(); 
+        return Response.ok(span).build();
     }
 
     @GET
     @Path("/current/static")
     public Response currentSpanStatic() {
-        return Response.ok(Span.current()).build(); 
+        return Response.ok(Span.current()).build();
     }
 }
 ```
@@ -293,18 +293,18 @@ Inject the current baggage:
 @Path("/")
 public class HelidonEndpoint {
     @Inject
-    Baggage baggage; 
+    Baggage baggage;
 
     @GET
     @Path("/current")
     public Response currentBaggage() {
-        return Response.ok(baggage.getEntryValue("baggageKey")).build(); 
+        return Response.ok(baggage.getEntryValue("baggageKey")).build();
     }
 
     @GET
     @Path("/current/static")
     public Response currentBaggageStatic() {
-        return Response.ok(Baggage.current().getEntryValue("baggageKey")).build(); 
+        return Response.ok(Baggage.current().getEntryValue("baggageKey")).build();
     }
 }
 ```
@@ -509,11 +509,11 @@ dependency should be added to project’s pom.xml file.
 <dependencies>
     <dependency>
         <groupId>io.helidon.microprofile.telemetry</groupId>
-        <artifactId>helidon-microprofile-telemetry</artifactId> 
+        <artifactId>helidon-microprofile-telemetry</artifactId>
     </dependency>
     <dependency>
         <groupId>io.opentelemetry</groupId>
-        <artifactId>opentelemetry-exporter-jaeger</artifactId>  
+        <artifactId>opentelemetry-exporter-jaeger</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -557,7 +557,7 @@ and let MicroProfile OpenTelemetry handle them.
 public class GreetResource {
 
     @GET
-    @WithSpan("default") 
+    @WithSpan("default")
     public String getDefaultMessage() {
         return "Hello World";
     }
@@ -583,18 +583,18 @@ output is:
 Custom method:
 ```java
 @Inject
-private Tracer tracer; 
+private Tracer tracer;
 
 @GET
 @Path("custom")
 @Produces(MediaType.APPLICATION_JSON)
-@WithSpan 
+@WithSpan
 public JsonObject useCustomSpan() {
-    Span span = tracer.spanBuilder("custom") 
+    Span span = tracer.spanBuilder("custom")
             .setSpanKind(SpanKind.INTERNAL)
             .setAttribute("attribute", "value")
             .startSpan();
-    span.end(); 
+    span.end();
 
     return Json.createObjectBuilder()
             .add("Custom Span", span.toString())
@@ -626,13 +626,13 @@ will be annotated with `@WithSpan` annotation.
 Outbound method:
 ```java
 @Uri("http://localhost:8081/secondary")
-private WebTarget target; 
+private WebTarget target;
 
 @GET
 @Path("/outbound")
-@WithSpan("outbound") 
+@WithSpan("outbound")
 public String outbound() {
-    return target.request().accept(MediaType.TEXT_PLAIN).get(String.class); 
+    return target.request().accept(MediaType.TEXT_PLAIN).get(String.class);
 }
 ```
 
@@ -646,9 +646,9 @@ annotated with `@WithSpan`.
 Secondary service:
 ```java
 @GET
-@WithSpan 
+@WithSpan
 public String getSecondaryMessage() {
-    return "Secondary"; 
+    return "Secondary";
 }
 ```
 

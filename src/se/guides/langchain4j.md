@@ -167,7 +167,7 @@ static void routing(HttpRouting.Builder routing) {
     routing.post("/chat", (req, res) -> {
         var prompt = req.content().as(String.class);
 
-        var response = Services.get(PirateService.class) 
+        var response = Services.get(PirateService.class)
                 .chat(prompt);
 
         res.send(response);

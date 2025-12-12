@@ -24,11 +24,11 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 <dependencies>
     <dependency>
         <groupId>io.helidon.tracing</groupId>
-        <artifactId>helidon-tracing</artifactId>    
+        <artifactId>helidon-tracing</artifactId>
     </dependency>
     <dependency>
         <groupId>io.helidon.webserver.observe</groupId>
-        <artifactId>helidon-webserver-observe-tracing</artifactId> 
+        <artifactId>helidon-webserver-observe-tracing</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -117,12 +117,12 @@ an implementation for:
 
 Configuring `Tracer`:
 ```java
-Tracer tracer = TracerBuilder.create("helidon") 
+Tracer tracer = TracerBuilder.create("helidon")
         .build();
 
 WebServer.builder()
         .addFeature(ObserveFeature.builder()
-                            .addObserver(TracingObserver.create(tracer)) 
+                            .addObserver(TracingObserver.create(tracer))
                             .build())
         .build()
         .start();
@@ -136,14 +136,14 @@ WebServer.builder()
 To create a custom span from tracer:
 
 ```java
-Span span = tracer.spanBuilder("name") 
+Span span = tracer.spanBuilder("name")
         .tag("key", "value")
         .start();
 
-try { 
+try {
     // do some work
     span.end();
-} catch (Throwable t) { 
+} catch (Throwable t) {
     span.end(t);
 }
 ```
@@ -599,9 +599,9 @@ tracing:
 
 Use the configuration in web server:
 ```java
-Tracer tracer = TracerBuilder.create(config.get("tracing")).build(); 
+Tracer tracer = TracerBuilder.create(config.get("tracing")).build();
 server.addFeature(ObserveFeature.builder()
-                          .addObserver(TracingObserver.create(tracer)) 
+                          .addObserver(TracingObserver.create(tracer))
                           .build());
 ```
 

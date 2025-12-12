@@ -615,7 +615,7 @@ Creating or updating a client project using the OpenAPI Maven plug-in:
                 <inputSpec>${project.basedir}/src/main/resources/petstore.yaml</inputSpec>
                 <generatorName>java-helidon-client</generatorName>
                 <library>mp</library>
-                <output>${project.build.directory}/generated-sources/client</output> 
+                <output>${project.build.directory}/generated-sources/client</output>
                 <addCompileSourceRoot>true</addCompileSourceRoot>
                 <configOptions>
                     <groupId>io.helidon.examples</groupId>
@@ -715,17 +715,17 @@ invokes a remote Pet service and shows one way to use the generated
 
 Using the generated `PetApi` returned from a separate service:
 ```java
-@Path("/exampleServiceCallingService") 
+@Path("/exampleServiceCallingService")
 public class ExampleOpenApiGenClientResource {
-    @Inject 
-    @RestClient 
-    private PetApi petApi; 
+    @Inject
+    @RestClient
+    private PetApi petApi;
 
     @GET
     @Path("/getPet/{petId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Pet getPetUsingId(@PathParam("petId") Long petId) throws ApiException {
-        Pet pet = petApi.getPetById(petId); 
+        Pet pet = petApi.getPetById(petId);
         return pet;
     }
 }

@@ -33,13 +33,13 @@ static Single<WebServer> startServer() {
             .addMediaSupport(JsonpSupport.create())
             .build();
 
-    Single<WebServer> webserver = server.start(); 
+    Single<WebServer> webserver = server.start();
 
-    webserver.thenAccept(ws -> { 
+    webserver.thenAccept(ws -> {
                 System.out.println("WEB server is up! http://localhost:" + ws.port() + "/greet");
                 ws.whenShutdown().thenRun(() -> System.out.println("WEB server is DOWN. Good bye!"));
             })
-            .exceptionallyAccept(t -> { 
+            .exceptionallyAccept(t -> {
                 System.err.println("Startup failed: " + t.getMessage());
                 t.printStackTrace(System.err);
             });
@@ -70,13 +70,13 @@ public static void main(String[] args) {
 
     Config config = Config.global();
 
-    WebServer server = WebServer.builder() 
+    WebServer server = WebServer.builder()
             .config(config.get("server"))
             .routing(Main::routing)
             .build()
-            .start(); 
+            .start();
 
-    System.out.println("WEB server is up! http://localhost:" + server.port() + "/greet"); 
+    System.out.println("WEB server is up! http://localhost:" + server.port() + "/greet");
 }
 ```
 
@@ -147,17 +147,17 @@ In Helidon 1.x-3.x the routing config was done the following way:
 ```java
 private static Routing createRouting(Config config) {
 
-    MetricsSupport metrics = MetricsSupport.create(); 
+    MetricsSupport metrics = MetricsSupport.create();
     HealthSupport health = HealthSupport.builder()
             .addLiveness(HealthChecks.healthChecks())
             .build();
 
-    GreetService greetService = new GreetService(config); 
+    GreetService greetService = new GreetService(config);
 
     return Routing.builder()
-            .register(health) 
+            .register(health)
             .register(metrics)
-            .register("/greet", greetService) 
+            .register("/greet", greetService)
             .build();
 }
 ```
@@ -178,7 +178,7 @@ same way.
 In Helidon 4, the routing is configured the following way:
 ```java
 static void routing(HttpRouting.Builder routing) {
-    routing.register("/greet", new GreetService()); 
+    routing.register("/greet", new GreetService());
 }
 ```
 
@@ -255,14 +255,14 @@ In prior versions, a service looks this way:
 public class GreetService implements Service {
 
     @Override
-    public void update(Routing.Rules rules) { 
+    public void update(Routing.Rules rules) {
         rules
                 .get("/", this::getDefaultMessageHandler)
                 .get("/{name}", this::getMessageHandler)
                 .put("/greeting", this::updateGreetingHandler);
     }
 
-    private void getDefaultMessageHandler(ServerRequest request, ServerResponse response) { 
+    private void getDefaultMessageHandler(ServerRequest request, ServerResponse response) {
         sendResponse(response, "World");
     }
 
@@ -276,16 +276,16 @@ public class GreetService implements Service {
 
 In Helidon 4, the same service:
 ```java
-public class GreetService implements HttpService { 
+public class GreetService implements HttpService {
 
     @Override
-    public void routing(HttpRules rules) { 
+    public void routing(HttpRules rules) {
         rules.get("/", this::getDefaultMessageHandler)
                 .get("/{name}", this::getMessageHandler)
                 .put("/greeting", this::updateGreetingHandler);
     }
 
-    private void getDefaultMessageHandler(ServerRequest request, ServerResponse response) { 
+    private void getDefaultMessageHandler(ServerRequest request, ServerResponse response) {
         sendResponse(response, "World");
     }
 
@@ -293,7 +293,7 @@ public class GreetService implements HttpService {
         // ...
     }
 
-    private void updateGreetingHandler(ServerRequest request, ServerResponse response) { 
+    private void updateGreetingHandler(ServerRequest request, ServerResponse response) {
         // ...
     }
 }

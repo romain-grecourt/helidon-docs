@@ -63,7 +63,7 @@ application:
   <dependency>
       <groupId>io.helidon.integrations.cdi</groupId>
       <artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>
-      <scope>runtime</scope> 
+      <scope>runtime</scope>
   </dependency>
   ```
 
@@ -84,7 +84,7 @@ To include the [Oracle Universal Connection Pool](https://docs.oracle.com/en/dat
   <dependency>
     <groupId>io.helidon.integrations.cdi</groupId>
     <artifactId>helidon-integrations-cdi-datasource-ucp</artifactId>
-    <scope>runtime</scope> 
+    <scope>runtime</scope>
   </dependency>
   ```
 
@@ -129,7 +129,7 @@ Helidon MP application so your application can [connect to an H2 database](https
   <dependency>
       <groupId>io.helidon.integrations.db</groupId>
       <artifactId>h2</artifactId>
-      <scope>runtime</scope> 
+      <scope>runtime</scope>
   </dependency>
   ```
 
@@ -154,7 +154,7 @@ in your Helidon MP application so your application can [connect to an Oracle dat
   <dependency>
       <groupId>io.helidon.integrations.db</groupId>
       <artifactId>ojdbc</artifactId>
-      <scope>runtime</scope> 
+      <scope>runtime</scope>
   </dependency>
   ```
 
@@ -426,9 +426,9 @@ of the data source you wish to use.
 Here is how to define such a field-backed injection point:
 
 ```java
-@Inject 
-@Named("test") 
-private DataSource ds; 
+@Inject
+@Named("test")
+private DataSource ds;
 ```
 
 - [`@Inject`](https://jakarta.ee/specifications/dependency-injection/2.0/apidocs/jakarta/inject/inject)
@@ -447,11 +447,11 @@ private DataSource ds;
 Here is how to define such a constructor parameter injection point:
 
 ```java
-private final DataSource ds; 
+private final DataSource ds;
 
-@Inject 
-public SomeObject(@Named("test") DataSource ds) { 
-    this.ds = ds; 
+@Inject
+public SomeObject(@Named("test") DataSource ds) {
+    this.ds = ds;
 }
 ```
 
@@ -494,12 +494,12 @@ To include Helidon’s JTA integration in your application:
       <dependency>
           <groupId>jakarta.transaction</groupId>
           <artifactId>jakarta.transaction-api</artifactId>
-          <scope>provided</scope> 
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>io.helidon.integrations.cdi</groupId>
           <artifactId>helidon-integrations-cdi-jta-weld</artifactId>
-          <scope>runtime</scope> 
+          <scope>runtime</scope>
       </dependency>
   </dependencies>
   ```
@@ -562,10 +562,10 @@ with the
 annotation:
 
 ```java
-@Transactional 
+@Transactional
 public void setGreeting(Integer id) {
     // Do something transactional.
-    greetingProvider.setMessage("Hello[" + id + "]"); 
+    greetingProvider.setMessage("Hello[" + id + "]");
 }
 ```
 
@@ -683,12 +683,12 @@ include the core of Helidon’s Jakarta Persistence integration:
       <dependency>
           <groupId>jakarta.persistence</groupId>
           <artifactId>jakarta.persistence-api</artifactId>
-          <scope>provided</scope> 
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>io.helidon.integrations.cdi</groupId>
           <artifactId>helidon-integrations-cdi-jpa</artifactId>
-          <scope>runtime</scope> 
+          <scope>runtime</scope>
       </dependency>
   </dependencies>
   ```
@@ -727,8 +727,8 @@ below:
                         <annotationProcessorPaths>
                             <annotationProcessorPath>
                                 <groupId>org.hibernate.orm</groupId>
-                                <artifactId>hibernate-jpamodelgen</artifactId> 
-                                <version>${version.lib.hibernate}</version> 
+                                <artifactId>hibernate-jpamodelgen</artifactId>
+                                <version>${version.lib.hibernate}</version>
                             </annotationProcessorPath>
                         </annotationProcessorPaths>
                     </configuration>
@@ -771,7 +771,7 @@ Hibernate ORM:
   <dependency>
       <groupId>io.helidon.integrations.cdi</groupId>
       <artifactId>helidon-integrations-cdi-hibernate</artifactId>
-      <scope>runtime</scope> 
+      <scope>runtime</scope>
   </dependency>
   ```
 
@@ -842,7 +842,7 @@ Eclipselink:
   <dependency>
       <groupId>io.helidon.integrations.cdi</groupId>
       <artifactId>helidon-integrations-cdi-eclipselink</artifactId>
-      <scope>runtime</scope> 
+      <scope>runtime</scope>
   </dependency>
   ```
 
@@ -863,7 +863,7 @@ project’s `pom.xml` file’s `<plugins>` element:
 <plugin>
     <groupId>org.codehaus.mojo</groupId>
     <artifactId>exec-maven-plugin</artifactId>
-    <version>3.1.0</version> 
+    <version>3.1.0</version>
     <executions>
         <execution>
             <id>weave</id>
@@ -976,7 +976,7 @@ collection of entities in a relational database.
 Here is a partial example of a persistence unit named `test` with a
 helpful description:
 ```xml
-<persistence-unit name="test" transaction-type="JTA"> 
+<persistence-unit name="test" transaction-type="JTA">
     <description>A testing database</description>
 </persistence-unit>
 ```
@@ -1053,7 +1053,7 @@ containing two entity classes:
 <persistence-unit name="test" transaction-type="JTA">
     <description>A testing database</description>
     <jta-data-source>main</jta-data-source>
-    <class>com.example.ExampleEntity0</class> 
+    <class>com.example.ExampleEntity0</class>
     <class>com.example.ExampleEntity1</class>
 </persistence-unit>
 ```
@@ -1087,12 +1087,12 @@ property:
 ```xml
 <persistence-unit name="test" transaction-type="JTA">
     <description>A testing database</description>
-    <jta-data-source>sample</jta-data-source> 
+    <jta-data-source>sample</jta-data-source>
     <class>com.example.ExampleEntity0</class>
     <class>com.example.ExampleEntity1</class>
     <properties>
-        <property name="hibernate.show_sql" value="true"/> 
-        <property name="eclipselink.weaving" value="false"/> 
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="eclipselink.weaving" value="false"/>
     </properties>
 </persistence-unit>
 ```

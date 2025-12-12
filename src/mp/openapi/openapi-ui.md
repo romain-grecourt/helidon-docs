@@ -81,7 +81,7 @@ service’s operations.
     values (first highlighted rectangle) and any non-required values you
     wish, then click "Execute" (highlighted arrow).
 
-4.  Just below the "Execute" button the UI shows several sections:  
+4.  Just below the "Execute" button the UI shows several sections:
 
     - the equivalent `curl` command for submitting the request with your
       inputs,
@@ -89,7 +89,7 @@ service’s operations.
     - the URL used for the request, and
 
     - a new "Server response" section (second highlighted rectangle)
-      containing several items from the response:  
+      containing several items from the response:
 
       - HTTP status code
 

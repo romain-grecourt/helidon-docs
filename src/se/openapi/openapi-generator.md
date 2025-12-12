@@ -633,7 +633,7 @@ Creating or updating a client project using the OpenAPI Maven plug-in:
                 <inputSpec>${project.basedir}/src/main/resources/petstore.yaml</inputSpec>
                 <generatorName>java-helidon-client</generatorName>
                 <library>se</library>
-                <output>${project.build.directory}/generated-sources/client</output> 
+                <output>${project.build.directory}/generated-sources/client</output>
                 <addCompileSourceRoot>true</addCompileSourceRoot>
                 <configOptions>
                     <groupId>io.helidon.examples</groupId>
@@ -732,16 +732,16 @@ The customized `handleAddPet` method in the `PetApiImpl` class:
 ```java
 public class PetServiceImpl extends PetService {
 
-    private final Map<Long, Pet> pets = new HashMap<>(); 
+    private final Map<Long, Pet> pets = new HashMap<>();
 
     @Override
     protected void handleAddPet(ServerRequest request, ServerResponse response,
                                 Pet pet) {
-        if (pets.containsKey(pet.getId())) { 
+        if (pets.containsKey(pet.getId())) {
             AddPetOp.Response405.builder().send(response);
         }
-        pets.put(pet.getId(), pet); 
-        AddPetOp.Response200.builder().send(response); 
+        pets.put(pet.getId(), pet);
+        AddPetOp.Response200.builder().send(response);
     }
 }
 ```
@@ -766,21 +766,21 @@ The customized `findPetsByTags` method in the `PetApiImpl` class:
 ```java
 public class PetServiceImpl extends PetService {
 
-    private final Map<Long, Pet> pets = new HashMap<>(); 
+    private final Map<Long, Pet> pets = new HashMap<>();
 
     @Override
     protected void handleFindPetsByTags(ServerRequest request, ServerResponse response,
-                                        List<String> tags) { 
+                                        List<String> tags) {
 
         List<Pet> result = pets.values().stream()
                 .filter(pet -> pet.getTags()
                         .stream()
                         .anyMatch(petTag -> tags.contains(petTag.getName())))
-                .toList(); 
+                .toList();
 
-        FindPetsByTagsOp.Response200.builder() 
-                .response(result) 
-                .send(response); 
+        FindPetsByTagsOp.Response200.builder()
+                .response(result)
+                .send(response);
 
     }
 }
@@ -855,15 +855,15 @@ following these steps, using the `AddPetOp` as an example.
     public class AddPetOpCustom extends PetService.AddPetOp {
         @Override
         protected Pet pet(ServerRequest request, ValidatorUtils.Validator validator) {
-            Pet result = request.content().hasEntity() 
+            Pet result = request.content().hasEntity()
                     ? request.content().as(Pet.class)
                     : null;
 
             // Insist that pet names never start with a lower-case letter.
             if (result != null) {
-                validator.validatePattern("pet", result.getName(), "[^a-z].*"); 
+                validator.validatePattern("pet", result.getName(), "[^a-z].*");
             }
-            return result; 
+            return result;
         }
     }
     ```
@@ -952,10 +952,10 @@ Creating an `ApiClient` instance - simple case:
 ```java
 public class ExampleClient {
 
-    private ApiClient apiClient; 
+    private ApiClient apiClient;
 
     void init() {
-        ApiClient apiClient = ApiClient.builder().build(); 
+        ApiClient apiClient = ApiClient.builder().build();
     }
 }
 ```
@@ -986,12 +986,12 @@ Creating an `ApiClient` instance - influencing the `ApiClient.Builder`
 ```java
 public class ExampleClient {
 
-    private ApiClient apiClient; 
+    private ApiClient apiClient;
 
     void init() {
-        ObjectMapper myObjectMapper = new ObjectMapper(); 
+        ObjectMapper myObjectMapper = new ObjectMapper();
         apiClient = ApiClient.builder()
-                .objectMapper(myObjectMapper) 
+                .objectMapper(myObjectMapper)
                 .build();
     }
 }
@@ -1013,16 +1013,16 @@ Creating an `ApiClient` instance - adjusting the `WebClientConfig.Builder`:
 ```java
 public class ExampleClient {
 
-    private ApiClient apiClient; 
+    private ApiClient apiClient;
 
     void init() {
-        ApiClient.Builder apiClientAdjustedBuilder = ApiClient.builder(); 
+        ApiClient.Builder apiClientAdjustedBuilder = ApiClient.builder();
 
         apiClientAdjustedBuilder
-                .webClientBuilder() 
-                .connectTimeout(Duration.ofSeconds(4)); 
+                .webClientBuilder()
+                .connectTimeout(Duration.ofSeconds(4));
 
-        apiClient = apiClientAdjustedBuilder.build(); 
+        apiClient = apiClientAdjustedBuilder.build();
     }
 }
 ```
@@ -1053,16 +1053,16 @@ Creating an `ApiClient` instance - using a custom
 ```java
 public class ExampleClient {
 
-    private ApiClient apiClient; 
+    private ApiClient apiClient;
 
     void init() {
-        WebClientConfig.Builder customWebClientBuilder = WebClient.builder() 
-                .connectTimeout(Duration.ofSeconds(3)) 
-                .baseUri("https://myservice.mycompany.com"); 
+        WebClientConfig.Builder customWebClientBuilder = WebClient.builder()
+                .connectTimeout(Duration.ofSeconds(3))
+                .baseUri("https://myservice.mycompany.com");
 
-        apiClient = ApiClient.builder() 
-                .webClientBuilder(customWebClientBuilder) 
-                .build(); 
+        apiClient = ApiClient.builder()
+                .webClientBuilder(customWebClientBuilder)
+                .build();
     }
 }
 ```
@@ -1105,12 +1105,12 @@ Preparing the PetStore Client API:
 ```java
 public class ExampleClient {
 
-    private ApiClient apiClient; 
+    private ApiClient apiClient;
 
-    private PetApi petApi; 
+    private PetApi petApi;
 
     void preparePetApi() {
-        petApi = PetApiImpl.create(apiClient); 
+        petApi = PetApiImpl.create(apiClient);
     }
 }
 ```
@@ -1164,9 +1164,9 @@ Access with only result access:
 ```java
 void findAvailablePets() {
     ApiResponse<List<Pet>> apiResponse =
-            petApi.findPetsByStatus(List.of(Pet.StatusEnum.AVAILABLE.value())); 
+            petApi.findPetsByStatus(List.of(Pet.StatusEnum.AVAILABLE.value()));
 
-    List<Pet> availablePets = apiResponse.result(); 
+    List<Pet> availablePets = apiResponse.result();
 }
 ```
 
@@ -1187,15 +1187,15 @@ Access with status checking:
 ```java
 void findAvailablePets() {
     ApiResponse<List<Pet>> apiResponse =
-            petApi.findPetsByStatus(List.of(Pet.StatusEnum.AVAILABLE.value())); 
+            petApi.findPetsByStatus(List.of(Pet.StatusEnum.AVAILABLE.value()));
 
-    try (HttpClientResponse webClientResponse = apiResponse.webClientResponse()) { 
-        if (webClientResponse.status().code() != 200) { 
+    try (HttpClientResponse webClientResponse = apiResponse.webClientResponse()) {
+        if (webClientResponse.status().code() != 200) {
             // Handle a non-successful status.
         }
     }
 
-    List<Pet> avlPets = apiResponse.result(); 
+    List<Pet> avlPets = apiResponse.result();
 }
 ```
 

@@ -225,11 +225,11 @@ public class MovieRepository {
     private final Driver driver;
 
     @Inject
-    public MovieRepository(Driver driver) { 
+    public MovieRepository(Driver driver) {
         this.driver = driver;
     }
 
-    List<Movie> findAll() { 
+    List<Movie> findAll() {
         try (var session = driver.session()) {
             var query = """
                         match (m:Movie)

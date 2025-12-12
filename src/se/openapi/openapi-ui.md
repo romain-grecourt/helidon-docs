@@ -90,7 +90,7 @@ service’s operations.
     values (first highlighted rectangle) and any non-required values you
     wish, then click "Execute" (highlighted arrow).
 
-4.  Just below the "Execute" button the UI shows several sections:  
+4.  Just below the "Execute" button the UI shows several sections:
 
     - the equivalent `curl` command for submitting the request with your
       inputs,
@@ -98,7 +98,7 @@ service’s operations.
     - the URL used for the request, and
 
     - a new "Server response" section (second highlighted rectangle)
-      containing several items from the response:  
+      containing several items from the response:
 
       - HTTP status code
 
@@ -139,7 +139,7 @@ Create `OpenApiFeature` with automatic UI:
 ```java
 WebServer server = WebServer.builder()
         .config(config.get("server"))
-        .addFeature(OpenApiFeature.create(config.get("openapi"))) 
+        .addFeature(OpenApiFeature.create(config.get("openapi")))
         .routing(Main::routing)
         .build()
         .start();
@@ -171,13 +171,13 @@ with explicit programmatic settings.
 
 Create `OpenApiUi` and `OpenAPISupport` instances:
 ```java
-Config openApiConfig = config.get("openapi"); 
+Config openApiConfig = config.get("openapi");
 WebServer server = WebServer.builder()
         .config(config.get("server"))
-        .addFeature(OpenApiFeature.builder() 
-                            .addService(OpenApiUi.builder() 
-                                                .webContext("my-ui") 
-                                                .config(openApiConfig.get("ui")) 
+        .addFeature(OpenApiFeature.builder()
+                            .addService(OpenApiUi.builder()
+                                                .webContext("my-ui")
+                                                .config(openApiConfig.get("ui"))
                                                 .build())
                             .config(openApiConfig)
                             .build())
