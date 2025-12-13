@@ -1,38 +1,12 @@
-This guide describes a basic example of an Helidon SE application using
-Docker and Kubernetes.
+# Helidon SE Quickstart
 
-# What You Need
+This guide describes a basic example of an Helidon SE application using Docker and Kubernetes.
 
-For this 5 minute tutorial, you will need the following:
+## What You Need
 
-|                                                                                                         |                                                                                                                                                     |
-|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| [JavaSE21](https://www.oracle.com/technetwork/java/javase/downloads) ([OpenJDK21](http://jdk.java.net)) | Helidon requires Java 21+ (25+ recommended).                                                                                                        |
-| [Maven 3.8+](https://maven.apache.org/download.cgi)                                                     | Helidon requires Maven 3.8+.                                                                                                                        |
-| [Docker 18.09+](https://docs.docker.com/install/)                                                       | If you want to build and run Docker containers.                                                                                                     |
-| [Kubectl 1.16.5+](https://kubernetes.io/docs/tasks/tools/install-kubectl/)                              | If you want to deploy to Kubernetes, you need `kubectl` and a Kubernetes cluster (you can [install one on your desktop](../../about/kubernetes.md). |
+Please see [Helidon Prerequisites](../../about/prerequisites.md).
 
-Prerequisite product versions for Helidon 4.4.0-SNAPSHOT
-
-Verify Prerequisites:
-```shell
-java -version
-mvn --version
-docker --version
-kubectl version
-```
-
-Setting JAVA_HOME:
-```shell
-# On Mac
-export JAVA_HOME=`/usr/libexec/java_home -v 21`
-
-# On Linux
-# Use the appropriate path to your JDK
-export JAVA_HOME=/usr/lib/jvm/jdk-21
-```
-
-# Generate The Project
+## Generate The Project
 
 Generate the project sources using the Helidon Maven archetype. The
 result is a simple project that shows the basics of a Helidon SE
@@ -106,7 +80,7 @@ curl -X GET http://localhost:8080/greet/Jose
 {"message":"Hola Jose!"}
 ```
 
-# Health and Metrics
+## Health and Metrics
 
 Helidon provides built-in support for health and metrics endpoints.
 
@@ -128,7 +102,7 @@ Metrics in JSON Format:
 curl -H 'Accept: application/json' -X GET http://localhost:8080/observe/metrics
 ```
 
-# Build a Docker Image
+## Build a Docker Image
 
 The project also contains a Dockerfile so that you can easily build and
 run a Docker image. To build the Docker image, you need to have Docker
@@ -146,7 +120,7 @@ docker run --rm -p 8080:8080 helidon-quickstart-se:latest
 
 Then you can try the application as you did before.
 
-# Deploy the application to Kubernetes
+## Deploy the application to Kubernetes
 
 If you don’t have access to a Kubernetes cluster, you can [install one on your desktop](../../about/kubernetes.md). Then deploy the example:
 
@@ -186,7 +160,7 @@ Remove the application from Kubernetes:
 kubectl delete -f app.yaml
 ```
 
-# Building Native and Custom Runtime Images
+## Building Native and Custom Runtime Images
 
 Helidon also includes support for GraalVM Native Images and Java Custom
 Runtime Images. For more information see:
@@ -194,8 +168,28 @@ Runtime Images. For more information see:
 - [GraalVM Native Images](graalnative.md)
 - [Custom Runtime Images using `jlink`](jlink-image.md)
 
-# The Helidon CLI
+## The Helidon CLI
 
 With the Helidon CLI you can create additional types of Helidon
 applications and use the "dev loop" to do fast, iterative development.
 [Try it now](../../about/cli.md).
+
+## Tips for Windows
+
+For Windows you will need to use special quoting to run the archetype.
+
+```shell
+mvn "-U" "archetype:generate" "-DinteractiveMode=false" `
+    "-DarchetypeGroupId=io.helidon.archetypes" `
+    "-DarchetypeArtifactId=helidon-quickstart-se" `
+    "-DarchetypeVersion=4.4.0-SNAPSHOT" `
+    "-DgroupId=io.helidon.examples" `
+    "-DartifactId=helidon-quickstart-se" `
+    "-Dpackage=io.helidon.examples.quickstart.se"
+```
+
+If you do not have `curl` installed you can use `Invoke-WebRequest`:
+
+```shell
+Invoke-WebRequest -Uri "http://localhost:8080/greet"
+```

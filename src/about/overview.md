@@ -1,34 +1,49 @@
-# What is Helidon?
+# Helidon Overview
 
-- [What is Helidon?](#what_is_helidon)
-- [Helidon Flavors](#helidon_flavors)
-  - [What flavor shall I use?](#what_flavor_shall_i_use)
-- [Prerequisites](#prerequisites)
-- [Next Steps](#next_steps)
+Helidon is a collection of Java libraries for writing microservices. Helidon is open source under the Apache License, Version 2.0.
 
-# What is Helidon?
+Helidon microservices are based on the Helidon WebServer and run as a stand-alone Java application in their own JVM. This is similar to a number of other Java microservices frameworks. So what makes Helidon different?
 
-[Helidon](https://helidon.io) is a collection of Java libraries for
-writing microservices.
+- **Helidon WebServer**: a minimal dependency, highly concurrent server designed and implemented from the ground up using Java virtual threads. 
+- **Blocking Allowed and Encouraged**: the performance of reactive programming with the simplicity of blocking APIs. All thanks to virtual threads.
+- **JDK alignment**: the Helidon project works closely with the JDK team to get the most out of the latest JDK features.
+- **API Choice**: Helidon SE, a low level imperative API and Helidon MP for those that prefer Jakarta EE APIs.
 
-Helidon is open source under the Apache license. Sources are available
-on [GitHub](https://github.com/oracle/helidon/tree/main).
+## Major Components
 
-Helidon is cloud-native ready. It provides fast start-up time and has
-low memory consumption and a small disk footprint. It also comes with a
-full observability stack out of the box including health checks,
-metrics, tracing and logging.
+Helidon has dozens of components, but here are some key areas:
 
-Helidon fully supports GraalVM native image allowing you to build a
-native executable from your Java application.
+* **WebServer**: a highly concurrent server supporting HTTP/1, HTTP/2, gRPC, JSON-RPC and SSE. Extensible media handling with built-in support for JSON (Jackson, JSON-P, JSON-B), GSON and multi-part.
+* **WebClient**: a highly concurrent client with protocol and media support consistent with WebServer.
+* **AI**: integration with LangChain4J and full MCP support.
+* **Observability**: metrics, tracing, health.
+* **MicroProfile**: optional support for MicroProfile APIs for those that prefer the Jakarta EE programming model.
+* **Persistence**: lean DBClient, full JPA/JTA (MicroProfile), or new Helidon Data (MicroProfile)
+* **GraalVM native-image support**: build a native executable from your Java application.
 
-Helidon applications are stand-alone Java applications running in their
-own JVM and powered by the Helidon WebServer.
+## Get Started
 
-# Helidon Flavors
+You can have your first Helidon server up and running in under a minute. See [Getting Started](./get-started.md).
+
+## Stay in Touch
+
+|||
+| ------------- | ------------- |
+| Code   | [GitHub](https://github.com/helidon-io/helidon) |
+| Issues | [GitHub issue tracker](https://github.com/helidon-io/helidon/issues) |
+| **Ask Questions:** |
+| Slack |  [\#helidon-user](http://slack.helidon.io) |
+| Stack Overflow | [helidon](https://stackoverflow.com/questions/tagged/helidon) |
+| FAQ | [Helidon FAQ](https://github.com/oracle/helidon/wiki/FAQ) |
+| **Follow Us:** |
+| Twitter | [@helidon_project](https://twitter.com/helidon_project) |
+| Blog | [Helidon on Medium](https://medium.com/helidon) |
+| YouTube | [Helidon](https://youtube.helidon.io) |
+
+## Helidon SE and MP
 
 Helidon comes in two flavors: **Helidon SE** and **Helidon MP**. Think
-about these flavors as frameworks providing similar functionality but
+about these as frameworks providing similar functionality but
 offering different developer experiences.
 
 | **Helidon SE**                                                                                                                                                                                                                                  | **Helidon MP**                                                                                                                                        |
@@ -67,7 +82,7 @@ Even though Helidon MP supports Jakarta EE APIs it does not require an
 application server. Helidon MP applications are stand-alone Java
 applications running in their own JVM powered by Helidon WebServer.
 
-## What flavor shall I use?
+### What flavor shall I use?
 
 Use Helidon SE if
 
@@ -95,27 +110,25 @@ Use Helidon MP if
 - You are planning to use JPA for data access and Jersey (JAX-RS) for
   RESTful services.
 
-> [!NOTE]
-> If you don’t know which Helidon flavor to use – use **Helidon MP**.
+## History 
 
-# Prerequisites
 
-Helidon requires Java and Maven. You might also need Docker and
-Kubernetes depending on how you plan to deploy your services.
+| Release       | Initial Release Date | Base JDK | MicroProfile | Jakarta EE | Service Life |
+| ------------- | ------------- | ----------- | ------------ | ---------- | ------------ |
+| Helidon&nbsp;4 | 23-Oct-2023   |   21        |     6.1      |    10      |   Active     |
+| Helidon 3     | 26-Jul-2022   |   17        |     5.0      |     9      | Maintenance  |
+| Helidon 2     | 24-Jun-2020   |   11        |     3.3      |     8      |     EOSL     |
+| Helidon 1     | 14-Feb-2019   |    8        |     3.2      |  Java EE 8 |     EOSL     |
 
-|                                                                                                         |                                                                                                                                                  |
-|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| [JavaSE21](https://www.oracle.com/technetwork/java/javase/downloads) ([OpenJDK21](http://jdk.java.net)) | Helidon requires Java 21+ (25+ recommended).                                                                                                     |
-| [Maven 3.8+](https://maven.apache.org/download.cgi)                                                     | Helidon requires Maven 3.8+.                                                                                                                     |
-| [Docker 18.09+](https://docs.docker.com/install/)                                                       | If you want to build and run Docker containers.                                                                                                  |
-| [Kubectl 1.16.5+](https://kubernetes.io/docs/tasks/tools/install-kubectl/)                              | If you want to deploy to Kubernetes, you need `kubectl` and a Kubernetes cluster (you can [install one on your desktop](../about/kubernetes.md). |
+* Active: under active feature development.
+* Maintenance: bug fixes and dependency upgrades only.
+* EOSL: End of Service Life. No planned releases, but the project may do a release at its discretion.
 
-Prerequisite product versions for Helidon 4.4.0-SNAPSHOT
+Active Helidon releases will always support the latest JDK release.
 
-We also strongly suggest installing the [Helidon CLI](cli.md) (command
-line interface) which helps in generating and building Helidon projects.
+Prior to Helidon 4, the Helidon WebServer was based on Netty. As of Helidon 4 it is a ground up rewrite designed for and implemented using virtual threads.
 
-# Upgrade
+## Upgrading
 
 To upgrade your current version of Helidon, follow the `Upgrade Guides`:
 
@@ -123,19 +136,13 @@ To upgrade from Helidon 3.x to 4.x:
 
 - [Helidon SE 4x Upgrade Guide](../se/guides/upgrade_4x.md)
 - [Helidon MP 4x Upgrade Guide](../mp/guides/upgrade_4x.md)
+
 To upgrade from Helidon 2.x to 3.x:
 
 - [Helidon SE 3x Upgrade Guide](../se/guides/upgrade_3x.md)
 - [Helidon MP 3x Upgrade Guide](../mp/guides/upgrade_3x.md)
+
 To upgrade from Helidon 1.x to 2.x:
 
 - [Helidon SE 2x Upgrade Guide](../se/guides/upgrade.md)
 - [Helidon MP 2x Upgrade Guide](../mp/guides/upgrade.md)
-
-# Next Steps
-
-Choose a Helidon flavor to explore and start using it. Check out the
-following:
-
-- [Helidon SE Documentation](../se/README.md)
-- [Helidon MP Documentation](../mp/README.md)

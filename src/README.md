@@ -4,7 +4,7 @@ Start here to learn how Helidon’s open-source set of Java libraries can
 help you write cloud-native Java microservices.
 
 - [What is Helidon?](about/introduction.md)
-- [What’s New in Helidon 4](about/intro.md)
+- [What’s New in Helidon 4](about/new.md)
 - [Helidon Archetypes](about/archetype.md)
 - [Helidon Community and Support](about/additional_info.md)
 
