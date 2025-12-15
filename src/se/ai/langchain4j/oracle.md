@@ -1,8 +1,10 @@
-# Overview
+# Helidon Oracle Embedding Store Provider
+
+## Overview
 
 This module adds support for the Oracle embedding store.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -14,9 +16,9 @@ following:
 </dependency>
 ```
 
-# Components
+## Components
 
-## OracleEmbeddingStore
+### OracleEmbeddingStore
 
 To automatically create and add `OracleEmbeddingStore` to the service
 registry add the following lines to `application.yaml`:
@@ -43,7 +45,7 @@ Full list of configuration properties:
 | `exact-search` | boolean | Specifies whether exact matching is used in searches. |
 | `vector-index-create-option` | string | The vector index creation option, which defines behavior when creating the vector index. Options are `CREATE_NONE` (default), `CREATE_IF_NOT_EXISTS`, `CREATE_OR_REPLACE`. |
 
-### OracleEmbeddingTable
+#### OracleEmbeddingTable
 
 Full list of configuration properties:
 
@@ -56,7 +58,7 @@ Full list of configuration properties:
 | `name` | string | Required. Name of the embedding table. |
 | `text-column` | string | Name of the text column in the embedding table. Default is "text". |
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
 - [langChain4J Oracle Embedding Store Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/oracle)

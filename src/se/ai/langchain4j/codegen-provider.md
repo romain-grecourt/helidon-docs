@@ -1,4 +1,6 @@
-# Overview
+# Helidon LangChain4J Codegen
+
+## Overview
 
 The number of available AI providers and their models in the LangChain4j
 project is impressive and is growing every day. To maintain binding with
@@ -8,7 +10,7 @@ the box. But you can generate integration yourself the same way we are
 generating official LangChain4j binding modules, in build time, with our
 codegen tooling.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -60,7 +62,7 @@ You also need to extend the list of annotation processors with
 </plugin>
 ```
 
-# Lc4j Provider
+## Lc4j Provider
 
 For instructing Helidon code generator what it should generate, you need
 to create a special Lc4jProvider interface, as it is used for code
@@ -105,7 +107,7 @@ that are too complex for setting via configuration. By adding annotation
 `@Option.RegistryService` you make it injectable from Helidon’s service
 registry.
 
-# Configuration
+## Configuration
 
 LangChain4j provider config key is by default derived from the provider
 interface name, example: `NameOfTheProviderLc4jProvider` →
@@ -122,7 +124,7 @@ langchain4j:
 
 - Config key derived from `GoogleAiGeminiLc4jProvider` interface name
 
-# Injectable Properties
+## Injectable Properties
 
 Injectable properties can be specified in the LangChain4J provider, when such
 property exists no properties with the same name are code generated.
@@ -169,7 +171,7 @@ public class CustomNamedSafetySettingFactory implements Supplier<GeminiSafetySet
 }
 ```
 
-## Default Injectable Properties
+### Default Injectable Properties
 
 Some properties usual for LangChain4j models are injectable by default
 to allow easy customization.

@@ -1,8 +1,10 @@
-# Overview
+# Helidon Open AI Provider
+
+## Overview
 
 This module adds support for selected Open AI models.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -14,9 +16,9 @@ following:
 </dependency>
 ```
 
-# Components
+## Components
 
-## OpenAiChatModel
+### OpenAiChatModel
 
 To automatically create and add `OpenAiChatModel` to the service
 registry add the following lines to `application.yaml`:
@@ -61,7 +63,7 @@ Full list of configuration properties:
 | `top-p` | double | The nucleus sampling value, where the model considers the results of the tokens with top_p probability mass. |
 | `user` | string | The user ID associated with the API requests. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -75,7 +77,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-### Tokenizer
+#### Tokenizer
 
 The framework attempts to resolve a tokenizer using the following
 strategy:
@@ -91,7 +93,7 @@ strategy:
 3.  **Default Tokenizer**: If neither service is found, the framework
     will use the default tokenizer provided by LangChain4j.
 
-## OpenAiEmbeddingModel
+### OpenAiEmbeddingModel
 
 To automatically create and add `OpenAiEmbeddingModel` to the service
 registry add the following lines to `application.yaml`:
@@ -123,7 +125,7 @@ Full list of configuration properties:
 | `timeout` | duration | The timeout setting for API requests. See [here](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) for the format. |
 | `user` | string | The user ID associated with the API requests. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -138,7 +140,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-### Tokenizer
+#### Tokenizer
 
 The framework attempts to resolve a tokenizer using the following
 strategy:
@@ -154,7 +156,7 @@ strategy:
 3.  **Default Tokenizer**: If neither service is found, the framework
     will use the default tokenizer provided by LangChain4j.
 
-## OpenAiImageModel
+### OpenAiImageModel
 
 To automatically create and add `OpenAiImageModel` to the service
 registry add the following lines to `application.yaml`:
@@ -191,7 +193,7 @@ Full list of configuration properties:
 | `user` | string | The unique identifier for the user making the request. |
 | `with-persisting` | boolean | The flag to indicate whether to persist the generated images. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -206,7 +208,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-## OpenAiLanguageModel
+### OpenAiLanguageModel
 
 To automatically create and add `OpenAiLanguageModel` to the service
 registry add the following lines to `application.yaml`:
@@ -237,7 +239,7 @@ Full list of configuration properties:
 | `temperature` | double | The sampling temperature to use, between 0 and 2. Higher values make the output more random, while lower values make it more focused and deterministic. |
 | `timeout` | duration | The timeout setting for API requests. See [here](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) for the format. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -252,7 +254,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-### Tokenizer
+#### Tokenizer
 
 The framework attempts to resolve a tokenizer using the following
 strategy:
@@ -268,7 +270,7 @@ strategy:
 3.  **Default Tokenizer**: If neither service is found, the framework
     will use the default tokenizer provided by LangChain4j.
 
-## OpenAiModerationModel
+### OpenAiModerationModel
 
 To automatically create and add `OpenAiModerationModel` to the service
 registry add the following lines to `application.yaml`:
@@ -298,7 +300,7 @@ Full list of configuration properties:
 | `organization-id` | string | The ID of the organization for API requests. |
 | `timeout` | duration | The timeout setting for API requests. See [here](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) for the format. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -313,7 +315,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-## OpenAiStreamingChatModel
+### OpenAiStreamingChatModel
 
 To automatically create and add `OpenAiStreamingChatModel` to the
 service registry add the following lines to `application.yaml`:
@@ -356,7 +358,7 @@ Full list of configuration properties:
 | `top-p` | double | The nucleus sampling value, where the model considers the results of the tokens with top_p probability mass. |
 | `user` | string | The user ID associated with the API requests. |
 
-### Proxy
+#### Proxy
 
 The framework attempts to resolve a proxy using the following strategy:
 
@@ -371,7 +373,7 @@ The framework attempts to resolve a proxy using the following strategy:
 3.  **No proxy**: If neither service is found, the framework will not
     use a proxy.
 
-### Tokenizer
+#### Tokenizer
 
 The framework attempts to resolve a tokenizer using the following
 strategy:
@@ -387,7 +389,7 @@ strategy:
 3.  **Default Tokenizer**: If neither service is found, the framework
     will use the default tokenizer provided by LangChain4j.
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
 - [LangChain4j OpenAI Documentation](https://docs.langchain4j.dev/integrations/language-models/open-ai)

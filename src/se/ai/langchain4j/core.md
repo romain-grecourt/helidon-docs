@@ -1,14 +1,16 @@
-# Overview
+# Helidon LangChain4J Core
+
+## Overview
 
 This module adds support for selected LangChain4j core components.
 
-# Maven Coordinates
+## Maven Coordinates
 
 No additional dependencies are required beyond the [LangChain4j integration core dependencies](langchain4j.md#maven-coordinates).
 
-# Components
+## Components
 
-## EmbeddingStoreContentRetriever
+### EmbeddingStoreContentRetriever
 
 To automatically create and add `EmbeddingStoreContentRetriever` to the
 service registry add the following lines to `application.yaml`:
@@ -38,6 +40,6 @@ Full list of configuration properties:
 | `embedding-model` | string  | Service in the service registry that implements `dev.langchain4j.model.embedding.EmbeddingModel`. Use `embedding-model.service-registry.named: "serviceName"` to select a named service bean. Use `@default` (the default option) to refer to the unnamed service.                          |
 | `embedding-store` | string  | Name of the service in the service registry that implements `dev.langchain4j.model.embedding.EmbeddingStore<TextSegment>`. Use `embedding-model.service-registry.named: "serviceName"` to select a named service bean. Use `@default` (the default option) to refer to the unnamed service. |
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j Integration](langchain4j.md)

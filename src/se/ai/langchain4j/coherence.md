@@ -1,8 +1,10 @@
-# Overview
+# Helidon Coherence Embedding Store Provider
+
+## Overview
 
 This module adds support for the Coherence embedding store.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -14,9 +16,9 @@ following:
 </dependency>
 ```
 
-# Components
+## Components
 
-## CoherenceEmbeddingStore
+### CoherenceEmbeddingStore
 
 To automatically create and add `CoherenceEmbeddingStore` to the service
 registry add the following lines to `application.yaml`:
@@ -50,7 +52,7 @@ Full list of configuration properties:
 | `normalize-embeddings` | boolean | A flag that when true, forces normalization of embeddings on adding and searching. |
 | `session` | string | The name of the `com.tangosol.net.Session` use to obtain the `com.tangosol.net.NamedMap` as specified with `name`. |
 
-## CoherenceChatMemoryStore
+### CoherenceChatMemoryStore
 
 To automatically create and add persistence support backed by Coherence
 to `ChatMemory`, just specify `store="coherence"` as following:
@@ -63,7 +65,7 @@ public interface ChatAiService {
 }
 ```
 
-# Additional Information
+## Additional Information
 
 - [LangChain4J Integration](langchain4j.md)
 - [langChain4J Coherence Embedding Store Documentation](https://docs.langchain4j.dev/integrations/embedding-stores/coherence)

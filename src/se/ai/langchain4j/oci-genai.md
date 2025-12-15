@@ -1,9 +1,11 @@
-# Overview
+# Helidon OCI GenAI Provider
+
+## Overview
 
 This module adds support for selected Oracle Cloud Infrastructure GenAI
 models.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -15,7 +17,7 @@ following:
 </dependency>
 ```
 
-# Authentication
+## Authentication
 
 Integration uses OCI SDK authentication provider bean from the service
 registry. The simplest way to configure it is by adding [Helidon OCI integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci):
@@ -68,9 +70,9 @@ All possible OCI configuration properties are documented at [OCI Configuration](
 More general information about Helidon OCI authentication integration
 can be found in [Helidon OCI integration](https://github.com/helidon-io/helidon/tree/main/integrations/oci/oci)
 
-# Components
+## Components
 
-## OciGenAiChatModel
+### OciGenAiChatModel
 
 To automatically create and add `OciGenAiChatModel` to the service
 registry add the following lines to `application.yaml`:
@@ -247,7 +249,7 @@ tokens that appear in the completion. Example:
 </tbody>
 </table>
 
-## OciGenAiStreamingChatModel
+### OciGenAiStreamingChatModel
 
 To automatically create and add `OciGenAiStreamingChatModel` to the
 service registry add the following lines to `application.yaml`:
@@ -422,7 +424,7 @@ tokens that appear in the completion. Example:
 </tbody>
 </table>
 
-## OciGenAiCohereChatModel
+### OciGenAiCohereChatModel
 
 To automatically create and add `OciGenAiChatModel` to the service
 registry add the following lines to `application.yaml`:
@@ -620,7 +622,7 @@ the model will not respond to the user’s message.</p></td>
 </tbody>
 </table>
 
-## OciGenAiCohereStreamingChatModel
+### OciGenAiCohereStreamingChatModel
 
 To automatically create and add `OciGenAiStreamingChatModel` to the
 service registry add the following lines to `application.yaml`:
@@ -818,7 +820,7 @@ the model will not respond to the user’s message.</p></td>
 </tbody>
 </table>
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
 - [LangChain4j OciGenAi  Documentation](https://docs.langchain4j.dev/integrations/language-models/oci-genai)
