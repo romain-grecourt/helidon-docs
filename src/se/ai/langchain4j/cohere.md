@@ -1,8 +1,10 @@
-# Overview
+# Helidon Cohere Provider
+
+## Overview
 
 This module adds support for selected Cohere models.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4j core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -14,9 +16,9 @@ following:
 </dependency>
 ```
 
-# Components
+## Components
 
-## CohereEmbeddingModel
+### CohereEmbeddingModel
 
 To automatically create and add `CohereEmbeddingModel` to the service
 registry add the following lines to `application.yaml`:
@@ -46,7 +48,7 @@ Full list of configuration properties:
 | `model-name` | string | The model name to use. |
 | `timeout` | duration | The timeout setting for API requests. See [here](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) for the format. |
 
-## CohereScoringModel
+### CohereScoringModel
 
 To automatically create and add `CohereScoringModel` to the service
 registry add the following lines to `application.yaml`:
@@ -75,7 +77,7 @@ Full list of configuration properties:
 | `model-name` | string | The model name to use. |
 | `timeout` | duration | The timeout setting for API requests. See [here](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) for the format. |
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j Integration](langchain4j.md)
 - [LangChain4j Cohere Documentation](https://docs.langchain4j.dev/integrations/embedding-models/cohere)

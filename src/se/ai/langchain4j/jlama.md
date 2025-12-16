@@ -1,9 +1,11 @@
-# Overview
+# Helidon JLama Provider
+
+## Overview
 
 This module adds support for selected
 [Jlama](https://github.com/tjake/Jlama) models.
 
-# Maven Coordinates
+## Maven Coordinates
 
 In addition to the [Helidon integration with LangChain4J core dependencies](langchain4j.md#maven-coordinates), you must add the
 following:
@@ -15,9 +17,9 @@ following:
 </dependency>
 ```
 
-# Components
+## Components
 
-## JlamaChatModel
+### JlamaChatModel
 
 To automatically create and add `JlamaChatModel` to the service registry
 add the following lines to `application.yaml`:
@@ -48,7 +50,7 @@ Full list of configuration properties:
 | `thread-count` | integer | Number of threads to use. |
 | `quantize-model-at-runtime` | boolean | Whether quantize the model at runtime. |
 
-## JlamaEmbeddingModel
+### JlamaEmbeddingModel
 
 To automatically create and add `JlamaEmbeddingModel` to the service
 registry add the following lines to `application.yaml`:
@@ -76,7 +78,7 @@ Full list of configuration properties:
 | `thread-count` | integer | Number of threads to use. |
 | `pooling-type` | enum | Method of embedding pooling. |
 
-## JlamaLanguageModel
+### JlamaLanguageModel
 
 To automatically create and add `JlamaLanguageModel` to the service
 registry add the following lines to `application.yaml`:
@@ -107,7 +109,7 @@ Full list of configuration properties:
 | `thread-count` | integer | Number of threads to use. |
 | `quantize-model-at-runtime` | boolean | Whether quantize the model at runtime. |
 
-## JlamaStreamingChatModel
+### JlamaStreamingChatModel
 
 To automatically create and add `JlamaStreamingChatModel` to the service
 registry add the following lines to `application.yaml`:
@@ -138,7 +140,7 @@ Full list of configuration properties:
 | `thread-count` | integer | Number of threads to use. |
 | `quantize-model-at-runtime` | boolean | Whether quantize the model at runtime. |
 
-# Additional Information
+## Additional Information
 
 - [LangChain4J Integration](langchain4j.md)
 - [LangChain4J Jlama Documentation](https://docs.langchain4j.dev/integrations/language-models/jlama/)
