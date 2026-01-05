@@ -1,10 +1,12 @@
-# Overview
+# Helidon Builder
+
+## Overview
 
 Helidon Builder is an API designed for generating immutable objects
 using the builder pattern, with optional integration with Helidon Config
 for initialization at runtime.
 
-## Terminology
+### Terminology
 
 - **Blueprint**: A package-private interface that serves as the source
   for code generation.
@@ -17,7 +19,7 @@ for initialization at runtime.
   prototype. It is useful for constructing custom objects beyond the
   generated prototype.
 
-## High Level Example
+### High Level Example
 
 Here’s a simple example of a blueprint:
 
@@ -38,7 +40,7 @@ ServiceConfig serviceConfig = ServiceConfig.builder()
     .build();
 ```
 
-## Features
+### Features
 
 - Reflection-free implementation; no bytecode manipulation.
 
@@ -58,7 +60,7 @@ ServiceConfig serviceConfig = ServiceConfig.builder()
 
 - Enumeration support.
 
-## Limitations
+### Limitations
 
 - Prototypes are generated in the same package as their blueprints.
 
@@ -71,7 +73,7 @@ ServiceConfig serviceConfig = ServiceConfig.builder()
 - Collection types are fixed to `ArrayList`, `LinkedHashSet`, and
   `LinkedHashMap`.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Builder, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -110,16 +112,16 @@ You also need to add the annotation processor configuration:
 </build>
 ```
 
-# Use Cases
+## Use Cases
 
-## Generate a class with a builder
+### Generate a class with a builder
 
 This use case demonstrates generating an immutable class with a builder
 from a blueprint interface. The blueprint serves as the input for code
 generation, and the resulting prototype provides a fluent API for
 constructing instances.
 
-## Specification
+### Specification
 
 1.  Blueprint Requirements:
 
@@ -140,7 +142,7 @@ constructing instances.
     - Generated files can be found in the
       `./target/generated-sources/annotations` directory.
 
-## Example
+### Example
 
 This example demonstrates generating a prototype from the blueprint
 below.
@@ -210,13 +212,13 @@ ServiceConfig serviceConfig = ServiceConfig.builder()
 This ensures type safety, immutability, and a fluent API for
 constructing objects.
 
-## Add support for reading data from configuration
+### Add support for reading data from configuration
 
 This scenario extends the basic builder functionality by enabling the
 generated prototype to initialize its fields using values from Helidon
 Config.
 
-## Specification
+### Specification
 
 1.  The blueprint must be annotated with `@Prototype.Configured` to
     enable configuration-based initialization.
@@ -236,7 +238,7 @@ Config.
     custom `BuilderDecorator` via
     `@Prototype.Blueprint(decorator = MyDecorator.class)`.
 
-## Example
+### Example
 
 The following example demonstrates how to configure a `ServiceConfig`
 object using Helidon Config.
@@ -296,14 +298,14 @@ Helidon Builder supports a range of customization options:
 
 For additional customization details, see the [API](#api) section.
 
-## Creating a runtime type
+### Creating a runtime type
 
 This scenario extends the basic functionality of Helidon Builder to
 create a user-defined runtime type based on a prototype. This approach
 is particularly useful when the generated prototype needs to be
 transformed into a domain-specific runtime type.
 
-## Specification
+### Specification
 
 To enable runtime object creation, follow these guidelines:
 
@@ -337,7 +339,7 @@ To enable runtime object creation, follow these guidelines:
     The blueprint must include the `@Prototype.Blueprint` annotation and
     extend `Prototype.Factory<RuntimeType>`.
 
-## Example
+### Example
 
 The following example demonstrates creating a `Service` runtime type
 from a `ServiceConfigBlueprint`.
@@ -408,9 +410,9 @@ Service service = Service.create(builder -> builder.name("My Service")
                                                  .pageSize(10));
 ```
 
-# API
+## API
 
-## Prototype
+### Prototype
 
 Annotations:
 
@@ -447,7 +449,7 @@ Interfaces:
 | `Prototype.Builder`           | Yes      | All prototype builders implement this interface, defines method `buildPrototype`                                                                                                                                                   |
 | `Prototype.ConfiguredBuilder` | Yes      | all prototype builders that support configuration implement this interface, defines method `config(Config)`                                                                                                                        |
 
-## Option
+### Option
 
 |                        |                                                                                                                                                                                                                                                                                      |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

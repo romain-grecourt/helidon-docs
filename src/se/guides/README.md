@@ -1,10 +1,12 @@
-# Getting Started
+# Helidon SE Guides
+
+## Getting Started
 
 | Topic        | Description                                                 |
 |--------------|-------------------------------------------------------------|
 | [Quickstart] | Create your first Helidon SE application in under 5 minutes |
 
-# Helidon SE Guides
+## Helidon SE Guides
 
 | Topic                     | Description                                                       |
 |---------------------------|-------------------------------------------------------------------|
@@ -21,7 +23,7 @@
 | [DB Client]               | Learn how to use the Helidon SE DB Client                         |
 | [Performance Tuning]      | Learn how to tune your Helidon SE application                     |
 
-# Build and Deploy
+## Build and Deploy
 
 | Topic                  | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
