@@ -1,25 +1,19 @@
 
 # Helidon Documentation Project
 
-This project contains an [mdBook](https://github.com/rust-lang/mdBook/) project
-for Helidon Documentation.
+This project contains a [VitePress](https://vitepress.dev/) project for Helidon Documentation.
 
 ## To build docs
 
-1. Install mdbook (`brew install mdbook`)
-2. `mdbook serve`
+1. Install VitePress: `npm add -D vitepress@next`
+   * See [VitePress Getting Started](https://vitepress.dev/guide/getting-started)
+2. Build the site: `npm run docs:build`
+3. Run dev HTTP server: `npm run docs:dev` (this will rebuild site as you make changes)
 
-## mdbook-pagetoc
+## Key files
 
-This project uses the [mdbook-pagetoc](https://github.com/slowsage/mdbook-pagetoc) plugin.
-For Linux and Windows you can download the binary from the GitHub release page. 
-Then add it to your path.
-
-For MacOS you must build it:
-
-1. `brew install rust`
-2. `git clone https://github.com/slowsage/mdbook-pagetoc`
-3. `git checkout tags/0.3.0`
-4. `cargo install`
-5. Add `${HOME}/.cargo/bin` to your PATH
+* `docs/src` : Helidon documentation source as markdown files
+* `docs/src/index.md` : Site's landing page
+* `docs/src/.vitepress/config.mts` : VitePress configuration
+* `docs/src/.vitepress/dist` : the generated static site (not committed into git)
 
