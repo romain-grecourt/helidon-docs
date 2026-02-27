@@ -96,7 +96,7 @@ jmh-baseline.json
 book
 
 # vitepress
-.vitepress/cache
-.vitepress/dist
+**/.vitepress/cache/
+**/.vitepress/dist/
 
 node_modules
