@@ -1,3 +1,5 @@
+# Security 
+
 To add security, such as protecting resource methods with
 authentication, to a MicroProfile application, add the Helidon security
 integration dependency to your project.

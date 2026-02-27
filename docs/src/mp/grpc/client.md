@@ -1,4 +1,4 @@
-# Overview
+# gRPC Client
 
 Building Java-based gRPC clients using the Helidon MP gRPC API is very
 simple and removes a lot of the boilerplate code typically associated
@@ -6,7 +6,7 @@ with more traditional approaches of writing gRPC clients. At its
 simplest, a gRPC Java client can be written using nothing more than a
 suitably annotated Java interface.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable gRPC MicroProfile Clients, add the following dependency to
 your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -18,7 +18,7 @@ your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dep
 </dependency>
 ```
 
-# API
+## API
 
 The following annotations are used to work with Helidon MP gRPC clients:
 
@@ -30,7 +30,7 @@ The following annotations are used to work with Helidon MP gRPC clients:
 - `@Grpc.GrpcService` - an annotation used to specify the name of a gRPC
   service to connect to.
 
-# Configuration
+## Configuration
 
 For a gRPC client to connect to a server, it requires a channel.
 Channels are configured in the `grpc` section of the Helidon application
@@ -59,7 +59,7 @@ While most client applications only connect to a single server, it is
 possible to configure multiple (an array of) named channels if the
 client needs to connect to multiple servers.
 
-## Configuring TLS
+### Configuring TLS
 
 gRPC runs on top of HTTP/2 which prefers secure TLS connections. Most
 gRPC channels will also include a section to configure TLS. Here is a
@@ -109,9 +109,9 @@ grpc:
 > above. The TLS section must be present and explicitly disabled. It is
 > generally discouraged to expose unsecure gRPC endpoints.
 
-# Usage
+## Usage
 
-## Defining a Client Interface
+### Defining a Client Interface
 
 The next step is to produce an interface with the service methods that
 the client requires. For example, suppose we have a simple service that
@@ -156,7 +156,7 @@ interface StringServiceClient {
 }
 ```
 
-## Injecting Client Proxies
+### Injecting Client Proxies
 
 Now that there is a client interface and a channel configuration, we can
 then use these in the client application. We can declare a field of the
@@ -189,7 +189,7 @@ In the example above, there is no need to use a channel directly. The
 correct channel is added to the dynamic client proxy internally by the
 Helidon MP gRPC API.
 
-## Injecting Channels
+### Injecting Channels
 
 Channels can also be directly injected into application bean instances.
 The Helidon gRPC client API has CDI producers to inject
@@ -213,6 +213,6 @@ follows:
 An injected channel can be used, for example, when directly
 instantiating `protoc` generated stubs.
 
-# Examples
+## Examples
 
 Please refer to the [Helidon gRPC MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/grpc).

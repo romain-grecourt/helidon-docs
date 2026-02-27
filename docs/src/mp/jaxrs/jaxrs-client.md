@@ -1,4 +1,4 @@
-# Overview
+# JJAX-RS Client
 
 The Jakarta REST Client defines a programmatic API to access REST
 resources. This API sits at a higher level than traditional HTTP client

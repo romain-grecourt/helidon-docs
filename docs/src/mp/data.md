@@ -1,4 +1,4 @@
-# Overview
+# Data
 
 The Helidon MP Data Repository provides a unified API for working with
 database queries.

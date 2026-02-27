@@ -1,4 +1,4 @@
-# Overview
+# WebLogic JMS
 
 WebLogic JMS Connector extends Helidon JMS connector with special
 handling for legacy WebLogic T3 thin clients. Legacy versions of thin

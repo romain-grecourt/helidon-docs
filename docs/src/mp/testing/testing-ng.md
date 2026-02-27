@@ -1,4 +1,4 @@
-# Overview
+# Testing with TestNG
 
 Helidon provides a TestNG listener that integrates CDI to support
 testing with Helidon MP.

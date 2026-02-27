@@ -1,3 +1,5 @@
+# 2.x Upgrade Guide
+
 In Helidon 2.x we have made some changes to APIs and runtime behavior.
 This guide will help you migrate a Helidon MP 1.x application to 2.x.
 

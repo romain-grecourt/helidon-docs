@@ -1,4 +1,4 @@
-# Overview
+# Helidon Connector
 
 Helidon uses Jersey as the Jakarta REST (JAX-RS) implementation. Jersey
 supports the concept of *connectors* which is an SPI to handle low-level

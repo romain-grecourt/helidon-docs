@@ -1,4 +1,4 @@
-# Overview
+# Fault Tolerance
 
 Fault Tolerance is part of the MicroProfile set of specifications. This
 API defines mostly annotations that improve application robustness by
@@ -10,7 +10,7 @@ network delays, temporal infrastructure instabilities, etc.
 
 To enable MicroProfile Fault Tolerance, either add a dependency on the
 [helidon-microprofile
-bundle](introduction/microprofile.md)
+bundle](about/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../about/managing-dependencies.md)).
 

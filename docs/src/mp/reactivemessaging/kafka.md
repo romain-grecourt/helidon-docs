@@ -1,4 +1,4 @@
-# Overview
+# Kafka
 
 Connecting streams to Kafka with Reactive Messaging is easy to do. There
 is a standard Kafka client behind the scenes, all the

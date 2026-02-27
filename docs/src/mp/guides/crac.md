@@ -1,3 +1,5 @@
+# CRaC Guide
+
 This guide describes how to create a CRaC snapshot for a Helidon MP
 application.
 

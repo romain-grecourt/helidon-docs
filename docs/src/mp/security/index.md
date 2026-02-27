@@ -1,4 +1,4 @@
-# Helidon MP Security
+# Security
 
 * [Adding Security](security.md)
 * [Security Providers](providers.md)

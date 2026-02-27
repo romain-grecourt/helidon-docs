@@ -1,4 +1,4 @@
-# Helidon AI
+# AI
 
 Helidon AI provides integration with AI technologies.
 

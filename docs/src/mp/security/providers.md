@@ -1,4 +1,4 @@
-# Implemented Security Providers
+# Security Providers
 
 Helidon provides the following security providers for endpoint
 protection:

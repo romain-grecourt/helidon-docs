@@ -1,3 +1,5 @@
+# 3.x Upgrade Guide
+
 In Helidon 3.x we have made some changes to APIs and runtime behavior.
 This guide will help you upgrade a Helidon MP 2.x application to 3.x.
 

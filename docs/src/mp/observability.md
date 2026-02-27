@@ -1,4 +1,4 @@
-# Overview
+# Observability
 
 In Helidon 4 all observability features were moved to one logical
 module: `observe`. Observability features specified by MicroProfile, such

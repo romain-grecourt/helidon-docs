@@ -1,4 +1,4 @@
-# Overview
+# Bean Validation
 
 Helidon supports Bean Validation via its integration with JAX-RS/Jersey.
 The [Jakarta Bean Validation specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)

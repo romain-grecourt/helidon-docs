@@ -1,3 +1,5 @@
+# Custom Runtime Images
+
 This guide describes how to build a custom runtime image for your
 Helidon application using Helidon’s support for the JDK’s `jlink` tool.
 

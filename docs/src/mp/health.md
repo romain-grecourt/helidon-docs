@@ -1,4 +1,4 @@
-# Overview
+# Health
 
 Microservices expose their health status primarily so external tools
 (for example, an orchestrator such as Kubernetes) can monitor each
@@ -9,7 +9,7 @@ service is unable to process incoming requests normally.
 # Maven Coordinates
 
 To enable MicroProfile Health add the [helidon-microprofile
-bundle](introduction/microprofile.md) dependency to your project’s
+bundle](about/microprofile.md) dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
 
 ```xml
@@ -41,7 +41,7 @@ following dependencies should be included in your project’s `pom.xml`:
 ```
 
 To enable built-in health checks add the following dependency (or use
-the [helidon-microprofile bundle](introduction/microprofile.md) )
+the [helidon-microprofile bundle](about/microprofile.md) )
 
 ```xml
 <dependency>

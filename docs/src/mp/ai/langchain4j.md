@@ -1,4 +1,4 @@
-# LangChain4j Support
+# About LangChain4j
 
 Helidon SE includes native [LangChain4j integration](../../se/ai/langchain4j/langchain4j.md),
 which can also be used in Helidon MP thanks to **Helidon Inject to CDI

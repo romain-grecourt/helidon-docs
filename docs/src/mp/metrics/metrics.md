@@ -1,4 +1,4 @@
-# Overview
+# Metrics
 
 Helidon MP metrics implements the MicroProfile Metrics specification,
 providing:

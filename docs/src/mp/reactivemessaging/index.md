@@ -1,4 +1,4 @@
-# Helidon MP Reactive Messaging
+# Reactive Messaging
 
 Support for MicroProfile reactive messaging.
 

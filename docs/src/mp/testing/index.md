@@ -1,4 +1,4 @@
-# Helidon MP Testing
+# Testing
 
 Helidon MP testing extensions.
 

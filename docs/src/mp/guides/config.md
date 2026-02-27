@@ -1,3 +1,5 @@
+# Config Guide
+
 This guide describes how to create a sample MicroProfile (MP) project
 that can be used to run some basic examples using both default and
 custom configuration with Helidon MP.

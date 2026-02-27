@@ -1,3 +1,5 @@
+# JAX-RS Application Configuration
+
 Your application can use the MicroProfile Config or Helidon Config (or
 both). MicroProfile Config offers portability to other MicroProfile
 servers. Helidon Config supports a full tree structure, including

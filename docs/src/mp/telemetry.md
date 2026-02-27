@@ -1,10 +1,10 @@
-# Overview
+# Telemetry
 
 # Maven Coordinates
 
 To enable MicroProfile Telemetry, either add a dependency on the
 [helidon-microprofile
-bundle](introduction/microprofile.md)
+bundle](about/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../about/managing-dependencies.md)).
 

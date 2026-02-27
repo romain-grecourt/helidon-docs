@@ -1,4 +1,4 @@
-# Overview
+# CORS
 
 The [cross-origin resource sharing (CORS)
 protocol](https://www.w3.org/TR/cors) helps developers control if and
@@ -30,7 +30,7 @@ Once you know the type of sharing you want to allow for each of your
 resources, including any from built-in services, you can change your
 application accordingly.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable CORS, add the following dependency to your project’s `pom.xml`
 (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -42,7 +42,7 @@ To enable CORS, add the following dependency to your project’s `pom.xml`
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Once you have planned how each of your resources should support CORS,
 you specify the CORS behavior in one of two ways:
@@ -55,9 +55,9 @@ You can do both. CORS configuration for a resource overrides any CORS
 settings declared using `@CrossOrigin` in the Java class for the
 resource.
 
-# API
+## API
 
-## The `@CrossOrigin` Annotation
+### The `@CrossOrigin` Annotation
 
 Adding CORS behavior to your Helidon MP application involves just a few
 simple steps.
@@ -95,7 +95,7 @@ For each resource class in your application:
 The [configuration table](#config-table) below describes the attributes
 of the `@CrossOrigin` annotation.
 
-# Configuration
+## Configuration
 
 You can define CORS behavior, and you or your users can override behavior
 declared in your code, using configuration.
@@ -160,7 +160,7 @@ If the cross-origin configuration is disabled (`enabled` = false), then
 the Helidon CORS implementation ignores the cross-origin configuration
 entry.
 
-# Examples
+## Examples
 
 The [Helidon MP Quickstart application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/quickstarts/helidon-quickstart-mp) allows users to:
 
@@ -271,9 +271,9 @@ cors.paths.1.allow-origins=https://foo.com
   declared; with this configuration, only the origin `foo.com` is
   permitted. (The declared setting also allowed `there.com`).
 
-# Additional Information
+## Additional Information
 
-## CORS and the Requested URI Feature
+### CORS and the Requested URI Feature
 
 The decisions the Helidon CORS feature makes depend on accurate
 information about each incoming request, particularly the host to which
@@ -292,7 +292,7 @@ the correct information about each request, according to your
 configuration, so it can make accurate decisions about whether to permit
 cross-origin accesses.
 
-## Using CORS Support in Built-in Helidon Services
+### Using CORS Support in Built-in Helidon Services
 
 Several built-in Helidon
 services, [health](../../mp/health.md),

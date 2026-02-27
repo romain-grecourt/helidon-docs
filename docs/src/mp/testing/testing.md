@@ -1,4 +1,4 @@
-# Overview
+# Testing with Junit5
 
 Helidon provides a JUnit5 extension that integrates CDI to support
 testing with Helidon MP.

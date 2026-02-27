@@ -1,4 +1,4 @@
-# Overview
+# gRPC Server
 
 The gRPC MicroProfile (MP) API is an extension to [Helidon MP](../README.md)
 that enables building gRPC services integrated with MicroProfile APIs.
@@ -10,7 +10,7 @@ runtime, just like other Helidon MP web services.
 Building gRPC services with Helidon gRPC MP is straightforward, allowing
 developers to focus on application logic rather than boilerplate code.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable gRPC MicroProfile Server, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -26,7 +26,7 @@ Additional dependencies may be required depending on your application
 needs. See the [gRPC MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/grpc)
 for a complete example.
 
-# API
+## API
 
 All Helidon gRPC MP annotations are defined in the `Grpc` interface. The
 following annotations are used to implement Helidon MP gRPC services:
@@ -55,7 +55,7 @@ The following gRPC method types are supported:
 - `@Grpc.Bidirectional`: a method that takes a stream of values and
   returns a stream of values.
 
-# Usage
+## Usage
 
 ## Defining a Service
 
@@ -165,7 +165,7 @@ Annotating the supplier with `@Dependent` ensures discoverability
 provided CDI is configured to find all annotated beans in the
 corresponding `beans.xml` file.
 
-# Implementing a gRPC Extension
+## Implementing a gRPC Extension
 
 When unable to annotate a service class, for example when the code is
 built by a third party,  another way to deploy non-CDI bean services is
@@ -200,7 +200,7 @@ service loader, so for this example above to work, a file
 `META-INF/services/io.helidon.microprofile.grpc.server.spi.GrpcMpExtension`
 would need to be created with the name of the extension shown above.
 
-# gRPC Reflection Service
+## gRPC Reflection Service
 
 When a gRPC client interacts with a server, it needs to have access to
 the Protobuf file to learn about the available services, methods and
@@ -252,12 +252,12 @@ Protobuf generated code, in this example, the `Strings.getDescription()`
 method. The reflection service shall call this method to provide service
 introspection to any clients that support the protocol.
 
-# Configuration
+## Configuration
 
 At the time of writing, there is no configuration that is specific to
 Helidon MP. For more information about gRPC configuration in SE, see
 [gRPC Server Configuration](../../se/grpc/server.md#configuration).
 
-# Examples
+## Examples
 
 Please refer to the [Helidon gRPC MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/grpc).

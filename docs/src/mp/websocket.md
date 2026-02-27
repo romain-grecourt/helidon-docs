@@ -1,4 +1,4 @@
-# Overview
+# WebSocket
 
 Helidon integrates with [Tyrus](https://projects.eclipse.org/projects/ee4j.tyrus) to provide
 support for the [Jakarta WebSocket API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).

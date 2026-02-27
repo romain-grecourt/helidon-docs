@@ -1,4 +1,4 @@
-# Overview
+# Scheduling
 
 Scheduling is an essential feature for the Enterprise. Helidon has its
 own implementation of Scheduling functionality based on
