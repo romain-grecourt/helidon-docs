@@ -1,4 +1,4 @@
-# Model Context Protocol (MCP) Server
+# MCP Server
 
 Helidon provides support for building Model Context Protocol (MCP)
 servers through a dedicated extension. The MCP Server feature is not

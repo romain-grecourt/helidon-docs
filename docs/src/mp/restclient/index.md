@@ -1,4 +1,4 @@
-# Helidon MP Rest Client
+# Rest Client
 
 Helidon support for MicroProfile Rest Client.
 

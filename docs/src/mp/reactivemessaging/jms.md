@@ -1,4 +1,4 @@
-# Overview
+# JMS
 
 Connecting streams to JMS with Reactive Messaging couldn’t be easier.
 

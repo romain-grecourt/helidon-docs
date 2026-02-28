@@ -1,4 +1,6 @@
-# Creating MicroProfile Config Sources for Manual Setup of Config
+# Config Advanced Topics
+
+## Creating MicroProfile Config Sources for Manual Setup of Config
 
 You can use the following methods to create MicroProfile Config Sources
 to manually set up the Config from
@@ -89,7 +91,7 @@ ConfigProviderResolver.instance().getBuilder()
         .build();
 ```
 
-# Creating Custom Config Sources
+## Creating Custom Config Sources
 
 Custom Config Sources are loaded using the Java Service Loader pattern,
 by implementing either
@@ -155,7 +157,7 @@ public class CustomConfigSource implements ConfigSource {
 
 - Returns the ordinal of this Config Source.
 
-# Creating MicroProfile Config Sources from meta-config
+## Creating MicroProfile Config Sources from meta-config
 
 Instead of directly specifying the configuration sources in your code,
 you can use meta-configuration in a file that declares the configuration
@@ -245,7 +247,7 @@ the following dependency to your project’s pom.xml.
 </dependency>
 ```
 
-# Extending Meta-Config to Create a Custom Config Source Type
+## Extending Meta-Config to Create a Custom Config Source Type
 
 Helidon meta-config by default supports the following types:
 environment-variables, system-properties, properties, yaml, hocon and
@@ -337,7 +339,7 @@ public class CustomMpMetaConfigProvider implements MpMetaConfigProvider {
 - Throws a ConfigException if not set to `optional` and config source is
   not found.
 
-# Creating MicroProfile Config Source from Helidon SE Config Source
+## Creating MicroProfile Config Source from Helidon SE Config Source
 
 To use the Helidon SE features in Helidon MP, create MicroProfile Config
 Source from Helidon SE Config Source. The Config Source is immutable
@@ -352,7 +354,7 @@ Config config = ConfigProviderResolver.instance()
 
 - Creates a MicroProfile config instance using Helidon Config Source.
 
-# Creating MicroProfile Config Source from Helidon SE Config Instance
+## Creating MicroProfile Config Source from Helidon SE Config Instance
 
 To use advanced Helidon SE features in Helidon MP, create MicroProfile
 Config Source from Helidon SE Config. The Config Source is mutable if

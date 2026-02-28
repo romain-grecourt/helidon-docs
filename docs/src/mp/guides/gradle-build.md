@@ -1,3 +1,5 @@
+# Gradle Guide
+
 This guide describes Helidon’s support for Gradle projects.
 
 # Introduction

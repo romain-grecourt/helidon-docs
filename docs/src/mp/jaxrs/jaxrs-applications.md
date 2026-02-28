@@ -1,4 +1,4 @@
-# Content
+# JAX-RS
 
 - [Overview](#overview)
 - [Discovery of REST Beans](#discovery_of_rest_beans)

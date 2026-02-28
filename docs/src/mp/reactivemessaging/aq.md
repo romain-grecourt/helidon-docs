@@ -1,4 +1,4 @@
-# Overview
+# AQ
 
 Connecting streams to Oracle AQ with Reactive Messaging couldn’t be
 easier. This connector extends Helidon’s JMS connector with Oracle’s

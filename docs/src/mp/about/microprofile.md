@@ -1,3 +1,5 @@
+# MicroProfile Introduction
+
 Complete these tasks to get started with your MicroProfile application.
 
 # Getting Started with Helidon MicroProfile

@@ -1,4 +1,4 @@
-# Helidon MicroProfile Integrations
+# Integrations
 
 Integrations with third party components.
 

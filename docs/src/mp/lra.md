@@ -1,4 +1,4 @@
-# Overview
+# LRA
 
 Distributed transactions for microservices are known as SAGA design
 patterns and are defined by the [MicroProfile Long Running Actions specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).

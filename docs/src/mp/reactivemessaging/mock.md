@@ -1,4 +1,4 @@
-# Overview
+# Mock
 
 Mock connector is a simple application scoped bean that can be used for
 emitting to a channel or asserting received data in a test environment.

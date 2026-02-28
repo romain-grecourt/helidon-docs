@@ -1,4 +1,4 @@
-# Helidon MicroProfile Server
+# MicroProfile Server
 
 # Overview
 

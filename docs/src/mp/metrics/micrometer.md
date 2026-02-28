@@ -1,4 +1,4 @@
-# Overview
+# Micrometer
 
 > [!NOTE]
 > Micrometer integration is deprecated beginning in Helidon 4.1 and is

@@ -1,3 +1,5 @@
+# GraalVM Native Image Guide
+
 This guide describes how to build a GraalVM native image for a Helidon
 MP application.
 

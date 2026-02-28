@@ -1,4 +1,4 @@
-# Helidon SE Quickstart
+# MP Quickstart
 
 This guide describes a basic example of a Helidon MP application using
 Docker and Kubernetes.

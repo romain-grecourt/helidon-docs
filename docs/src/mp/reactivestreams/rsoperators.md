@@ -1,4 +1,4 @@
-# Overview
+# RS Operators
 
 Helidon implements [MicroProfile Reactive Streams Operators](https://download.eclipse.org/microprofile/microprofile-reactive-streams-operators-3.0/microprofile-reactive-streams-operators-spec-3.0.html)
 specification which defines reactive operators and provides a
@@ -10,7 +10,7 @@ portability between different implementations.
 
 To enable {feature-name}, either add a dependency on the
 [helidon-microprofile
-bundle](../../mp/introduction/microprofile.md)
+bundle](../about/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../../about/managing-dependencies.md)).
 

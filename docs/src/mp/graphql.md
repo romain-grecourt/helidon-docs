@@ -1,4 +1,4 @@
-# Overview
+# GraphQL
 
 Helidon MP implements the [MicroProfile GraphQL specification](https://download.eclipse.org/microprofile/microprofile-graphql-2.0/microprofile-graphql-spec-2.0.html).
 This specification describes how applications can be built to expose an
@@ -128,7 +128,7 @@ Generate Jandex index:
 ```
 
 > [!NOTE]
-> As per the instructions [here](introduction/microprofile.md) ensure
+> As per the instructions [here](about/microprofile.md) ensure
 > you have added a `src/main/resources/META-INF/beans.xml` file, so the
 > CDI implementation can pick up your classes.
 

@@ -1,4 +1,4 @@
-# Overview
+# Oracle Cloud Infrastructure
 
 You can quickly and easily deploy Helidon applications on Oracle Cloud
 Infrastructure (OCI) and integrate them with OCI services using the OCI

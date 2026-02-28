@@ -1,4 +1,4 @@
-# Overview
+# OpenAPI
 
 The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 defines a standard way to express the interface exposed by a REST
@@ -38,7 +38,7 @@ API from whichever of these sources are present in the application:
 
 To enable MicroProfile OpenAPI, either add a dependency on the
 [helidon-microprofile
-bundle](../../mp/introduction/microprofile.md)
+bundle](../about/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../../about/managing-dependencies.md)).
 

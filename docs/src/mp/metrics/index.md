@@ -1,4 +1,4 @@
-# Helidon MP Metrics
+# Metrics
 
 Helidon provides a neutral metrics API for tracking and exporting monitoring data.
 

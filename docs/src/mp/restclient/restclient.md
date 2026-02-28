@@ -1,4 +1,4 @@
-# Overview
+# Rest Client
 
 MicroProfile Rest Client adds the capability to invoke remote services
 by defining a Java interface with Jakarta REST (JAX-RS) annotations that
@@ -16,7 +16,7 @@ described in [this related page.](restclientmetrics.md)
 
 To enable MicroProfile Rest Client, either add a dependency on the
 [helidon-microprofile
-bundle](../../mp/introduction/microprofile.md)
+bundle](../about/microprofile.md)
 or add the following dependency to your project’s `pom.xml` (see
 [Managing Dependencies](../../about/managing-dependencies.md)).
 

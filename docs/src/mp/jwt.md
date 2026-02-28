@@ -1,5 +1,4 @@
-# Overview
-
+# JWT
 
 JSON Web Tokens (JWT) are an open, industry standard
 [(RFC 7519)](https://datatracker.ietf.org/doc/html/rfc7519) method for
@@ -13,7 +12,7 @@ Helidon MP applications.
 # Maven Coordinates
 
 To enable JWT Authentication, either add a dependency on the
-[helidon-microprofile bundle](introduction/microprofile.md)
+[helidon-microprofile bundle](about/microprofile.md)
 or add the following dependency to your project’s `pom.md` (see
 [Managing Dependencies](../about/managing-dependencies.md)).
 

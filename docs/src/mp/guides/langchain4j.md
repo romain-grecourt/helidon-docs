@@ -1,3 +1,5 @@
+# LangChain4J Guide
+
 This guide describes how to create a sample AI powered Helidon MP
 project with LangChain4j integration.
 

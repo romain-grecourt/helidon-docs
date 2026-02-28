@@ -1,4 +1,4 @@
-# Overview
+# Reactive Messaging
 
 Reactive messaging offers a new way of processing messages that is
 different from the older method of using message-driven beans. One

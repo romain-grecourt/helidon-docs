@@ -1,4 +1,4 @@
-# Overview
+# Neo4j
 
 Neo4j is a graph database management system developed by Neo4j, Inc. It
 is an ACID-compliant transactional database with native graph storage

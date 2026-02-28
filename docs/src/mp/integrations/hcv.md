@@ -1,4 +1,4 @@
-# Overview
+# HashiCorp Vault
 
 HashiCorp Vault is a commonly used Vault in many microservices. The APIs
 are REST-based and Helidon implements them using
