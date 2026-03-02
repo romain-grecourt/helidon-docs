@@ -16,7 +16,7 @@ methods annotated by `@Incoming` and `@Outgoing` and the invocation is
 always driven by message core - either at assembly time, or for every
 message coming from the stream.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Reactive Messaging, add the following dependency
 to your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -37,7 +37,7 @@ To include health checks for Messaging add the following dependency:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 - [Channels](#channels)
 - [Emitter](#emitter)
@@ -455,7 +455,7 @@ you will discover every messaging channel to have its own probe.
 > Due to the nack support are exceptions thrown in messaging methods NOT
 > translated to error and cancel signals implicitly anymore
 
-# Configuration
+## Configuration
 
 The channel must be configured to use connector as its upstream or
 downstream.
@@ -551,7 +551,7 @@ public void consume(String value) {
 // > Consuming: bar
 ```
 
-# Reference
+## Reference
 
 - [Helidon MicroProfile Reactive Messaging](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.messaging/module-summary.html)
 - [MicroProfile Reactive Messaging Specification](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html)

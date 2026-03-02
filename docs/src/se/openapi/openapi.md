@@ -1,6 +1,6 @@
 # About OpenAPI
 
-# Overview
+## Overview
 
 The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 defines a standard way to express the interface exposed by a REST
@@ -25,7 +25,7 @@ To construct the model, Helidon gathers information about the service
 API from a static OpenAPI document file packaged as part of your
 service.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable OpenAPI, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -37,7 +37,7 @@ To enable OpenAPI, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Automatic Registration (default)
 
@@ -94,7 +94,7 @@ JSON. Alternatively, the client can pass the query parameter `format` as
 either `JSON` or `YAML` to receive `application/json` or
 `application/vnd.oai.openapi` (YAML) output, respectively.
 
-# API
+## API
 
 Helidon SE provides an API for creating and setting up the REST endpoint
 which serves OpenAPI documents to clients at the `/openapi` path. Use
@@ -105,7 +105,7 @@ or use its
 Then add that instance or builder to your application’s routing. The
 [example](#register_openapifeature) below shows how to do this.
 
-# Configuration
+## Configuration
 
 Helidon SE OpenAPI configuration supports the settings described below
 in the `server.features.openapi` section.
@@ -208,7 +208,7 @@ io.helidon.openapi.OpenApiFeature.WEIGHT.</p></td>
 </tbody>
 </table>
 
-# Examples
+## Examples
 
 Helidon SE provides a [complete OpenAPI example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/openapi)
 based on the SE QuickStart sample app.

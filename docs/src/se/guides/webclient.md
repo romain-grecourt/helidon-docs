@@ -3,7 +3,7 @@
 This guide describes how to create a sample Helidon SE project that can
 be used to run some basic examples using WebClient.
 
-# What you need
+## What you need
 
 For this 15 minute tutorial, you will need the following:
 

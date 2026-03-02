@@ -5,7 +5,7 @@ module: `observe`. The observability support groups all observe
 endpoints together under a single context root (the default behavior)
 `/observe`.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon Observability, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -62,7 +62,7 @@ For Configuration Observability features:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Each provider usually adds a new endpoint (such as `health`, `metrics`).
 This is to have a single easily configurable path for security, proxy
@@ -228,7 +228,7 @@ path:
 
 For more information see [Metrics](metrics/metrics.md) documentation.
 
-# Configuration
+## Configuration
 
 To customize the endpoint of an observer:
 
@@ -339,7 +339,7 @@ routing.</p></td>
 </tbody>
 </table>
 
-# Additional Information
+## Additional Information
 
 The Observability features are now implemented with `HttpFeature` and
 can be registered with
@@ -358,7 +358,7 @@ developer).
 - This is to allow ordering of features in a meaningful way (e.g.
   Context should be first, Tracing second, Security third etc).
 
-# Reference
+## Reference
 
 - [MicroProfile Metrics Specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.0.0/microprofile-metrics-spec-5.0.0.pdf)
 - [Metrics](metrics/metrics.md) documentation.

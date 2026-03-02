@@ -1,6 +1,6 @@
 # SE Guides
 
-# Getting Started
+## Getting Started
 
 | Topic        | Description                                                 |
 |--------------|-------------------------------------------------------------|

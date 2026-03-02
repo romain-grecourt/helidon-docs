@@ -3,12 +3,12 @@
 In Helidon 2.x we have made some changes to APIs and runtime behavior.
 This guide will help you migrate a Helidon MP 1.x application to 2.x.
 
-# Java 11 Runtime
+## Java 11 Runtime
 
 Java 8 is no longer supported in Helidon 2. Java 11 or newer is
 required.
 
-# Tracing
+## Tracing
 
 We have upgraded to OpenTracing version 0.33.0 that is not backward
 compatible. OpenTracing introduced the following breaking changes:
@@ -24,7 +24,7 @@ compatible. OpenTracing introduced the following breaking changes:
 If you use the `TracerBuilder` abstraction in Helidon and have no custom
 Spans, there is no change required
 
-# Security: OIDC
+## Security: OIDC
 
 When the OIDC provider is configured to use cookie (default
 configuration) to carry authentication information, the cookie
@@ -33,7 +33,7 @@ prevent infinite redirects, as browsers would refuse to set the cookie
 on redirected requests (due to this setting). Only in the case of the
 frontend host and identity host match, we leave `Strict` as the default
 
-# MicroProfile Bundles
+## MicroProfile Bundles
 
 We have removed the versioned MicroProfile bundles (i.e.
 `helidon-microprofile-x.x`), and introduced unversioned core and full
@@ -46,7 +46,7 @@ bundles:
 - `io.helidon.microprofile.bundles:helidon-microprofile` - contains the
   latest full MicroProfile version implemented by Helidon
 
-# Application Main and Startup
+## Application Main and Startup
 
 - `io.helidon.microprofile.server.Main` has been deprecated. Use
   `io.helidon.microprofile.cdi.Main` instead.
@@ -58,7 +58,7 @@ bundles:
   `logging.properties` on the classpath or in the current directory to
   be automatically picked up to configure Java Util Logging.
 
-# JAX-RS Applications
+## JAX-RS Applications
 
 Helidon 1.x usually required that you have an `Application` subclass
 that returned the Application classes to scan. For common cases this is
@@ -81,14 +81,14 @@ servers:
 - `Application` subclasses MUST be annotated with `@ApplicationScoped`,
   otherwise they are ignored
 
-# MicroProfile JWT-Auth
+## MicroProfile JWT-Auth
 
 If a JAX-RS application exists that is annotated with `@LoginConfig`
 with value MP-JWT, the correct authentication provider is added to
 security. The startup would fail if the provider is required yet not
 configured.
 
-# Security in Helidon MP
+## Security in Helidon MP
 
 - If there is no authentication provider configured, authentication will
   now fail.
@@ -99,7 +99,7 @@ configured.
 In Helidon 1.x these were configured if there was no provider configured
 overall.
 
-# CDI and MicroProfile Server
+## CDI and MicroProfile Server
 
 In order to support GraalVM `native-image` we have had to re-implement
 how CDI is initialized and started. This has resulted in some changes in
@@ -135,13 +135,13 @@ APIs and behavior:
 
 - `Server.cdiContainer` is removed, use `CDI.current()` instead.
 
-# Metrics
+## Metrics
 
 Helidon now supports only MicroProfile Metrics 2.x. Support for Metrics
 1.x has been removed, and modules for 2.x have been renamed from
 `metrics2` to `metrics`.
 
-# Java EE dependencies
+## Java EE dependencies
 
 We have moved from dependencies in groupId `javax` (Java EE modules) to
 dependencies in groupId `jakarta` (Jakarta EE modules).

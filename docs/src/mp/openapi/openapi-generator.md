@@ -57,7 +57,7 @@ The rest of this document walks you through [how to use](#usage)
 each technique and how to [configure](#configuration) the generators to
 produce the code you want.
 
-# Maven Coordinates
+## Maven Coordinates
 
 Your project does not need any dependencies on the OpenAPI generator.
 
@@ -90,7 +90,7 @@ Declaring the OpenAPI Generator Plug-in:
 A [later section](#invoking-the-openapi-generator-maven-plug-in) describes how to invoke the
 plug-in during your build.
 
-# Configuration
+## Configuration
 
 The OpenAPI generators support a substantial, powerful, and sometimes
 bewildering group of configuration settings. For complete lists see
@@ -403,7 +403,7 @@ serializing JSON</p></td>
   preferences loaded from the previous generator run, and as a last
   resort using hard-coded values for each major Helidon release.
 
-# Usage
+## Usage
 
 This section covers two major topics:
 
@@ -658,7 +658,7 @@ your project.
 
 This document does not explore further the use of the online generator.
 
-# Using the Generated Code
+## Using the Generated Code
 
 The Helidon generators go a long way in helping you write your client or
 server. Even so, there are important parts of your project only you can
@@ -738,7 +738,7 @@ public class ExampleOpenApiGenClientResource {
 - Invokes the remote service using the injected field and the parameter
   from the incoming request.
 
-# References
+## References
 
 - [OpenAPI Generator Official Website](https://openapi-generator.tech)
 - [OpenAPI Generator GitHub Repository](https://github.com/OpenAPITools/openapi-generator)

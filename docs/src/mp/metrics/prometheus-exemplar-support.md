@@ -30,7 +30,7 @@ implementation supports exemplars as recorded by Micrometer’s Prometheus
 meter registry and exposed by the OpenMetrics output (media type
 `application/openmetrics-text`).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable OpenMetrics exemplar support, add the following dependency to
 your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -62,7 +62,7 @@ Add the Helidon tracing component itself:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Once you add the appropriate dependencies to your project, exemplar
 support runs automatically as part of the Helidon metrics implementation
@@ -99,7 +99,7 @@ But some consumers, such as trace collectors and their UIs, understand
 the exemplar format, and they allow you to browse meters and then
 navigate directly to the trace for the meter’s exemplar.
 
-# Examples
+## Examples
 
 Once you enable exemplar support you can see the exemplars in the
 metrics output.
@@ -117,6 +117,6 @@ amount by which the counter was updated (`1.0`), and the timestamp
 recording when the update occurred expressed as seconds in the UNIX
 epoch (`1696889651.779`).
 
-# Additional Information
+## Additional Information
 
 Brief discussion of [exemplars in the OpenMetrics spec](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars)

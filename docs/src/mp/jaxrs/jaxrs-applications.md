@@ -6,7 +6,7 @@
 - [Access to Application Instances](#access_to_application_instances)
 - [Injection Managers in Helidon](#injection_managers_in_helidon)
 
-# Overview
+## Overview
 
 The Jakarta REST specification (formerly JAX-RS) defines the notion of
 an `Application` subclass whose methods return resource and provider
@@ -23,7 +23,7 @@ provider classes discovered by Helidon. Most Helidon applications should
 simply rely on this mechanism in accordance to convention over
 configuration practices.
 
-# Discovery of REST Beans
+## Discovery of REST Beans
 
 CDI scanning is controlled by the `bean-discovery-mode` attribute in
 `beans.xml` files,  the default value for this attribute is `annotated`.
@@ -62,7 +62,7 @@ sets.
 > but, as stated above, `Application` subclasses may require additional
 > annotations depending on the discovery mode
 
-# Setting Application Path
+## Setting Application Path
 
 The application path, also known as context root, is the base URI used
 to serve all resource URIs provided by `@Path` annotation. This section
@@ -102,7 +102,7 @@ and can be configured using this property:
 jakarta.ws.rs.core.Application.routing-path.path=/my-application
 ```
 
-# Access to Application Instances
+## Access to Application Instances
 
 Jakarta REST provides access to the `Application` subclass instance via
 injection using `@Context`. This form of access is still supported in
@@ -126,7 +126,7 @@ This approach effectively moves the scope of `Application` subclass
 instances to request scope in order to access the correct subclass for
 the resource method being executed.
 
-# Injection Managers in Helidon
+## Injection Managers in Helidon
 
 The Oracle implementation of Jakarta REST, known as Jersey, does not
 currently provide support for multiple `Application` subclasses. As a

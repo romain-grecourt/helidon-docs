@@ -1041,7 +1041,7 @@ the default tenant configuration (base OIDC configuration), and
 therefore its configuration do not need to change all the properties, if
 they do not differ from the base OIDC configuration.
 
-# CORS Settings
+## CORS Settings
 
 As an experimental feature, you can set up cross-origin handling for the
 redirect and logout endpoints in an optional `cors` block inside the

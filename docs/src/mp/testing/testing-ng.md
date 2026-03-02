@@ -6,7 +6,7 @@ testing with Helidon MP.
 The test class is added as a CDI bean to support injection and the CDI
 container is started lazily during test execution.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Testing with TestNG, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Basic usage:
 ```java
@@ -367,7 +367,7 @@ class AnnotationOnMethod {
 }
 ```
 
-# API
+## API
 
 Here is a brief overview of the MicroProfile testing annotations:
 
@@ -384,7 +384,7 @@ Here is a brief overview of the MicroProfile testing annotations:
 | [`@Socket`](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.testing/io/helidon/microprofile/testing/Socket.html)                     | CDI qualifier to inject a JAX-RS client or URI for a named socket                                    |
 | [`@AfterStop`](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.testing/io/helidon/microprofile/testing/AfterStop.html)               | Mark a static method to be executed after the container is stopped                                   |
 
-# Examples
+## Examples
 
 ## Config Injection Example
 
@@ -458,7 +458,7 @@ class MyResource {
 }
 ```
 
-# Mock Support
+## Mock Support
 
 Mocking in Helidon MP is all about replacing CDI beans with instrumented
 mock classes.
@@ -595,7 +595,7 @@ class MyService {
 }
 ```
 
-# Virtual Threads
+## Virtual Threads
 
 Virtual Threads pinning can be detected during tests.
 
@@ -629,6 +629,6 @@ class MyTest {
 When pinning is detected, the test fails with a stacktrace pointing at
 the culprit.
 
-# Reference
+## Reference
 
 - [TestNG Documentation](https://testng.org)

@@ -9,7 +9,7 @@ through its own API, backed by either through the [OpenTelemetry API](https://op
 by [OpenTracing API](https://opentracing.io). Tracing is integrated with
 WebServer and Security.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon Tracing, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -70,7 +70,7 @@ For OpenTracing:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 This section explains a few concepts that you need to understand before
 you get started with tracing.
@@ -361,9 +361,9 @@ if (nativeOtelSpan instanceof io.opentelemetry.sdk.trace.ReadableSpan readableSp
 Remember that operations on the `nativeOtelSpan` variable *do not*
 notify span listeners of lifecycle changes.
 
-# Helidon Spans
+## Helidon Spans
 
-# Traced spans
+## Traced spans
 
 The following table lists all spans traced by Helidon components:
 
@@ -408,7 +408,7 @@ configurable.
 | `jersey-client-call` | `http.status_code` | HTTP status code of client response                                                               |
 | `jersey-client-call` | `http.url`         | Full URL of the request (such as `http://localhost:8080/greet`)                                   |
 
-# Configuration
+## Configuration
 
 The following configuration should be supported by all tracer
 implementations (if feasible)
@@ -421,7 +421,7 @@ Type:
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -658,7 +658,7 @@ Parameters provided:
 2.  Path - path of the request (such as '/greet')
 3.  Query - query of the request (may be null)
 
-# Additional Information
+## Additional Information
 
 ## WebClient Span Propagation
 
@@ -700,7 +700,7 @@ String response = client.get()
 </dependency>
 ```
 
-# Configuring Jaeger
+## Configuring Jaeger
 
 Jaeger tracer configuration.
 
@@ -710,7 +710,7 @@ Type:
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -851,7 +851,7 @@ Jaeger tracing in your Helidon application.
 </dependency>
 ```
 
-# Configuring Zipkin
+## Configuring Zipkin
 
 Zipkin tracer configuration
 
@@ -860,7 +860,7 @@ Type: io.opentracing.Tracer
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -918,7 +918,7 @@ Example of Zipkin trace:
 <img src="../images/tracing-zipkin.png" alt="Zipkin example" />
 </figure>
 
-# Reference
+## Reference
 
 - [Opentracing Project](https://opentracing.io/)
 - [OpenTelemetry API](https://opentelemetry.io/docs/instrumentation/js/api/tracing/)

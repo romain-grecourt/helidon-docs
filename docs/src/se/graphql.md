@@ -7,7 +7,7 @@ to access server data. The Helidon GraphQL integration enables HTTP
 clients to issue queries over the network and retrieve data; it is an
 alternative to other protocols such as REST or GRPC.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable GraphQL, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ To enable GraphQL, add the following dependency to your project’s
 </dependency>
 ```
 
-# API
+## API
 
 An instance of `GraphQlSupport` must be registered in the Helidon
 WebServer routes to enable GraphQL support in your application. In
@@ -85,7 +85,7 @@ The following is a description of each of these steps:
 
 - Generate the GraphQL schema.
 
-# Configuration
+## Configuration
 
 The following configuration keys can be used to set up integration with
 WebServer:
@@ -106,7 +106,7 @@ invocation:
 | `graphql.exception-white-list`  |                | Array of checked exception classes that should return default error message                                  |
 | `graphql.exception-black-list`  |                | Array of unchecked exception classes that should return message to caller (instead of default error message) |
 
-# Examples
+## Examples
 
 Using the schema defined in Section [API](#api), you can probe the
 following endpoints:
@@ -127,6 +127,6 @@ following endpoints:
     {"data":{"helloInDifferentLanguages":["Bonjour","Hola","Zdravstvuyte","Nǐn hǎo","Salve","Gudday","Konnichiwa","Guten Tag"]}}
     ```
 
-# Additional Information
+## Additional Information
 
 - [GraphQL Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.graphql.server/module-summary.html)

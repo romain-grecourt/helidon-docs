@@ -7,7 +7,7 @@ manipulation language for APIs, and a runtime for fulfilling data
 queries. It provides an alternative to, though not necessarily a
 replacement for, REST.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile GraphQL, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 </dependency>
 ```
 
-# API
+## API
 
 The MicroProfile GraphQL specification defines a number of key
 annotations to be used when writing a GraphQL endpoint:
@@ -143,7 +143,7 @@ change the location of these resources.
 
 If you wish to use the [GraphQL UI](https://github.com/graphql/graphiql) then please see the [GraphQL MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/graphql).
 
-# Configuration
+## Configuration
 
 The specification defines the following configuration options:
 
@@ -172,14 +172,14 @@ invocation:
 | `graphql.exception-white-list`  |                | Array of checked exception classes that should return default error message                                  |
 | `graphql.exception-black-list`  |                | Array of unchecked exception classes that should return message to caller (instead of default error message) |
 
-# Examples
+## Examples
 
 For a complete example, see [GraphQL MP Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/graphql).
 
-# Additional Information
+## Additional Information
 
 - [GraphQL](http://graphql.org).
 
-# Reference
+## Reference
 
 - [MicroProfile GraphQL Javadocs](https://download.eclipse.org/microprofile/microprofile-graphql-2.0/apidocs).

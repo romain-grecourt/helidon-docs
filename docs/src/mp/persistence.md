@@ -9,7 +9,7 @@ separately:
 - [Jakarta Persistence (JPA)](#jakarta-persistence-jpa)
 Each integration’s setup, configuration, and usage are described below.
 
-# Named Data Source Integration
+## Named Data Source Integration
 
 ## Overview
 
@@ -471,7 +471,7 @@ public SomeObject(@Named("test") DataSource ds) {
 
 - The injected argument will never be `null`.
 
-# Jakarta Transactions (JTA) Integration
+## Jakarta Transactions (JTA) Integration
 
 ## Overview
 
@@ -583,7 +583,7 @@ public void setGreeting(Integer id) {
   object like a managed
   [`EntityManager`](https://jakarta.ee/specifications/persistence/3.1/apidocs/jakarta.persistence/jakarta/persistence/entitymanager)).
 
-# Jakarta Persistence (JPA)
+## Jakarta Persistence (JPA)
 
 ## Overview
 
@@ -1150,7 +1150,7 @@ tables, and how to perform other related tasks.
 
 - [JPA Pokemons Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/cdi/pokemons)
 
-# References
+## References
 
 - [Managing Dependencies in Helidon MP](../about/managing-dependencies.md)
 - [MicroProfile Config in Helidon MP](config/introduction.md)

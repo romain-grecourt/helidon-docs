@@ -3,7 +3,7 @@
 This guide describes how to create a sample AI powered Helidon SE
 project with LangChain4j integration.
 
-# Introduction
+## Introduction
 
 [LangChain4j](https://github.com/langchain4j/langchain4j) is a Java
 framework for building AI-powered applications using Large Language
@@ -21,7 +21,7 @@ use of LangChain4j in Helidon applications.
 > subject to change. These APIs will be finalized in a future release of
 > Helidon.
 
-# What you need
+## What you need
 
 For this 15 minute tutorial, you will need the following:
 
@@ -52,7 +52,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Generate the Project
+## Generate the Project
 
 Generate the project using the Helidon SE Quickstart Maven archetype.
 
@@ -75,7 +75,7 @@ build.
 cd helidon-quickstart-lc4j-se
 ```
 
-# Dependencies
+## Dependencies
 
 Add necessary dependencies for LangChain4j integration and OpenAI
 provider in the project POM.
@@ -123,7 +123,7 @@ section of `pom.xml`:
 </plugin>
 ```
 
-# Configuration
+## Configuration
 
 Add to the configuration file `./src/main/resources/application.yaml`
 following LangChain4j configuration for OpenAI provider.
@@ -142,7 +142,7 @@ langchain4j:
       api-key: "demo"
 ```
 
-# Ai Service
+## Ai Service
 
 Next we need to create LangChain4j [Ai service](https://docs.langchain4j.dev/tutorials/ai-services) and
 annotate it with `@Ai.Service` so Helidon can make a superfast build
@@ -188,7 +188,7 @@ We can test our pirate service with curl:
 
     echo "Who are you?" | curl -d @- localhost:8080/chat
 
-# Prompt Template Arguments
+## Prompt Template Arguments
 
 Ofcourse all the features from LangChain4j Ai services are going to
 work, let’s try to expand the example with [template arguments](https://docs.langchain4j.dev/tutorials/ai-services#usermessage).
@@ -228,7 +228,7 @@ We can test our pirate service with curl:
 
     echo "Who was your captain?" | curl -d @- localhost:8080/chat
 
-# Custom Memory Provider
+## Custom Memory Provider
 
 We can also extend the pirate example with [conversation memory](https://docs.langchain4j.dev/tutorials/chat-memory). First, we
 need to create a memory provider so our memory works per conversation

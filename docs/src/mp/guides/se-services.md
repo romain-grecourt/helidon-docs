@@ -3,7 +3,7 @@
 This guide shows how reuse Helidon SE Service in your Helidon MP
 application.
 
-# What You Need
+## What You Need
 
 For this 10 minute tutorial, you will need the following:
 

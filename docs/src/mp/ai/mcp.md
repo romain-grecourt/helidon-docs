@@ -35,7 +35,7 @@ To get started:
 3.  Explore how to expose your Helidon resources as MCP tools, prompts,
     and data sources.
 
-# MCP Client
+## MCP Client
 
 Helidon includes support for an MCP client through its [integration with LangChain4j](../../se/ai/langchain4j/langchain4j.md#mcp-client).
 With this integration, you can set up the MCP client using Helidon

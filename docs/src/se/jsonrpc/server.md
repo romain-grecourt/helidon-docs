@@ -1,6 +1,6 @@
 # JSON RPC Server
 
-# Overview
+## Overview
 
 The Helidon WebServer provides a framework for creating [JSON-RPC
 2.0](https://www.jsonrpc.org/specification) applications. The JSON-RPC
@@ -8,7 +8,7 @@ protocol is a stateless and lightweight protocol based on JSON that runs
 on top of HTTP/1.1. It offers the ability to invoke remote methods
 passing parameters and getting results as JSON values.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable WebServer/JSON-RPC, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -20,7 +20,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Service Implementation
 
@@ -115,13 +115,13 @@ public record StartStopResult(String status) {
 > JSON-B implementation (Eclipse Yasson in our example) to have access
 > to them.
 
-# Configuration
+## Configuration
 
 At the time of writing, there is no configuration that is specific to
 the JSON-RPC feature other than what is already provided by the
 WebServer itself.
 
-# Examples
+## Examples
 
 The code snippets in this document are part of the JSON-RPC example
 available here:

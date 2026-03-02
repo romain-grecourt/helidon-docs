@@ -3,7 +3,7 @@
 The Helidon SE DB Client provides a unified API for working with
 databases.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable DB Client, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -33,13 +33,13 @@ Or to use with MongoDB client add the following dependency:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The DB Client simplifies how you work with databases by abstracting the
 type of the database. The API can be used both for relational and
 non-relational databases.
 
-# API
+## API
 
 - Database configuration abstraction
 
@@ -64,7 +64,7 @@ non-relational databases.
 
   The API offers support for health checks, metrics and tracing.
 
-# Configuration
+## Configuration
 
 Before you begin you must add the DB Client dependencies and configure
 the client.
@@ -122,7 +122,7 @@ db:
 
 - A ping statement used by health check
 
-# Using DB Client API Methods
+## Using DB Client API Methods
 
 The Helidon DB Client API contains many methods to run various
 statements with parameters and to retrieve statement execution results.
@@ -296,7 +296,7 @@ Execution of a query statement will always return `Stream<DbRow>>`.
 
 - Use `.toList()` on the stream to collect all rows
 
-# Additional Information
+## Additional Information
 
 Now that you understand how to build and execute statements, try it for
 yourself. [DB Client Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/dbclient).

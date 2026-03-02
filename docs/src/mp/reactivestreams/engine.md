@@ -4,7 +4,7 @@ Helidon has its own set of reactive operators that have no dependencies
 outside the Helidon ecosystem. These operators can be used with
 `java.util.concurrent.Flow` based reactive streams.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Reactive Engine, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -16,7 +16,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The stream processing operator chain can be easily constructed by
 `io.helidon.common.reactive.Multi`, or

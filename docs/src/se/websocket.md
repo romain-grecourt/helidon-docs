@@ -19,7 +19,7 @@ Helidon SE support is based on the `WebSocketRouting` class which
 enables Helidon application to configure routing for both annotated and
 programmatic WebSocket endpoints.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable WebSocket, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -31,7 +31,7 @@ To enable WebSocket, add the following dependency to your project’s
 </dependency>
 ```
 
-# Example
+## Example
 
 This section describes the implementation of a simple application that
 uses a REST resource to push messages into a shared queue and a
@@ -103,6 +103,6 @@ void snippet() {
 This code snippet registers `MessageBoardEndpoint` at `/websocket/board`
 and associates.
 
-# Reference
+## Reference
 
 - [Helidon WebSocket Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.websocket/module-summary.html)

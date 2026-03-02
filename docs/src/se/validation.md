@@ -13,7 +13,7 @@ There are two ways to use validation features in Helidon SE:
 The feature fit with our [Helidon Declarative](injection/declarative.md#validation),
 which is a preview feature.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Validation, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -36,7 +36,7 @@ To enable Validation, add the following dependency to your project’s
 - WebServer integration with validation, to provide correct HTTP status
   on validation failures
 
-# Usage
+## Usage
 
 ## Validated type
 

@@ -3,7 +3,7 @@
 In Helidon 4.x we have made some changes to APIs and runtime behavior.
 This guide will help you upgrade a Helidon MP 3.x application to 4.x.
 
-# Java 21 Runtime
+## Java 21 Runtime
 
 Java 17 is no longer supported in Helidon 4. Java 21 or newer is
 required (Java 25 or newer recommended). Please follow the instructions
@@ -15,7 +15,7 @@ Helidon 4 no longer uses Netty. Helidon MP is now running on Helidon
 WebServer which is based on virtual threads technology, available in
 Java 21.
 
-# MicroProfile 6.0 support
+## MicroProfile 6.0 support
 
 MicroProfile 6.0 enables MicroProfile APIs to be used together with
 Jakarta EE 10 Core Profile.
@@ -149,7 +149,7 @@ update it and add the following dependency:
 </dependency>
 ```
 
-# Conclusion
+## Conclusion
 
 Please proceed to [Helidon MP Introduction](../README.md) to find
 more information and documentation about each module.

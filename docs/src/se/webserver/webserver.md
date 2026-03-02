@@ -1,11 +1,11 @@
 # About WebServer
 
-# Overview
+## Overview
 
 WebServer provides an API for creating HTTP servers. It uses virtual
 threads and can handle nearly unlimited concurrent requests.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable WebServer, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -17,7 +17,7 @@ To enable WebServer, add the following dependency to your project’s
 </dependency>
 ```
 
-# Configuration
+## Configuration
 
 You can configure the WebServer either programmatically or by the
 Helidon configuration framework.
@@ -499,7 +499,7 @@ operations.</p></td>
 </tbody>
 </table>
 
-# Routing
+## Routing
 
 Routing lets you use request matching criteria to bind requests to a
 `handler` that implements your custom business logic. Matching criteria
@@ -671,7 +671,7 @@ Each service has access to the routing builder. HTTP Features are
 configured for each routing builder. If there is a need to configure a
 feature for multiple sockets, you can use [Server Feature](#server_features) instead.
 
-# Request Handling
+## Request Handling
 
 Implement the logic to handle requests to WebServer in a `Handler`,
 which is a `FunctionalInterface`. Handlers:
@@ -780,7 +780,7 @@ rules.get("/hello", (req, res) -> {
 
 - send the response
 
-# Protocol-Specific Routing
+## Protocol-Specific Routing
 
 Handling routes based on the protocol version is possible by registering
 specific routes on routing builder.
@@ -803,7 +803,7 @@ While `Http1Route` for Http/1 is always available with Helidon
 webserver, other routes like `Http2Route` for [HTTP/2](#http2_support)
 needs to be added as additional dependency.
 
-# Requested URI Discovery
+## Requested URI Discovery
 
 Proxies and reverse proxies between an HTTP client and your Helidon
 application mask important information (for example `Host` header,
@@ -926,7 +926,7 @@ See the
 [`UriInfo`](https://helidon.io/docs/v4/apidocs/io.helidon.common.uri/io/helidon/common/uri/UriInfo.html)
 Javadoc for more information.
 
-# Error Handling
+## Error Handling
 
 ## Error Routing
 
@@ -1263,7 +1263,7 @@ algorithm.</p></td>
 </tbody>
 </table>
 
-# Server Features
+## Server Features
 
 Server features provide additional functionality to the WebServer,
 through modification of the server configuration, listener
@@ -1319,7 +1319,7 @@ dependency to project’s `pom.xml`:
 Context feature can be configured, all options shown below are also
 available both in config, and programmatically when using builder.
 
-# ContextFeature (webserver.context) Configuration
+## ContextFeature (webserver.context) Configuration
 
 Type:
 [io.helidon.webserver.context.ContextFeature](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.context/io/helidon/webserver/context/ContextFeature.html)
@@ -1393,7 +1393,7 @@ server:
 All options shown below are also available programmatically when using
 builder.
 
-# AccessLogFeature (webserver.accesslog) Configuration
+## AccessLogFeature (webserver.accesslog) Configuration
 
 Type:
 [io.helidon.webserver.accesslog.AccessLogFeature](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.accesslog/io/helidon/webserver/accesslog/AccessLogFeature.html)
@@ -1519,9 +1519,9 @@ high: io.helidon.webserver.accesslog.AccessLogFeature.WEIGHT.</p></td>
 </tbody>
 </table>
 
-# Supported Technologies
+## Supported Technologies
 
-# HTTP/2 Support
+## HTTP/2 Support
 
 Helidon supports HTTP/2 upgrade from HTTP/1, HTTP/2 without prior
 knowledge, HTTP/2 with prior knowledge, and HTTP/2 with ALPN over TLS.
@@ -1540,7 +1540,7 @@ To enable HTTP/2 support add the following dependency to your project’s
 </dependency>
 ```
 
-# Static Content Support
+## Static Content Support
 
 Static content is served through a `StaticContentFeature`. As with other
 server features, it can be configured through config, or registered with
@@ -1614,7 +1614,7 @@ server:
 See [Static Content Feature Configuration Reference](../../config/io_helidon_webserver_staticcontent_StaticContentFeature.md)
 for details of configuration options.
 
-# Media types support
+## Media types support
 
 WebServer and WebClient share the HTTP media support of Helidon, and any
 supported media type can be used in both. The media type support is
@@ -2017,7 +2017,7 @@ Response body:
 {"name":"Joe"}
 ```
 
-# HTTP Content Encoding
+## HTTP Content Encoding
 
 HTTP encoding can improve bandwidth utilization and transfer speeds in
 certain scenarios. It requires a few extra CPU cycles for compressing
@@ -2078,7 +2078,7 @@ For example, if the request includes `Accept-Encoding: gzip, deflate`,
 and HTTP compression has been enabled as shown above, the response shall
 include the header `Content-Encoding: gzip` and a compressed payload.
 
-# Proxy Protocol Support
+## Proxy Protocol Support
 
 The [Proxy Protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
 provides a way to convey client information across reverse proxies or
@@ -2142,7 +2142,7 @@ and `X-Forwarded-Port`, respectively. In some cases, it is just simpler
 to inspect these headers instead of getting the complete
 `ProxyProtocolData` instance as shown above.
 
-# Additional Information
+## Additional Information
 
 Here is the code for a minimalist web application that runs on a random
 free port:
@@ -2166,7 +2166,7 @@ public static void main(String[] args) {
 
 - The server is bound to a random free port.
 
-# Reference
+## Reference
 
 - [Helidon WebServer Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver/module-summary.html)
 - [Helidon WebServer Static Content Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.staticcontent/module-summary.html)

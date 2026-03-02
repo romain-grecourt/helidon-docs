@@ -28,7 +28,7 @@ Metrics is one of the Helidon observability features.
 > specification. See the [longer discussion below](#controlling-the-metric-type-for-gctime)
 > in the Configuration section.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable metrics, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -43,7 +43,7 @@ To enable metrics, add the following dependency to your project’s
 Adding this dependency packages the full-featured metrics implementation
 with your service.
 
-# Usage
+## Usage
 
 ## Instrumenting Your Service
 
@@ -434,7 +434,7 @@ timer’s data as follows:
 To enable the JSON output behavior from Helidon 3, specify
 `json-units-default` as `NANOSECONDS`.
 
-# API
+## API
 
 The [MicroProfile Metrics API](https://download.eclipse.org/microprofile/microprofile-metrics-5.1.1/apidocs/org/eclipse/microprofile/metrics/package-summary.html)
 prescribes all the standard interfaces related to metrics. This section
@@ -567,7 +567,7 @@ itself using configuration. One way to accomplish this is to deal with
 metrics in a method that observes the Helidon `RuntimeStart` CDI event,
 which the [extension example below](#working-with-metrics-in-cdi-extensions-1) illustrates.
 
-# Configuration
+## Configuration
 
 To control how the Helidon metrics subsystem behaves, add a `metrics`
 section to your `META-INF/microprofile-config.properties` file.
@@ -776,7 +776,7 @@ The ability to choose the metric type for `gc.time` is deprecated and is
 planned for removal in a future major release of Helidon at which time
 Helidon will always use a gauge.
 
-# Examples
+## Examples
 
 Helidon MP includes a pre-written example application illustrating
 [enabling/disabling
@@ -1322,7 +1322,7 @@ metrics.rest-request.enabled=true
 Helidon automatically registers and updates `Timer` metrics for every
 REST endpoint in your service.
 
-# Additional Information
+## Additional Information
 
 ## Integration with Kubernetes and Prometheus
 

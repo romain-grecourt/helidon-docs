@@ -4,7 +4,7 @@ Scheduling is an essential feature for the Enterprise. Helidon has its
 own implementation of Scheduling functionality based on
 [Cron-utils](https://github.com/jmrozanec/cron-utils).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Scheduling, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -16,7 +16,7 @@ To enable Scheduling, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 For scheduling periodic tasks, it is possible to choose a fixed rate or
 a Cron expression.
@@ -256,7 +256,7 @@ void snippet() {
 }
 ```
 
-# Task Management
+## Task Management
 
 A `io.helidon.scheduling.TaskManager` can be used to manage tasks that
 are started within Helidon. When using imperative programming model, you
@@ -272,7 +272,7 @@ When using declarative programming model, the `TaskManager` can be
 injected. It is a `Singleton` service that will be used by all scheduled
 tasks in the current application.
 
-# Examples
+## Examples
 
 ## Fixed Rate Example
 
@@ -303,7 +303,7 @@ void snippet() {
 }
 ```
 
-# Reference
+## Reference
 
 - [Cron-utils GitHub page](https://github.com/jmrozanec/cron-utils)
 - [Helidon Scheduling Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.scheduling/io/helidon/microprofile/scheduling/package-summary.html)

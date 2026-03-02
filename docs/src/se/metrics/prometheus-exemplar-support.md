@@ -1,6 +1,6 @@
 # Prometheus Exemplars
 
-# Overview
+## Overview
 
 A meter typically reflects the usage of a *single* point in your service
 which processes *multiple* requests over time. A value such as the total
@@ -32,7 +32,7 @@ implementation supports exemplars as recorded by Micrometer’s Prometheus
 meter registry and exposed by the OpenMetrics output (media type
 `application/openmetrics-text`).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable OpenMetrics exemplar support, add the following dependency to
 your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -113,7 +113,7 @@ For OpenTracing:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Once you add the appropriate dependencies to your project, exemplar
 support runs automatically as part of the Helidon metrics implementation
@@ -150,7 +150,7 @@ But some consumers, such as trace collectors and their UIs, understand
 the exemplar format, and they allow you to browse meters and then
 navigate directly to the trace for the meter’s exemplar.
 
-# Examples
+## Examples
 
 Helidon includes an [example application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/metrics/exemplar),
 based on the QuickStart application, which illustrates exemplar support.
@@ -171,6 +171,6 @@ amount by which the counter was updated (`1.0`), and the timestamp
 recording when the update occurred expressed as seconds in the UNIX
 epoch (`1696889651.779`).
 
-# Additional Information
+## Additional Information
 
 Brief discussion of [exemplars in the OpenMetrics spec](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars)

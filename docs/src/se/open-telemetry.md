@@ -50,7 +50,7 @@ OpenTelemetry API, and this documentation all follow this hierarchy:
 This document describes how to configure each level in the hierarchy and
 covers general topics related to Helidon’s support of OpenTelemetry.
 
-# API
+## API
 
 There are *two* APIs that might be useful to developers working with
 OpenTelemetry:
@@ -135,7 +135,7 @@ effects:
 - Creates a Helidon `Tracer` using the OpenTelemetry instance and makes
   that the Helidon global `Tracer`.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable various aspects of OpenTelemetry Support add one or more of
 the following dependencies to your project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -214,7 +214,7 @@ artifacts. For example, OpenTelemetry packages various span exporters
 individually. (See [this OpenTelemetry page](https://github.com/open-telemetry/opentelemetry-java/tree/v1.29.0/exporters)
 on span exporters in particular.)
 
-# Configuration
+## Configuration
 
 You can control almost all of OpenTelemetry’s overall and tracing
 runtime behavior using Helidon configuration settings. Helidon
@@ -951,7 +951,7 @@ there.
 
 OpenTelemetry defaults for span limits
 
-# Additional Information
+## Additional Information
 
 ## Helidon Documentation
 

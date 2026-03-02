@@ -6,7 +6,7 @@ to include them and use them in your project. In each case you need to
 add module dependencies to your project and, in some cases, write your
 application accordingly.
 
-# Additional Config Formats and Parsers
+## Additional Config Formats and Parsers
 
 ## Automatic Media Type and File Type Handling
 
@@ -182,7 +182,7 @@ You can also specify
 [`ConfigResolveOptions`](https://github.com/lightbend/config/blob/master/config/src/main/java/com/typesafe/config/ConfigResolveOptions.java)
 using the `HoconConfigParser.builder().resolveOptions` method.
 
-# Additional Config Source Types
+## Additional Config Source Types
 
 ## Etcd
 

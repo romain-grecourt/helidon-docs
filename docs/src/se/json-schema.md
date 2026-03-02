@@ -21,7 +21,7 @@ Helidon provides two complementary ways to work with JSON Schema.
 
 Helidon currently supports only schema generation.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable JSON Schema, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -33,7 +33,7 @@ To enable JSON Schema, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Imperative Schema Creation
 

@@ -1,6 +1,6 @@
 # Metrics Micrometer Support
 
-# Overview
+## Overview
 
 > [!NOTE]
 > Micrometer integration is deprecated beginning in Helidon 4.1 and is
@@ -25,7 +25,7 @@ application-specific metrics:
 In Helidon 4.4.0-SNAPSHOT, Micrometer support is separate from the
 Helidon SE metrics API and the built-in Helidon metrics.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable {feature-name}, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -44,7 +44,7 @@ you will need to add dependencies for them to your `pom.xml` and,
 optionally, add code to your application or add configuration to set
 them up as you wish.
 
-# Usage
+## Usage
 
 Your application registers and updates Micrometer meters using
 annotations or direct use of the Micrometer API.
@@ -74,7 +74,7 @@ registries beyond what Helidon automatically provides, *and* you want
 those meter registries reflected in the output from the `/micrometer`
 REST endpoint.
 
-# API
+## API
 
 ## The Helidon Micrometer API
 
@@ -89,7 +89,7 @@ interface exposes static methods to directly create an instance of
 [`Builder`](https://javadoc.io/doc/io.micrometer/io/helidon/integrations/micrometer/MicrometerSupport.Builder.html)
 instance so your code can fine-tune how the REST service behaves.
 
-# Configuration
+## Configuration
 
 You can configure the Helidon Micrometer REST service as you can other
 built-in Helidon services by adding configuration settings under the
@@ -123,7 +123,7 @@ micrometer:
   web-context: my-micrometer
 ```
 
-# Examples
+## Examples
 
 Helidon SE includes an [example application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/micrometer/se)
 which uses Micrometer support.
@@ -316,7 +316,7 @@ metrics output from its meter registry and set and send the response.
 Note that the `Handler` which your function returns typically has a
 reference to the meter registry it will use in preparing the response.
 
-# Additional Information
+## Additional Information
 
 The [Micrometer website](https://micrometer.io) describes the project as
 a whole and has links to more information.

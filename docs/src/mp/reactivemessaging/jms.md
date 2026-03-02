@@ -2,7 +2,7 @@
 
 Connecting streams to JMS with Reactive Messaging couldn’t be easier.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable JMS Connector, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -14,7 +14,7 @@ To enable JMS Connector, add the following dependency to your project’s
 </dependency>
 ```
 
-# Configuration
+## Configuration
 
 Connector name: `helidon-jms`
 
@@ -112,7 +112,7 @@ mp:
       type: queue
 ```
 
-# Usage
+## Usage
 
 ## Consuming
 

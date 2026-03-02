@@ -4,7 +4,7 @@ This guide describes how to create a sample Helidon MicroProfile (MP)
 project that can be used to run some basic examples using both built-in
 and custom metrics with Helidon.
 
-# What You Need
+## What You Need
 
 For this 30 minute tutorial, you will need the following:
 

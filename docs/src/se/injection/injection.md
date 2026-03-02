@@ -1,6 +1,6 @@
 # Injection 
 
-# Overview
+## Overview
 
 Injection is the basic building stone for inversion of control.
 Dependency injection provides a mechanism to get an instance of a
@@ -11,7 +11,7 @@ service instances through a constructor or a factory method.
 > Injection is a preview feature. The APIs shown here are subject to
 > change. These APIs will be finalized in a future release of Helidon.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Injection, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -23,7 +23,7 @@ To enable Injection, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 To start using Helidon Inject, you need to create both:
 
@@ -33,7 +33,7 @@ To start using Helidon Inject, you need to create both:
 
 Let’s begin by explaining some basic terms.
 
-# Basic terms
+## Basic terms
 
 ## Dependency Injection
 
@@ -119,7 +119,7 @@ Contract and service can be the same thing, but also separate entities.
 It all depends on the design of your application and which approach you
 choose.
 
-# How are services defined
+## How are services defined
 
 Services are defined by:
 
@@ -138,7 +138,7 @@ service registry.
 
 Now, let’s talk about an injection points.
 
-# Injection points
+## Injection points
 
 In Helidon, dependency injection can be done into the injection point in
 the following ways:
@@ -188,7 +188,7 @@ required behavior:
   all instances MUST be created when the service instance is created
   (during construction).
 
-# Scopes
+## Scopes
 
 There are three built-in scopes:
 
@@ -206,7 +206,7 @@ There are three built-in scopes:
   but aligns with concepts like an HTTP request-response cycle or
   message consumption in a messaging system.
 
-# Build time
+## Build time
 
 Helidon injection is a compile-time based injection. This provides a
 significant performance boost since it eliminates the need for
@@ -256,7 +256,7 @@ service. This descriptor is discovered at runtime and is used to
 instantiate the service without relying on reflection, improving
 performance and reducing overhead during service creation.
 
-# Basic injection example
+## Basic injection example
 
 To demonstrate how injection works, let’s create a simple working
 example where one service is injected into another.
@@ -316,7 +316,7 @@ to compile correctly with injection is included. See [Build time](#build_time).
 If everything went as expected, no problems occurred and a Service
 registry gave us fully initialized and ready to use service.
 
-# Service Lifecycle
+## Service Lifecycle
 
 The service registry manages the lifecycle of services. To ensure a
 method is invoked at a specific lifecycle phase, you can use the
@@ -338,7 +338,7 @@ following annotations:
     is deactivated (e.g. for singletons this happens during registry or
     JVM shutdown).
 
-# Qualifiers
+## Qualifiers
 
 In dependency injection, a qualifier is a way to tell the framework
 which dependency to use when there are multiple options available.
@@ -524,7 +524,7 @@ record GreenCircle(@Green Color color) {
 }
 ```
 
-# Factories
+## Factories
 
 Let’s consider we have a contract named `MyContract`.
 
@@ -711,7 +711,7 @@ class LoggerFactory implements Service.InjectionPointFactory<System.Logger> {
 }
 ```
 
-# Interceptors
+## Interceptors
 
 Interception allows adding behavior to constructors, methods, and
 injected fields without the need to explicitly code the required
@@ -935,7 +935,7 @@ class SomeExternalClassProvider implements Supplier<SomeExternalClass> {
 }
 ```
 
-# Events
+## Events
 
 Events enable in-application communication between services by providing
 a mechanism to emit events and register consumers to handle them.
@@ -1036,7 +1036,7 @@ class MyEventObserver {
 }
 ```
 
-# Qualified Events
+## Qualified Events
 
 A Qualified Event is only delivered to Event Observers that use the same
 qualifier.
@@ -1089,7 +1089,7 @@ class MyBlueObserver {
 }
 ```
 
-# Asynchronous Events
+## Asynchronous Events
 
 Events can be emitted asynchronously, and event observers can also
 operate asynchronously.
@@ -1152,7 +1152,7 @@ class MyEventAsyncObserver {
 }
 ```
 
-# Programmatic Lookup
+## Programmatic Lookup
 
 If you want to use programmatic lookup, there are several ways how to
 get a
@@ -1248,7 +1248,7 @@ var registryManager = ServiceRegistryManager.create();
 registryManager.shutdown();
 ```
 
-# Startup
+## Startup
 
 Helidon provides a Maven plugin
 (`io.helidon.service:helidon-service-maven-plugin`, goal

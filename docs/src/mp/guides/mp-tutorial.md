@@ -4,7 +4,7 @@ This tutorial describes how to build a Helidon MicroProfile (MP)
 application from scratch including JSON REST endpoints, metrics, health
 check, and configuration.
 
-# What You Need
+## What You Need
 
 For this 30 minute tutorial, you will need the following:
 
@@ -34,7 +34,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Create the Maven Project
+## Create the Maven Project
 
 This tutorial demonstrates how to create the application from scratch,
 without using the Maven archetypes as a quickstart.
@@ -146,7 +146,7 @@ This will create a JAR file in the `target` directory.
 > ignored for now because there is no actual content in the application
 > yet.
 
-# Start Implementing the MicroProfile Application
+## Start Implementing the MicroProfile Application
 
 The actual application logic can be created now. Create a directory for
 your source code, and then create directories for the package hierarchy:
@@ -255,7 +255,7 @@ the following content:
 - The `bean-discovery-mode` tells Helidon to look for the annotations to
   discover Java beans in the application.
 
-# Build the Application
+## Build the Application
 
 Helidon MP applications are packaged into a JAR file and the
 dependencies are copied into a `libs` directory.
@@ -292,7 +292,7 @@ In the output you can see the JSON output from the `getDefaultMessage()`
 method that was discussed earlier. The server has used a default port
 `7001`. The application can be stopped cleanly by pressing Ctrl+C.
 
-# Configuration
+## Configuration
 
 Helidon MP applications can use the
 `META-INF/microprofile-config.properties` file to specify configuration
@@ -414,7 +414,7 @@ the application, notice that it uses the changed value.
 > To learn more about Helidon MP configuration please see the
 > [Config](../config/introduction.md) section of the documentation.
 
-# Extending the Application
+## Extending the Application
 
 In this section, the application will be extended to add a PUT resource
 method which will allow users to update the greeting and a second GET
@@ -484,7 +484,7 @@ curl -X GET http://localhost:8080/greet/Jose
 Helidon MP provides many other features which can be added to the
 application.
 
-# Logging
+## Logging
 
 The application logging can be customized. The default logging provider
 is `java.util.logging`, however it is possible to use other providers.
@@ -535,7 +535,7 @@ http://localhost:8080/greet
 http://localhost:8080/greet
 ```
 
-# Metrics
+## Metrics
 
 Helidon provides built-in support for metrics endpoints.
 
@@ -625,7 +625,7 @@ curl -H "Accept: application/json" http://localhost:8080/metrics/application
 
 Learn more about using Helidon and MicroProfile metrics in the [Metrics Guide](metrics.md).
 
-# Health Check
+## Health Check
 
 Helidon provides built-in support for health check endpoints. Obtain the
 built-in health check using the following URL:
@@ -782,7 +782,7 @@ content-length: 536
 
 Learn more about health checks in the [Health Check Guide](health.md).
 
-# Build a Docker Image
+## Build a Docker Image
 
 To run the application in Docker (or Kubernetes), a `Dockerfile` is
 needed to build a Docker image. To build the Docker image, you need to
@@ -859,7 +859,7 @@ curl http://localhost:8080/health/ready
 {"outcome":"UP","status":"UP","checks":[]}
 ```
 
-# Deploy the application to Kubernetes
+## Deploy the application to Kubernetes
 
 If you don’t have access to a Kubernetes cluster, you can [install one on your desktop](../../about/kubernetes.md).
 
@@ -969,7 +969,7 @@ application from Kubernetes as follows:
 kubectl delete -f app.yaml
 ```
 
-# Summary
+## Summary
 
 This tutorial demonstrated how to build a new Helidon MP application,
 how to use Helidon and MicroProfile configuration, logging, metrics, and
@@ -980,7 +980,7 @@ There were several links to more detailed information included in the
 tutorial. These links are repeated below and can be explored to learn
 more details about Helidon application development.
 
-# Related links
+## Related links
 
 - [Eclipse MicroProfile](https://projects.eclipse.org/projects/technology.microprofile)
 - [Contexts and Dependency Injection Specification](https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html)

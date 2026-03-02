@@ -18,7 +18,7 @@ that affect availability and the ability to perform correctly:
 
 - Other Services (used by your application)
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Health Checks, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -39,7 +39,7 @@ Optional dependency to use built-in health checks:
 </dependency>
 ```
 
-# API
+## API
 
 ## Enabling Health Support (and Built-in Health Checks) in Your Application
 
@@ -561,7 +561,7 @@ kubectl get event --field-selector involvedObject.name=${POD_NAME}
 > `DOWN` status. This will allow you to correlate the cause of a failed
 > probe.
 
-# Configuration
+## Configuration
 
 Built-in health checks can be configured using the config property keys
 described in this [table](#built-in-health-checks-table).
@@ -571,7 +571,7 @@ configuration item `server.features.observe.observers.health.exclude` to
 a comma-separated list of the health check names you want to exclude.
 The same table lists the name names for the built-in health checks.
 
-# Examples
+## Examples
 
 ## JSON Response Example
 
@@ -734,6 +734,6 @@ spec:
 
 - The readiness probe configuration.
 
-# Additional Information
+## Additional Information
 
 - [Health Checks SE API Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.health.checks/module-summary.html).

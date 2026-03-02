@@ -7,7 +7,7 @@ bi-directional, client stream and server stream. A Helidon gRPC client
 can be configured either using generated stubs (the most popular option)
 or using manually crafted service descriptors.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable gRPC Client, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ To enable gRPC Client, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Generated Stubs
 
@@ -206,7 +206,7 @@ interceptors to execute on every invocation.
 Channel newChannel = grpcClient.channel(myInterceptors());
 ```
 
-# Metrics
+## Metrics
 
 Helidon supports a few metrics that are specific to gRPC clients and are
 based on those defined in [gRPC OpenTelemetry Metrics](https://grpc.io/docs/guides/opentelemetry-metrics/). Metrics
@@ -246,7 +246,7 @@ GrpcClient grpcClient = GrpcClient.builder()
 
 For more information see [Helidon Metrics](../../se/metrics/metrics.md).
 
-# Tracing
+## Tracing
 
 Tracing in the gRPC client is implemented as a so-called gRPC client
 service. To enable tracing support, you need to list tracing as an
@@ -283,7 +283,7 @@ GrpcClient grpcClient = GrpcClient.builder()
         .build();
 ```
 
-# Configuration
+## Configuration
 
 TLS can be configured externally, just like it is done when using the
 WebClient to access an HTTP endpoint. For more information, see

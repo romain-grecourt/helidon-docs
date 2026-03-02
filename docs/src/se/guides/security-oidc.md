@@ -3,7 +3,7 @@
 This guide describes how to set up Keycloak and Helidon to secure your
 application with OIDC security provider.
 
-# What You Need
+## What You Need
 
 For this 20 minute tutorial, you will need the following:
 
@@ -34,7 +34,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Introduction
+## Introduction
 
 This guide describes the steps required to protect your whole
 application or a specific area with Open ID Connect (OIDC) security.
@@ -42,7 +42,7 @@ OIDC is a secure mechanism for an application to contact an identity
 service. It’s built on top of OAuth 2.0 and provides full-fledged
 authentication and authorization protocols.
 
-# Keycloak Installation
+## Keycloak Installation
 
 ## On Docker
 
@@ -124,7 +124,7 @@ use the same credentials to log in.
 
 After successfully logged in, the admin console is prompted.
 
-# Setup Keycloak
+## Setup Keycloak
 
 To set up Keycloak properly, go to the admin console: http://localhost:8080/admin
 
@@ -245,7 +245,7 @@ tab.
 Keycloak is now configured and ready. Keep keycloak running on your
 terminal and open a new tab to set up Helidon.
 
-# Setup Helidon
+## Setup Helidon
 
 Use the Helidon SE Maven archetype to create a simple project. It will
 be used as an example to show how to set up Helidon. Replace
@@ -376,7 +376,7 @@ redirects browser after a successful login.
 
 Helidon sample is now setup and ready.
 
-# Build the Application
+## Build the Application
 
 Build the application, skipping unit tests, then run it:
 ```shell

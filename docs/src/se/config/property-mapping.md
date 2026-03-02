@@ -8,7 +8,7 @@ values, and to express parts of the config tree as complex types
 section introduces how to use the built-in mappings and your own custom
 ones to convert to simple and complex types.
 
-# Converting Configuration to Simple Types
+## Converting Configuration to Simple Types
 
 The [`Config`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.html)
 class itself provides many conversions to Java types. See the Javadoc
@@ -120,7 +120,7 @@ Your application can use `Config.as` to interpret the value as a
 BigDecimal initialId = config.get("bl.initial-id").as(BigDecimal.class);
 ```
 
-# Converting Configuration to `enum` Values
+## Converting Configuration to `enum` Values
 
 Configuration can automatically map `Config` nodes to most `enum` types.
 
@@ -230,7 +230,7 @@ to use that function instead of the built-in `enum` conversion when it
 converts values. A [later section](#customConfigAs) describes this
 technique which works for all types, not only `enum` types.
 
-# Converting Configuration to Complex Types
+## Converting Configuration to Complex Types
 
 The [hierarchical features](hierarchical-features.md) section describes
 the tree structure used to represent config data. The config system can
@@ -390,7 +390,7 @@ WebConfig web = config.get("web")
 Either of the two approaches just described will *always* work without
 requiring you to change the POJO class.
 
-# Advanced Conversions using Explicit Mapping Logic
+## Advanced Conversions using Explicit Mapping Logic
 
 If the target Java class you want to use meets certain conditions, or
 if you can change it to meet one of those conditions, you might not
@@ -488,7 +488,7 @@ system
 3.  invokes the builder’s `build()` method yielding the resulting
     `WebConfig` instance.
 
-# Conversions using JavaBean Deserialization
+## Conversions using JavaBean Deserialization
 
 The config system can also interpret your classes as JavaBeans and use
 the normal bean naming conventions to map configuration data to your

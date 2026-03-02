@@ -17,7 +17,7 @@ Discovery API, and packages a (normally Helidon-supplied) conformant
 Discovery implementation (a provider) with her application at deployment
 time. See [Providers](#providers) below.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon Discovery, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -38,7 +38,7 @@ providers*](#providers). Generally you will choose a single provider
 and include its relevant dependencies on your runtime classpath as well.
 See the [Providers](#providers) section for more details.
 
-# API Usage
+## API Usage
 
 To use Helidon Discovery, you acquire an
 [`io.helidon.discovery.Discovery`
@@ -194,7 +194,7 @@ URI uri = uris.getFirst().uri();
   is the most suitable one for use, and may or may not be equal to the
   supplied default value.
 
-# Providers
+## Providers
 
 The Discovery API is implemented at runtime by a *Discovery provider*.
 Helidon currently ships with a [Eureka Discovery provider](#eureka).
@@ -392,7 +392,7 @@ the (related) [Eureka Server Service Instance
 Registration](integrations/eureka/eureka-registration.md)
 feature.
 
-# Integrations
+## Integrations
 
 Helidon integrates a [Discovery provider](#providers) with other
 Helidon modules as described below.
@@ -489,7 +489,7 @@ webclient:
 - URIs that begin with text other than `https://example.com:443/` or
   `https://test.example.com:443/` will not be subject to discovery
 
-# References
+## References
 
 - [Discovery Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.discovery/module-summary.html)
 - [Eureka Discovery Provider Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.discovery.providers.eureka/module-summary.html)

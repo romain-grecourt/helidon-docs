@@ -1,6 +1,6 @@
 # Metrics
 
-# Overview
+## Overview
 
 Helidon SE metrics is a neutral metrics API which provides
 
@@ -32,7 +32,7 @@ aggregate statistical measurements about the service. The term "meter"
 refers to an entity which collects these measurements, such as a counter
 or a timer.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable metrics, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -87,7 +87,7 @@ Packaging the built-in meters:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Instrumenting Your Service
 
@@ -505,7 +505,7 @@ WebServer server = WebServer.builder()
         .start();
 ```
 
-# API
+## API
 
 To work with Helidon Metrics in your code, follow these steps:
 
@@ -586,7 +586,7 @@ interface declares the `unwrap` method which accepts a class parameter
 to which the delegate is cast. You can then invoke any method declared
 on the implementation-specific type.
 
-# Configuration
+## Configuration
 
 To control how the Helidon metrics subsystem behaves, add a `metrics`
 section to your configuration file, such as `application.yaml`.
@@ -795,7 +795,7 @@ The ability to choose the meter type for `gc.time` is deprecated and is
 planned for removal in a future major release of Helidon at which time
 Helidon will always use a gauge.
 
-# Examples
+## Examples
 
 Helidon SE includes several pre-written example applications
 illustrating aspects of metrics:
@@ -993,7 +993,7 @@ server:
               threshold-ms: 2000
 ```
 
-# Additional Information
+## Additional Information
 
 ## References
 

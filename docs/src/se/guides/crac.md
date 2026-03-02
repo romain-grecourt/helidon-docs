@@ -3,7 +3,7 @@
 This guide describes how to create a CRaC snapshot for a Helidon SE
 application.
 
-# Introduction
+## Introduction
 
 CRaC - Coordinated Restore at Checkpoint
 
@@ -11,7 +11,7 @@ CRaC - Coordinated Restore at Checkpoint
 > CRaC support is a preview feature. The feature shown here is subject
 > to change, and will be finalized in a future release of Helidon.
 
-# What You Need
+## What You Need
 
 For this 10 minute tutorial, you will need the following:
 
@@ -21,7 +21,7 @@ For this 10 minute tutorial, you will need the following:
 | [Maven 3.8+](https://maven.apache.org/download.cgi) | Helidon requires Maven 3.8+. |
 | [Azul Zulu JDK CRaC 21+](https://www.azul.com/downloads/?version=java-21-lts&package=jdk-crac#zulu) | Zulu Warp CRaC engine allows snapshotting without elevated privileges |
 
-# Install JDK with CRaC support
+## Install JDK with CRaC support
 
 There are two JDK builds with CRaC support as of now to choose from.
 
@@ -39,7 +39,7 @@ engine:
 sdk install java 23.0.1.crac-zulu
 ```
 
-# Generate the Project
+## Generate the Project
 
 Generate the project using the Helidon SE Quickstart Maven archetype.
 
@@ -117,7 +117,7 @@ The application should respond with `{"message":"Hello World!"}`
 For more information about the Quickstart application and other
 endpoints it supports see the [Helidon SE Quickstart Guide](../../se/guides/quickstart.md).
 
-# Creating snapshot
+## Creating snapshot
 
 In another shell trigger the snapshot creation with
 [jcmd](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jcmd.html)

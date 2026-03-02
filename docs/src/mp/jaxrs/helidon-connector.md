@@ -7,7 +7,7 @@ provides a connector that is based on its `WebClient` implementation and
 that has a few benefits, most notably, configuration using Config and
 support for HTTP/2.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon Connector, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
  </dependency>
 ```
 
-# API
+## API
 
 Enabling the Helidon connector is possible at creation time using
 Jersey’s `ClientConfig` instance as shown below:
@@ -34,7 +34,7 @@ Any subsequent requests using a `Client` instance configured this way
 will defer to the Helidon connector to handle the underlying HTTP
 connection.
 
-# Configuration
+## Configuration
 
 The Helidon connector implementation is based on WebClient. Even though
 WebClient can handle protocols other than HTTP (such as gRPC), only its
@@ -120,7 +120,7 @@ There are three ways to enable HTTP/2:
     request knowing *a priori* that the server is capable of handling
     it. This option always requires TLS.
 
-# Examples
+## Examples
 
 ## HTTP/2 Negotiation Without TLS
 
@@ -212,11 +212,11 @@ The property `HelidonProperties.PROTOCOL_CONFIGS` accepts a list of
 protocol configurations that are passed directly to the underlying
 `WebClient` layer.
 
-# Additional Information
+## Additional Information
 
 For additional information, see the [Jakarta REST Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
 
-# Reference
+## Reference
 
 - [Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)
 - [Jersey User Guide](https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest31x/index.html)

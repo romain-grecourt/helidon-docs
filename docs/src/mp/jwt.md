@@ -9,7 +9,7 @@ transmitting information between parties as a JSON object. With JWT Auth
 you can integrate security features such as single sign on into your
 Helidon MP applications.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable JWT Authentication, either add a dependency on the
 [helidon-microprofile bundle](about/microprofile.md)
@@ -24,7 +24,7 @@ or add the following dependency to your project’s `pom.md` (see
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The main configuration point for JWT Auth is a JAX-RS Application class.
 As this class is discovered using CDI, it must have a bean defining
@@ -41,7 +41,7 @@ public class ProtectedApplication extends Application {
 }
 ```
 
-# API
+## API
 
 The following interfaces and annotations are used to work with JWT in
 Helidon MP:
@@ -57,7 +57,7 @@ Helidon MP:
 - `ClaimValue` - a proxy interface used with `@Claim` annotation to
   obtain the value of a claim by calling `getValue()`.
 
-# Configuration
+## Configuration
 
 MP-JWT Auth configuration is defined by the spec (options prefixed with
 `mp.jwt.`), and we add a few configuration options for the security
@@ -280,7 +280,7 @@ mp.jwt.verify.issuer=https://{PublicIssuerDomain}/oauth2/default
 mp.jwt.verify.publickey.location=${mp.jwt.verify.issuer}/v1/keys
 ```
 
-# Examples
+## Examples
 
 ```java
 
@@ -343,12 +343,12 @@ Hello, secure@helidon.io!
 
 Which means that the request successfully passed authentication.
 
-# Additional Information
+## Additional Information
 
 Learn more about JWT authentication at:
 [Eclipse MicroProfile Interoperable JWT RBAC](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.1#_introduction)
 
-# Reference
+## Reference
 
 - [MicroProfile JWT Auth Spec](https://download.eclipse.org/microprofile/microprofile-jwt-auth-2.1/microprofile-jwt-auth-spec-2.1.html)
 - [MicroProfile JWT Auth GitHub Repository](https://github.com/eclipse/microprofile-jwt-auth)

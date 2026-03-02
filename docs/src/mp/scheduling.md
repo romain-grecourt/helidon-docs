@@ -4,7 +4,7 @@ Scheduling is an essential feature for the Enterprise. Helidon has its
 own implementation of Scheduling functionality based on
 [Cron-utils](https://github.com/jmrozanec/cron-utils).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Scheduling, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -16,7 +16,7 @@ To enable Scheduling, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 For scheduling tasks in Helidon you can choose from `@Scheduling.Cron`
 or `@Scheduling.FixedRate` annotations by required complexity of
@@ -108,7 +108,7 @@ public void methodName(CronInvocation inv) {
 }
 ```
 
-# Configuration
+## Configuration
 
 `Scheduled` annotation properties can be overridden using
 `application.yaml` properties
@@ -128,7 +128,7 @@ fully.qualified.ClassName.methodName:
 
 Configuration properties
 
-# Examples
+## Examples
 
 ## Fixed rate
 
@@ -170,7 +170,7 @@ public void methodName(CronInvocation inv) {
 }
 ```
 
-# Reference
+## Reference
 
 - [Cron-utils GitHub page](https://github.com/jmrozanec/cron-utils)
 - [Helidon Scheduling Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.scheduling/io/helidon/microprofile/scheduling/package-summary.html)

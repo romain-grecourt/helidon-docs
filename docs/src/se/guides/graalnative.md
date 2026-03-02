@@ -3,7 +3,7 @@
 This guide describes how to build a GraalVM native image for a Helidon
 SE application.
 
-# Introduction
+## Introduction
 
 [Native images](https://www.graalvm.org/jdk21/reference-manual/native-image/)
 are ahead-of-time compiled Java code that result in a self contained
@@ -14,7 +14,7 @@ to a Java VM.
 In this guide you will learn how to build a native image locally on your
 machine, as well as using Docker.
 
-# What You Need
+## What You Need
 
 For this 10 minute tutorial, you will need the following:
 
@@ -44,7 +44,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Install GraalVM and the Native Image Command
+## Install GraalVM and the Native Image Command
 
 After [downloading and installing](https://www.graalvm.org/jdk21//docs/getting-started/)
 GraalVM, set the `GRAALVM_HOME` environment variable to point at your
@@ -62,7 +62,7 @@ $GRAALVM_HOME/bin/java -version
 $GRAALVM_HOME/bin/native-image --version
 ```
 
-# Generate the Project
+## Generate the Project
 
 Generate the project using the Helidon SE Quickstart Maven archetype.
 
@@ -103,7 +103,7 @@ Now stop the running application (by pressing Ctrl+C).
 For more information about the Quickstart application and other
 endpoints it supports see the [Helidon SE Quickstart Guide](../../se/guides/quickstart.md).
 
-# Building a Native Image
+## Building a Native Image
 
 You can build a native executable in 2 different ways:
 
@@ -165,7 +165,7 @@ docker run --rm -p 8080:8080 helidon-quickstart-se-native:latest
 Again, it starts fast. You can exercise the application’s endpoints as
 before.
 
-# When should I use Native Images?
+## When should I use Native Images?
 
 Native images are ideal for applications with high horizontal
 scalability requirements where the ability to rapidly scale out to

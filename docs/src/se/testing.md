@@ -2,7 +2,7 @@
 
 Helidon provides built-in test support for Helidon testing with JUnit 5.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon Testing Framework, add the following dependency to
 your project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -15,14 +15,14 @@ your project’s `pom.xml` (see [Managing Dependencies](../about/managing-depend
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Helidon provides a rich set of extensions based on JUnit 5 for Helidon
 WebServer testing. Testing can be done with automatic server start-up,
 configuration, and shutdown. Testing can also be done without full
 server start-up with `DirectClient` when no real sockets are created.
 
-# API
+## API
 
 There are two main annotations that you can use to test Helidon
 WebServer.
@@ -97,7 +97,7 @@ Injectable types.
 Extensions can enhance the features for the module
 `helidon-testing-junit5-webserver` to support additional protocols.
 
-# Examples
+## Examples
 
 You can create the following test to validate that the server returns
 the correct response:
@@ -206,7 +206,7 @@ inject the DirectClient client, which can then be used in unit tests.
 Routing is configured the same way as in full server testing using the
 `@SetUpRoute` annotation.
 
-# Virtual Threads
+## Virtual Threads
 
 Helidon tests are able to detect Virtual Threads pinning. A situation
 when carrier thread is blocked in a way, that virtual thread scheduler
@@ -237,7 +237,7 @@ class MyTest {
 When pinning is detected, test fails with stacktrace pointing to the
 line of code causing it.
 
-# Additional Information
+## Additional Information
 
 ## WebSocket Testing
 
@@ -342,6 +342,6 @@ The testing class should be annotated with `@RoutingTest` only if
 routing tests are required without real port opening. Instead of
 `WsClient`, use `DirectWsClient`.
 
-# Reference
+## Reference
 
 - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)

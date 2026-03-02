@@ -34,7 +34,7 @@ API from whichever of these sources are present in the application:
   The SPI defines an interface you can implement in your application
   which can mask parts of the model.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile OpenAPI, either add a dependency on the
 [helidon-microprofile
@@ -61,7 +61,7 @@ so you can use them in your code:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## OpenAPI support in Helidon MP
 
@@ -178,7 +178,7 @@ JSON. Alternatively, the client can pass the query parameter `format` as
 either `JSON` or `YAML` to receive `application/json` or
 `application/vnd.oai.openapi` (YAML) output, respectively.
 
-# API
+## API
 
 The [MicroProfile OpenAPI specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)
 gives a listing and brief examples of the annotations you can add to
@@ -188,7 +188,7 @@ The [MicroProfile OpenAPI Javadocs](https://download.eclipse.org/microprofile/mi
 give full details of the annotations and the other classes and
 interfaces you can use in your code.
 
-# Configuration
+## Configuration
 
 Helidon OpenAPI configuration supports the following settings:
 
@@ -293,7 +293,7 @@ io.helidon.openapi.OpenApiFeature.WEIGHT.</p></td>
 Further, Helidon OpenAPI supports the MicroProfile OpenAPI settings
 described in [the MicroProfile OpenAPI specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html#_configuration).
 
-# Examples
+## Examples
 
 Helidon MP includes a [complete OpenAPI example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
 based on the MP quick-start sample app. The rest of this section shows,
@@ -456,7 +456,7 @@ also one contributed by the `SimpleAPIModelReader`.
 
 Full example is available [in our official repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/openapi)
 
-# Additional Information
+## Additional Information
 
 ## Building the Jandex index
 
@@ -551,7 +551,7 @@ for more information and a complete project that indexes a dependency.
 > the resulting OpenAPI model. This means your OpenAPI document contains
 > less information about the types in your API than it otherwise could.
 
-# Reference
+## Reference
 
 - [MicroProfile OpenAPI GitHub Repository](https://github.com/eclipse/microprofile-open-api)
 - [MicroProfile OpenAPI Specification](https://download.eclipse.org/microprofile/microprofile-open-api-3.1.1/microprofile-openapi-spec-3.1.1.html)

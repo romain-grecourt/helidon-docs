@@ -11,7 +11,7 @@ Validation
 specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)
 which defines an API to validate Java beans.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Bean Validation, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -32,7 +32,7 @@ For general validation, please add to your `pom.xml`:
 </dependency>
 ```
 
-# API
+## API
 
 The specification defines a small set of built-in constraints. Their
 usage is encouraged both in regular constraint declarations and as
@@ -388,14 +388,14 @@ are left to Jakarta Bean Validation providers. Accepts
 </tbody>
 </table>
 
-# Configuration
+## Configuration
 
 Bean Validation can be configured using `META-INF/validation.xml`.
 
 For more information about configuring the validator factory in
 validation.xml, see [Hibernate Validator Documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/?v=7.0#chapter-xml-configuration).
 
-# Examples
+## Examples
 
 1.  The following example shows a simple resource method annotated with
     `@POST` whose parameter must be *not null* and *valid*. Validating a
@@ -447,11 +447,11 @@ validation.xml, see [Hibernate Validator Documentation](https://docs.jboss.org/h
 
 Examples are available in [our official GitHub repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/bean-validation).
 
-# Additional Information
+## Additional Information
 
 Helidon uses [Hibernate Bean Validator](https://hibernate.org/validator/) for general bean
 validation.
 
-# Reference
+## Reference
 
 - [Bean Validation Specification](https://jakarta.ee/specifications/bean-validation/3.0/jakarta-bean-validation-spec-3.0.html)

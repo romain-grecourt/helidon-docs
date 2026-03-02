@@ -3,7 +3,7 @@
 This guide describes the basic process of deploying a Helidon MP
 application on Oracle Cloud Infrastructure (OCI).
 
-# Overview
+## Overview
 
 Oracle Cloud Infrastructure (OCI) is a set of complementary cloud
 services that enable you to build and run a range of applications and
@@ -32,7 +32,7 @@ consult the [Deploying a Helidon OCI MP Application on a Basic OCI Setup](https:
 lab in the Helidon Labs GitHub repository for the requirements of
 configuring and running the server service.
 
-# What You Need
+## What You Need
 
 For this tutorial, you will need the following:
 
@@ -62,7 +62,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Generating the Project
+## Generating the Project
 
 You can generate Helidon MP project files for OCI using the Helidon
 Project Starter.
@@ -178,7 +178,7 @@ The structure of the Helidon MP OCI Project:
     └── api.yaml
 ```
 
-# Running the Application Locally
+## Running the Application Locally
 
 Use the project to build an application jar for the example. It saves
 all runtime dependencies in the `/target/libs` directory, allowing you
@@ -215,7 +215,7 @@ curl -X GET http://localhost:8080/greet/Jose
 {"message":"Hola Jose!"}
 ```
 
-# Deploying a Helidon Application on OCI
+## Deploying a Helidon Application on OCI
 
 You can deploy a Helidon application to an Oracle Cloud Infrastructure
 (OCI) environment, using either OCI Compute or OCI Kubernetes Engine
@@ -329,7 +329,7 @@ with other components such as Oracle Kubernetes Engine (OKE).
 To learn how to enable OCI Logging integration, read the **Custom Logs
 Monitoring** section in `/server/README.md`.
 
-# Working with Other OCI Services
+## Working with Other OCI Services
 
 While the Helidon MP OCI Starter Project focuses on the OCI Monitoring
 and OCI Logging services, you can extend the project to use other OCI

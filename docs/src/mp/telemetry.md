@@ -1,6 +1,6 @@
 # Telemetry
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Telemetry, either add a dependency on the
 [helidon-microprofile
@@ -38,7 +38,7 @@ on multiple exporters and then use configuration to choose which to use
 in any given execution. See the [configuration](#configuration) section
 for more details.
 
-# Usage
+## Usage
 
 [OpenTelemetry](https://opentelemetry.io/) comprises a collection of
 APIs, SDKs, integration tools, and other software components intended to
@@ -426,7 +426,7 @@ public class CustomRestClientRequestFilterHelper implements HelidonTelemetryClie
 }
 ```
 
-# Configuration
+## Configuration
 
 > [!IMPORTANT]
 > MicroProfile Telemetry is not activated by default. To activate this
@@ -466,7 +466,7 @@ should be set:
 This way, Helidon will explicitly get all the configuration and objects
 from the Agent, thus allowing correct span hierarchy settings.
 
-# Examples
+## Examples
 
 This guide demonstrates how to incorporate MicroProfile Telemetry into
 Helidon and provides illustrations of how to view traces. Jaeger is
@@ -675,7 +675,7 @@ output (shown below).
 
 This example is available at the [Helidon official GitHub repository](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile/telemetry).
 
-# Reference
+## Reference
 
 - [MicroProfile Telemetry Specification](https://download.eclipse.org/microprofile/microprofile-telemetry-1.1/tracing/microprofile-telemetry-tracing-spec-1.1.pdf)
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/)

@@ -29,7 +29,7 @@ or the [JMS connector](../../mp/reactivemessaging/jms.md) After the
 download, the thin T3 client artefact needs to be installed in the Maven
 repository accessible from the application build.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable WebLogic JMS connector, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -41,7 +41,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Configuration
+## Configuration
 
 Connector name: `helidon-weblogic-jms`
 
@@ -118,7 +118,7 @@ jms-server-name/jms-module-name!jms-server-name@udd-name
 Destination for UDD doesn’t have `./` prefix, because distributed
 destinations can be served by multiple servers within a cluster.
 
-# Usage
+## Usage
 
 ## Consuming
 

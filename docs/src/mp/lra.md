@@ -7,7 +7,7 @@ more scalable. Every LRA JAX-RS resource ([participant](#participant))
 defines endpoints to be invoked when transaction needs to be *completed*
 or *compensated*.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Long Running Actions, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -26,7 +26,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 </dependencies>
 ```
 
-# Usage
+## Usage
 
 The LRA transactions need to be coordinated over REST API by the LRA
 coordinator. [Coordinator](#coordinator) keeps track of all
@@ -61,7 +61,7 @@ reported by the participants.
 <img src="../images/lra-compensate-lb-timeout.svg" alt="Timeout" />
 </figure>
 
-# API
+## API
 
 ## Participant
 
@@ -387,7 +387,7 @@ public void whenLRAFinishes(URI lraId, LRAStatus status) {
 }
 ```
 
-# Configuration
+## Configuration
 
 Type: `io.helidon.microprofile.lra`:
 
@@ -419,7 +419,7 @@ mp.lra:
 
 For more information continue to [MicroProfile Long Running Actions specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html).
 
-# Examples
+## Examples
 
 The following example shows how a simple LRA participant starts and
 joins a transaction after calling the '/start-example' resource. When
@@ -476,7 +476,7 @@ public Response compensateExample(@HeaderParam(LRA_HTTP_CONTEXT_HEADER) URI lraI
 
 - Method which will be called by coordinator when LRA is canceled
 
-# Testing
+## Testing
 
 Testing of JAX-RS resources with LRA can be challenging as LRA
 participant running in parallel with the test is needed.
@@ -634,7 +634,7 @@ public class LraNoDiscoveryTest {
 }
 ```
 
-# Additional Information
+## Additional Information
 
 ## Coordinator
 
@@ -757,7 +757,7 @@ context, with port `8070` defined in the snippet above you need to
 configure your Helidon LRA app as follows:
 `mp.lra.coordinator.url=http://localhost:8070/lra-coordinator`
 
-# Reference
+## Reference
 
 - [MicroProfile LRA GitHub Repository](https://github.com/eclipse/microprofile-lra)
 - [MicroProfile Long Running Actions specification](https://download.eclipse.org/microprofile/microprofile-lra-2.0/microprofile-lra-spec-2.0.html)

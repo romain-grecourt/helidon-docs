@@ -4,7 +4,7 @@ This guide describes how to create a sample Helidon SE project that can
 be used to run some basic examples using both built-in and custom health
 checks.
 
-# What You Need
+## What You Need
 
 For this 15 minute tutorial, you will need the following:
 

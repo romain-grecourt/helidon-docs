@@ -4,7 +4,7 @@ This guide describes how Helidon and Jakarta Batch (JBatch) can be used
 together to execute batch jobs in environments that do not fully support
 EE environments.
 
-# What You Need
+## What You Need
 
 For this 20 minute tutorial, you will need the following:
 
@@ -40,7 +40,7 @@ export JAVA_HOME=/usr/lib/jvm/jdk-21
 > specification](https://projects.eclipse.org/projects/ee4j.batch) from
 > the Eclipse Foundation project site.
 
-# Dependencies
+## Dependencies
 
 For this example, add the IBM JBatch implementation and the `derby`
 embedded DB (since JPA and JPA are not available by default)
@@ -60,7 +60,7 @@ Maven dependencies:
 </dependencies>
 ```
 
-# Add Sample Jobs
+## Add Sample Jobs
 
 In this demonstration you will first create sample input and output
 records and then the following jobs:
@@ -204,7 +204,7 @@ public class MyBatchlet extends AbstractBatchlet {
 }
 ```
 
-# Update the Descriptor File
+## Update the Descriptor File
 
 Add this code to your job descriptor.xml file:
 ```xml
@@ -236,7 +236,7 @@ Add this code to your job descriptor.xml file:
 > like “jobs.io.helidon.examples.jbatch.MyItemReader”, otherwise it will
 > not work.
 
-# Create an Endpoint
+## Create an Endpoint
 
 Create a small endpoint to activate the job:
 ```java
@@ -297,14 +297,14 @@ public class HelidonExecutorServiceProvider implements ExecutorServiceProvider {
 }
 ```
 
-# Run the Code
+## Run the Code
 
 ```shell
 mvn package
 java -jar target/helidon-jbatch-example.jar
 ```
 
-# Call the Endpoint
+## Call the Endpoint
 
 ```shell
 curl -X GET http://localhost:8080/batch
@@ -353,7 +353,7 @@ The results should look something like this:
 {"Steps executed":"[step1, step2]","Status":"COMPLETED"}
 ```
 
-# Summary
+## Summary
 
 This guide demonstrated how to use Helidon with JBatch even though
 Helidon is not a full EE container.

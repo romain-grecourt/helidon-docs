@@ -5,7 +5,7 @@ configuration for each environment in advance, and then simply switch
 between these structures using a system property or an environment
 variable.
 
-# Profile Options
+## Profile Options
 
 To choose a configuration profile to use at runtime, you can use:
 
@@ -24,7 +24,7 @@ Configuration profiles can only be used when config is created using the
 `Config.create()` method without parameters. If you explicitly configure
 sources, profiles are ignored.
 
-# Profile Config Sources
+## Profile Config Sources
 
 If a profile is specified, config will load the profile-specific default
 configuration source before the "main" source.
@@ -49,7 +49,7 @@ sources (in this order):
 
 8.  `application.properties` on classpath
 
-# Profile Files
+## Profile Files
 
 If a profile is specified, config will look for a profile-specific "meta
 configuration".
@@ -396,7 +396,7 @@ and
 [`PollingStrategy`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/spi/PollingStrategy.html)
 Javadoc sections.
 
-# Declarative
+## Declarative
 
 When using Helidon Declarative programming model (inversion of control,
 injection, annotation based), we may still be interested in the profile

@@ -3,21 +3,21 @@
 In Helidon 3 we have made some changes to APIs and runtime behavior.
 This guide will help you upgrade a Helidon SE 2.x application to 3.x.
 
-# Java 17 Runtime
+## Java 17 Runtime
 
 Java 11 is no longer supported in Helidon 3. Java 17 or newer is
 required. Please follow the instructions in
 [Prerequisites](../../about/prerequisites.md)
 for proper installation.
 
-# New Routing
+## New Routing
 
 Handling routes based on the protocol version is now possible by
 registering specific routes on routing builder.
 
 For further information check [WebServer Documentation](../webserver/webserver.md)
 
-# Http/2 Support
+## Http/2 Support
 
 Helidon support of Http/2 is no longer experimental.
 
@@ -62,7 +62,7 @@ server:
 
 For further information check [WebServer Documentation](../webserver/webserver.md)
 
-# WebSocket
+## WebSocket
 
 Helidon SE support is now based on the `WebSocketRouting` class which
 enables Helidon application to configure routing for both annotated and
@@ -124,7 +124,7 @@ void snippet()() {
 }
 ```
 
-# Deprecations
+## Deprecations
 
 - The custom Helidon OCI clients have been deprecated ([See PR](https://github.com/oracle/helidon/pull/4015)).
 

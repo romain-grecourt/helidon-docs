@@ -1,13 +1,13 @@
 # Performance Tuning
 
-# Introduction
+## Introduction
 
 In this guide you fill find basic advice for performance tuning of your
 Helidon application. Most of this concerns tuning Helidon WebServer, but
 you should also consider configuring/tuning Java heap size as per any
 Java application.
 
-# WebServer Tuning
+## WebServer Tuning
 
 Helidon WebServer is in large part self tuning. It uses default values
 that will satisfy most use cases, and with the adoption of Java virtual
@@ -20,7 +20,7 @@ For details on the following options please see:
 - [WebServer Configuration](../../se/webserver/webserver.md#configuration)
 - [WebServer Socket Configuration](../../config/io_helidon_common_socket_SocketOptions.md)
 
-# Summary of Tuning Options
+## Summary of Tuning Options
 
 The following `application.yaml` snippet shows some configuration
 options that can be used to tune your application. It is intended to
