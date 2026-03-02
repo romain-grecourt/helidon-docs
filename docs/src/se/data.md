@@ -10,7 +10,7 @@ translated into implementation classes at compile time.
 The Helidon Data Repository supports Jakarta Persistence and major
 providers such as EclipseLink and Hibernate.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Data Repository, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -47,7 +47,7 @@ driver, such as MySQL, are required at runtime:
 </dependency>
 ```
 
-# Annotation Processor
+## Annotation Processor
 
 Both the entity model and data repository interfaces require a specific
 annotation-processor configuration:
@@ -67,7 +67,7 @@ annotation-processor configuration:
 </annotationProcessorPaths>
 ```
 
-# Usage
+## Usage
 
 The Data Repository provides an API and tooling for implementing
 database queries through interface method prototypes.
@@ -87,7 +87,7 @@ Optional<Pet> findByName(String name);
 List<Pet> selectPetsByCategory(String categoryName);
 ```
 
-# Helidon Config
+## Helidon Config
 
 You must configure the data repository before using it.
 
@@ -135,7 +135,7 @@ data:
 `"example"`. This name is referenced in the corresponding
 `persistence-units` configuration node.
 
-# SE Application
+## SE Application
 
 The runtime initialization of the data repository is managed by the
 service registry. You can obtain repository interface instances using
@@ -145,7 +145,7 @@ the service registry API:
 private final KeeperRepository repository = Services.get(KeeperRepository.class);
 ```
 
-# Repository Interface
+## Repository Interface
 
 Data repository interfaces are annotated with `@Data.Repository` and
 extend the `Data.GenericRepository` interface.
@@ -454,7 +454,7 @@ Supported return types include:
 
 - `Page` or `Slice` with the query row type as the generic parameter
 
-# Pagination
+## Pagination
 
 Pagination allows the caller to split a returned data collection into
 individual pages. When pagination is used, the repository method must
@@ -475,7 +475,7 @@ An example repository method with pagination:
 Slice<Keeper> listAll(PageRequest pageRequest);
 ```
 
-# Dynamic Ordering
+## Dynamic Ordering
 
 The ordering part of the method name defines a static ordering rule that
 cannot be modified at runtime. Dynamic ordering allows the caller to
@@ -496,7 +496,7 @@ dynamic rules are added after them:
 List<Keeper> listByAgeBetweenOrderByAge(int min, int max, Sort sort);
 ```
 
-# Persistence Session Access
+## Persistence Session Access
 
 The caller can access the persistence provider session to implement more
 complex tasks that the framework does not support directly. This feature
@@ -546,7 +546,7 @@ public class PetService {
 > being executed. This instance must not be stored and used after this
 > method has ended.
 
-# Transactions
+## Transactions
 
 Transaction handling is available through Helidon Transaction API.
 

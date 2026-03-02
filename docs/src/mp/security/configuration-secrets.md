@@ -7,7 +7,7 @@ This example configures a basic authentication provider and protects
 static content on the web server. It also includes annotations in
 Jersey.
 
-# Protecting Configuration Secrets
+## Protecting Configuration Secrets
 
 In Helidon MP, the config encryption filter is **enabled by default**.
 However, if you don’t configure it, the filter only supports a template

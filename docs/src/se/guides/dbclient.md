@@ -4,7 +4,7 @@ This guide describes the features of Helidon’s DB Client and how to
 create a sample Helidon SE project that can be used to run some basic
 examples using the Helidon DB Client.
 
-# What You Need
+## What You Need
 
 For this 15 minute tutorial, you will need the following:
 
@@ -35,7 +35,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Introduction
+## Introduction
 
 The Helidon DB Client provides a unified API for working with databases.
 
@@ -56,7 +56,7 @@ The main features of Helidon DB Client are:
   switch to another database by changing the configuration files, not
   the code.
 
-# Getting Started with Helidon DB Client
+## Getting Started with Helidon DB Client
 
 This section describes how to configure and use the key features of the
 Helidon DB Client.
@@ -539,7 +539,7 @@ static void routing(HttpRouting.Builder routing) {
 The library service does not yet exist, but you’ll create it in the next
 step of the guide.
 
-# Build and Run the Library Application
+## Build and Run the Library Application
 
 The application is ready to be built and run.
 

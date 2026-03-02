@@ -59,7 +59,7 @@ following ways, depending on your specific requirements:
 
 The following sections briefly illustrate each approach.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable CORS, add the following dependency to your project’s `pom.xml`
 (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -81,7 +81,7 @@ your application also add the following dependency as well:
 </dependency>
 ```
 
-# API
+## API
 
 ## Using the Config-only Approach
 
@@ -217,7 +217,7 @@ request.
 By adding the few additional lines described above you allow the
 greeting application to participate in CORS.
 
-# Configuration
+## Configuration
 
 You can use configuration instead of or in combination with the Helidon
 CORS SE API to add CORS support to your resources by replacing some Java
@@ -403,11 +403,11 @@ established by the other `CrossOriginConfig` instance based on the
 > part of your application JAR file, then you need to rebuild and
 > restart your application for any changes to take effect.
 
-# Examples
+## Examples
 
 For a complete example, see [Helidon SE CORS Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/cors).
 
-# Additional Information
+## Additional Information
 
 ## CORS and the Requested URI Feature
 

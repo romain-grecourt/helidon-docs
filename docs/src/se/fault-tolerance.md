@@ -25,7 +25,7 @@ require explicit creation and management of threads or executors.
 
 For more information, see [Fault Tolerance API Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Fault Tolerance, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -37,7 +37,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 </dependency>
 ```
 
-# API
+## API
 
 The Fault Tolerance API is *blocking* and based on the JDK’s virtual
 thread model. As a result, methods return *direct* values instead of
@@ -274,7 +274,7 @@ executed once a value is returned).
 > implementation in Helidon when a method is decorated with multiple
 > annotations.
 
-# Metrics
+## Metrics
 
 The Helidon Fault Tolerance module has support for some basic metrics to
 monitor certain application conditions. Metrics are disabled by default,
@@ -348,10 +348,10 @@ Retry retry = Retry.builder()
 > are enabled globally, they **cannot** be disabled individually by
 > calling `enableMetrics(false)`.
 
-# Examples
+## Examples
 
 See [API](#api) section for examples.
 
-# Additional Information
+## Additional Information
 
 For additional information, see the [Fault Tolerance API Javadocs](https://helidon.io/docs/v4/apidocs/io.helidon.faulttolerance/module-summary.html).

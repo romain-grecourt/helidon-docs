@@ -4,7 +4,7 @@ Mock connector is a simple application scoped bean that can be used for
 emitting to a channel or asserting received data in a test environment.
 All data received are kept in memory only.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Mock Connector, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -16,7 +16,7 @@ To enable Mock Connector, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 > [!WARNING]
 > Mock connector should be used in the test environment only!
@@ -53,7 +53,7 @@ mockConnector
 - Request number of expected items and block the thread until items
   arrive then assert the payloads
 
-# Configuration
+## Configuration
 
 |                |                  |                                                                    |
 |----------------|------------------|--------------------------------------------------------------------|
@@ -61,7 +61,7 @@ mockConnector
 | mock-data      |                  | Initial data emitted to the channel immediately after subscription |
 | mock-data-type | java.lang.String | Type of the emitted initial data to be emitted                     |
 
-# Helidon Test with Mock Connector
+## Helidon Test with Mock Connector
 
 Mock connector works great with built-in Helidon test support for [JUnit 5](/../../testing/testing.adoc)
 or [TestNG](/../../testing/testing-ng.adoc).

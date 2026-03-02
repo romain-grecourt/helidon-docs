@@ -3,7 +3,7 @@
 Helidon integrates with [Tyrus](https://projects.eclipse.org/projects/ee4j.tyrus) to provide
 support for the [Jakarta WebSocket API](https://jakarta.ee/specifications/websocket/2.1/jakarta-websocket-spec-2.1.html).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Jakarta Websocket, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -15,7 +15,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The WebSocket API enables Java applications to participate in WebSocket
 interactions as both servers and clients. The server API supports two
@@ -35,7 +35,7 @@ endpoints or use any combination of them. Using annotated endpoints is
 recommended in MP as they usually result in more succinct and
 easier-to-read code.
 
-# API
+## API
 
 | Annotation      | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +46,7 @@ easier-to-read code.
 | @OnError        | This method level annotation can be used to decorate a Java method that will be called in order to handle errors.                                                                                                                                                                                                                                                                                                  |
 | @OnClose        | This method level annotation can be used to decorate a Java method that will be called when a web socket session is closing.                                                                                                                                                                                                                                                                                       |
 
-# Examples
+## Examples
 
 This section describes the implementation of a simple application that
 uses a REST resource to push messages into a shared queue and a
@@ -215,7 +215,7 @@ server:
 This example assumes that port 8888 is reserved for admin users and
 binds the `MessageBoardApplication` to it.
 
-# Reference
+## Reference
 
 - [Eclipse Tyrus](https://projects.eclipse.org/proposals/eclipse-tyrus)
 - [WebSocket RFC 6455](https://datatracker.ietf.org/doc/html/rfc6455)

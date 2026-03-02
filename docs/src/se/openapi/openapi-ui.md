@@ -14,7 +14,7 @@ The Helidon OpenAPI component allows you to integrate the SmallRye UI
 into your application, adding the UI web page to your application very
 simply.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Helidon OpenAPI UI support, add the following dependency to
 your project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -48,7 +48,7 @@ Also, make sure your project has the following dependency.
 This dependency allows your application to create, configure, and
 register the `OpenApiFeature` service.
 
-# Usage
+## Usage
 
 Make sure your application incorporates Helidon OpenAPI support as
 described in detail in [the Helidon OpenAPI documentation](openapi.md).
@@ -119,7 +119,7 @@ OpenAPI document for the application.
 <figcaption>Example OpenAPI UI screenshot</figcaption>
 </figure>
 
-# API
+## API
 
 With the Helidon OpenAPI UI dependency in your `pom.xml` file, the
 OpenAPI support automatically includes the default UI behavior, possibly
@@ -215,7 +215,7 @@ not be able to anticipate.
 > web context for the UI, not as a suffix appended to the web context
 > for the `OpenAPISupport` service.
 
-# Configuration
+## Configuration
 
 To use configuration to control how the Helidon OpenAPI UI service
 behaves, add an `openapi.services.ui` section to your configuration
@@ -292,7 +292,7 @@ class as the keys in your Helidon configuration.
 > Helidon assigns, possibly interfering with the proper operation of the
 > UI.
 
-# Additional Information
+## Additional Information
 
 - [Helidon OpenAPI SE documentation](../../se/openapi/openapi.md)
 - [SmallRye OpenAPI UI GitHub site](https://github.com/smallrye/smallrye-open-api/tree/3.3.4/ui/open-api-ui)

@@ -4,7 +4,7 @@ This guide describes how to write and execute tests for your
 MicroProfile applications in a JUnit 5 environment using optimized
 customizations.
 
-# What You Need
+## What You Need
 
 For this 20 minute tutorial, you will need the following:
 
@@ -35,7 +35,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Dependencies
+## Dependencies
 
 To start using this feature, add the following dependencies to the
 testing module:
@@ -55,7 +55,7 @@ Maven dependencies:
 </dependencies>
 ```
 
-# Create a Sample Helidon MP Project
+## Create a Sample Helidon MP Project
 
 In this guide we will use the [Helidon MP Quickstart](../guides/quickstart.md) project in our examples.
 
@@ -248,7 +248,7 @@ class GreetTest {
 > and/or `@AddExtension`. As you have seen in standard test output, by
 > default Helidon starts with the dependencies defined in pom.xml.
 
-# Write a Basic Test
+## Write a Basic Test
 
 If you want just the basic test features enabled, then you only have to
 add a few required extensions and classes to your test. The following
@@ -282,7 +282,7 @@ class GreetTest {
 }
 ```
 
-# Summary
+## Summary
 
 This guide demonstrated how to create tests for MicroProfile
 applications in a JUnit 5 environment. It described some useful

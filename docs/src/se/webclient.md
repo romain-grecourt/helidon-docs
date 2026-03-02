@@ -24,7 +24,7 @@ Helidon WebClient provides the following features:
   of the Helidon WebServer to the WebClient and uses them during request
   and response.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable WebClient, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -48,7 +48,7 @@ added:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 ## Instantiating the WebClient
 
@@ -256,7 +256,7 @@ Webclient provides three DNS resolver implementations out of the box:
 </dependency>
 ```
 
-# Configuring the WebClient
+## Configuring the WebClient
 
 The class responsible for WebClient configuration is:
 
@@ -735,7 +735,7 @@ client:
 
 - TLS configuration
 
-# Examples
+## Examples
 
 ## Webclient with Proxy
 
@@ -1005,7 +1005,7 @@ WebClient.builder()
 
 - Passing the client configuration node
 
-# Context Propagation
+## Context Propagation
 
 WebClient supports the capability to propagate values from
 `io.helidon.common.context.Context` over HTTP headers.
@@ -1038,7 +1038,7 @@ client:
 
 Full configuration reference:
 
-# WebClientContextService (webclient.context) Configuration
+## WebClientContextService (webclient.context) Configuration
 
 Type:
 [io.helidon.webclient.context.WebClientContextService](https://helidon.io/docs/v4/apidocs/io.helidon.webclient.context/io/helidon/webclient/context/WebClientContextService.html)
@@ -1051,7 +1051,7 @@ Type:
 
 Optional configuration options
 
-# Reference
+## Reference
 
 - [Helidon Webclient API](https://helidon.io/docs/v4/apidocs/io.helidon.webclient.api/module-summary.html)
 - [Helidon WebClient HTTP/1.1 Support](https://helidon.io/docs/v4/apidocs/io.helidon.webclient.http1/module-summary.html)

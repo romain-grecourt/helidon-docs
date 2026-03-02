@@ -12,7 +12,7 @@ For more information, see [Rest Client For MicroProfile Specification](https://d
 You can also use metrics annotations on your Rest Client methods as
 described in [this related page.](restclientmetrics.md)
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Rest Client, either add a dependency on the
 [helidon-microprofile
@@ -27,7 +27,7 @@ or add the following dependency to your project’s `pom.xml` (see
 </dependency>
 ```
 
-# API
+## API
 
 | Class | Description |
 |----|----|
@@ -121,7 +121,7 @@ public class MyBean {
 }
 ```
 
-# Configuration
+## Configuration
 
 Configuration is only available for CDI managed client instances, it is
 not supported for client created programmatically using
@@ -172,7 +172,7 @@ clients:
 | `org.eclipse.microprofile.rest.client.propagateHeaders`                       | string  |               | To specify which headers to propagate from the inbound JAX-RS request to the outbound MP Rest Client request. Should not be prefixed with the rest client class or alias. |
 | `microprofile.rest.client.disable.default.mapper`                             | boolean | `false`       | Whether to disable default exception mapper. Should not be prefixed with the rest client class or alias.                                                                  |
 
-# Examples
+## Examples
 
 To be able to run and test this example, use the [Helidon MP
 examples/quickstarts](../guides/quickstart.md). Add a dependency on the
@@ -198,7 +198,7 @@ Then create a runnable method as described in [Creating new client](#creating-a-
 By calling `GreetRestClient.getDefaultMessage()` you reach the endpoint
 of Helidon quickstart.
 
-# Reference
+## Reference
 
 - [Helidon MicroProfile RestClient Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.restclient/module-summary.html)
 - [MicroProfile RestClient Specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html)

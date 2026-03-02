@@ -6,7 +6,7 @@ providing support to conveniently handle error conditions (faults) that
 may occur in real-world applications. Examples include service restarts,
 network delays, temporal infrastructure instabilities, etc.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Fault Tolerance, either add a dependency on the
 [helidon-microprofile
@@ -21,7 +21,7 @@ or add the following dependency to your project’s `pom.xml` (see
  </dependency>
 ```
 
-# API
+## API
 
 The MicroProfile Fault Tolerance specification defines a set of
 annotations to decorate classes and methods in your application for the
@@ -122,7 +122,7 @@ computation.</p></td>
 </tbody>
 </table>
 
-# Configuration
+## Configuration
 
 Helidon’s implementation uses two types of thread pools: normal and
 scheduled. The default core size of these executors is 20; however, that
@@ -145,7 +145,7 @@ see
 [ThreadPoolConfig](https://helidon.io/docs/v4/apidocs/io.helidon.common.configurable/io/helidon/common/configurable/ThreadPoolConfig.html).
 [ScheduledThreadPoolConfig](https://helidon.io/docs/v4/apidocs/io.helidon.common.configurable/io/helidon/common/configurable/ScheduledThreadPoolConfig.html).
 
-# Examples
+## Examples
 
 1.  The method `retryWithFallback` shall be called at most 3 times,
     first call plus 2 retries, with a delay of 400 milliseconds between
@@ -192,12 +192,12 @@ see
     }
     ```
 
-# Additional Information
+## Additional Information
 
 For additional information about this API, see the [MicroProfile Fault
 Tolerance
 Javadocs](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/apidocs).
 
-# Reference
+## Reference
 
 - [MicroProfile Fault Tolerance](https://download.eclipse.org/microprofile/microprofile-fault-tolerance-4.0.2/microprofile-fault-tolerance-spec-4.0.2.html)

@@ -44,7 +44,7 @@ APIs can be mapped to a non-HTTP protocol). Nevertheless, there may be
 security providers that only make sense with HTTP (such as HTTP digest
 authentication).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Security, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -56,7 +56,7 @@ To enable Security, add the following dependency to your project’s
 </dependency>
 ```
 
-# Usage
+## Usage
 
 To integrate with a container, or to use Security standalone, we must
 create an instance of security. In general, Security supports three

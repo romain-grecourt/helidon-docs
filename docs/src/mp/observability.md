@@ -6,7 +6,7 @@ as metrics and health, keep their familiar endpoints. The endpoints for
 other observability features are grouped together under a single context
 root which defaults to `/observe`.
 
-# Maven Coordinates
+## Maven Coordinates
 
 You do not need to explicitly add any observability dependency in your
 Helidon MP project `pom.xml` file for MicroProfile technologies. Adding
@@ -43,7 +43,7 @@ For Configuration Observability features:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The MicroProfile observability features use top-level endpoints (such as
 `/health` and `/metrics`) which you can customize if you wish. See the
@@ -199,7 +199,7 @@ path:
 
 For more information see [Metrics](../se/metrics/metrics.md) documentation.
 
-# Configuration
+## Configuration
 
 To customize the endpoint of an observer:
 
@@ -310,7 +310,7 @@ routing.</p></td>
 </tbody>
 </table>
 
-# Additional Information
+## Additional Information
 
 The Observability features are now implemented with `HttpFeature` and
 can be registered with
@@ -329,7 +329,7 @@ developer).
 - This is to allow ordering of features in a meaningful way (e.g.
   Context should be first, Tracing second, Security third etc.).
 
-# Reference
+## Reference
 
 - [MicroProfile Metrics Specification](https://download.eclipse.org/microprofile/microprofile-metrics-5.0.0/microprofile-metrics-spec-5.0.0.pdf)
 - [Metrics](../se/metrics/metrics.md) documentation.

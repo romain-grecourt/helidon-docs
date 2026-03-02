@@ -2,7 +2,7 @@
 
 This guide describes Helidon’s support for Maven projects.
 
-# Introduction
+## Introduction
 
 Helidon supports Maven by providing the following:
 
@@ -12,7 +12,7 @@ Helidon supports Maven by providing the following:
 
 3.  The `helidon-maven-plugin`
 
-# The Helidon Application POM
+## The Helidon Application POM
 
 Helidon examples and projects generated using the [Helidon Quickstart](../../mp/guides/quickstart.md)
 use a Helidon application POM as their parent. This parent POM provides
@@ -32,7 +32,7 @@ For more details on Helidon application POMs see the [Helidon’s
 Application
 POMS](https://github.com/oracle/helidon/tree/main/docs-internal/application-pom.md)
 
-# Dependency Management
+## Dependency Management
 
 In Maven, you use Dependency Management to manage the versions of the
 dependencies used by your project so that you do not need to specify
@@ -80,7 +80,7 @@ Component dependency:
 </dependency>
 ```
 
-# Helidon Maven Plugin
+## Helidon Maven Plugin
 
 Helidon provides a Maven plugin that, among other things, provides the
 following goals:

@@ -1,12 +1,12 @@
 # HasiCorp Vault
 
-# Overview
+## Overview
 
 HashiCorp Vault is a commonly used Vault in many microservices. The APIs
 are REST-based and Helidon implements them using
 [WebClient](../../se/webclient.md).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable HashiCorp Vault, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -62,7 +62,7 @@ available:
 </dependencies>
 ```
 
-# Usage
+## Usage
 
 Vault integration supports the following:
 
@@ -162,7 +162,7 @@ io.helidon.integrations.vault.spi.VaultAuth
 io.helidon.integrations.vault.spi.InjectionProvider
 ```
 
-# Examples
+## Examples
 
 The following example shows usage of Vault to encrypt a secret.
 
@@ -548,7 +548,7 @@ class K8sExample {
 
 - Function used to enable Kubernetes authentication.
 
-# Local testing
+## Local testing
 
 Vault is available as a docker image, so to test locally, you can
 simply:
@@ -562,6 +562,6 @@ on `localhost:8200` with a custom root token my-token, using name vault.
 This is of course only suitable for local testing, as the root token has
 too many rights, but it can be easily used with the examples below.
 
-# References
+## References
 
 - [Hashicorp Vault Usage Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/vault)

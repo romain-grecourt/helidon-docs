@@ -2,7 +2,7 @@
 
 Complete these tasks to get started with your MicroProfile application.
 
-# Getting Started with Helidon MicroProfile
+## Getting Started with Helidon MicroProfile
 
 Helidon provides a MicroProfile server implementation
 (`io.helidon.microprofile.server`) that encapsulates the Helidon

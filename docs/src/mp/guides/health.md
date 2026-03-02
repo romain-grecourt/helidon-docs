@@ -4,7 +4,7 @@ This guide describes how to create a sample MicroProfile (MP) project
 that can be used to run some basic examples using both built-in and
 custom health checks with Helidon MP.
 
-# What You Need
+## What You Need
 
 For this 15 minute tutorial, you will need the following:
 

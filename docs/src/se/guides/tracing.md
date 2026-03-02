@@ -4,7 +4,7 @@ This guide describes how to create a sample Helidon SE project that can
 be used to run some basic examples using tracing with a Helidon SE
 application.
 
-# What You Need
+## What You Need
 
 For this 30 minute tutorial, you will need the following:
 
@@ -35,7 +35,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Introduction
+## Introduction
 
 Distributed tracing is a critical feature of microservice-based
 applications, since it traces workflow both within a service and across
@@ -62,7 +62,7 @@ and can belong to multiple services, running on multiple hosts. Spans
 are automatically created by Helidon as needed during execution of the
 REST request.
 
-# Getting Started with Tracing
+## Getting Started with Tracing
 
 The examples in this guide demonstrate how to integrate tracing with
 Helidon, how to view traces, how to trace across multiple services, and
@@ -557,7 +557,7 @@ Note several things about the display:
 You can now stop your second service, it is no longer used in this
 guide.
 
-# Integration with Kubernetes
+## Integration with Kubernetes
 
 The following example demonstrates how to use Jaeger from a Helidon
 application running in Kubernetes.
@@ -719,7 +719,7 @@ kubectl delete service jaeger-external
 docker rm -f jaeger
 ```
 
-# Responding to Span Lifecycle Events
+## Responding to Span Lifecycle Events
 
 Applications and libraries can register listeners to be notified at
 several moments during the lifecycle of every Helidon span:
@@ -858,7 +858,7 @@ Helidon invokes each listener’s methods in the following order:
 
 Order in which Helidon Invokes Listener Methods
 
-# Summary
+## Summary
 
 This guide has demonstrated how to use the Helidon SE tracing feature
 with Jaeger. You have learned to do the following:

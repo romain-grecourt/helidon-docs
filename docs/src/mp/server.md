@@ -1,12 +1,12 @@
 # MicroProfile Server
 
-# Overview
+## Overview
 
 Helidon provides a MicroProfile server implementation
 (`io.helidon.microprofile.server.Server`) that encapsulates the Helidon
 WebServer.
 
-# Maven-Coordinates
+## Maven-Coordinates
 
 To enable MicroProfile Server add the helidon-microprofile-core bundle
 dependency to your project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -32,7 +32,7 @@ dependencies should be included in your project’s `pom.xml`:
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Helidon Microprofile Server is used to collect and deploy JAX-RS
 application(s). When starting Helidon MP, it is recommended to use the
@@ -47,7 +47,7 @@ Usage of the `io.helidon.microprofile.server.Server` API is discouraged,
 as Helidon MP uses convention to discover and configure features, which
 makes the applications easier to understand and maintain.
 
-# API
+## API
 
 The following table provides a brief description of routing annotations,
 including its parameters. More information in
@@ -80,7 +80,7 @@ with routing.</p></td>
 </tbody>
 </table>
 
-# Configuration
+## Configuration
 
 By default, the server uses the MicroProfile Config, but you may also
 want to use [Helidon configuration](config/introduction.md).
@@ -428,7 +428,7 @@ operations.</p></td>
 </tbody>
 </table>
 
-# Examples
+## Examples
 
 ## Access Log
 
@@ -456,7 +456,7 @@ server.host=0.0.0.0
 server.features.access-log.format=helidon
 ```
 
-# AccessLogFeature (webserver.accesslog) Configuration
+## AccessLogFeature (webserver.accesslog) Configuration
 
 Type:
 [io.helidon.webserver.accesslog.AccessLogFeature](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.accesslog/io/helidon/webserver/accesslog/AccessLogFeature.html)
@@ -942,7 +942,7 @@ Javadoc for more information.
 > web services `UriInfo` object, *not* the Helidon-provided requested
 > URI information `UriInfo` record.
 
-# Reference
+## Reference
 
 - [Helidon MicroProfile Server Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.server/module-summary.html)
 - [Helidon MicroProfile Server on GitHub](https://github.com/oracle/helidon/tree/main/microprofile/server)

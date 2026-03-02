@@ -6,7 +6,7 @@ service and take action, such as restarting a service instance if it has
 failed or temporarily shunting traffic away from the instance if the
 service is unable to process incoming requests normally.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Health add the [helidon-microprofile
 bundle](about/microprofile.md) dependency to your project’s
@@ -50,7 +50,7 @@ the [helidon-microprofile bundle](about/microprofile.md) )
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Helidon implements [MicroProfile Health](https://download.eclipse.org/microprofile/microprofile-health-4.0/microprofile-health-spec-4.0.html)
 Specification. The spec prescribes how external tools probe a service’s
@@ -80,7 +80,7 @@ MicroProfile Health supports three types of health checks:
   normally will report `UP` soon, assuming it is able to start
   successfully.
 
-# REST Endpoints
+## REST Endpoints
 
 A MicroProfile-compliant service reports its health via known REST
 endpoints. Helidon MP provides these endpoints automatically as part of
@@ -103,7 +103,7 @@ HTTP `HEAD` requests return only the status with no payload.
 
 Types of Health Checks
 
-# Configuration
+## Configuration
 
 Health checks may be configured using the following properties.
 
@@ -217,7 +217,7 @@ configuration item `server.features.observe.observers.health.exclude` to
 a comma-separated list of the health check names you want to exclude.
 The table above lists the names for the built-in health checks.
 
-# Examples
+## Examples
 
 Generate Helidon MP Quickstart project following these
 [instructions](guides/quickstart.md).
@@ -567,7 +567,7 @@ JSON response:
 
 Full example code is available [here](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/microprofile).
 
-# Reference
+## Reference
 
 - [Helidon MicroProfile Health Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.microprofile.health/module-summary.html)
 - [Helidon Built-in Checks Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.health.checks/module-summary.html)

@@ -10,7 +10,7 @@ resources. The Helidon OCI SDK [CDI portable extension](https://jakarta.ee/speci
 provides support for injecting [Oracle Cloud Infrastructure SDK Clients](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
 into your Helidon applications.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable OCI Integration, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -23,7 +23,7 @@ Adding the Helidon OCI SDK Extension dependency:
 </dependency>
 ```
 
-# Authentication
+## Authentication
 
 You must configure authentication between your local environment and the
 OCI environment. It is recommended that you configure authentication
@@ -86,7 +86,7 @@ and its configuration and authentication options. In particular, the
 `oci.auth-strategies` property lets you control which
 `AuthenticationDetailsProvider` will be used.
 
-# Accessing OCI Services
+## Accessing OCI Services
 
 The Helidon OCI SDK extension supports injecting the client for any [OCI
 service supported by the OCI SDK for
@@ -192,7 +192,7 @@ VaultResource(Secrets secrets,
 }
 ```
 
-# References
+## References
 
 - [OciExtension](https://helidon.io/docs/v4/apidocs/io.helidon.integrations.oci.sdk.cdi/io/helidon/integrations/oci/sdk/cdi/OciExtension.html) in the Helidon Javadocs
 - [OCI SDK Usage Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/oci) in the Helidon Examples GitHub repository

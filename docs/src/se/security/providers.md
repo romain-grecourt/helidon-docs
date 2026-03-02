@@ -1,6 +1,6 @@
 # Providers
 
-# Implemented Security Providers
+## Implemented Security Providers
 
 Helidon provides the following security providers for endpoint
 protection:
@@ -22,7 +22,7 @@ The following providers are no longer evolved:
 | [Google Login](#google_login_provider) | Authentication | ✅ | **Deprecated**! Authenticates a token from request against Google servers |
 | [JWT Provider](#jwt_provider) | Authentication | ✅ | JWT tokens passed from frontend |
 
-# OIDC Provider
+## OIDC Provider
 
 Open ID Connect security provider.
 
@@ -1059,7 +1059,7 @@ the default tenant configuration (base OIDC configuration), and
 therefore its configuration do not need to change all the properties, if
 they do not differ from the base OIDC configuration.
 
-# CORS Settings
+## CORS Settings
 
 As an experimental feature, you can set up cross-origin handling for the
 redirect and logout endpoints in an optional `cors` block inside the
@@ -2372,7 +2372,7 @@ For outbound, we support either token propagation (e.g. the token from
 request is propagated further) or support for generating a brand new
 token based on configuration of this provider.
 
-# Reference
+## Reference
 
 - [Helidon Security Examples](https://github.com/oracle/helidon/tree/mainexamples/security)
 - [Helidon OIDC Javadoc](https://helidon.io/docs/v4/apidocs/io.helidon.security.providers.oidc/module-summary.html)

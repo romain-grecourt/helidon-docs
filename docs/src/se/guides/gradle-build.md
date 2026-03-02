@@ -2,19 +2,19 @@
 
 This guide describes Helidon’s support for Gradle projects.
 
-# Introduction
+## Introduction
 
 While most of Helidon’s examples use Maven, you can also use Helidon
 with a Gradle project. Gradle 8.4+ is required to build Helidon 4
 projects.
 
-# Gradle Example
+## Gradle Example
 
 The Helidon [Quickstart Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/quickstarts/helidon-quickstart-se)
 contains a `build.gradle` file that you can use as an example for
 building your Helidon application using Gradle.
 
-# Dependency Management
+## Dependency Management
 
 Gradle supports using a Maven POM to perform dependency management. You
 can use the Helidon Dependencies POM for this purpose. Once you import

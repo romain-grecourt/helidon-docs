@@ -4,7 +4,7 @@ This guide describes how to create a sample MicroProfile (MP) project
 that can be used to run some basic examples using both default and
 custom configuration with Helidon MP.
 
-# What You Need
+## What You Need
 
 For this 20 minute tutorial, you will need the following:
 
@@ -35,7 +35,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Getting Started with Configuration
+## Getting Started with Configuration
 
 Helidon provides a very flexible and comprehensive configuration system,
 offering you many application configuration choices. You can include
@@ -250,7 +250,7 @@ JSON response:
 - The system property took precedence over both the environment variable
   and `META-INF/microprofile-config.properties`.
 
-# Accessing Config within an Application
+## Accessing Config within an Application
 
 The examples in this section will demonstrate how to access that config
 data at runtime. Your application uses the `Config` object to access the
@@ -461,7 +461,7 @@ JSON response:
 }
 ```
 
-# Integration with Kubernetes
+## Integration with Kubernetes
 
 The following example uses a Kubernetes ConfigMap to pass the
 configuration data to your Helidon application deployed to Kubernetes.
@@ -652,14 +652,14 @@ kubectl delete -f ./k8s-config.yaml
 kubectl delete configmap  helidon-configmap
 ```
 
-# Summary
+## Summary
 
 This guide has demonstrated how to use basic Helidon configuration
 features. For more information about using the advanced Helidon
 configuration features, including mutability support and extensions, see
 [Helidon Configuration](../../mp/config/introduction.md).
 
-# References
+## References
 
 Refer to the following references for additional information:
 

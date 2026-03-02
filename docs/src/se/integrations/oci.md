@@ -1,11 +1,11 @@
 # OCI
 
-# Overview
+## Overview
 
 Helidon SE OCI Integration provides easy access to Oracle Cloud
 Infrastructure using the OCI Java SDK.
 
-# Usage
+## Usage
 
 It is recommended that you use the OCI Java SDK directly, in particular
 the Async clients. All you need to do is configure and create an OCI SDK
@@ -45,7 +45,7 @@ Once you have authentication with OCI configured, you can use it to
 access any OCI service supported by the OCI SDK. You will need to add
 dependencies for the specific ODI SDK clients you will use.
 
-# Examples
+## Examples
 
 This example describes how to access OCI Object Storage.
 
@@ -76,7 +76,7 @@ described in:
 
 - [OCI SDK Object Storage Javadocs](https://docs.oracle.com/en-us/iaas/tools/java/latest/com/oracle/bmc/objectstorage/package-summary.html)
 - [OCI Object Storage Overview](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-# References
+## References
 
 - [OCI SDK Usage Examples](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/oci)
 - [OCI Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)

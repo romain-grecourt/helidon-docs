@@ -3,7 +3,7 @@
 This section discusses several advanced topics related to Helidon
 configuration.
 
-# Advanced Config Sources
+## Advanced Config Sources
 
 ## Environment Variables Config Source
 
@@ -206,7 +206,7 @@ Config config = Config.builder()
 - Specifies the merging strategy. This example uses the default fallback
   merging strategy.
 
-# Advanced Config Parsers
+## Advanced Config Parsers
 
 Config sources and parsers work together to read and translate
 configuration data from some external form into the corresponding
@@ -389,7 +389,7 @@ Config config = Config.create(classpath("application.yaml")
 As before, the config system replaces the value node in the containing
 config tree with the config tree resulting from the additional parse.
 
-# Config Keys with . in name
+## Config Keys with . in name
 
 As described in the [hierarchical features
 section](hierarchical-features.md#access-by-key) each config node (except
@@ -430,7 +430,7 @@ void snippet()() {
 }
 ```
 
-# Filters, Overrides, and Token Substitution
+## Filters, Overrides, and Token Substitution
 
 When your application retrieves a config value, the config system can
 transform it before returning the value, according to *filters*,
@@ -536,7 +536,7 @@ Config config = Config.builder()
         .build();
 ```
 
-# Executors for Asynchronous Config Activity
+## Executors for Asynchronous Config Activity
 
 Various parts of the config system work asynchronously:
 

@@ -3,7 +3,7 @@
 This guide describes how to build a custom runtime image for your
 Helidon application using Helidon’s support for the JDK’s `jlink` tool.
 
-# Introduction
+## Introduction
 
 JDK 9 introduced the
 [`jlink`](https://docs.oracle.com/en/java/javase/21/docs/specs/man/jlink.html)
@@ -15,7 +15,7 @@ resulting in a smaller, better performing runtime.
 In this guide you will learn how to build a custom runtime image locally
 on your machine, as well as how to build it in a Docker image.
 
-# What You Need
+## What You Need
 
 For this 10 minute tutorial, you will need the following:
 
@@ -47,7 +47,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Verify JDK
+## Verify JDK
 
 As noted in the prerequisites above, Java 21 or newer is required (Java
 25 or newer is recommended).
@@ -73,7 +73,7 @@ ls $JAVA_HOME/jmods
 > distributions provide `*.jmod` files only in the
 > `openjdk-*-jdk-headless` packages.
 
-# Generate the Project
+## Generate the Project
 
 Generate the project using the Helidon MP Quickstart Maven archetype.
 
@@ -114,7 +114,7 @@ Now stop the running application (by pressing Ctrl+C).
 For more information about the Quickstart application and other
 endpoints it supports see the [Helidon MP quickstart Guide](../../mp/guides/quickstart.md).
 
-# Building a Custom Runtime Image
+## Building a Custom Runtime Image
 
 You can build a custom runtime image in 2 different ways:
 
@@ -192,7 +192,7 @@ docker run --rm -p 8080:8080 helidon-quickstart-mp-jri:latest
 
 You can exercise the application’s endpoints as before.
 
-# Using Custom Runtime Images
+## Using Custom Runtime Images
 
 Custom runtime images are ideal for use when you want all the runtime
 performance of the JDK JVM in a reasonably compact form.

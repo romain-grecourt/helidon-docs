@@ -13,7 +13,7 @@ can be aware of updates to the underlying config sources by:
 3.  using `Supplier`s of particular config values to obtain the
     always-current value for a key.
 
-# Using Config Metadata
+## Using Config Metadata
 
 ## Loading Time
 
@@ -45,7 +45,7 @@ Note that the config context describes or replaces a currently-loaded
 config tree. It by itself does not help your application decide *when*
 reloading the config might be useful.
 
-# Responding to Changes in Config Sources
+## Responding to Changes in Config Sources
 
 Although in-memory config trees do not change once loaded, applications
 can respond to change in the underlying config sources by:
@@ -143,7 +143,7 @@ config.get("greeting")
   at the `greeting` node changes. The `changedNode` is a new instance of
   `Config` representing the updated subtree rooted at `greeting`.
 
-# Accessing Always-current Values
+## Accessing Always-current Values
 
 Some applications do not need to respond to change as they happen.
 Instead, it’s sufficient that they simply have access to the current

@@ -19,7 +19,7 @@ several advantages:
 - Integrated deployment: You can host gRPC and HTTP endpoints on the
   same WebServer instance, even sharing the same port.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable gRPC Server, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -35,7 +35,7 @@ Additional dependencies may be required depending on your application
 needs. See the [gRPC SE Example](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/webserver/grpc)
 for a complete example.
 
-# Usage
+## Usage
 
 ## gRPC Server Routing
 
@@ -256,7 +256,7 @@ server:
 The configuration above shall enable metrics on the Webserver’s default
 port 8080. For more information see [Helidon Metrics](../../se/metrics/metrics.md).
 
-# Configuration
+## Configuration
 
 Configure the gRPC server using the Helidon configuration framework,
 either programmatically or via a configuration file.
@@ -346,7 +346,7 @@ server:
 Compression is always *enabled* by default in Helidon, but can be
 disabled as shown above.
 
-# Examples
+## Examples
 
 The following gRPC examples for Helidon SE are available:
 

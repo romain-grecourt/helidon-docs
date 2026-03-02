@@ -4,7 +4,7 @@ This guide describes how to create a sample Helidon SE project that can
 be used to run some basic examples using both default and custom
 configuration.
 
-# What you need
+## What you need
 
 For this 20 minute tutorial, you will need the following:
 
@@ -35,7 +35,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 21`
 export JAVA_HOME=/usr/lib/jvm/jdk-21
 ```
 
-# Getting Started with Configuration
+## Getting Started with Configuration
 
 Helidon provides a very flexible and comprehensive configuration system,
 offering you many application configuration choices. You can include
@@ -212,7 +212,7 @@ property and the value in `application.yaml`.
 }
 ```
 
-# Custom Configuration Sources
+## Custom Configuration Sources
 
 To use custom configuration sources, your application needs to specify
 the sources when it creates `Config` object. By doing this, you are in
@@ -596,7 +596,7 @@ You can re-run the previous tests that exercised environment variables
 and system properties. Swap the two types to see the precedence change.
 Be sure to unset APP_GREETING after you finish testing.
 
-# Accessing Config within an Application
+## Accessing Config within an Application
 
 You have used Helidon to customize configuration behavior from your code
 using the `Config` and `Config.Builder` classes. As discussed
@@ -769,7 +769,7 @@ JSON response:
 
 - The application reacted to the change and updated the greeting.
 
-# Integration with Kubernetes
+## Integration with Kubernetes
 
 The following example uses a Kubernetes ConfigMap to pass the
 configuration data to your Helidon application deployed to Kubernetes.
@@ -954,7 +954,7 @@ kubectl delete -f ./k8s-config.yaml
 kubectl delete configmap  helidon-configmap
 ```
 
-# Summary
+## Summary
 
 This guide has demonstrated how to use basic Helidon configuration
 features. The full configuration documentation, starting with the

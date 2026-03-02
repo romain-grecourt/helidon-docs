@@ -7,7 +7,7 @@ and
 [consumer](https://kafka.apache.org/28/documentation.html#consumerconfigs)
 configs can be propagated through messaging config.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Reactive Kafka Connector, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Config Example
+## Config Example
 
 Example of connector config:
 ```yaml
@@ -68,7 +68,7 @@ public PublisherBuilder<String> produceToKafka() {
 }
 ```
 
-# NACK Strategy
+## NACK Strategy
 
 |              |                                                                                                              |
 |--------------|--------------------------------------------------------------------------------------------------------------|
@@ -130,7 +130,7 @@ mp.messaging:
       nack-log-only: true
 ```
 
-# Examples
+## Examples
 
 Don’t forget to check out the examples with pre-configured Kafka docker
 image, for easy testing:

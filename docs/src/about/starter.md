@@ -41,7 +41,7 @@ Helidon MP only.
 
 You will then have additional options you can choose from to configure your project.
 
-# Download the Project Files
+## Download the Project Files
 
 Click **Download** and Project Starter generates the files in a
 directory named after the `artifactId` value. It mainly contains the

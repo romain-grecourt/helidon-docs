@@ -3,12 +3,12 @@
 In Helidon 2 we have made some changes to APIs and runtime behavior.
 This guide will help you migrate a Helidon SE 1.x application to 2.x.
 
-# Java 11 Runtime
+## Java 11 Runtime
 
 Java 8 is no longer supported in Helidon 2. Java 11 or newer is
 required.
 
-# Tracing
+## Tracing
 
 We have upgraded to OpenTracing version 0.33.0 that is not backward
 compatible. OpenTracing introduced the following breaking changes:
@@ -24,7 +24,7 @@ compatible. OpenTracing introduced the following breaking changes:
 If you use the `TracerBuilder` abstraction in Helidon and have no custom
 Spans, there is no change required
 
-# Security: OIDC
+## Security: OIDC
 
 When the OIDC provider is configured to use cookie (default
 configuration) to carry authentication information, the cookie
@@ -33,7 +33,7 @@ prevent infinite redirects, as browsers would refuse to set the cookie
 on redirected requests (due to this setting). Only in the case of the
 frontend host and identity host match, we leave `Strict` as the default
 
-# Getters
+## Getters
 
 Some methods that act as getters of type `T` have been modified to
 return `Optional<T>`. You will need to change your code to handle the
@@ -59,7 +59,7 @@ Span myNewSpan = spanBuilder.start();
 
 Note the use of `ifPresent()` on the returned `Optional<SpanContext>`.
 
-# Configuration
+## Configuration
 
 1.  File watching is now done through a `ChangeWatcher` - use of
     `PollingStrategies.watch()` needs to be refactored to
@@ -114,7 +114,7 @@ Config.builder()
         .build();
 ```
 
-# Resource Class When Loaded from Config
+## Resource Class When Loaded from Config
 
 The configuration approach to `Resource` class was using prefixes which
 was not aligned with our approach to configuration. All usages were
@@ -129,7 +129,7 @@ refactored as follows:
 3.  Classes using resources are changed as well, such as `KeyConfig` -
     see details below
 
-# Media Support
+## Media Support
 
 In Helidon 1.x support for JSON and other media types was configured
 when constructing `webserver.Routing` using the `register` method. In
@@ -156,13 +156,13 @@ The new JSON MediaSupport classes are:
 - `io.helidon.http.media.jackson.JacksonSupport` in module
   `io.helidon.http.media:helidon-media-jackson`
 
-# Reactive
+## Reactive
 
 | Removed                                             | Replacement                        |
 |-----------------------------------------------------|------------------------------------|
 | `io.helidon.common.reactive.ReactiveStreamsAdapter` | `org.reactivestreams.FlowAdapters` |
 
-# Security: OidcConfig
+## Security: OidcConfig
 
 Configuration has been updated to use the new `Resource` approach:
 
@@ -171,7 +171,7 @@ Configuration has been updated to use the new `Resource` approach:
 
 2.  `sign-jwk.resource` is the new key for loading signing JWK resource
 
-# Security: JwtProvider and JwtAuthProvider
+## Security: JwtProvider and JwtAuthProvider
 
 Configuration has been updated to use the new `Resource` approach:
 
@@ -181,7 +181,7 @@ Configuration has been updated to use the new `Resource` approach:
 2.  `jwt.resource` is also used for outbound as key for loading JWK for
     signing tokens
 
-# PKI Key Configuration
+## PKI Key Configuration
 
 The configuration has been updated to have a nicer tree structure:
 
@@ -217,7 +217,7 @@ pem:
     resource.resource-path: "keystore/public_key_cert.pem"
 ```
 
-# GrpcTlsDescriptor
+## GrpcTlsDescriptor
 
 Configuration has been updated to use the new `Resource` approach:
 
@@ -227,7 +227,7 @@ Configuration has been updated to use the new `Resource` approach:
 
 3.  `tl-ca-cert` is the new key for certificate
 
-# WebServer Configuration
+## WebServer Configuration
 
 ## SSL/TLS
 

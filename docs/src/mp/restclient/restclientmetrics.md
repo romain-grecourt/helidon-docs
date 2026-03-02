@@ -10,7 +10,7 @@ uses the MicroProfile Metrics spec for inspiration where appropriate.
 
 For more information about support for REST clients in Helidon see [REST Client](restclient.md).
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Rest Client Metrics, either add a dependency on
 the [helidon-microprofile
@@ -25,7 +25,7 @@ or add the following dependency to your project’s `pom.xml` (see
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Add the MicroProfile Metrics `@Counted` and `@Timed` annotations to REST
 client interfaces and interface methods to trigger counting or timing,
@@ -102,7 +102,7 @@ When a REST client is made known to Helidon the logging reports the
 actual registration of the metrics derived from that REST client
 interface.
 
-# API
+## API
 
 Use the following annotations from
 `org.eclipse.microprofile.metrics.annotation` listed in the following
@@ -117,7 +117,7 @@ table to trigger REST client metrics.
 Type-level annotations trigger registration of separate metrics for each
 REST client method in the REST client interface.
 
-# Configuration
+## Configuration
 
 Optional configuration options:
 
@@ -129,7 +129,7 @@ The `enabled` configuration setting allows developers to build REST
 client metrics into an application while permitting end users to disable
 the feature at their discretion.
 
-# Examples
+## Examples
 
 This example is similar to the [Helidon REST Client doc example](restclient.md#examples)
 which starts with the [Helidon MP QuickStart example](../guides/quickstart.md).
@@ -325,7 +325,7 @@ To create this REST client metrics example follow these steps.
         name, and the `absolute` setting means the selected name *is
         not* relative to the fully-qualified class name.
 
-# Reference
+## Reference
 
 - [Helidon REST Client documentation](restclient.md)
 - [MicroProfile RestClient specification](https://download.eclipse.org/microprofile/microprofile-rest-client-3.0/microprofile-rest-client-spec-3.0.html)

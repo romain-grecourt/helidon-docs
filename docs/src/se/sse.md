@@ -20,7 +20,7 @@ Helidon provides support for server and client APIs, although Web
 browsers are popular client alternatives. The following sections
 describe these APIs in more detail.
 
-# Server API
+## Server API
 
 The Server API is available as a loadable service in the Helidon
 WebServer. The following additional dependency is required to find and
@@ -105,7 +105,7 @@ media converters are available in the class path. For example, when
 passing a Java instance, you may request XML instead of JSON
 serialization by using `application/xml` as the event’s media type.
 
-# Client API
+## Client API
 
 The Client API is available as a loadable service in the Helidon
 WebClient. The following additional dependency is required to find and
@@ -204,7 +204,7 @@ void test(Http1Client client) {
 }
 ```
 
-# Reference
+## Reference
 
 - [`SSE` specification][sse-spec]
 

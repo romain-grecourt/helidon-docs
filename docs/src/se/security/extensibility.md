@@ -8,7 +8,7 @@ The component has the following extension points:
 - [Security Providers](#security_providers)
 - [Provider Selection Policy](#provider_selection_policy)
 - [Framework Integration](#framework_integration)
-# Security Providers
+## Security Providers
 
 You can build a custom provider for each type of security concept
 supported.
@@ -74,7 +74,7 @@ Implementation may do whatever desired with these messages, e.g.:
 
 - discard them
 
-# Provider Selection Policy
+## Provider Selection Policy
 
 Each request is processed by a single authentication and/or
 authorization provider. The selection policy provides the security
@@ -95,7 +95,7 @@ are three policies:
 To create a custom provider selection policy, create a class that
 implements "io.helidon.security.spi.ProviderSelectionPolicy".
 
-# Framework Integration
+## Framework Integration
 
 The Security component supports integration with Helidon WebServer
 (`helidon-security-integration-webserver`) and with Jersey

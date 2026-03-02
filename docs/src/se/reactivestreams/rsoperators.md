@@ -7,7 +7,7 @@ standardized tool for manipulation with [Reactive Streams](https://www.reactive-
 Reactive Streams Operators when you want to maintain source-level
 portability between different implementations.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Reactive Streams, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
 </dependency>
 ```
 
-# Usage
+## Usage
 
 The MicroProfile Reactive Streams Operators specification provides a set
 of operators within stages, as well as the builders used to prepare
@@ -113,7 +113,7 @@ publisherStage
 // >Item received: BAR
 ```
 
-# Reference
+## Reference
 
 - [MicroProfile Reactive Streams Operators Specification](https://download.eclipse.org/microprofile/microprofile-reactive-streams-operators-3.0/microprofile-reactive-streams-operators-spec-3.0.html)
 - [MicroProfile Reactive Streams Operators Javadoc](https://download.eclipse.org/microprofile/microprofile-reactive-streams-operators-3.0/apidocs)

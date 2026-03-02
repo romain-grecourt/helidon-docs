@@ -3,14 +3,14 @@
 In Helidon 3.x we have made some changes to APIs and runtime behavior.
 This guide will help you upgrade a Helidon MP 2.x application to 3.x.
 
-# Java 17 Runtime
+## Java 17 Runtime
 
 Java 11 is no longer supported in Helidon 3. Java 17 or newer is
 required. Please follow the instructions in
 [Prerequisites](../../about/prerequisites.md)
 for proper installation.
 
-# javax.\* namespace to jakarta.\* namespace
+## javax.\* namespace to jakarta.\* namespace
 
 Helidon 3 supports MicroProfile 5.0 and *selected* Jakarta EE 9.1 APIs.
 In Jakarta EE 9.1 the Java package namespace was changed from `javax` to
@@ -23,7 +23,7 @@ now is fully migrated to `jakarta` namespace.
 As a result, `javax` module is no longer in dependency management of
 Helidon parent pom files.
 
-# MicroProfile 5.0 support
+## MicroProfile 5.0 support
 
 MicroProfile 5.0 enables MicroProfile APIs to be used together with
 Jakarta EE 9.1 (Jakarta EE namespace). This release was mainly focused
@@ -172,7 +172,7 @@ below.
 > [!NOTE]
 > Please, read each specification carefully for incompatible changes!
 
-# Deprecations
+## Deprecations
 
 - The custom Helidon OCI clients have been deprecated. Use the OCI Java
   SDK instead. If you use Helidon MP you can inject OCI SDK clients by

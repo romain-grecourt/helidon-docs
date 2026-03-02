@@ -5,7 +5,7 @@ engine has been removed. APIS and implementations are rewritten in
 "blocking" paradigm. This guide will help you upgrade a Helidon SE 3.x
 application to 4.x.
 
-# Java 21 Runtime
+## Java 21 Runtime
 
 Java 17 is no longer supported in Helidon 4. Java 21 or newer is
 required. Java 25 or newer is highly recommended. Please follow the
@@ -17,13 +17,13 @@ Helidon 4 no longer uses Netty. Helidon SE is now running on Helidon
 WebServer which is based on virtual threads technology, available in
 Java 21.
 
-# Programming Paradigm
+## Programming Paradigm
 
 Helidon SE has changed from an asynchronous style API to an
 imperative/blocking style API that is optimized for use with virtual
 threads. Currently, there is no compatibility API available
 
-# Server Initialization and Start Up
+## Server Initialization and Start Up
 
 In Helidon 1.x-3.x you started a server like this:
 ```java
@@ -92,7 +92,7 @@ Just create it, configure it, and wait for it to start. If any
 exceptions happen, they are handled the traditional way using available
 language constructions.
 
-# Server Lifecycle
+## Server Lifecycle
 
 In Helidon 3.x you provided code to run after WebServer startup and
 after WebServer shutdown using asynchronous constructs:
@@ -127,7 +127,7 @@ static class MyService implements HttpService {
 No special API is needed for after server starup since the server starts
 sycnhronously as described in the previous section.
 
-# Server Features and Media Support Discovery
+## Server Features and Media Support Discovery
 
 In previous versions of Helidon you had to explicitly register WebServer
 features (`register(MetricsSupport.create())`) and explicitly add media
@@ -143,7 +143,7 @@ For more information see:
 - [Observability feature support](../observability.md)
 - [Media types support](../webserver/webserver.md#_media_types_support)
 
-# Routing Configuration
+## Routing Configuration
 
 In Helidon 1.x-3.x the routing config was done the following way:
 ```java
@@ -202,7 +202,7 @@ according to their weight. Higher-weighted features are registered
 first. This is to allow ordering of features in a meaningful way (e.g.
 Context should be first, Tracing second, Security third etc).
 
-# Adding Additional Routing Criteria
+## Adding Additional Routing Criteria
 
 In prior versions, the `RequestPredicate` class was used to specify more
 routing criteria. This class has been removed from Helidon 4.
@@ -248,7 +248,7 @@ public abstract class RoutingHandlerResource<I, R> implements HttpService {
 }
 ```
 
-# Services
+## Services
 
 There are also significant changes in Helidon `Service`.
 
@@ -470,7 +470,7 @@ update it and add the following dependency:
 </dependency>
 ```
 
-# Conclusion
+## Conclusion
 
 Please proceed to [Helidon SE Introduction](../README.md) to find
 more information and documentation about each module.

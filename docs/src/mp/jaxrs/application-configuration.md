@@ -5,7 +5,7 @@ both). MicroProfile Config offers portability to other MicroProfile
 servers. Helidon Config supports a full tree structure, including
 repeating elements.
 
-# Configuring the Application
+## Configuring the Application
 
 You can inject values that the application can access from both
 MicroProfile Config and from Helidon Config.

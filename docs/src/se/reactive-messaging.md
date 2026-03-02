@@ -6,7 +6,7 @@ reactive streams directly by combining operators and connecting them to
 reactive APIs, with Helidon SE Reactive Messaging, you can now use
 prepared tools for repetitive use case scenarios .
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Reactive Messaging, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -18,7 +18,7 @@ project’s `pom.xml` (see [Managing Dependencies](../about/managing-dependencie
 </dependency>
 ```
 
-# Usage
+## Usage
 
 Connecting your streams to external services usually requires a lot of
 boilerplate code for configuration handling, backpressure propagation,
@@ -657,7 +657,7 @@ Messaging.builder()
   `example_queue_1` immediately
 - Subscribe callback for any message coming from `example_queue_1`
 
-# Configuration
+## Configuration
 
 - [Configuration for Messaging Connector](#configuration_for_messaging_connector)
 - [Explicit Configuration with Config Builder for Kafka Connector](#explicit_config_with_config_builder_for_kafka_connector)
@@ -665,7 +665,7 @@ Messaging.builder()
 - [Explicit Configuration with Config Builder for JMS Connector](#explicit_config_with_config_builder_for_jms_connector)
 - [Implicit Helidon Configuration for JMS Connector](#implicit_helidon_config_for_jms_connector)
 
-# Reference
+## Reference
 
 - [MicroProfile Reactive Messaging Specification](https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html)
 - [MicroProfile Reactive Messaging on GitHub](https://github.com/eclipse/microprofile-reactive-messaging)

@@ -5,7 +5,7 @@ is an ACID-compliant transactional database with native graph storage
 and processing. Neo4j is available in a GPL3-licensed open-source
 “community edition”.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Neo4j, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -22,7 +22,7 @@ To enable Neo4j, add the following dependency to your project’s
 > [Neo4j Health Checks](#neo4j_health_checks) for additional
 > dependencies for *Neo4j* `Metrics` and `Health Checks` integration.
 
-# Usage
+## Usage
 
 The support for Neo4j is implemented in Neo4j driver level. Just add the
 dependency, add configuration in `microprofile-config.properties` file
@@ -50,7 +50,7 @@ public MovieRepository(Driver driver) {
 
 The driver can be used according to the [Neo4j documentation](https://neo4j.com/developer/java/).
 
-# Configuration
+## Configuration
 
 Type:
 [io.helidon.integrations.neo4j.Neo4j](https://helidon.io/docs/v4/apidocs/io.helidon.integrations.neo4j/io/helidon/integrations/neo4j/Neo4j.html)
@@ -166,7 +166,7 @@ CA.</p></li>
 </tbody>
 </table>
 
-# Examples
+## Examples
 
 This example implements a simple Neo4j REST service using MicroProfile.
 For this example a working Neo4j database is required. The Neo4j Movie
@@ -301,7 +301,7 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 
 Full example code is available in [Helidon GitHub Repository](https://github.com/oracle/helidon/tree/master/examples/integrations/neo4j/neo4j-mp).
 
-# Additional Information
+## Additional Information
 
 ## Neo4j Metrics propagation
 
@@ -350,7 +350,7 @@ Maven module:
 
 Health checks for Neo4j will be included in `/health` endpoint output.
 
-# References
+## References
 
 - [Neo4j official website](https://neo4j.com/)
 - [Neo4j Java developer guide](https://neo4j.com/developer/java/)

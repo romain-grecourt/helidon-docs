@@ -6,7 +6,7 @@ the leaves in the tree, accessing them by their keys. You can also
 navigate explicitly among the nodes of the tree without using keys. This
 section describes what the tree looks like and how you can traverse it.
 
-# Configuration Node Types
+## Configuration Node Types
 
 The config system represents configuration in memory using three types
 of nodes, each a different interface defined within the
@@ -39,7 +39,7 @@ system built the tree.
 > The in-memory config tree contains nodes only of types `OBJECT`,
 > `LIST`, and `VALUE`.
 
-# Configuration Key
+## Configuration Key
 
 Each config node (except the root) has a non-null key. Here is the
 formal definition of what keys can be:
@@ -59,7 +59,7 @@ config-key = *1( key-token *( "." key-token ) )
 > separator in keys. To include a dot as a character in a key escape it
 > as “~1”. To include a tilda escape it as “~0”.
 
-# In-memory Representation of Configuration
+## In-memory Representation of Configuration
 
 The following example is in
 [HOCON](https://github.com/lightbend/config/blob/master/HOCON.md)
@@ -136,7 +136,7 @@ and
 [`type`](https://helidon.io/docs/v4/apidocs/io.helidon.config/io/helidon/config/Config.html#type--)
 of the node.
 
-# Access by Key
+## Access by Key
 
 For many applications, accessing configuration values by key will be the
 simplest approach. If you write the code with a specific configuration
@@ -181,7 +181,7 @@ The config system throws a `MissingValueException` if the application
 tries to access the value of a missing node by invoking the
 `ConfigValue.get()` method.
 
-# Access by General Navigation
+## Access by General Navigation
 
 Some applications might need to work with configuration without knowing
 its structure or key names ahead of time, and such applications can use
@@ -330,7 +330,7 @@ VALUE   app.basic-range.0
 VALUE   app.basic-range.1
 ```
 
-# Detaching a Config Subtree
+## Detaching a Config Subtree
 
 Sometimes it can be convenient to write part of your application to deal
 with configuration without it knowing if or where the relevant

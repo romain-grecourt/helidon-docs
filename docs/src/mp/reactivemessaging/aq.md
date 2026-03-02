@@ -4,7 +4,7 @@ Connecting streams to Oracle AQ with Reactive Messaging couldn’t be
 easier. This connector extends Helidon’s JMS connector with Oracle’s
 AQ-specific API.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable AQ Connector, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -16,7 +16,7 @@ To enable AQ Connector, add the following dependency to your project’s
 </dependency>
 ```
 
-# Configuration
+## Configuration
 
 Connector name: `helidon-aq`
 
@@ -146,7 +146,7 @@ mp:
       type: queue
 ```
 
-# Usage
+## Usage
 
 ## Consuming
 

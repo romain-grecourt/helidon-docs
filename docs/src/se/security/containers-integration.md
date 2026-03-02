@@ -149,6 +149,6 @@ security.web-server.paths.3.path=/static/*
 security.web-server.paths.3.roles-allowed=user,monitor
 ```
 
-# Reference
+## Reference
 
 - [Helidon WebServer Security Integration](https://helidon.io/docs/v4/apidocs/io.helidon.webserver.security/module-summary.html)

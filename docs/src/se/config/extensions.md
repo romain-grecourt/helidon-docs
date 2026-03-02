@@ -68,7 +68,7 @@ for custom extensions. Service providers:
 The config system itself implements several of these SPIs, as noted in
 the sections below.
 
-# Configuring an Extension
+## Configuring an Extension
 
 You can configure a custom extension in two ways:
 
@@ -141,7 +141,7 @@ annotating the service implementation class with
 The default value is 100. The higher the weight, the more important the
 extension is.
 
-# ConfigSource SPI
+## ConfigSource SPI
 
 The config system includes built-in support for several types of sources
 (for example, Java `String`, `Readable`, `Properties`, and `Map`
@@ -198,7 +198,7 @@ APIs to simplify the overall class structure:
   not returned, media type must be present on `Content`, or provided
   through media type mapping
 
-# ConfigParser SPI
+## ConfigParser SPI
 
 The parsing step converts config data in some format into the
 corresponding in-memory representation of config `ObjectNode`s. The
@@ -241,7 +241,7 @@ Example custom parser implementation listed in
 my.module.MyConfigParser
 ```
 
-# OverrideSource SPI
+## OverrideSource SPI
 
 When the application retrieves a configuration value the config system
 first uses the relevant config sources and filters. It then applies any
@@ -275,7 +275,7 @@ service loader SPI
 Note that override sources can also implement `PollableSource`, and
 `WatchableSource` to add change support.
 
-# ConfigFilter SPI
+## ConfigFilter SPI
 
 Before returning a `String` from `Config.value()` the config system
 applies any *filters* set up on the `Config.Builder` used to create the
@@ -351,7 +351,7 @@ lower-priority filters will not yet have run.*
 <figcaption>ConfigFilter SPI</figcaption>
 </figure>
 
-# ConfigMapperProvider SPI
+## ConfigMapperProvider SPI
 
 The config system provides built-in mappings from `String` values to
 various Java types. (See
@@ -430,7 +430,7 @@ Reference custom mapper provider implementation in
 my.module.MyConfigMapperProvider
 ```
 
-# Change Support SPI
+## Change Support SPI
 
 Once it loads a `Config` tree from `ConfigSource`, the config system
 does not itself change the in-memory `Config` tree. Even so, the
@@ -498,7 +498,7 @@ support appropriate type of change watchers).
 To support change watchers that can be configured in config profile,
 also implement the `ChangeWatcherProvider` Java service loader SPI.
 
-# RetryPolicy SPI
+## RetryPolicy SPI
 
 The builder for each `ConfigSource` and `OverrideSource` accepts a
 [`RetryPolicy`](https://helidon.io/docs/v4/apidocs//io.helidon.config/io/helidon/config/spi/RetryPolicy.html)

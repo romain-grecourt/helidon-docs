@@ -85,7 +85,7 @@ use of LangChain4j in Helidon applications.
 
 We will extend the number of supported components in future releases.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable LangChain4j Integration, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../../about/managing-dependencies.md)).
@@ -129,7 +129,7 @@ section of `pom.xml`:
 Some features of the integration may require adding other dependencies.
 Check the corresponding sections for additional information.
 
-# General Concepts
+## General Concepts
 
 ## Creating Components
 
@@ -220,7 +220,7 @@ In a CDI environment such as Helidon MP, Helidon Inject components are
 exposed as CDI beans, allowing them to be injected into other CDI beans
 without any restrictions.
 
-# AI Services
+## AI Services
 
 LangChain4j AI Services provide a declarative and type-safe way to
 define AI-powered functionality. It allows combining chat models,
@@ -430,7 +430,7 @@ follow the [OpenTelemetry Semantic Conventions for GenAI Metrics
 v1.36.0](https://github.com/open-telemetry/semantic-conventions/blob/v1.36.0/docs/gen-ai/gen-ai-metrics.md).
 This is done out-of-box for Chat API calls.
 
-# Additional Information
+## Additional Information
 
 - [LangChain4j documentation](https://docs.langchain4j.dev/)
 - Components Reference

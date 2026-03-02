@@ -4,7 +4,7 @@
 |--------------|-------------------------------------------------------------|
 | [Quickstart] | Create your first Helidon MP application in under 5 minutes |
 
-# Helidon MP Guides
+## Helidon MP Guides
 
 | Topic                     | Description                                                      |
 |---------------------------|------------------------------------------------------------------|
@@ -22,7 +22,7 @@
 | [JBatch]                  | Learn how to use JBatch with Helidon MP                          |
 | [Performance tuning]      | Learn how to improve performance of your application             |
 
-# Build and Deploy
+## Build and Deploy
 
 | Topic                  | Description                                                                       |
 |------------------------|-----------------------------------------------------------------------------------|

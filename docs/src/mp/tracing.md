@@ -17,7 +17,7 @@ operational issues. Helidon MP includes support for distributed tracing
 through the [OpenTracing API](https://opentracing.io). Tracing is
 integrated with WebServer and Security.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable MicroProfile Tracing, either add a dependency on the
 [helidon-microprofile
@@ -32,7 +32,7 @@ or add the following dependency to your project’s `pom.xml` (see
 </dependency>
 ```
 
-# Usage
+## Usage
 
 This section explains a few concepts that you need to understand before
 you get started with tracing.
@@ -57,7 +57,7 @@ you get started with tracing.
   REST request. Additional spans can be added through MP annotation
   `@Traced` or through OpenTracing APIs.
 
-# Traced spans
+## Traced spans
 
 The following table lists all spans traced by Helidon components:
 
@@ -102,7 +102,7 @@ configurable.
 | `jersey-client-call` | `http.status_code` | HTTP status code of client response                                                               |
 | `jersey-client-call` | `http.url`         | Full URL of the request (such as `http://localhost:8080/greet`)                                   |
 
-# Configuration
+## Configuration
 
 ## Enabling and Disabling Tracing
 
@@ -119,7 +119,7 @@ Type:
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -304,7 +304,7 @@ Parameters provided:
 
 3.  Query - query of the request (may-be null)
 
-# Examples
+## Examples
 
 The examples in this guide demonstrate how to integrate tracing with
 Helidon, how to view traces, how to trace across multiple services, and
@@ -493,7 +493,7 @@ the delay no longer exists.
 You can now stop your second service, it is no longer used in this
 guide.
 
-# Integration with Kubernetes
+## Integration with Kubernetes
 
 The following example demonstrates how to use Jaeger from a Helidon
 application running in Kubernetes.
@@ -652,7 +652,7 @@ kubectl delete service jaeger-external
 docker rm -f jaeger
 ```
 
-# Creating custom spans
+## Creating custom spans
 
 Helidon MP fully supports MicroProfile OpenTracing. You can add custom
 spans using `@Traced` annotation on methods of CDI beans.
@@ -663,7 +663,7 @@ invoked through a CDI proxy and as such cannot be intercepted. To make
 sure `@Traced` is honored, use it on JAX-RS resource methods and on CDI
 bean methods used from other beans.*
 
-# Trace propagation across services
+## Trace propagation across services
 
 Automated trace propagation is supported currently only with Jersey
 client.
@@ -690,7 +690,7 @@ Response response = client.target(serviceEndpoint)
         .get();
 ```
 
-# Additional Information
+## Additional Information
 
 ## Jaeger Tracing
 
@@ -701,7 +701,7 @@ Response response = client.target(serviceEndpoint)
 </dependency>
 ```
 
-# Configuring Jaeger
+## Configuring Jaeger
 
 Jaeger tracer configuration.
 
@@ -711,7 +711,7 @@ Type:
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -852,7 +852,7 @@ Jaeger tracing in your Helidon application.
 </dependency>
 ```
 
-# Configuring Zipkin
+## Configuring Zipkin
 
 Zipkin tracer configuration
 
@@ -861,7 +861,7 @@ Type: io.opentracing.Tracer
 This is a standalone configuration type, prefix from configuration root:
 `tracing`
 
-# Configuration options
+## Configuration options
 
 <table>
 <caption>Optional configuration options</caption>
@@ -1061,7 +1061,7 @@ Helidon invokes each listener’s methods in the following order:
 
 Order in which Helidon Invokes Listener Methods
 
-# Reference
+## Reference
 
 - [MicroProfile Opentracing Specification](https://download.eclipse.org/microprofile/microprofile-opentracing-3.0/microprofile-opentracing-spec-3.0.html)
 - [Opentracing Project](https://opentracing.io/)

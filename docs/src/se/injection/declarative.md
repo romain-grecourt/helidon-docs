@@ -1,6 +1,6 @@
 # Declarative Guide
 
-# Overview
+## Overview
 
 Helidon declarative programming model allows inversion of control style
 programming with all the performance benefits of Helidon SE.
@@ -23,7 +23,7 @@ Our declarative approach has the following advantages:
 > subject to change. These APIs will be finalized in a future release of
 > Helidon.
 
-# Usage
+## Usage
 
 To create a declarative application, use the annotations provided in our
 Helidon SE modules (details under [Features](#features)), and the maven
@@ -52,7 +52,7 @@ necessary code:
 </plugins>
 ```
 
-# Features
+## Features
 
 The following features are currently implemented:
 

@@ -1,6 +1,6 @@
 # OpenAPI Generators
 
-# Overview
+## Overview
 
 The [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)
 provides a standard way to express RESTful APIs.
@@ -59,7 +59,7 @@ The rest of this document walks you through [how to use](#usage-section)
 each technique and how to [configure](#configuration) the generators to
 produce the code you want.
 
-# Maven Coordinates
+## Maven Coordinates
 
 Your project does not need any dependencies on the OpenAPI generator.
 
@@ -92,7 +92,7 @@ Declaring the OpenAPI Generator Plug-in:
 A [later section](#invoking-the-plugin) describes how to invoke the
 plug-in during your build.
 
-# Configuration
+## Configuration
 
 The OpenAPI generators support a substantial, powerful, and sometimes
 bewildering group of configuration settings. For complete lists see
@@ -407,7 +407,7 @@ serializing JSON</p></td>
   preferences loaded from the previous generator run, and as a last
   resort using hard-coded values for each major Helidon release.
 
-# Usage
+## Usage
 
 This section covers two major topics:
 
@@ -678,7 +678,7 @@ your project.
 
 This document does not explore further the use of the online generator.
 
-# Using the Generated Code
+## Using the Generated Code
 
 The Helidon generators go a long way in helping you write your client or
 server. Even so, there are important parts of your project only you can
@@ -1213,7 +1213,7 @@ void findAvailablePets() {
 This code also blocks the current thread, first to wait for the initial
 response and then to wait for the result content.
 
-# References
+## References
 
 - [OpenAPI Generator Official Website](https://openapi-generator.tech)
 - [OpenAPI Generator GitHub Repository](https://github.com/OpenAPITools/openapi-generator)

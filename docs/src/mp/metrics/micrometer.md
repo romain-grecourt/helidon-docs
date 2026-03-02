@@ -20,7 +20,7 @@ application-specific metrics:
 In Helidon 4.4.0-SNAPSHOT, Micrometer support is separate from the
 Helidon MP metrics API and the built-in Helidon metrics.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Micrometer support, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -38,7 +38,7 @@ for the Prometheus meter registry. To use other meter registry types,
 you will need to add dependencies for them to your `pom.xml` and,
 optionally, add configuration to set them up as you wish.
 
-# Usage
+## Usage
 
 Your application registers and updates Micrometer meters using
 annotations or direct use of the Micrometer API.
@@ -65,7 +65,7 @@ Helidon MP Micrometer integration automatically creates a REST endpoint
 which clients can access to retrieve Micrometer metrics, by default at
 the `/micrometer` endpoint.
 
-# API
+## API
 
 To incorporate Micrometer metrics into your code, you will work with two
 APIs: a small one specific to Helidon, and the Micrometer API itself.
@@ -88,7 +88,7 @@ the Micrometer `MeterRegistry` API. The [Micrometer concepts document](https://d
 provides a good starting point for learning how to use Micrometer’s
 interfaces and classes.
 
-# Configuration
+## Configuration
 
 You can configure the Helidon Micrometer REST service as you can other
 built-in Helidon services by adding configuration settings under the
@@ -120,7 +120,7 @@ Overriding the default Micrometer path
 micrometer.web-context=my-micrometer
 ```
 
-# Examples
+## Examples
 
 Helidon MP includes an [example application](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/micrometer/mp)
 which uses Micrometer support.
@@ -215,7 +215,7 @@ apply to that registry type.
 Helidon does not validate the configuration keys you specify for meter
 registries.
 
-# Additional Information
+## Additional Information
 
 The [Micrometer website](https://micrometer.io) describes the project as
 a whole and has links to more information.

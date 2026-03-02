@@ -8,11 +8,11 @@ register a running Helidon microservice with an available Netflix Eureka
 Server of at least version 2.0.5 in the microservice’s runtime
 environment.
 
-# Usage
+## Usage
 
 ## Installation
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Eureka Server Service Instance Registration Integration, add
 the following dependency to your project’s `pom.xml` (see [Managing Dependencies](../../../about/managing-dependencies.md)).
@@ -92,7 +92,7 @@ server:
 Please consult the [Helidon Config Reference](../../../config/io_helidon_integrations_eureka_EurekaRegistrationConfig.md)
 for a full description of the permitted configuration.
 
-# Logging
+## Logging
 
 This feature is deliberately designed to be *unobtrusive*. Unobtrusive
 means that if everything is working properly Eureka Server service
@@ -108,7 +108,7 @@ debug, warning and error-level information.
 Information about how this feature is communicating with the Eureka
 Server is logged by loggers under the `io.helidon.webclient` prefix.
 
-# Related Documentation
+## Related Documentation
 
 Users of this feature may also be interested in the (related) [Discovery feature](../../../se/discovery.md),
 particularly its [Eureka provider](../../../se/discovery.md#eureka).

@@ -24,7 +24,7 @@ that method shall execute on. If such a method returns `CompletionStage`
 or `CompletableFuture`, it is assumed to be asynchronous and shall
 execute in a new thread but without blocking the caller’s thread.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable ExecuteOn, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../about/managing-dependencies.md)).
@@ -36,7 +36,7 @@ To enable ExecuteOn, add the following dependency to your project’s
 </dependency>
 ```
 
-# API
+## API
 
 The API consists of a single `@ExecuteOn` annotation (with a few
 parameters) that can be applied to any CDI bean method.
@@ -53,7 +53,7 @@ parameters) that can be applied to any CDI bean method.
 | unit | A `TimeUnit` value | Unit for `timeout` parameter |
 | executorName | The name of an executor from which to obtain a thread | CDI producer with a `@Named` qualifier to access the executor |
 
-# Configuration
+## Configuration
 
 The implementation of the `@ExecuteOn` annotation takes advantage of
 Helidon’s `ThreadPoolSupplier` to (lazily) create a pool of platform
@@ -81,7 +81,7 @@ execute-on:
     thread-name-prefix: "my-virtual-thread"
 ```
 
-# Examples
+## Examples
 
 1.  The following example creates a new platform thread from a
     (configurable) default pool to execute a cpu-intensive task.

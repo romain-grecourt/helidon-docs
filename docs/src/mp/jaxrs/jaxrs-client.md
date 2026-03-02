@@ -7,7 +7,7 @@ providers. It differs from the [Rest Client API](../restclient/restclient.md) in
 annotations or proxies, but instead uses builders and a fluent API to
 create and execute requests.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Jakarta REST Client, add the following dependency to your
 project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -19,7 +19,7 @@ project’s `pom.xml` (see [Managing Dependencies](../../about/managing-dependen
  </dependency>
 ```
 
-# API
+## API
 
 Bootstrapping the API is done by obtaining an instance of `Client`. A
 single instance of this class can be used to create multiple service
@@ -110,22 +110,22 @@ In either case, the implementation will ensure the calling thread is not
 blocked and that the result from the invocation is available upon
 request or via a callback mechanism.
 
-# Configuration
+## Configuration
 
 Configuration for this API is all done programmatically as shown in the
 previous sections.
 
-# Examples
+## Examples
 
 See [API](#api) for same simple examples. For additional information,
 refer to the
 
 [Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api).
 
-# Additional Information
+## Additional Information
 
 For additional information, see the [Jakarta REST Javadocs](https://jakarta.ee/specifications/restful-ws/3.1/apidocs).
 
-# Reference
+## Reference
 
 - [Jakarta REST Client Specification](https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html#client_api)

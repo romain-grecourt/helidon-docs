@@ -6,7 +6,7 @@ component provides a Java API to load and process configuration data
 from various sources into a `Config` object which the application can
 then use.
 
-# Maven Coordinates
+## Maven Coordinates
 
 To enable Config, add the following dependency to your project’s
 `pom.xml` (see [Managing Dependencies](../../about/managing-dependencies.md)).
@@ -20,7 +20,7 @@ To enable Config, add the following dependency to your project’s
 </dependencies>
 ```
 
-# Usage
+## Usage
 
 A brief overview of the config system helps clarify its different parts
 and how they work together. Most applications will typically deal with
@@ -100,7 +100,7 @@ See the [advanced
 topics'](advanced-configuration.md#advanced-config-parsers) page for
 further information on some more involved aspects of config parsers.
 
-# Configuration
+## Configuration
 
 ## Global Configuration
 
@@ -437,11 +437,11 @@ by implementing the
 interface. See the [extensions'](extensions.md) documentation for
 complete information.
 
-# Reference
+## Reference
 
 Step-by-step [guide]( ../guides/config.md) about using Config in your Helidon SE application.
 
-# Additional Information
+## Additional Information
 
 The links in the following tables lead you to more information about
 various other config topics.

@@ -1,6 +1,6 @@
 # Concurrency Limits
 
-# Introduction
+## Introduction
 
 With the introduction of virtual threads, Helidon is able to create a
 new thread per request with the only limit being the available memory on
@@ -16,7 +16,7 @@ possible to establish rules for those requests that cannot be serviced
 immediately, as well as how to grow or shrink the number of *permits*
 available in the system.
 
-# Setting Concurrency Limits
+## Setting Concurrency Limits
 
 Helidon now includes support for two independent concurrency limit
 strategies: fixed and AIMD (Arithmetic Increase Multiplicative Decrease)
@@ -126,7 +126,7 @@ strategies see:
 
 - [FixedLimit](../../config/io_helidon_common_concurrency_limits_FixedLimit.md)
 - [AimdLimit](../../config/io_helidon_common_concurrency_limits_AimdLimit.md)
-# Metrics
+## Metrics
 
 The Concurrency Limit module also has built-in support for metrics in
 order to monitor the chosen strategy. These metrics are disabled by
@@ -173,7 +173,7 @@ AIMD
 For more information regarding metrics support in Helidon and the
 dependencies that are required for metrics to work, see [Helidon Metrics](../../se/metrics/metrics.md).
 
-# Tracing
+## Tracing
 
 The Concurrency Limit component supports tracing for the webserver. If
 you enable tracing for waiting time, any time Helidon queues a request
